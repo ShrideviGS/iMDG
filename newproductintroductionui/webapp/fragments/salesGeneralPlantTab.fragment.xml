@@ -1,0 +1,107 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" class="sapUiSizeCompact" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table">
+	<VBox>
+		<Toolbar height="2rem" class="basicDataToolbarBrdClass">
+			<HBox>
+				<Text text="{i18n>GENERAL_DATA}" class="hdrTextClass"></Text>
+			</HBox>
+			<VBox class="basicDataHLineClass sapUiSmallMarginBegin" width="100%"></VBox>
+		</Toolbar>
+		<l:Grid defaultSpan="XL3 L3 M6 S12">
+			<l:content>
+				<VBox>
+					<Label text="{i18n>QUALIFIES_FOR_DISCOUNT}:" class="sapUiTinyMarginTop"></Label>
+					<Input value="{oBasicDataCollectionModel>/basicDataDto/qualifiesForDiscount}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
+				</VBox>
+			</l:content>
+		</l:Grid>
+		<Toolbar height="2rem" class="basicDataToolbarBrdClass sapUiSmallMarginTop">
+			<HBox>
+				<Text text="{i18n>PACKING_MATERIAL_DATA}" class="hdrTextClass"></Text>
+			</HBox>
+			<VBox class="basicDataHLineClass sapUiSmallMarginBegin" width="100%"></VBox>
+		</Toolbar>
+		<l:Grid defaultSpan="XL3 L3 M6 S12">
+			<l:content>
+				<VBox>
+					<Label text="{i18n>ALLOWED_PKG_WEIGHT}:" class="sapUiTinyMarginTop"></Label>
+					<Input value="{oBasicDataCollectionModel>/basicDataDto/allowedPkgWeight}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
+				</VBox>
+				<VBox class="sapUiSmallMarginBegin">
+					<Label text="{i18n>EXCESS_VOLUME_TOLERANCE}:" class="sapUiTinyMarginTop"></Label>
+					<Input value="{oBasicDataCollectionModel>/basicDataDto/excessVolumeTolerance}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
+				</VBox>
+				<VBox class="sapUiSmallMarginBegin">
+					<Label text="{i18n>ALLOWED_PKG_WEIGHT_UOM}:" class="sapUiTinyMarginTop"></Label>
+					<ComboBox items="{oDropdownLookupsModel>/pkgWeigthUOM}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+						selectedKey="{oBasicDataCollectionModel>/basicDataDto/allowedPkgWeightUom}" showSecondaryValues="true" width="100%">
+						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>uomDesc30}" additionalText="{oDropdownLookupsModel>code}"/>
+						<customData>
+							<core:CustomData key="target" value="DROP_DOWN"/>
+						</customData>
+					</ComboBox>
+				</VBox>
+				<VBox class="sapUiSmallMarginBegin">
+					<Label text="{i18n>EXCESS_WEIGHT_TOLERANCE}:" class="sapUiTinyMarginTop"></Label>
+					<Input value="{oBasicDataCollectionModel>/basicDataDto/excessWeightTolerance}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
+				</VBox>
+				<VBox>
+					<Label text="{i18n>MAXIMUM_LEVEL}:" class="sapUiTinyMarginTop"></Label>
+					<Input value="{oBasicDataCollectionModel>/basicDataDto/maximumLevel}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
+				</VBox>
+				<VBox class="sapUiSmallMarginBegin">
+					<Label text="{i18n>ALLOWED_PKG_VOLUME}:" class="sapUiTinyMarginTop"></Label>
+					<Input value="{oBasicDataCollectionModel>/basicDataDto/allowedPkgVolume}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
+				</VBox>
+				<VBox class="sapUiSmallMarginBegin">
+					<Label text="{i18n>STACKABILITY_FACTOR}:" class="sapUiTinyMarginTop"></Label>
+					<Input value="{oBasicDataCollectionModel>/basicDataDto/stackabilityFactor}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
+				</VBox>
+				<VBox class="sapUiSmallMarginBegin">
+					<Label text="{i18n>ALLOWED_PKG_VOLUME_UOM}:" class="sapUiTinyMarginTop"></Label>
+					<ComboBox items="{oDropdownLookupsModel>/pkgVolumeUOM}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+						selectedKey="{oBasicDataCollectionModel>/basicDataDto/allowedPkgVolumeUom}" showSecondaryValues="true" width="100%">
+						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>uomDesc30}" additionalText="{oDropdownLookupsModel>code}"/>
+						<customData>
+							<core:CustomData key="target" value="DROP_DOWN"/>
+						</customData>
+					</ComboBox>
+				</VBox>
+				<VBox>
+					<Label text="{i18n>PACKAGING_MAT_TYPE}:" class="sapUiTinyMarginTop"></Label>
+					<ComboBox items="{oDropdownLookupsModel>/packmaterialtypes}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+						selectedKey="{oBasicDataCollectionModel>/basicDataDto/packagingMatType}" showSecondaryValues="true" width="100%">
+						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>uomDesc30}" additionalText="{oDropdownLookupsModel>code}"/>
+						<customData>
+							<core:CustomData key="target" value="DROP_DOWN"/>
+						</customData>
+					</ComboBox>
+				</VBox>
+				<VBox class="sapUiSmallMarginBegin">
+					<Label text="{i18n>CLOSED}:" class="sapUiTinyMarginTop"></Label>
+					<CheckBox selected="{oBasicDataCollectionModel>/basicDataDto/closed}" editable="{oSpecTblDataModel>/isBasicEditable}"/>
+				</VBox>
+			</l:content>
+		</l:Grid>
+		<Toolbar height="2rem" class="basicDataToolbarBrdClass sapUiSmallMarginTop">
+			<HBox>
+				<Text text="{i18n>SHIPPING_DATA}" class="hdrTextClass"></Text>
+			</HBox>
+			<VBox class="basicDataHLineClass sapUiSmallMarginBegin" width="100%"></VBox>
+		</Toolbar>
+		<l:Grid defaultSpan="XL3 L3 M6 S12">
+			<l:content>
+				<VBox>
+					<Label text="{i18n>TRANSPORTATION_GROUP}:" class="sapUiTinyMarginTop" required="true"></Label>
+					<ComboBox items="{oDropdownLookupsModel>/transportgroups}" id="mara_tragr" change="onChangeComboBox"
+						editable="{oSpecTblDataModel>/isBasicEditable}" selectedKey="{oBasicDataCollectionModel>/basicDataDto/transportGroup}"
+						showSecondaryValues="true" width="100%">
+						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
+						<customData>
+							<core:CustomData key="target" value="DROP_DOWN"/>
+						</customData>
+					</ComboBox>
+				</VBox>
+			</l:content>
+		</l:Grid>
+	</VBox>
+</core:FragmentDefinition>

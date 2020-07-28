@@ -1,0 +1,294 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	controllerName="newproductintroductionui.newproductintroductionui.controller.warehouseView" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="{i18n>PAGE_TITLE}" class="sapUiSizeCompact" showHeader="false" floatingFooter="true">
+		<content>
+			<!--<l:Grid defaultSpan="L3 M4 S6" class="sapUiSizeCompact sapUiSmallMarginTop hdrGridClass">
+				<VBox>
+					<Label text="{i18n>GLBL_MAT}" design="Bold"></Label>
+					<Input enabled="false" class="sapUiSizeCompact"></Input>
+				</VBox>
+				<VBox>
+					<Label text="{i18n>MAT_DESC}" design="Bold"></Label>
+					<Input enabled="false" class="sapUiSizeCompact"></Input>
+				</VBox>
+			</l:Grid>-->
+			<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+				<Label text="{i18n>REGIONAL_CODE_DATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+				<HBox width="100%" class="hdrTxtLineClass"></HBox>
+			</HBox>
+			<HBox class="sapUiSizeCompact sapUiSmallMarginEnd">
+				<l:Grid defaultSpan="L3 M4 S6" class="sapUiSizeCompact">
+					<VBox>
+						<Label text="{i18n>PROJECT_NUM}" design="Bold"></Label>
+						<Input enabled="false" value="{oWarehouseContextModel>/projectId}" class="sapUiSizeCompact"></Input>
+					</VBox>
+					<!--<VBox>
+						<Label text="{i18n>MAT_DUE_DATE}" design="Bold"></Label>
+						<Input enabled="false" class="sapUiSizeCompact"></Input>
+					</VBox>-->
+					<VBox>
+						<Label text="{i18n>MATERIAL}" design="Bold"></Label>
+						<Input enabled="false" value="{oWarehouseContextModel>/materialId}" class="sapUiSizeCompact"></Input>
+					</VBox>
+					<VBox>
+						<Label text="{i18n>MAT_DESC}" design="Bold"></Label>
+						<Input enabled="false" value="{oWarehouseContextModel>/materialDescription}" class="sapUiSizeCompact"></Input>
+					</VBox>
+					<VBox>
+						<Label text="{i18n>BUOM}" design="Bold"></Label>
+						<Input enabled="false" value="{oWarehouseContextModel>/baseUoM}" class="sapUiSizeCompact"></Input>
+					</VBox>
+					<VBox>
+						<Label text="{i18n>MATERIAL_TYPE}" design="Bold"></Label>
+						<Input enabled="false" value="{oWarehouseContextModel>/materialType}" class="sapUiSizeCompact"></Input>
+					</VBox>
+					<VBox>
+						<Label text="{i18n>WAREHOUSE}" design="Bold"></Label>
+						<Input enabled="false" value="{oWarehouseContextModel>/warehouseCode}" class="sapUiSizeCompact"></Input>
+					</VBox>
+					<l:layoutData>
+						<FlexItemData styleClass="hdrGridClass"/>
+					</l:layoutData>
+				</l:Grid>
+				<!--<HBox></HBox>
+				<Table class="tblBoxClass">
+					<columns>
+						<Column>
+							<Label text="{i18n>HDR_COL1}" tooltip="{i18n>HDR_COL1}" design="Bold"></Label>
+						</Column>
+						<Column>
+							<Label text="{i18n>HDR_COL2}" tooltip="{i18n>HDR_COL2}" design="Bold"></Label>
+						</Column>
+						<Column>
+							<Label text="{i18n>HDR_COL3}" tooltip="{i18n>HDR_COL3}" design="Bold"></Label>
+						</Column>
+						<Column>
+							<Label text="{i18n>HDR_COL4}" tooltip="{i18n>HDR_COL4}" design="Bold"></Label>
+						</Column>
+					</columns>
+					<layoutData>
+						<FlexItemData styleClass="hdrTblClass"/>
+					</layoutData>
+				</Table>-->
+			</HBox>
+			<l:Grid defaultSpan="L12 M12 S12" class="sapUiSizeCompact splitterGridClass">
+				<l:Splitter class="sapUiSizeCompact splitterBGClass">
+					<List id="idMasterList" showSeparators="None" class="sapUiSizeCompact leftContentClass" mode="SingleSelectMaster" itemPress="onItemPress">
+						<items>
+							<StandardListItem title="{i18n>WAREHOUSE_MGMT1}" type="Active" class="masterListClass" press="onItemPress"></StandardListItem>
+							<StandardListItem title="{i18n>WAREHOUSE_MGMT2}" type="Active" class="masterListClass" press="onItemPress"></StandardListItem>
+						</items>
+						<layoutData>
+							<l:SplitterLayoutData size="20%" resizable="false"/>
+						</layoutData>
+					</List>
+					<VBox>
+						<items>
+							<!-- Warehouse Mgmt 1 Tab -->
+							<VBox visible="{oVisModel>/oWM1Box}">
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>GENERAL_DATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>CAPACITY_CONSUMPTION_UOM}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oWarehouseDataModel>/capacityConsumptionUom}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>CAPACITY_USAGE}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oWarehouseDataModel>/capacityUsage}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>WAREHOUSE_MAN_UOM}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oWarehouseDataModel>/warehouseManUom}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PROPOSED_UOM}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oWarehouseDataModel>/proposedUom}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PICKING_STORAGE_TYPE}" design="Bold"></Label>
+											<ComboBox width="100%" showSecondaryValues="true" items="{oPickStorageTypeModel>/results}"
+												selectedKey="{oWarehouseDataModel>/pickingStorageType}">
+												<core:ListItem key="{oPickStorageTypeModel>code}" text="{oPickStorageTypeModel>description}" additionalText="{oPickStorageTypeModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PERIOD_IND}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oWarehouseDataModel>/periodIndicator}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>MIN_REM_SHELF_LIFE}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oWarehouseDataModel>/minRemShelfLife}"></Input>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>STORAGE_STRATEGIES}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>STOCK_REMOVAL}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oWarehouseDataModel>/stockRemoval}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>STOCK_PLACEMENT}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oWarehouseDataModel>/stockPlacement}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>STORAGE_SECTION_IND}" design="Bold"></Label>
+											<ComboBox width="100%" showSecondaryValues="true" items="{oStorageSelIndModel>/results}"
+												selectedKey="{oWarehouseDataModel>/storageSectionInd}">
+												<core:ListItem key="{oStorageSelIndModel>code}" text="{oStorageSelIndModel>description}" additionalText="{oStorageSelIndModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>BULK_STORAGE}" design="Bold"></Label>
+											<ComboBox width="100%" showSecondaryValues="true" items="{oBulkStorageModel>/results}"
+												selectedKey="{oWarehouseDataModel>/bulkStorage}">
+												<core:ListItem key="{oBulkStorageModel>code}" text="{oBulkStorageModel>description}" additionalText="{oBulkStorageModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>SPECIAL_MOVEMENT}" design="Bold"></Label>
+											<ComboBox width="100%" showSecondaryValues="true" items="{oSpclMovementModel>/results}"
+												selectedKey="{oWarehouseDataModel>/specialMovement}">
+												<core:ListItem key="{oSpclMovementModel>code}" text="{oSpclMovementModel>description}" additionalText="{oSpclMovementModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>MESSAGE_IM}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" selected="{oWarehouseDataModel>/messageToIM}"></CheckBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>TWO_STEP_PICKING}" design="Bold"></Label>
+											<ComboBox width="100%" showSecondaryValues="true" items="{oTwoStepPickModel>/results}"
+												selectedKey="{oWarehouseDataModel>/picking2Steps}">
+												<core:ListItem key="{oTwoStepPickModel>code}" text="{oTwoStepPickModel>description}" additionalText="{oTwoStepPickModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>ALLOW_ADDN_STOCK}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" selected="{oWarehouseDataModel>/allowAdditionToStock}"></CheckBox>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<!--<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>DOCUMENT_UPLOAD}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<VBox class="memoBoxClass">
+									<UploadCollection></UploadCollection>
+								</VBox>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>MEMO_DETAILS}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<VBox class="memoBoxClass">
+									<FeedInput post="onMemoPost" showIcon="false"/>
+									<List showSeparators="Inner" items="{oCommModel>/EntryCollection}">
+										<FeedListItem sender="{oCommModel>Author}" showIcon="false" senderPress="onSenderPress" iconPress="onIconPress" iconDensityAware="false"
+											info="{oCommModel>Type}" timestamp="{oCommModel>Date}" text="{oCommModel>Text}" convertLinksToAnchorTags="All"/>
+									</List>
+								</VBox>-->
+							</VBox>
+							<!-- Warehouse Mgmt 1 Tab -->
+							<!-- Warehouse Mgmt 2 Tab -->
+							<VBox visible="{oVisModel>/oWM2Box}">
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>PALLETIZATION_DATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L4 M4 S12">
+									<l:content>
+										<Label text="{i18n>LOADING_EQUIPMENT_QTY}" design="Bold"></Label>
+										<Label text="{i18n>LOADING_EQUIPMENT_UOM}" design="Bold"></Label>
+										<Label text="{i18n>STORAGE_UNIT_TYPE}" design="Bold"></Label>
+									</l:content>
+								</l:Grid>
+								<l:Grid defaultSpan="L4 M4 S12">
+									<l:content>
+										<Input class="sapUiSizeCompact" value="{oWarehouseDataModel>/loadingEquipmentQuantity1}"></Input>
+										<Input class="sapUiSizeCompact" value="{oWarehouseDataModel>/loadingEquipmentUom1}"></Input>
+										<ComboBox width="100%" showSecondaryValues="true" items="{oStorageUnitTypeModel>/results}"
+											selectedKey="{oWarehouseDataModel>/storageUnitType1}">
+											<core:ListItem key="{oStorageUnitTypeModel>code}" text="{oStorageUnitTypeModel>description}" additionalText="{oStorageUnitTypeModel>code}"/>
+										</ComboBox>
+										<Input class="sapUiSizeCompact" value="{oWarehouseDataModel>/loadingEquipmentQuantity2}"></Input>
+										<Input class="sapUiSizeCompact" value="{oWarehouseDataModel>/loadingEquipmentUom2}"></Input>
+										<ComboBox width="100%" showSecondaryValues="true" items="{oStorageUnitTypeModel>/results}"
+											selectedKey="{oWarehouseDataModel>/storageUnitType2}">
+											<core:ListItem key="{oStorageUnitTypeModel>code}" text="{oStorageUnitTypeModel>description}" additionalText="{oStorageUnitTypeModel>code}"/>
+										</ComboBox>
+										<Input class="sapUiSizeCompact" value="{oWarehouseDataModel>/loadingEquipmentQuantity3}"></Input>
+										<Input class="sapUiSizeCompact" value="{oWarehouseDataModel>/loadingEquipmentUom3}"></Input>
+										<ComboBox width="100%" showSecondaryValues="true" items="{oStorageUnitTypeModel>/results}"
+											selectedKey="{oWarehouseDataModel>/storageUnitType3}">
+											<core:ListItem key="{oStorageUnitTypeModel>code}" text="{oStorageUnitTypeModel>description}" additionalText="{oStorageUnitTypeModel>code}"/>
+										</ComboBox>
+									</l:content>
+								</l:Grid>
+								<!--<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>STORAGE_BIN_STOCK}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<VBox class="storageLocBoxClass sapUiSizeCompact">
+									<Table class="tblBoxClass" mode="MultiSelect">
+										<headerToolbar>
+											<Toolbar class="sapUiSizeCompact">
+												<content>
+													<ToolbarSpacer></ToolbarSpacer>
+													<Button text="{i18n>ADD_ROW}" icon="sap-icon://add"></Button>
+													<Button text="{i18n>REMOVE_ROW}" icon="sap-icon://delete"></Button>
+												</content>
+											</Toolbar>
+										</headerToolbar>
+										<columns>
+											<Column>
+												<Label text="{i18n>STORAGE_TYPE}" tooltip="{i18n>PLANT}" design="Bold"></Label>
+											</Column>
+											<Column>
+												<Label text="{i18n>REPLENISHMENT_QTY}" tooltip="{i18n>STORAGE_LOC}" design="Bold"></Label>
+											</Column>
+											<Column>
+												<Label text="{i18n>MIN_BIN_QTY}" tooltip="{i18n>DESCRIPTION}" design="Bold"></Label>
+											</Column>
+											<Column>
+												<Label text="{i18n>MAX_BIN_QTY}" tooltip="{i18n>PLANT}" design="Bold"></Label>
+											</Column>
+											<Column>
+												<Label text="{i18n>ROUNDING_QTY}" tooltip="{i18n>STORAGE_LOC}" design="Bold"></Label>
+											</Column>
+											<Column>
+												<Label text="{i18n>PICKING_AREA}" tooltip="{i18n>DESCRIPTION}" design="Bold"></Label>
+											</Column>
+											<Column>
+												<Label text="{i18n>STORAGE_BIN}" tooltip="{i18n>PLANT}" design="Bold"></Label>
+											</Column>
+											<Column>
+												<Label text="{i18n>CTRL_QTY}" tooltip="{i18n>STORAGE_LOC}" design="Bold"></Label>
+											</Column>
+										</columns>
+									</Table>
+								</VBox>-->
+							</VBox>
+							<!-- Warehouse Mgmt 2 Tab -->
+						</items>
+					</VBox>
+				</l:Splitter>
+			</l:Grid>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer></ToolbarSpacer>
+				<Button text="{i18n>SAVE}" press="onSave"></Button>
+				<Button text="{i18n>VALIDATE}" press="onValidate"></Button>
+				<Button text="{i18n>SUBMIT}" press="onSubmit"></Button>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

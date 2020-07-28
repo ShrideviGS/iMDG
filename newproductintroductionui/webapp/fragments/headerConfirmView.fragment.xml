@@ -1,0 +1,265 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" class="sapUiSizeCompact" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table">
+	<IconTabBar class="sapIconTabBar sapUiResponsiveContentPadding sapUiSmallMarginTop sapUiTinyMarginEnd" backgroundDesign="Transparent"
+		headerBackgroundDesign="Transparent">
+		<items>
+			<IconTabFilter design="Vertical" text="{i18n>COUNTRIES_ROLES_PHASES}" key="sourcing">
+				<Toolbar height="2rem" class="toolbarBorderClass">
+					<Button icon="sap-icon://stop" text="Hold"></Button>
+					<Button type="Accept" icon="sap-icon://restart" text="Resume"></Button>
+					<Button type="Reject" icon="sap-icon://sys-cancel" text="Cancel"></Button>
+					<ToolbarSpacer/>
+					<Button type="Accept" icon="sap-icon://add" text="{i18n>ADD}" press="addNewProjectRole"></Button>
+					<Button type="Reject" icon="sap-icon://delete" text="{i18n>REMOVE}" press="deleteProjectRole"></Button>
+				</Toolbar>
+				<!--<Toolbar height="2rem" class="toolBarClass">
+							<Button text="{i18n>ADD_ROW}" class="buttonBGClass" press="addNewProjectRole"></Button>
+							<Button text="{i18n>DELETE_ROW}" class="sapUiTinyMarginBegin buttonBGClass" press="deleteProjectRole"></Button>
+							<Button text="{i18n>VIEW_ROW_REVISIONS}" class="sapUiTinyMarginBegin buttonBGClass"></Button>
+							<Button text="{i18n>VIEW_EDIT_DETAIL_SCOPING}" class="sapUiTinyMarginBegin buttonBGClass" press="onViewEditDetailScoping"></Button>
+							<Button text="{i18n>VIEW_EDIT_COMMENTS}" class="sapUiTinyMarginBegin buttonBGClass"></Button>
+							<Button text="{i18n>SHOW_ADDI_INFO}" class="sapUiTinyMarginBegin buttonBGClass"></Button>
+						</Toolbar>-->
+				<table:Table rows="{oProjectDetailModel>/rolesData}" selectionMode="Single" id="MM_PROJECT_ROLES_TBL" alternateRowColors="true"
+					showNoData="true" class="sapUiTableBorderClass">
+					<table:columns>
+						<table:Column width="5rem" hAlign="Center">
+							<Label text="{i18n>ROW}" design="Bold"/>
+							<table:template>
+								<Text text="{oProjectDetailModel>rowNumber}" wrapping="false"/>
+							</table:template>
+						</table:Column>
+						<!--<table:Column hAlign="Center">-->
+						<!--	<Label text="{i18n>LEAD_CLUSTER}" design="Bold"/>-->
+						<!--	<table:template>-->
+						<!--		<Select forceSelection="false" selectedKey="{oProjectDetailModel>leadClusterCode}" items="{oDropdownLookupsModel>/cluster}" width="100%">-->
+						<!--			<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>-->
+						<!--		</Select>-->
+						<!--	</table:template>-->
+						<!--</table:Column>-->
+						<table:Column hAlign="Center">
+							<Label text="{i18n>LEAD_COUNTRY}" design="Bold"/>
+							<table:template>
+								<Select forceSelection="false" selectedKey="{oProjectDetailModel>leadCountryCode}"
+									items="{path: 'oDropdownLookupsModel>/countryList',sorter:{ path:'name'},templateShareable:'true'}" width="100%">
+									<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>name}"/>
+								</Select>
+							</table:template>
+						</table:Column>
+						<table:Column hAlign="Center">
+							<Label text="{i18n>ROLE}" design="Bold"/>
+							<table:template>
+								<Select forceSelection="false" selectedKey="{oProjectDetailModel>role}" items="{oDropdownLookupsModel>/roles}" width="100%">
+									<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
+								</Select>
+							</table:template>
+						</table:Column>
+						<table:Column hAlign="Center">
+							<Label text="{i18n>READY_BY_DATE}" design="Bold"/>
+							<table:template>
+								<DatePicker change="onRolesTblChangeDateValue" valueFormat="yyyy-MM-dd" displayFormat="yyyy-MM-dd"
+									value="{path:'oProjectDetailModel>readByDate', formatter:'newproductintroductionui.newproductintroductionui.formatter.formatter.formatDateObject'}"/>
+							</table:template>
+						</table:Column>
+						<!--<table:Column>
+									<Label text="{i18n>LEADING_CATEGORY}"/>
+									<table:template>
+										<Select forceSelection="false" selectedKey="{oProjectDetailModel>leadCategoryCode}" items="{oDropdownLookupsModel>/leadCategory}">
+											<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
+										</Select>
+									</table:template>
+								</table:Column>-->
+						<!--<table:Column>
+									<Label text="{i18n>SUPPLIED_FROM}"/>
+									<table:template>
+										<Input value="{oProjectDetailModel>read}"/>
+									</table:template>
+								</table:Column>-->
+						<!--<table:Column>
+									<Label text="{i18n>SELF_MANAGED}"/>
+									<table:template>
+										<CheckBox selected=""/>
+									</table:template>
+								</table:Column>
+								<table:Column>
+									<Label text="{i18n>TASK_ASSIGNMENT_CATEGORY}"/>
+									<table:template>
+										<Input value="{oProjectDetailModel>read}"/>
+									</table:template>
+								</table:Column>-->
+						<!--<table:Column >
+									<Label text="{i18n>DS_DONE}"/>
+									<table:template>
+										<CheckBox selected=""/>
+									</table:template>
+								</table:Column>-->
+						<table:Column hAlign="Center">
+							<Label text="{i18n>SUMMARY_STATUS}" design="Bold"/>
+							<table:template>
+								<Input value="{oProjectDetailModel>summaryStatus}" enabled="false"/>
+							</table:template>
+						</table:Column>
+					</table:columns>
+				</table:Table>
+			</IconTabFilter>
+			<IconTabFilter design="Vertical" text="{i18n>MATERIALS}" key="ordering">
+				<Toolbar height="2rem">
+					<Button icon="sap-icon://stop" text="Hold"></Button>
+					<Button type="Accept" icon="sap-icon://restart" text="Resume"></Button>
+					<Button type="Reject" icon="sap-icon://sys-cancel" text="Cancel"></Button>
+					<ToolbarSpacer/>
+					<!--<Button text="{i18n>REPLICATE_LINE}" class="sapUiTinyMarginBegin buttonBGClass"></Button>-->
+					<Button type="Accept" icon="sap-icon://add" text="{i18n>ADD}" press="addNewMaterialLines"></Button>
+					<Button type="Reject" icon="sap-icon://delete" text="{i18n>REMOVE}" press="deleteProjectMaterials"></Button>
+				</Toolbar>
+				<table:Table rows="{oProjectDetailModel>/materialLines}" selectionMode="Single" id="MM_PROJECT_MATERIAL_TBL" class="sapUiTableBorderClass">
+					<table:columns>
+						<table:Column width="5rem" hAlign="Center">
+							<Label text="{i18n>LINE}" design="Bold"/>
+							<table:template>
+								<Text text="{oProjectDetailModel>displaySequenceNumber}" wrapping="false"/>
+							</table:template>
+						</table:Column>
+						<table:Column hAlign="Center">
+							<Label text="{i18n>ACTION}" design="Bold"/>
+							<table:template>
+								<Select forceSelection="false" selectedKey="{oProjectDetailModel>materialAction}" items="{oDropdownLookupsModel>/materialAction}"
+									width="100%">
+									<core:Item key="{oDropdownLookupsModel>serialId}" text="{oDropdownLookupsModel>displayValue}"/>
+								</Select>
+							</table:template>
+						</table:Column>
+						<!--<table:Column width="5rem">
+									<Label text="{i18n>GLOBAL_CODE}"/>
+									<table:template>
+										<Text text="" wrapping="false"/>
+									</table:template>
+								</table:Column>-->
+						<table:Column hAlign="Center">
+							<Label text="Material Number" design="Bold"/>
+							<table:template>
+								<Input value="{oProjectDetailModel>globalMaterialCode}" enabled="false"/>
+							</table:template>
+						</table:Column>
+						<!--<table:Column width="8rem">
+									<Label text="{i18n>SPECIFICATION_ID}"/>
+									<table:template>
+										<Text text="" wrapping="false"/>
+									</table:template>
+								</table:Column>-->
+						<!--	<table:Column width="8rem">
+									<Label text="{i18n>SP_GROUP}"/>
+									<table:template>
+										<Text text="" wrapping="false"/>
+									</table:template>
+								</table:Column>-->
+						<!--<table:Column>
+									<Label text="{i18n>GLOBAL_DESCRIPTION}"/>
+									<table:template>
+										<Input value="{oProjectDetailModel>globalLineDescription}"/>
+									</table:template>
+								</table:Column>-->
+						<table:Column hAlign="Center">
+							<Label text="Material Description" design="Bold"/>
+							<table:template>
+								<Input value="{oProjectDetailModel>globalLineDescription}"/>
+							</table:template>
+						</table:Column>
+						<table:Column hAlign="Center">
+							<Label text="{i18n>REGIONAL_MATERIAL_TYPE}" design="Bold"/>
+							<table:template>
+								<Select forceSelection="false" selectedKey="{oProjectDetailModel>materialType}" items="{oDropdownLookupsModel>/regionalmaterialtypes}"
+									width="100%">
+									<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
+								</Select>
+							</table:template>
+						</table:Column>
+						<!--<table:Column>
+									<Label text="{i18n>GTIN_REQ}"/>
+									<table:template>
+										<CheckBox selected="{oProjectDetailModel>gtinRequired}"/>
+									</table:template>
+								</table:Column>-->
+						<table:Column hAlign="Center">
+							<Label text="{i18n>SUMMARY_STATUS}" design="Bold"/>
+							<table:template>
+								<Input value="{oProjectDetailModel>summaryStatus}" enabled="false"/>
+							</table:template>
+						</table:Column>
+					</table:columns>
+				</table:Table>
+			</IconTabFilter>
+			<IconTabFilter design="Vertical" text="Uploads" key="UPLOAD"></IconTabFilter>
+		</items>
+	</IconTabBar>
+	<!--	<l:Grid defaultSpan="XL6 L6 M12 S12">
+		<l:content>
+			<Panel expandable="true" expanded="true" class="confirmHdrViewPanel projectTablePanelClass" headerText="{i18n>DOCUMENT_UPLOAD}" width="80%">
+				<content>
+					<HBox>
+						<Label text="{i18n>DOCUMENT_TYPE}:" class="sapUiTinyMarginTop"></Label>
+						<Select forceSelection="false" selectedKey="">
+							<core:Item key="" text=""/>
+						</Select>
+						<Label text="{i18n>DOCUMENT}:" class="sapUiTinyMarginTop"></Label>
+						<Button text="{i18n>CHOOSE_FILE}"></Button>
+						<Input value="" placeholder="No file chosen"></Input>
+						<Button text="{i18n>UPLOAD}"></Button>
+					</HBox>
+					<table:Table rows="" selectionMode="None" visibleRowCount="3">
+						<table:columns>
+							<table:Column>
+								<Label text="{i18n>USER_NAME}"/>
+								<table:template>
+									<Text text="" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<Label text="{i18n>UPLOADED_DATE}"/>
+								<table:template>
+									<Text text="" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<Label text="{i18n>DOCUMENT}"/>
+								<table:template>
+									<Text text="" wrapping="false"/>
+								</table:template>
+							</table:Column>
+						</table:columns>
+					</table:Table>
+				</content>
+			</Panel>
+			<Panel expandable="true" expanded="true" class="confirmHdrViewPanel projectTablePanelClass" headerText="{i18n>MEMO_DETAILS}" width="85%">
+				<content>
+					<HBox>
+						<Label text="{i18n>MEMO_TEXT}:" class="sapUiTinyMarginTop"></Label>
+						<Input value=""></Input>
+						<Button text="{i18n>ADD}"></Button>
+					</HBox>
+					<table:Table rows="" selectionMode="None" visibleRowCount="3">
+						<table:columns>
+							<table:Column>
+								<Label text="{i18n>USER_NAME}"/>
+								<table:template>
+									<Text text="" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<Label text="{i18n>UPLOADED_DATE}"/>
+								<table:template>
+									<Text text="" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<Label text="{i18n>MEMO_TEXT}"/>
+								<table:template>
+									<Text text="" wrapping="false"/>
+								</table:template>
+							</table:Column>
+						</table:columns>
+					</table:Table>
+				</content>
+			</Panel>
+		</l:content>
+	</l:Grid>-->
+</core:FragmentDefinition>

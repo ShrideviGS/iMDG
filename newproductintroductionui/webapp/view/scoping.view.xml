@@ -1,0 +1,244 @@
+<mvc:View controllerName="newproductintroductionui.newproductintroductionui.controller.scoping" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:table="sap.ui.table">
+	<SplitApp initialDetail="detail" initialMaster="master" orientationChange="onOrientationChange">
+		<detailPages>
+			<Page showHeader="false" class="createProjectBackgroundColor sapUiSizeCompact">
+				<content>
+					<Panel class="sapUiSmallMarginTop">
+						<headerToolbar class="sapUiSizeCompact">
+							<Toolbar height="2rem">
+								<Title text="{i18n>PROJECTS}" class="sapPanelHeaderLabelCls"/>
+								<ToolbarSpacer/>
+								<Button text="{i18n>LOAD_PROJECT}" type="Accept" class="sapUiSizeCompact" press="onFetchProjectDetails"/>
+								<Button text="{i18n>CREATE_NEW_PROJECT}" type="Accept" class="sapUiSizeCompact" press="onCreateNewProject"/>
+							</Toolbar>
+						</headerToolbar>
+						<content>
+							<table:Table rows="{oProjectDetailTblModel>/projectTblData}" selectionMode="Single" id="NPI_PROJECTS_TBL" alternateRowColors="true"
+								rowHeight="40px" showNoData="true" selectionBehavior="RowOnly" class="sapUiTableBorderClass" visibleRowCount="12">
+								<table:columns>
+									<table:Column width="6rem" hAlign="Center">
+										<Label text="{i18n>PROJECT_ID}" design="Bold"/>
+										<table:template>
+											<Text text="{oProjectDetailTblModel>projectId}" wrapping="false"/>
+										</table:template>
+									</table:Column>
+									<table:Column width="12rem" hAlign="Center">
+										<Label text="{i18n>PROJECT_DESCRIPTION}" design="Bold"/>
+										<table:template>
+											<Text text="{oProjectDetailTblModel>description}" wrapping="false"/>
+										</table:template>
+									</table:Column>
+									<!--<table:Column width="12rem" hAlign="Center">-->
+									<!--	<Label text="{i18n>REGION}" design="Bold"/>-->
+									<!--	<table:template>-->
+									<!--		<Select forceSelection="false" enabled="false" width="100%" selectedKey="{oProjectDetailTblModel>regionCode}"-->
+									<!--			items="{oDropdownLookupsModel>/region}">-->
+									<!--			<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>-->
+									<!--		</Select>-->
+									<!--	</table:template>-->
+									<!--</table:Column>-->
+									<!--<table:Column width="12rem" hAlign="Center">-->
+									<!--	<Label text="{i18n>LEAD_CLUSTER}" design="Bold"/>-->
+									<!--	<table:template>-->
+									<!--		<Select forceSelection="false" enabled="false" width="100%" selectedKey="{oProjectDetailTblModel>leadClusterCode}"-->
+									<!--			items="{oDropdownLookupsModel>/cluster}">-->
+									<!--			<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>-->
+									<!--		</Select>-->
+									<!--	</table:template>-->
+									<!--</table:Column>-->
+									<table:Column width="12rem" hAlign="Center">
+										<Label text="{i18n>LEAD_COUNTRY}" design="Bold"/>
+										<table:template>
+											<Select forceSelection="false" enabled="false" width="100%" selectedKey="{oProjectDetailTblModel>leadCountryCode}"
+												items="{path: 'oDropdownLookupsModel>/countryList',sorter:{ path:'name'},templateShareable:'true'}">
+												<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>name}"/>
+											</Select>
+										</table:template>
+									</table:Column>
+									<table:Column width="12rem" hAlign="Center">
+										<Label text="{i18n>LEADING_CATEGORY}" design="Bold"/>
+										<table:template>
+											<Select forceSelection="false" enabled="false" width="100%" selectedKey="{oProjectDetailTblModel>leadCategoryCode}"
+												items="{oDropdownLookupsModel>/leadCategory,templateShareable:'true'}">
+												<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
+											</Select>
+										</table:template>
+									</table:Column>
+									<table:Column width="10rem" hAlign="Center">
+										<Label text="{i18n>TASK_ASSIGNMENT_CATEGORY}" design="Bold"/>
+										<table:template>
+											<Text text="{oProjectDetailTblModel>tacCode}" wrapping="false"/>
+										</table:template>
+									</table:Column>
+									<table:Column width="14rem" hAlign="Center">
+										<Label text="{i18n>PROJECT_TYPE}" design="Bold"/>
+										<table:template>
+											<Select forceSelection="false" enabled="false" width="100%" selectedKey="{oProjectDetailTblModel>projectTypeCode}"
+												items="{oDropdownLookupsModel>/projectTypes,templateShareable:'true'}">
+												<core:Item key="{oDropdownLookupsModel>serialId}" text="{oDropdownLookupsModel>displayValue}"/>
+											</Select>
+											<!--<Text text="{oProjectDetailTblModel>projectTypeCode}" wrapping="false"/>-->
+										</table:template>
+									</table:Column>
+									<table:Column width="10rem" hAlign="Center">
+										<Label text="{i18n>CREATED_BY}" design="Bold"/>
+										<table:template>
+											<Text text="{oProjectDetailTblModel>userCreated}" wrapping="false"/>
+										</table:template>
+									</table:Column>
+									<table:Column width="10rem" hAlign="Center">
+										<Label text="{i18n>STATUS}" design="Bold"/>
+										<table:template>
+											<Select forceSelection="false" enabled="false" width="100%" selectedKey="{oProjectDetailTblModel>projectStatusCode}"
+												items="{oDropdownLookupsModel>/projectStatus,templateShareable:'true'}">
+												<core:Item key="{oDropdownLookupsModel>serialId}" text="{oDropdownLookupsModel>displayValue}"/>
+											</Select>
+										</table:template>
+									</table:Column>
+									<table:Column width="10rem" hAlign="Center">
+										<Label text="{i18n>LAUNCH_DATE}" design="Bold"/>
+										<table:template>
+											<Text
+												text="{path:'oProjectDetailTblModel>launchDate', formatter:'newproductintroductionui.newproductintroductionui.formatter.formatter.formatDateObject'}"
+												wrapping="false"/>
+										</table:template>
+									</table:Column>
+									<table:Column width="10rem" hAlign="Center">
+										<Label text="{i18n>FIRST_PRODUCTION_DATE}" design="Bold"/>
+										<table:template>
+											<Text
+												text="{path:'oProjectDetailTblModel>firstProductionDate', formatter:'newproductintroductionui.newproductintroductionui.formatter.formatter.formatDateObject'}"
+												wrapping="false"/>
+										</table:template>
+									</table:Column>
+									<table:Column width="10rem" hAlign="Center">
+										<Label text="{i18n>CREATED_DATE}" design="Bold"/>
+										<table:template>
+											<Text
+												text="{path:'oProjectDetailTblModel>dateCreated', formatter:'newproductintroductionui.newproductintroductionui.formatter.formatter.formatDateObject'}"
+												wrapping="false"/>
+										</table:template>
+									</table:Column>
+									<!--	<table:Column width="5rem">
+									<Label text="{i18n>IS_LOCKED}"/>
+									<table:template>
+										<CheckBox selected="{oProjectDetailTblModel>validForUsage}"/>
+									</table:template>
+								</table:Column>-->
+									<!--	<table:Column width="6rem">
+									<Label text="{i18n>LOCKED_BY}"/>
+									<table:template>
+										<Text text="{oProjectDetailTblModel>projectId}" wrapping="false"/>
+									</table:template>
+								</table:Column>-->
+								</table:columns>
+							</table:Table>
+						</content>
+					</Panel>
+				</content>
+			</Page>
+		</detailPages>
+		<masterPages>
+			<Page showHeader="false" class="sapUiSizeCompact">
+				<content>
+					<Panel headerText="{i18n>PROJECT_SEARCH}" class="sapUiSizeCompact">
+						<content>
+							<l:Grid defaultSpan="L12 M4 S6">
+								<l:content>
+									<VBox class="sapUiSmallMarginEnd">
+										<Label text="{i18n>PROJECT_ID}:" class="sapUiTinyMarginTop"></Label>
+										<Input value="{oProjectSearchModel>/projectId}"></Input>
+									</VBox>
+									<VBox class="sapUiSmallMarginEnd">
+										<Label text="{i18n>PROJECT_DESCRIPTION}:" class="sapUiTinyMarginTop"></Label>
+										<Input value="{oProjectSearchModel>/projectDescription}"></Input>
+									</VBox>
+									<VBox class="sapUiSmallMarginEnd">
+										<Label text="{i18n>PROJECT_TYPE}:" class="sapUiTinyMarginTop"></Label>
+										<Select forceSelection="false" width="100%" selectedKey="{oProjectSearchModel>/projectType}" items="{oDropdownLookupsModel>/projectTypes,templateShareable:'true'}">
+											<core:Item key="{oDropdownLookupsModel>serialId}" text="{oDropdownLookupsModel>displayValue}"/>
+										</Select>
+									</VBox>
+									<VBox class="sapUiSmallMarginEnd">
+										<Label text="{i18n>PROJECT_STATUS}:" class="sapUiTinyMarginTop"></Label>
+										<Select forceSelection="false" width="100%" selectedKey="{oProjectSearchModel>/projectStatus}"
+											items="{oDropdownLookupsModel>/projectStatus,templateShareable:'true'}">
+											<core:Item key="{oDropdownLookupsModel>serialId}" text="{oDropdownLookupsModel>displayValue}"/>
+										</Select>
+									</VBox>
+									<VBox class="sapUiSmallMarginEnd">
+										<Label text="{i18n>CREATED_BY}:" class="sapUiTinyMarginTop"></Label>
+										<Input value="{oProjectSearchModel>/createdBy}"></Input>
+									</VBox>
+									<!--<VBox class="sapUiSmallMarginEnd">-->
+									<!--	<Label text="{i18n>REGION}:" class="sapUiTinyMarginTop"></Label>-->
+									<!--	<Select forceSelection="false" width="100%" selectedKey="{oProjectSearchModel>/region}" items="{oDropdownLookupsModel>/region}">-->
+									<!--		<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>-->
+									<!--	</Select>-->
+									<!--</VBox>-->
+									<!--<VBox class="sapUiSmallMarginEnd">-->
+									<!--	<Label text="{i18n>LEAD_CLUSTER}:" class="sapUiTinyMarginTop"></Label>-->
+									<!--	<Select forceSelection="false" width="100%" selectedKey="{oProjectSearchModel>/leadCluster}" items="{oDropdownLookupsModel>/cluster}">-->
+									<!--		<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>-->
+									<!--	</Select>-->
+									<!--</VBox>-->
+									<VBox class="sapUiSmallMarginEnd">
+										<Label text="{i18n>LEAD_COUNTRY}:" class="sapUiTinyMarginTop"></Label>
+										<Select forceSelection="false" width="100%" selectedKey="{oProjectSearchModel>/leadCountry}"
+											items="{path: 'oDropdownLookupsModel>/countryList',sorter:{ path:'name'},templateShareable:'true'}">
+											<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>name}"/>
+										</Select>
+									</VBox>
+									<VBox class="sapUiSmallMarginEnd">
+										<Label text="{i18n>LEADING_CATEGORY}:" class="sapUiTinyMarginTop"></Label>
+										<Select forceSelection="false" width="100%" selectedKey="{oProjectSearchModel>/leadCategory}" items="{oDropdownLookupsModel>/leadCategory,templateShareable:'true'}">
+											<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
+										</Select>
+									</VBox>
+									<VBox class="sapUiSmallMarginEnd">
+										<Label text="{i18n>LAUNCH_DATE} - {i18n>FROM}:" class="sapUiTinyMarginTop"></Label>
+										<DatePicker change="onSearchTblChangeDateValue" valueFormat="yyyy-MM-dd" displayFormat="yyyy-MM-dd"
+											value="{path:'oProjectSearchModel>/launchDateFrom', formatter:'newproductintroductionui.newproductintroductionui.formatter.formatter.formatDateObject'}"/>
+									</VBox>
+									<VBox class="sapUiSmallMarginEnd">
+										<Label text="{i18n>LAUNCH_DATE} - {i18n>TO}:" class="sapUiTinyMarginTop"></Label>
+										<DatePicker change="onSearchTblChangeDateValue" valueFormat="yyyy-MM-dd" displayFormat="yyyy-MM-dd"
+											value="{path:'oProjectSearchModel>/launchDateTo', formatter:'newproductintroductionui.newproductintroductionui.formatter.formatter.formatDateObject'}"/>
+									</VBox>
+									<VBox class="sapUiSmallMarginEnd">
+										<Label text="{i18n>FIRST_PRODUCTION_DATE} - {i18n>FROM}:" class="sapUiTinyMarginTop"></Label>
+										<DatePicker change="onSearchTblChangeDateValue" valueFormat="yyyy-MM-dd" displayFormat="yyyy-MM-dd"
+											value="{path:'oProjectSearchModel>/firstProdDateFrom', formatter:'newproductintroductionui.newproductintroductionui.formatter.formatter.formatDateObject'}"/>
+									</VBox>
+									<VBox class="sapUiSmallMarginEnd">
+										<Label text="{i18n>FIRST_PRODUCTION_DATE} - {i18n>TO}:" class="sapUiTinyMarginTop"></Label>
+										<DatePicker change="onSearchTblChangeDateValue" valueFormat="yyyy-MM-dd" displayFormat="yyyy-MM-dd"
+											value="{path:'oProjectSearchModel>/firstProdDateTo', formatter:'newproductintroductionui.newproductintroductionui.formatter.formatter.formatDateObject'}"/>
+									</VBox>
+									<VBox class="sapUiSmallMarginEnd">
+										<Label text="{i18n>CREATED_DATE} - {i18n>TO}:" class="sapUiTinyMarginTop"></Label>
+										<DatePicker change="onSearchTblChangeDateValue" valueFormat="yyyy-MM-dd" displayFormat="yyyy-MM-dd"
+											value="{path:'oProjectSearchModel>/createdDateFrom', formatter:'newproductintroductionui.newproductintroductionui.formatter.formatter.formatDateObject'}"/>
+									</VBox>
+									<VBox class="sapUiSmallMarginEnd">
+										<Label text="{i18n>CREATED_DATE} - {i18n>TO}:" class="sapUiTinyMarginTop"></Label>
+										<DatePicker change="onSearchTblChangeDateValue" valueFormat="yyyy-MM-dd" displayFormat="yyyy-MM-dd"
+											value="{path:'oProjectSearchModel>/createdDateTo', formatter:'newproductintroductionui.newproductintroductionui.formatter.formatter.formatDateObject'}"/>
+									</VBox>
+								</l:content>
+							</l:Grid>
+						</content>
+					</Panel>
+				</content>
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Button text="{i18n>CLEAR}" type="Reject" class="sapUiSizeCompact" press="onClearPorjectSearch"></Button>
+						<Button text="{i18n>SEARCH}" type="Accept" class="sapUiSizeCompact" press="onSearchProject"></Button>
+					</Toolbar>
+				</footer>
+			</Page>
+		</masterPages>
+	</SplitApp>
+</mvc:View>

@@ -1,0 +1,342 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	controllerName="newproductintroductionui.newproductintroductionui.controller.ficoView" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="{i18n>PAGE_TITLE}" class="sapUiSizeCompact" showHeader="false" floatingFooter="true">
+		<content>
+			<!--<l:Grid defaultSpan="L3 M4 S6" class="sapUiSizeCompact sapUiSmallMarginTop hdrGridClass">
+				<VBox>
+					<Label text="{i18n>GLBL_MAT}" design="Bold"></Label>
+					<Input enabled="false" class="sapUiSizeCompact"></Input>
+				</VBox>
+				<VBox>
+					<Label text="{i18n>MAT_DESC}" design="Bold"></Label>
+					<Input enabled="false" class="sapUiSizeCompact"></Input>
+				</VBox>
+			</l:Grid>-->
+			<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+				<Label text="{i18n>REGIONAL_CODE_DATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+				<HBox width="100%" class="hdrTxtLineClass"></HBox>
+			</HBox>
+			<HBox class="sapUiSizeCompact sapUiSmallMarginEnd">
+				<l:Grid defaultSpan="L3 M4 S6" class="sapUiSizeCompact">
+					<VBox>
+						<Label text="{i18n>PROJECT_NUM}" design="Bold"></Label>
+						<Input enabled="false" class="sapUiSizeCompact" value="{oMRPContextModel>/projectId}"></Input>
+					</VBox>
+					<VBox>
+						<Label text="{i18n>MATERIAL}" design="Bold"></Label>
+						<Input enabled="false" class="sapUiSizeCompact" value="{oMRPContextModel>/materialId}"></Input>
+					</VBox>
+					<VBox>
+						<Label text="{i18n>MAT_DESC}" design="Bold"></Label>
+						<Input enabled="false" class="sapUiSizeCompact" value="{oMRPContextModel>/materialDescription}"></Input>
+					</VBox>
+					<VBox>
+						<Label text="{i18n>BUOM}" design="Bold"></Label>
+						<Input enabled="false" class="sapUiSizeCompact" value="{oMRPContextModel>/baseUoM}"></Input>
+					</VBox>
+					<VBox>
+						<Label text="{i18n>MATERIAL_TYPE}" design="Bold"></Label>
+						<Input enabled="false" class="sapUiSizeCompact" value="{oMRPContextModel>/materialType}"></Input>
+					</VBox>
+					<VBox>
+						<Label text="{i18n>PLANT}" design="Bold"></Label>
+						<Input enabled="false" class="sapUiSizeCompact" value="{oMRPContextModel>/plantCode}"></Input>
+					</VBox>
+					<l:layoutData>
+						<FlexItemData styleClass="hdrGridClass"/>
+					</l:layoutData>
+				</l:Grid>
+			</HBox>
+			<l:Grid defaultSpan="L12 M12 S12" class="sapUiSizeCompact splitterGridClass">
+				<l:Splitter class="sapUiSizeCompact splitterBGClass">
+					<List id="idMasterList" showSeparators="None" class="sapUiSizeCompact leftContentClass" mode="SingleSelectMaster" itemPress="onItemPress">
+						<items>
+							<StandardListItem title="{i18n>ACCOUNTING1}" type="Active" class="masterListClass" press="onItemPress"></StandardListItem>
+							<StandardListItem title="{i18n>ACCOUNTING2}" type="Active" class="masterListClass" press="onItemPress"></StandardListItem>
+							<StandardListItem title="{i18n>COSTING1}" type="Active" class="masterListClass" press="onItemPress"></StandardListItem>
+						</items>
+						<layoutData>
+							<l:SplitterLayoutData size="20%" resizable="false"/>
+						</layoutData>
+					</List>
+					<VBox>
+						<items>
+							<VBox visible="{oVisModel>/oAccounting1Box}">
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>GENERAL_DATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>BUOM}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/baseUnit}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>VALUATION_CATEGORY}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/valuationCategory}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>CURRENCY}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/baseUoM}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>CURRENT_PERIOD}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/baseUoM}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>DIVISION}" design="Bold"></Label>
+											<!-- Rohit -->
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/baseUoM}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PRICE_DETERM}" design="Bold"></Label>
+											<!-- Rohit -->
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/baseUoM}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>ML_ACT}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/baseUoM}"></Input>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>CURRENT_VALUATION}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>VALUATION_CLASS}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/valuationClass}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>VC_SO_STK}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/valuationClassForSalesOrderStock}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PROJ_STK_VAL_CLASS}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/projectStockVc}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PRICE_CONTROL}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/baseUoM}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PRICE_UNIT}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/priceUnit}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>MOVING_PRICE}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/baseUoM}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>STD_PRICE}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/baseUoM}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>TOTAL_STOCK}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/baseUoM}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>TOTAL_VAL}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/baseUoM}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>VALUATED_UN}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/baseUoM}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>FUTURE_PRICE}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oFICODataModel>/baseUoM}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>VALID_FROM}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oFICODataModel>/baseUoM}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PREVIOUS_PRICE}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oFICODataModel>/baseUoM}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>LAST_PRICE_CHANGE}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oFICODataModel>/baseUoM}"></Input>
+										</VBox>
+									</l:content>
+								</l:Grid>
+							</VBox>
+							<VBox visible="{oVisModel>/oAccounting2Box}">
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>DETERM_LOW_VAL}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L4 M8 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>TAX_PRICE_1}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oFICODataModel>/taxPrice1}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>TAX_PRICE_2}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oFICODataModel>/taxPrice2}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>TAX_PRICE_3}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oFICODataModel>/taxPrice3}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>COMMERCIAL_PRICE_1}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oFICODataModel>/commercialPrice1}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>COMMERCIAL_PRICE_2}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oFICODataModel>/commercialPrice2}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>COMMERCIAL_PRICE_3}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oFICODataModel>/commercialPrice3}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>DEVALUATION_IND}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oFICODataModel>/devaluationIndicator}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PRICE_UNIT}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oFICODataModel>/priceUnit2}"></Input>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>LIFO_DATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>LIFO_FIFO_RELEVANT}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" selected="{oFICODataModel>/lifoFifoRelevant}"></CheckBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>LIFO_POOL}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oFICODataModel>/lifoPool}"></Input>
+										</VBox>
+									</l:content>
+								</l:Grid>
+							</VBox>
+							<VBox visible="{oVisModel>/oCosting1Box}">
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>GENERAL_DATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>VARKEY}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/varianceKey}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>OVRHEADGRP}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/overheadGroup}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>ORGGRP}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/originGroup}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PROFCTR}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/profitCenter}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>MATORIGIN}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" selected="{oFICODataModel>/materialOrigin}"></CheckBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>DONOTCOST}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" selected="{oFICODataModel>/doNotCost}"></CheckBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>COSTEDWITQTY}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" selected="{oFICODataModel>/costedWithQtyStructure}"></CheckBox>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>QTYSTRDATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>GRPCOUNT}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/groupCounter}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>SPECPROCCOST}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/specProcuremCosting}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>GROUP}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/groupName}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>BOMUSAGE}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/bomUsage}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>ALTBOM}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/alternativeBOM}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PRODVER}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/productionVersion}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>COSTLOTSIZE}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/costingLotSize}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>TASKLISTTYPE}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/taskListType}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>COPROD}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" selected="{oFICODataModel>/coProduct}"></CheckBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>FIXEDPRICE}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" selected="{oFICODataModel>/fixedPrice}"></CheckBox>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>COSTADDFIELD}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>SUPROFIT}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/suProfitUnit}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PRODGRPK2}" design="Bold"></Label>
+											<Input width="100%" class="sapUiSizeCompact" value="{oFICODataModel>/productGrpK2Reporting}"></Input>
+										</VBox>
+									</l:content>
+								</l:Grid>
+							</VBox>
+						</items>
+					</VBox>
+				</l:Splitter>
+			</l:Grid>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer></ToolbarSpacer>
+				<Button text="{i18n>SAVE}" press="onSave"></Button>
+				<Button text="{i18n>VALIDATE}" press="onValidate"></Button>
+				<Button text="{i18n>SUBMIT}" press="onSubmit"></Button>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

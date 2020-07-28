@@ -1,0 +1,58 @@
+ID: iMDG
+_schema-version: '2.1'
+parameters:
+  deploy_mode: html5-repo
+version: 0.0.1
+modules:
+  - name: imdg-approuter
+    type: approuter.nodejs
+    path: imdg-approuter
+    parameters:
+      disk-quota: 256M
+      memory: 256M
+    requires:
+      - name: iMDG_html5_repo_runtime
+      - name: uaa_iMDG
+  - name: iMDG_ui_deployer
+    type: com.sap.html5.application-content
+    path: iMDG_ui_deployer
+    requires:
+      - name: iMDG_html5_repo_host
+    build-parameters:
+      requires:
+        - name: newproductintroductionui
+          artifacts:
+            - './*'
+          target-path: resources/newproductintroductionui
+  - name: newproductintroductionui
+    type: html5
+    path: newproductintroductionui
+    build-parameters:
+      builder: custom
+      commands:
+        - npm install
+        - npm run build
+      supported-platforms: []
+      build-result: dist
+resources:
+  - name: iMDG_html5_repo_runtime
+    parameters:
+      service-plan: app-runtime
+      service: html5-apps-repo
+    type: org.cloudfoundry.managed-service
+  - name: iMDG_html5_repo_host
+    parameters:
+      service-plan: app-host
+      service: html5-apps-repo
+    type: org.cloudfoundry.managed-service
+  - name: uaa_iMDG
+    parameters:
+      path: ./xs-security.json
+      service-plan: application
+      service: xsuaa
+    type: org.cloudfoundry.managed-service
+  - name: dest_iMDG
+    parameters:
+      service-plan: lite
+      service: destination
+    type: org.cloudfoundry.managed-service

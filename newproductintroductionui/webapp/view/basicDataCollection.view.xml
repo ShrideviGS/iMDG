@@ -1,0 +1,284 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table"
+	controllerName="newproductintroductionui.newproductintroductionui.controller.basicDataCollection" xmlns:html="http://www.w3.org/1999/xhtml"
+	class="sapUiSizeCompact">
+	<Page showHeader="false" class="createProjectBackgroundColor sapUiSizeCompact" floatingFooter="true">
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer></ToolbarSpacer>
+				<Button text="{i18n>SAVE}" type="Accept" press="onSaveBasicData"></Button>
+				<Button text="{i18n>VALIDATE}" type="Reject" press="onValidateBasicData"/>
+				<Button text="{i18n>SUBMIT}" type="Emphasized" press="onSubmitBasicData"></Button>
+			</Toolbar>
+		</footer>
+		<content>
+			<!--	<Toolbar height="2rem" class="sapUiSmallMarginBegin basicDataToolbarBrdClass">
+				<HBox>
+					<Text text="{i18n>TASK_DATA}" class="hdrTextClass sapUiSizeCompact"></Text>
+				</HBox>
+				<VBox class="basicDataHLineClass sapUiSmallMarginBegin sapUiSmallMarginEnd" width="100%"></VBox>
+			</Toolbar>
+			<l:Grid defaultSpan="XL3 L3 M6 S12" class="basicDataGridClass">
+				<l:content>
+					<VBox class="sapUiSmallMarginBegin">
+						<Label text="{i18n>DUE_AT}:" class="sapUiTinyMarginTop sapUiSizeCompact"></Label>
+						<Input value="" enabled="false" class="sapUiSizeCompact"></Input>
+						<Label text="{i18n>PRIORITY}:" class="sapUiTinyMarginTop sapUiSizeCompact"></Label>
+						<Input value="" enabled="false" class="sapUiSizeCompact"></Input>
+					</VBox>
+					<VBox class="sapUiSmallMarginBegin">
+						<Label text="{i18n>STATUS}:" class="sapUiTinyMarginTop sapUiSizeCompact"></Label>
+						<Input value="" enabled="false" class="sapUiSizeCompact"></Input>
+						<Label text="{i18n>NOTES}:" class="sapUiTinyMarginTop sapUiSizeCompact"></Label>
+						<Input value="" enabled="false" class="sapUiSizeCompact"></Input>
+					</VBox>
+					<VBox class="sapUiSmallMarginBegin">
+						<Label text="{i18n>ATTACHMENTS}:" class="sapUiTinyMarginTop sapUiSizeCompact"></Label>
+						<Input value="" enabled="false" class="sapUiSizeCompact"></Input>
+						<Label text="{i18n>OWNER}:" class="sapUiTinyMarginTop sapUiSizeCompact"></Label>
+						<Input value="" enabled="false" class="sapUiSizeCompact"></Input>
+					</VBox>
+					<VBox class="sapUiSmallMarginBegin">
+						<Label text="{i18n>PROCESS}:" class="sapUiTinyMarginTop sapUiSizeCompact"></Label>
+						<Input value="" enabled="false" class="sapUiSizeCompact"></Input>
+					</VBox>
+				</l:content>
+			</l:Grid>-->
+			<Panel expandable="true" expanded="true" class="sapPanelBottomBorderClass sapUiSmallMarginTop sapUiTinyBeginEnd basicDataPanelStyle">
+				<headerToolbar>
+					<Toolbar height="2rem">
+						<Label text="{i18n>TASK_APPLICATION}" design="Bold" class="sapPanelHeaderLabelCls"/>
+						<ToolbarSpacer></ToolbarSpacer>
+						<Button text="Create with reference" type="Emphasized" press="onSubmitBasicData"></Button>
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<IconTabBar class="basicDataIconTabClass sapIconTabBar" backgroundDesign="Transparent" headerBackgroundDesign="Transparent">
+						<items>
+							<IconTabFilter design="Vertical" text="{i18n>HEADER_DATA}" key="GRP_HDR">
+								<l:Grid defaultSpan="XL3 L3 M6 S12" class="basicDataGridClass">
+									<l:content>
+										<VBox class="sapUiSmallMarginBegin">
+											<Label text="{i18n>PROJECT_NO}:" class="sapUiTinyMarginTop sapUiSizeCompact"></Label>
+											<HBox>
+												<Input value="{oTaskDataModel>/projectId}" enabled="false" class="sapUiSizeCompact"></Input>
+												<Input value="{oTaskDataModel>/projectDescription}" enabled="false" class="sapUiSmallMarginBegin noInputBorder sapUiSizeCompact"></Input>
+											</HBox>
+											<Label text="{i18n>MATERIAL}:" class="sapUiTinyMarginTop sapUiSizeCompact"></Label>
+											<HBox>
+												<Input value="{oTaskDataModel>/materialId}" enabled="false" class="sapUiSizeCompact"></Input>
+												<Input value="{oTaskDataModel>/materialDescription}" enabled="false" class="sapUiSmallMarginBegin noInputBorder sapUiSizeCompact"></Input>
+											</HBox>
+										</VBox>
+										<VBox class="sapUiSmallMarginBegin">
+											<Label text="{i18n>LEAD_CATEGORY}:" class="sapUiTinyMarginTop sapUiSizeCompact"></Label>
+											<Input value="{oTaskDataModel>/leadCategory}" enabled="false" class="sapUiSizeCompact"></Input>
+											<Label text="{i18n>MATERIAL_TYPE}:" class="sapUiTinyMarginTop sapUiSizeCompact"></Label>
+											<Input value="{oTaskDataModel>/materialType}" enabled="false" class="sapUiSizeCompact"></Input>
+										</VBox>
+										<!--<VBox class="sapUiSmallMarginBegin">
+									<Label text="{i18n>LEAD_CLUSTER}:" class="sapUiTinyMarginTop sapUiSizeCompact"></Label>
+									<Input value="{oBasicDataCollectionModel>/header/leadClusterCode}" enabled="false" class="sapUiSizeCompact"></Input>
+									<Label text="{i18n>BASE_UOM}:" class="sapUiTinyMarginTop sapUiSizeCompact"></Label>
+									<Input value="{oBasicDataCollectionModel>/header/baseUnit}" enabled="false" class="sapUiSizeCompact"></Input>
+								</VBox>-->
+										<VBox class="sapUiSmallMarginBegin">
+											<Label text="{i18n>LEAD_COUNTRY}:" class="sapUiTinyMarginTop sapUiSizeCompact"></Label>
+											<Input value="{oTaskDataModel>/leadCountry}" enabled="false" class="sapUiSizeCompact"></Input>
+											<Label text="{i18n>REQUESTOR}:" class="sapUiTinyMarginTop sapUiSizeCompact"></Label>
+											<Input value="{oTaskDataModel>/requestedBy}" enabled="false" class="sapUiSizeCompact"></Input>
+										</VBox>
+										<!--	<VBox>
+									<Link text="Create with reference" class="sapUiSmallMarginTop sapUiSmallMarginBegin"></Link>
+								</VBox>-->
+									</l:content>
+								</l:Grid>
+							</IconTabFilter>
+							<!--	<IconTabFilter design="Vertical" text="Header" key="{i18n>HEADER_DATA}" enabled="true">
+						<l:Grid defaultSpan="XL6 L6 M12 S12" class="basicDataGridClass">
+							<l:content>
+								<HBox class="sapUiSmallMarginBegin sapUiSmallMarginTop">
+									<VBox>
+										<Label text="{i18n>GLOBAL_MATERIAL}:" class="sapUiTinyMarginTop sapUiSizeCompact"></Label>
+										<HBox>
+											<Input value="" enabled="false" class="sapUiSizeCompact"></Input>
+											<Input value="G1" enabled="false" class="sapUiSmallMarginBegin noInputBorder sapUiSizeCompact"></Input>
+											<Input value="" enabled="false" class="sapUiSmallMarginBegin noInputBorder sapUiSizeCompact"></Input>
+										</HBox>
+										<Label text="{i18n>CU_GTIN}:" class="sapUiTinyMarginTop sapUiSizeCompact"></Label>
+										<HBox>
+											<Input value="" enabled="false" class="sapUiSizeCompact"></Input>
+											<Input value="" enabled="false" class="sapUiSmallMarginBegin noInputBorder sapUiSizeCompact"></Input>
+											<Input value="" enabled="false" class="sapUiSmallMarginBegin noInputBorder sapUiSizeCompact"></Input>
+										</HBox>
+										<Label text="{i18n>IPK_GTIN}:" class="sapUiTinyMarginTop sapUiSizeCompact"></Label>
+										<HBox>
+											<Input value="" enabled="false" class="sapUiSizeCompact"></Input>
+											<Input value="0" enabled="false" class="sapUiSmallMarginBegin sapUiSizeCompact"></Input>
+											<Input value="CU Per IPK" enabled="false" class="sapUiSmallMarginBegin noInputBorder sapUiSizeCompact"></Input>
+										</HBox>
+										<HBox>
+											<VBox>
+												<Label text="{i18n>CASE_GTIN}:" class="sapUiTinyMarginTop sapUiSizeCompact"></Label>
+												<Input value="" enabled="false" class="sapUiSizeCompact"></Input>
+											</VBox>
+											<VBox>
+												<Label text="Postal Code:" class="sapUiTinyMarginTop sapUiSmallMarginBegin sapUiSizeCompact"></Label>
+												<Input value="10" enabled="false" class="sapUiSmallMarginBegin sapUiSizeCompact"></Input>
+											</VBox>
+											<VBox>
+												<Label text="" class="sapUiTinyMarginTop sapUiSmallMarginBegin sapUiSizeCompact"></Label>
+												<Input value="CU Per CS" enabled="false" class="sapUiSmallMarginBegin noInputBorder sapUiSizeCompact"></Input>
+											</VBox>
+										</HBox>
+									</VBox>
+								</HBox>
+								<VBox class="sapUiLargeMarginBegin sapUiSmallMarginTop">
+									<Label text="{i18n>GLOBAL_MATERIAL_GROUP}:" class="sapUiSizeCompact"></Label>
+									<Input value="" enabled="false" width="auto" class="sapUiSizeCompact"></Input>
+									<Label text="{i18n>GLOBAL_PURCHASING_GROUP}:" class="sapUiSizeCompact"></Label>
+									<Input value="" enabled="false" width="auto" class="sapUiSizeCompact"></Input>
+									<Label text="{i18n>GLOBAL_COMMODITY_CODE}:" class="sapUiSizeCompact"></Label>
+									<Input value="" enabled="false" width="auto" class="sapUiSizeCompact"></Input>
+									<Label text="{i18n>GLOBAL_TAINT_VALUE}:" class="sapUiSizeCompact"></Label>
+									<Input value="" enabled="false" width="auto" class="sapUiSizeCompact"></Input>
+								</VBox>
+							</l:content>
+						</l:Grid>
+					</IconTabFilter>-->
+						</items>
+					</IconTabBar>
+				</content>
+			</Panel>
+			<IconTabBar class="basicDataIconTabClass sapIconTabBar" backgroundDesign="Transparent" headerBackgroundDesign="Transparent">
+				<items>
+					<IconTabFilter design="Vertical" text="{i18n>MATERIAL_DESC}" key="MAT_DESC">
+						<core:Fragment fragmentName="newproductintroductionui.newproductintroductionui.fragments.basicDataMaterialDesc" type="XML"/>
+					</IconTabFilter>
+					<IconTabFilter design="Vertical" text="{i18n>BASIC_DATA_1}" key="BASICDATA_1">
+						<core:Fragment fragmentName="newproductintroductionui.newproductintroductionui.fragments.basicData1" type="XML"/>
+					</IconTabFilter>
+					<IconTabFilter design="Vertical" text="{i18n>BASIC_DATA_2}" key="BASICDATA_2">
+						<core:Fragment fragmentName="newproductintroductionui.newproductintroductionui.fragments.basicData2" type="XML"/>
+					</IconTabFilter>
+					<IconTabFilter design="Vertical" text="{i18n>UOM/EAN}" key="UOM_EAN" visible="{oSpecTblDataModel>/isUOMEditable}">
+						<core:Fragment fragmentName="newproductintroductionui.newproductintroductionui.fragments.UOMPerEANTab" type="XML"/>
+					</IconTabFilter>
+					<IconTabFilter design="Vertical" text="{i18n>PLANT_DATA_STORAGE1}" key="PLANT_DATA_STORAGE1">
+						<core:Fragment fragmentName="newproductintroductionui.newproductintroductionui.fragments.plantDataStorage1Tab" type="XML"/>
+					</IconTabFilter>
+					<IconTabFilter design="Vertical" text="{i18n>SALES_GENERAL_PLANT}" key="SALES_GENERAL_PLANT">
+						<core:Fragment fragmentName="newproductintroductionui.newproductintroductionui.fragments.salesGeneralPlantTab" type="XML"/>
+					</IconTabFilter>
+					<IconTabFilter design="Vertical" text="{i18n>PURCHASING}" key="PURCHASING">
+						<core:Fragment fragmentName="newproductintroductionui.newproductintroductionui.fragments.basicDataPurchasingTab" type="XML"/>
+					</IconTabFilter>
+					<!--	<IconTabFilter design="Vertical" text="{i18n>CLASSIFICATION}" key="CLASSIFICATION">
+							<core:Fragment fragmentName="newproductintroductionui.newproductintroductionui.fragments.classification" type="XML"/>
+						</IconTabFilter>
+						<IconTabFilter design="Vertical" text="{i18n>SALES_ORG_2}" key="SALES_ORG_2"></IconTabFilter>
+						<IconTabFilter design="Vertical" text="{i18n>WM_EXECUTION}" key="WM_EXECUTION"></IconTabFilter>-->
+					<IconTabFilter design="Vertical" text="{i18n>OTHER_DATA}" key="OTHER_DATA">
+						<core:Fragment fragmentName="newproductintroductionui.newproductintroductionui.fragments.basicOtherDataTab" type="XML"/>
+					</IconTabFilter>
+					<!--	<IconTabFilter design="Vertical" text="{i18n>WM_PACKAGING}" key="WM_PACKAGING">
+						</IconTabFilter>-->
+				</items>
+			</IconTabBar>
+			<!--	</VBox>-->
+			<!--	<VBox width="35%">
+				<table:Table rows="" visibleRowCount="5" class="sapUiSmallMarginTop">
+					<table:columns>
+						<table:Column width="10rem">
+							<Label text="{i18n>GLOBAL_MAT_CODE}"/>
+							<table:template>
+								<Text text="" wrapping="false"/>
+							</table:template>
+						</table:Column>
+						<table:Column width="15rem">
+							<Label text="{i18n>REGIONAL_MAT_CODE}"/>
+							<table:template>
+								<Text text="" wrapping="false"/>
+							</table:template>
+						</table:Column>
+						<table:Column width="15rem">
+							<Label text="{i18n>REGIONAL_MAT_DESC}"/>
+							<table:template>
+								<Text text="" wrapping="false"/>
+							</table:template>
+						</table:Column>
+						<table:Column width="8rem">
+							<Label text="{i18n>CASE_GTIN}"/>
+							<table:template>
+								<Text text="" wrapping="false"/>
+							</table:template>
+						</table:Column>
+						<table:Column width="8rem">
+							<Label text="{i18n>CU_GTIN}"/>
+							<table:template>
+								<Text text="" wrapping="false"/>
+							</table:template>
+						</table:Column>
+						<table:Column width="8rem">
+							<Label text="{i18n>IPK_GTIN}"/>
+							<table:template>
+								<Text text="" wrapping="false"/>
+							</table:template>
+						</table:Column>
+						<table:Column width="8rem">
+							<Label text="{i18n>CASE_UPC}"/>
+							<table:template>
+								<Text text="" wrapping="false"/>
+							</table:template>
+						</table:Column>
+						<table:Column width="8rem">
+							<Label text="{i18n>LEAD_CLUSTER}"/>
+							<table:template>
+								<Text text="" wrapping="false"/>
+							</table:template>
+						</table:Column>
+						<table:Column width="8rem">
+							<Label text="{i18n>LEAD_COUNTRY}"/>
+							<table:template>
+								<Text text="" wrapping="false"/>
+							</table:template>
+						</table:Column>
+						<table:Column width="10rem">
+							<Label text="{i18n>IS_MAINTAINED_INDIVIDUALLY}"/>
+							<table:template>
+								<Text text="" wrapping="false"/>
+							</table:template>
+						</table:Column>
+					</table:columns>
+				</table:Table>
+				<table:Table rows="{oSpecTblDataModel>/tableData}" visibleRowCount="7" selectionMode="None" class="sapUiSmallMarginTop">
+					<table:columns>
+						<table:Column width="15rem">
+							<Text text="{i18n>SPEC_DATA}"/>
+							<table:template>
+								<Label text="{oSpecTblDataModel>specData}" wrapping="false"/>
+							</table:template>
+						</table:Column>
+						<table:Column width="8rem">
+							<Text text="Min"/>
+							<table:template>
+								<Label text="{oSpecTblDataModel>min}" wrapping="false"/>
+							</table:template>
+						</table:Column>
+						<table:Column width="8rem">
+							<Text text="Target"/>
+							<table:template>
+								<Label text="{oSpecTblDataModel>target}" wrapping="false"/>
+							</table:template>
+						</table:Column>
+						<table:Column width="8rem">
+							<Text text="Max"/>
+							<table:template>
+								<Label text="{oSpecTblDataModel>max}" wrapping="false"/>
+							</table:template>
+						</table:Column>
+					</table:columns>
+				</table:Table>
+			</VBox>-->
+		</content>
+	</Page>
+</mvc:View>

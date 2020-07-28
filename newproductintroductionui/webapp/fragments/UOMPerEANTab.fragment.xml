@@ -1,0 +1,289 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" class="sapUiSizeCompact" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table">
+	<VBox>
+		<!--<Panel expandable="false" expanded="true" headerText="{i18n>PALLET_PACKING_SPECIFICATION_INFO}" class="npiPanelStyle iconPanelHdng">
+			<content>
+				<HBox>
+					<l:Grid defaultSpan="XL6 L6 M12 S12">
+						<l:content>
+							<Label text="{i18n>P_AND_P_SPEC}:" class="sapUiTinyMarginTop"></Label>
+							<Input value="" enabled="false" class="noInputBorder"></Input>
+							<Label text="{i18n>P_AND_P_DES}:" class="sapUiTinyMarginTop"></Label>
+							<Input value="" enabled="false"></Input>
+							<Label text="{i18n>PALLET_STACKING_DURING_TRANSPORT}:" class="sapUiTinyMarginTop"></Label>
+							<Input value="" enabled="false"></Input>
+							<Label text="{i18n>PALLET_STACKING_IN_STORAGE}:" class="sapUiTinyMarginTop"></Label>
+							<Input value="" enabled="false"></Input>
+							<Label text="{i18n>DISPALY}:" class="sapUiTinyMarginTop"></Label>
+							<HBox>
+								<CheckBox text="Metric"></CheckBox>
+								<CheckBox text="Imperial"></CheckBox>
+							</HBox>
+							<Label text="{i18n>CUC_GLOBAL_CODE}:" class="sapUiTinyMarginTop"></Label>
+							<Input value="" enabled="false"></Input>
+							<Label text="{i18n>GLOBAL_CUC_DESC}:" class="sapUiTinyMarginTop"></Label>
+							<Input value="" enabled="false" class="noInputBorder"></Input>
+							<Label text="{i18n>WEIGHT_UNIT}:" class="sapUiTinyMarginTop"></Label>
+							<Input value="LB" enabled="false"></Input>
+							<Label text="{i18n>SIZE_DIM}:" class="sapUiTinyMarginTop"></Label>
+							<Input value=""></Input>
+							<Label text="{i18n>DENSITY}:" class="sapUiTinyMarginTop"></Label>
+							<Input value="" enabled="false"></Input>
+						</l:content>
+					</l:Grid>
+					<table:Table rows="" visibleRowCount="5">
+						<table:columns>
+							<table:Column>
+								<Label text="{i18n>PACK_LEVEL}"/>
+								<table:template>
+									<Text text="" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column >
+								<Label text="{i18n>QTY_CU}"/>
+								<table:template>
+									<Text text="" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<Label text="{i18n>QTY_CS}"/>
+								<table:template>
+									<Text text="" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<Label text="{i18n>LENGTH}"/>
+								<table:template>
+									<Text text="" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<Label text="{i18n>WIDTH}"/>
+								<table:template>
+									<Text text="" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<Label text="{i18n>HEIGHT}"/>
+								<table:template>
+									<Text text="" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<Label text="{i18n>LWH_UNIT}"/>
+								<table:template>
+									<Text text="" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<Label text="{i18n>VOLUME}"/>
+								<table:template>
+									<Text text="" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<Label text="{i18n>VOLUME_UNIT}"/>
+								<table:template>
+									<Text text="" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<Label text="{i18n>WEIGHT}"/>
+								<table:template>
+									<Text text="" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<Label text="{i18n>UNIT}"/>
+								<table:template>
+									<Text text="" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<Label text="{i18n>CHANGED_DATE}"/>
+								<table:template>
+									<Text text="" wrapping="false"/>
+								</table:template>
+							</table:Column>
+						</table:columns>
+					</table:Table>
+					<VBox>
+						<Panel expandable="false" expanded="true" headerText="{i18n>CAPTURE_CONSUMER_UNIT_SIZE}" class="npiPanelStyle iconPanelHdng">
+							<l:Grid defaultSpan="XL6 L6 M12 S12">
+								<l:content>
+									<Label text="{i18n>SIZE_VOLUME}:" class="sapUiTinyMarginTop"></Label>
+									<Input value="10" enabled="true"></Input>
+									<Label text="{i18n>SIZE_VOLUME_UNIT}:" class="sapUiTinyMarginTop"></Label>
+									<Input value="KG" enabled="true"></Input>
+								</l:content>
+							</l:Grid>
+						</Panel>
+						<Panel expandable="false" expanded="true" headerText="{i18n>MOST_RECENT_CHANGE_TO_PNP_HDR_AND_PACK_LEVELS}"
+							class="npiPanelStyle iconPanelHdng">
+							<l:Grid defaultSpan="XL6 L6 M12 S12">
+								<l:content>
+									<Label text="{i18n>PNP_CHANGED}:" class="sapUiTinyMarginTop"></Label>
+									<Input value="" enabled="false"></Input>
+									<Label text="{i18n>PNP_HDR_CHANGED}:" class="sapUiTinyMarginTop"></Label>
+									<Input value="" enabled="false"></Input>
+								</l:content>
+							</l:Grid>
+						</Panel>
+					</VBox>
+				</HBox>
+			</content>
+		</Panel>-->
+		<l:Grid defaultSpan="XL3 L3 M6 S12">
+			<l:content>
+				<VBox>
+					<Label text="{i18n>NET_WEIGHT}:" class="sapUiTinyMarginTop" required="true"></Label>
+					<Input value="{oBasicDataCollectionModel>/basicDataDto/netWeight}" enabled="true" type="Number" id="mara_ntgew">
+						<customData>
+							<core:CustomData key="target" value="INPUT"/>
+						</customData>
+					</Input>
+				</VBox>
+				<VBox>
+					<Label text="Size/dimensions:" class="sapUiTinyMarginTop" required="true"></Label>
+					<Input value="{oBasicDataCollectionModel>/basicDataDto/sizeDimensions}" enabled="true" id="mara_groes">
+						<customData>
+							<core:CustomData key="target" value="INPUT"/>
+						</customData>
+					</Input>
+				</VBox>
+			</l:content>
+		</l:Grid>
+		<Toolbar height="2rem">
+			<ToolbarSpacer></ToolbarSpacer>
+			<Button text="{i18n>ADD}" icon="sap-icon://add" type="Accept" press="onAddUOMPerEANTableRow"></Button>
+			<Button text="{i18n>REMOVE}" icon="sap-icon://delete" type="Reject" press="onRemoveUOMPerEANTableRow"></Button>
+			<!--	<Button text="{i18n>MATCHING_EANS}" class="buttonBGClass"></Button>
+					<Button text="{i18n>MATCHING_MATERIAL}" class="buttonBGClass"></Button>
+					<Button text="{i18n>MATCHING_EANS}" class="buttonBGClass"></Button>
+					<Button text="{i18n>COMMOMN_CODE_COUNTRY}" class="buttonBGClass"></Button>
+					<Button text="{i18n>UOM_CALCULATOR}" class="buttonBGClass"></Button>-->
+			<Button text="{i18n>ASSIGN_GTIN}" type="Emphasized" press="onAssignGtinEANUPC"></Button>
+			<!--<Button text="{i18n>CHECK_UOM}" class="buttonBGClass"></Button>-->
+		</Toolbar>
+		<table:Table rows="{oBasicDataCollectionModel>/listAltUoMDto}" selectionMode="Single" id="UOMEANTBLEID" alternateRowColors="true"
+			showNoData="true" class="sapUiTableBorderClass">
+			<table:columns>
+				<table:Column width="10rem" hAlign="Center">
+					<Label text="{i18n>DENOMINATOR}" design="Bold"/>
+					<table:template>
+						<Input value="{oBasicDataCollectionModel>denominator}" type="Number"/>
+					</table:template>
+				</table:Column>
+				<table:Column width="10rem" hAlign="Center">
+					<Label text="{i18n>UNIT}" design="Bold"/>
+					<table:template>
+						<ComboBox items="{oDropdownLookupsModel>/baseUnits}" change="onChangeComboBox" selectedKey="{oBasicDataCollectionModel>unit}"
+							showSecondaryValues="true" width="100%">
+							<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>uomDesc30}" additionalText="{oDropdownLookupsModel>code}"/>
+						</ComboBox>
+					</table:template>
+				</table:Column>
+				<table:Column width="10rem" hAlign="Center">
+					<Label text="{i18n>NUMERATOR}" design="Bold"/>
+					<table:template>
+						<Input value="{oBasicDataCollectionModel>numerator}" type="Number"/>
+					</table:template>
+				</table:Column>
+				<table:Column width="10rem" hAlign="Center">
+					<Label text="{i18n>EAN_UPC}" design="Bold"/>
+					<table:template>
+						<Input value="{oBasicDataCollectionModel>ean}"/>
+					</table:template>
+				</table:Column>
+				<table:Column width="10rem" hAlign="Center">
+					<Label text="{i18n>EAN_CATEGORY}" design="Bold"/>
+					<table:template>
+						<ComboBox items="{oDropdownLookupsModel>/eanCategories}" change="onChangeComboBox" selectedKey="{oBasicDataCollectionModel>eanCategory}"
+							showSecondaryValues="true" width="100%">
+							<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
+						</ComboBox>
+					</table:template>
+				</table:Column>
+				<table:Column width="10rem" hAlign="Center">
+					<Label text="{i18n>LENGTH}" design="Bold"/>
+					<table:template>
+						<Input value="{oBasicDataCollectionModel>length}" type="Number"/>
+					</table:template>
+				</table:Column>
+				<table:Column width="10rem" hAlign="Center">
+					<Label text="{i18n>WIDTH}" design="Bold"/>
+					<table:template>
+						<Input value="{oBasicDataCollectionModel>width}" type="Number"/>
+					</table:template>
+				</table:Column>
+				<table:Column width="10rem" hAlign="Center">
+					<Label text="{i18n>HEIGHT}" design="Bold"/>
+					<table:template>
+						<Input value="{oBasicDataCollectionModel>height}" type="Number"/>
+					</table:template>
+				</table:Column>
+				<table:Column width="10rem" hAlign="Center">
+					<Label text="{i18n>L_W_H_UNIT}" design="Bold"/>
+					<table:template>
+						<ComboBox items="{oDropdownLookupsModel>/lengthUnits}" change="onChangeComboBox" selectedKey="{oBasicDataCollectionModel>lwhUnit}"
+							showSecondaryValues="true" width="100%">
+							<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>uomDesc30}" additionalText="{oDropdownLookupsModel>code}"/>
+						</ComboBox>
+					</table:template>
+				</table:Column>
+				<table:Column width="10rem" hAlign="Center">
+					<Label text="{i18n>VOLUME}" design="Bold"/>
+					<table:template>
+						<Input
+							value="{parts:['oBasicDataCollectionModel>length', 'oBasicDataCollectionModel>width', 'oBasicDataCollectionModel>height'] , formatter:'newproductintroductionui.newproductintroductionui.formatter.formatter.calculateVolume'}"
+							type="Number" editable="false"/>
+					</table:template>
+				</table:Column>
+				<table:Column width="10rem" hAlign="Center">
+					<Label text="{i18n>VOLUME_UNIT}" design="Bold"/>
+					<table:template>
+						<ComboBox items="{oDropdownLookupsModel>/volumnUnits}" change="onChangeComboBox" selectedKey="{oBasicDataCollectionModel>volumeUnit}"
+							showSecondaryValues="true" width="100%">
+							<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>uomDesc30}" additionalText="{oDropdownLookupsModel>code}"/>
+						</ComboBox>
+					</table:template>
+				</table:Column>
+				<table:Column width="10rem" hAlign="Center">
+					<Label text="{i18n>GROSS_WEIGHT}" design="Bold"/>
+					<table:template>
+						<Input value="{oBasicDataCollectionModel>grossWeight}" type="Number"/>
+					</table:template>
+				</table:Column>
+			<!--	<table:Column width="10rem" hAlign="Center">
+					<Label text="{i18n>NET_WEIGHT}" design="Bold"/>
+					<table:template>
+						<Input value="{oBasicDataCollectionModel>netWeight}" type="Number"/>
+					</table:template>
+				</table:Column>-->
+				<table:Column width="10rem" hAlign="Center">
+					<Label text="{i18n>WEIGHT_UNIT}" design="Bold"/>
+					<table:template>
+						<ComboBox items="{oDropdownLookupsModel>/weightUnits}" change="onChangeComboBox" selectedKey="{oBasicDataCollectionModel>weightUnit}"
+							showSecondaryValues="true" width="100%">
+							<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>uomDesc30}" additionalText="{oDropdownLookupsModel>code}"/>
+						</ComboBox>
+					</table:template>
+				</table:Column>
+				<!--<table:Column>
+							<Label text="{i18n>LOWER_LEVEL_UNIT}"/>
+							<table:template>
+								<ComboBox items="{oDropdownLookupsModel>/packmaterialgroups}" change="onChangeComboBox"
+									selectedKey="{oBasicDataCollectionModel>lowerLevelUnit}" showSecondaryValues="true" width="100%">
+									<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
+								</ComboBox>
+							</table:template>
+						</table:Column>
+						<table:Column>
+							<Label text="{i18n>LLU_QTY}"/>
+							<table:template>
+								<Input value="{oBasicDataCollectionModel>lluQty}" type="Number"/>
+							</table:template>
+						</table:Column>-->
+			</table:columns>
+		</table:Table>
+	</VBox>
+</core:FragmentDefinition>

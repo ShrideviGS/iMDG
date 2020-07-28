@@ -1,0 +1,114 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table">
+	<Dialog showHeader="false" class="sapPageBackgroundColor sapUiSizeCompact" contentWidth="70%">
+		<content>
+			<Toolbar height="3rem" class="sapUiTinyMarginBeginEnd">
+				<Title text="Warehouse" class="hdrTextClass sapUiTinyMarginBegin"/>
+				<ToolbarSpacer/>
+				<Button icon="sap-icon://decline" type="Transparent" press="closeScenarioWarehousePopUp"/>
+			</Toolbar>
+			<l:Grid defaultSpan="L3 M4 S6" class="sapUiTinyMarginTop sapUiSmallMarginBeginEnd">
+				<l:content>
+					<!--<VBox class="sapUiSmallMarginEnd">-->
+					<!--	<Label text="{i18n>CLUSTER}:"></Label>-->
+					<!--	<Select forceSelection="false" selectedKey="{oScenarioModel>/contextData/leadCluster}" items="{oDropdownLookupsModel>/cluster}"-->
+					<!--		enabled="false">-->
+					<!--		<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>-->
+					<!--	</Select>-->
+					<!--</VBox>-->
+					<VBox class="sapUiSmallMarginEnd">
+						<Label text="{i18n>COUNTRY}:"></Label>
+						<Select forceSelection="false" selectedKey="{oScenarioModel>/contextData/leadCountry}" items="{oDropdownLookupsModel>/countryList}"
+							enabled="false">
+							<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>name}"/>
+						</Select>
+					</VBox>
+					<VBox class="sapUiSmallMarginEnd">
+						<Label text="{i18n>ROLE}:"></Label>
+						<Select forceSelection="false" selectedKey="{oScenarioModel>/contextData/role}" enabled="false" items="{oDropdownLookupsModel>/roles}">
+							<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
+						</Select>
+					</VBox>
+					<!--<VBox class="sapUiSmallMarginEnd">-->
+					<!--	<Label text="{i18n>PHASE}:"></Label>-->
+					<!--	<Input value="{oScenarioModel>/contextData/phase}" enabled="false"></Input>-->
+					<!--</VBox>-->
+					<VBox class="sapUiSmallMarginEnd">
+						<Label text="{i18n>DUE_DATE}:"></Label>
+						<Input value="{oScenarioModel>/contextData/date}" enabled="false"></Input>
+					</VBox>
+					<!--<VBox class="sapUiSmallMarginEnd">-->
+					<!--	<Label text="{i18n>VERSION}:"></Label>-->
+					<!--	<Input value="1" enabled="false"></Input>-->
+					<!--</VBox>-->
+					<!--<VBox class="sapUiSmallMarginEnd">-->
+					<!--	<Label text="{i18n>CREATED_ON}:"></Label>-->
+					<!--	<Input value="" enabled="false"></Input>-->
+					<!--</VBox>-->
+					<!--<VBox class="sapUiSmallMarginEnd">-->
+					<!--	<Label text="{i18n>CREATED_BY}:"></Label>-->
+					<!--	<Input value="" enabled="false"></Input>-->
+					<!--</VBox>-->
+					<!--<VBox class="sapUiSmallMarginEnd">-->
+					<!--	<Label text="{i18n>STATUS}:"></Label>-->
+					<!--	<Input value="WIP" enabled="false"></Input>-->
+					<!--</VBox>-->
+					<VBox class="sapUiSmallMarginEnd">
+						<Label text="{i18n>SET_NO}:"></Label>
+						<Input value="{oScenarioModel>/oSelectedRowDetailsScoping/scenario/setNumber}" enabled="false"></Input>
+					</VBox>
+					<VBox class="sapUiSmallMarginEnd">
+						<Label text="{i18n>SCENARIO}:"></Label>
+						<Input value="{oScenarioModel>/oSelectedRowDetailsScoping/scenario/scenarioCode}" enabled="false"></Input>
+					</VBox>
+					<VBox class="sapUiSmallMarginEnd">
+						<Label text="{i18n>DESCRIPTION}:"></Label>
+						<Input value="{oScenarioModel>/oSelectedRowDetailsScoping/scenario/scenarioDescription}" enabled="false"></Input>
+					</VBox>
+					<VBox class="sapUiSmallMarginEnd">
+						<Label text="{i18n>VARIANT}:"></Label>
+						<Input value="{oScenarioModel>/oSelectedRowDetailsScoping/scenario/variant}" enabled="false"></Input>
+					</VBox>
+				</l:content>
+			</l:Grid>
+			<Toolbar class="basicDataToolbarBrdClass sapUiSmallMarginBeginEnd sapUiTinyMarginTop" height="2rem">
+				<HBox>
+					<Text text="Assigned Warehouse(s)" class="hdrTextClass"></Text>
+				</HBox>
+				<VBox class="basicDataHLineClass sapUiSmallMarginBegin" width="100%"></VBox>
+			</Toolbar>
+			<Toolbar class="basicDataToolbarBrdClass sapUiSmallMarginBeginEnd" height="2rem">
+				<ToolbarSpacer/>
+				<Button text="Add Warehouse" icon="sap-icon://add" type="Accept" press="onAddScenarioWarehouse"></Button>
+				<Button text="Delete Warehouse" icon="sap-icon://delete" type="Reject" press="onDeleteScenarioWarehouse"></Button>
+			</Toolbar>
+			<table:Table rows="{oScenarioModel>/scenarioWarehouse}" id="MM_SCENARIOS_WAREHOUSE_TBL" selectionMode="Single" alternateRowColors="true"
+				rowHeight="40px" showNoData="true" visibleRowCount="5" class="sapUiSmallMarginBeginEnd sapUiSmallMarginBottom sapUiTableBorderClass">
+				<table:columns>
+					<table:Column>
+						<Label text="Warehouse Code" design="Bold"/>
+						<table:template>
+							<Input showValueHelp="true" value="{oScenarioModel>code}" valueHelpRequest="openWarehouseLookUp"/>
+							<!--<HBox>
+								<Input value="{oScenarioModel>code}" enabled="false"/>
+								<Button icon="sap-icon://value-help" press="openWarehouseLookUp" type="Transparent" class="valueHelpClass"/>
+							</HBox>-->
+						</table:template>
+					</table:Column>
+					<table:Column width="">
+						<Label text="Name" design="Bold"/>
+						<table:template>
+							<!--<Select forceSelection="false" selectedKey="{oScenarioModel>distributionChannel}" items="{oDropdownLookupsModel>/distritbutionchannels}">
+								<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>name}"/>
+							</Select>-->
+							<Text text="{oScenarioModel>name}"/>
+						</table:template>
+					</table:Column>
+				</table:columns>
+			</table:Table>
+		</content>
+		<buttons>
+			<Button text="{i18n>APPLY}" type="Accept" press="onApplyWarehouse"></Button>
+			<Button text="{i18n>CANCEL}" type="Reject" press="closeScenarioWarehousePopUp"></Button>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

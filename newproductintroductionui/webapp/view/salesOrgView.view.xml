@@ -1,0 +1,345 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table"
+	controllerName="newproductintroductionui.newproductintroductionui.controller.salesOrgView" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="{i18n>PAGE_TITLE}" class="sapUiSizeCompact" showHeader="false" floatingFooter="true">
+		<content>
+			<!--<l:Grid defaultSpan="L3 M4 S6" class="sapUiSizeCompact sapUiSmallMarginTop hdrGridClass">
+				<VBox>
+					<Label text="{i18n>GLBL_MAT}" design="Bold"></Label>
+					<Input enabled="false" class="sapUiSizeCompact"></Input>
+				</VBox>
+				<VBox>
+					<Label text="{i18n>MAT_DESC}" design="Bold"></Label>
+					<Input enabled="false" class="sapUiSizeCompact"></Input>
+				</VBox>
+			</l:Grid>-->
+			<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+				<Label text="{i18n>REGIONAL_CODE_DATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+				<HBox width="100%" class="hdrTxtLineClass"></HBox>
+			</HBox>
+			<HBox class="sapUiSizeCompact sapUiSmallMarginEnd">
+				<l:Grid defaultSpan="L3 M4 S6" class="sapUiSizeCompact">
+					<VBox>
+						<Label text="{i18n>PROJECT_NUM}" design="Bold"></Label>
+						<Input enabled="false" class="sapUiSizeCompact" value="{oMRPContextModel>/projectId}"></Input>
+					</VBox>
+					<!--<VBox>
+						<Label text="{i18n>MAT_DUE_DATE}" design="Bold"></Label>
+						<Input enabled="false" class="sapUiSizeCompact"></Input>
+					</VBox>-->
+					<VBox>
+						<Label text="{i18n>MATERIAL}" design="Bold"></Label>
+						<Input enabled="false" class="sapUiSizeCompact" value="{oMRPContextModel>/materialId}"></Input>
+					</VBox>
+					<VBox>
+						<Label text="{i18n>MAT_DESC}" design="Bold"></Label>
+						<Input enabled="false" class="sapUiSizeCompact" value="{oMRPContextModel>/materialDescription}"></Input>
+					</VBox>
+					<VBox>
+						<Label text="{i18n>BUOM}" design="Bold"></Label>
+						<Input enabled="false" class="sapUiSizeCompact" value="{oMRPContextModel>/baseUoM}"></Input>
+					</VBox>
+					<VBox>
+						<Label text="{i18n>MATERIAL_TYPE}" design="Bold"></Label>
+						<Input enabled="false" class="sapUiSizeCompact" value="{oMRPContextModel>/materialType}"></Input>
+					</VBox>
+					<VBox>
+						<Label text="{i18n>SALESORG}" design="Bold"></Label>
+						<Input enabled="false" class="sapUiSizeCompact" value="{oMRPContextModel>/salesOrgCode}"></Input>
+					</VBox>
+					<VBox>
+						<Label text="{i18n>DISTCHANNEL}" design="Bold"></Label>
+						<Input enabled="false" class="sapUiSizeCompact" value="{oSalesOrgDataModel>/dcCode}"></Input>
+					</VBox>
+					<l:layoutData>
+						<FlexItemData styleClass="hdrGridClass"/>
+					</l:layoutData>
+				</l:Grid>
+			</HBox>
+			<l:Grid defaultSpan="L12 M12 S12" class="sapUiSizeCompact splitterGridClass">
+				<l:Splitter class="sapUiSizeCompact splitterBGClass">
+					<List id="idMasterList" showSeparators="None" class="sapUiSizeCompact leftContentClass" mode="SingleSelectMaster" itemPress="onItemPress">
+						<items>
+							<StandardListItem title="{i18n>SALESORG1}" type="Active" class="masterListClass" press="onItemPress"></StandardListItem>
+							<StandardListItem title="{i18n>SALESORG2}" type="Active" class="masterListClass" press="onItemPress"></StandardListItem>
+							<StandardListItem title="{i18n>TAXDATA}" type="Active" class="masterListClass" press="onItemPress"></StandardListItem>
+						</items>
+						<layoutData>
+							<l:SplitterLayoutData size="20%" resizable="false"/>
+						</layoutData>
+					</List>
+					<VBox>
+						<items>
+							<VBox visible="{oVisModel>/oSALESORG1Box}">
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>GENERAL_DATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>DCHAINSPSTAT}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oSalesOrgDataModel>/dchainSpecificStatus}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>DELIVPLANT}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oSalesOrgDataModel>/deliveringPlantCode}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>SALESUNIT}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oSalesOrgDataModel>/salesUnit}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>CASHDISC}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oSalesOrgDataModel>/cashDiscount}"></Input>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>QTYSTIPULATION}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>MINORDQTY}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oSalesOrgDataModel>/minOrderQuantity}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>MINDDELIVQTY}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oSalesOrgDataModel>/minDeliveryQuantity}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>DELIVUNIT}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oSalesOrgDataModel>/deliveryUnit}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>DELIVUNITUOM}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oSalesOrgDataModel>/deliveryUnitUom}"></Input>
+										</VBox>
+									</l:content>
+								</l:Grid>
+							</VBox>
+							<VBox visible="{oVisModel>/oSALESORG2Box}">
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>GRPTERMS}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>MATSTATGRP}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oSalesOrgDataModel>/materialStatisticsGroup}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>MATPRICEGRP}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oSalesOrgDataModel>/materialPricingGroup}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>VOLREBATEGRP}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oSalesOrgDataModel>/volumeRebateGroup}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>ACCTASGNGRP}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oSalesOrgDataModel>/accAssignmentGroup}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>ITEMCATGRP}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oSalesOrgDataModel>/plantSpecificStatus}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PRICREFMAT}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oSalesOrgDataModel>/itemCategoryGroup}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PRODHIERAR}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oSalesOrgDataModel>/plantSpecificStatus}"></Input>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>MATGRP}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>MATGRP1}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oSalesOrgDataModel>/materialGroup1}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>MATGRP2}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oSalesOrgDataModel>/materialGroup2}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>MATGRP3}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oSalesOrgDataModel>/materialGroup3}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>MATGRP4}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oSalesOrgDataModel>/materialGroup4}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>MATGRP5}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" value="{oSalesOrgDataModel>/materialGroup5}"></Input>
+										</VBox>
+									</l:content>
+								</l:Grid>
+							</VBox>
+							<VBox visible="{oVisModel>/oTAXDATABox}">
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>TAXDATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<table:Table rows="{oSalesOrgDataModel>/taxData}" selectionMode="Single" id="NPI_PROJECTS_TBL" alternateRowColors="true" rowHeight="40px"
+									showNoData="true" selectionBehavior="RowOnly" class="sapUiTableBorderClass" visibleRowCount="5">
+									<table:columns>
+										<table:Column width="12em" hAlign="Center">
+											<Label text="{i18n>DEPCOUNTRY}" design="Bold"/>
+											<table:template>
+												<Input value="{oSalesOrgDataModel>departureCountry}"/>
+											</table:template>
+										</table:Column>
+										<table:Column width="12em" hAlign="Center">
+											<Label text="{i18n>REGCODE}" design="Bold"/>
+											<table:template>
+												<Input value="{oSalesOrgDataModel>regionCode}"/>
+											</table:template>
+										</table:Column>
+										<table:Column width="12em" hAlign="Center">
+											<Label text="{i18n>STEPNUM}" design="Bold"/>
+											<table:template>
+												<Input value="{oSalesOrgDataModel>stepNumber}"/>
+											</table:template>
+										</table:Column>
+										<table:Column width="12em" hAlign="Center">
+											<Label text="{i18n>TAXCAT1}" design="Bold"/>
+											<table:template>
+												<Input value="{oSalesOrgDataModel>taxCategory1}"/>
+											</table:template>
+										</table:Column>
+										<table:Column width="12em" hAlign="Center">
+											<Label text="{i18n>TAXCLASSIFI1}" design="Bold"/>
+											<table:template>
+												<Input value="{oSalesOrgDataModel>taxClassification1}"/>
+											</table:template>
+										</table:Column>
+										<table:Column width="12em" hAlign="Center">
+											<Label text="{i18n>TAXCAT2}" design="Bold"/>
+											<table:template>
+												<Input value="{oSalesOrgDataModel>taxCategory2}"/>
+											</table:template>
+										</table:Column>
+										<table:Column width="12em" hAlign="Center">
+											<Label text="{i18n>TAXCLASSIFI2}" design="Bold"/>
+											<table:template>
+												<Input value="{oSalesOrgDataModel>taxClassification2}"/>
+											</table:template>
+										</table:Column>
+										<table:Column width="12em" hAlign="Center">
+											<Label text="{i18n>TAXCAT3}" design="Bold"/>
+											<table:template>
+												<Input value="{oSalesOrgDataModel>taxCategory3}"/>
+											</table:template>
+										</table:Column>
+										<table:Column width="12em" hAlign="Center">
+											<Label text="{i18n>TAXCLASSIFI3}" design="Bold"/>
+											<table:template>
+												<Input value="{oSalesOrgDataModel>taxClassification3}"/>
+											</table:template>
+										</table:Column>
+										<table:Column width="12em" hAlign="Center">
+											<Label text="{i18n>TAXCAT4}" design="Bold"/>
+											<table:template>
+												<Input value="{oSalesOrgDataModel>taxCategory4}"/>
+											</table:template>
+										</table:Column>
+										<table:Column width="12em" hAlign="Center">
+											<Label text="{i18n>TAXCLASSIFI4}" design="Bold"/>
+											<table:template>
+												<Input value="{oSalesOrgDataModel>taxClassification4}"/>
+											</table:template>
+										</table:Column>
+										<table:Column width="12em" hAlign="Center">
+											<Label text="{i18n>TAXCAT5}" design="Bold"/>
+											<table:template>
+												<Input value="{oSalesOrgDataModel>taxCategory5}"/>
+											</table:template>
+										</table:Column>
+										<table:Column width="12em" hAlign="Center">
+											<Label text="{i18n>TAXCLASSIFI5}" design="Bold"/>
+											<table:template>
+												<Input value="{oSalesOrgDataModel>taxClassification5}"/>
+											</table:template>
+										</table:Column>
+										<table:Column width="12em" hAlign="Center">
+											<Label text="{i18n>TAXCAT6}" design="Bold"/>
+											<table:template>
+												<Input value="{oSalesOrgDataModel>taxCategory6}"/>
+											</table:template>
+										</table:Column>
+										<table:Column width="12em" hAlign="Center">
+											<Label text="{i18n>TAXCLASSIFI6}" design="Bold"/>
+											<table:template>
+												<Input value="{oSalesOrgDataModel>taxClassification6}"/>
+											</table:template>
+										</table:Column>
+										<table:Column width="12em" hAlign="Center">
+											<Label text="{i18n>TAXCAT7}" design="Bold"/>
+											<table:template>
+												<Input value="{oSalesOrgDataModel>taxCategory7}"/>
+											</table:template>
+										</table:Column>
+										<table:Column width="12em" hAlign="Center">
+											<Label text="{i18n>TAXCLASSIFI7}" design="Bold"/>
+											<table:template>
+												<Input value="{oSalesOrgDataModel>taxClassification7}"/>
+											</table:template>
+										</table:Column>
+										<table:Column width="12em" hAlign="Center">
+											<Label text="{i18n>TAXCAT8}" design="Bold"/>
+											<table:template>
+												<Input value="{oSalesOrgDataModel>taxCategory8}"/>
+											</table:template>
+										</table:Column>
+										<table:Column width="12em" hAlign="Center">
+											<Label text="{i18n>TAXCLASSIFI8}" design="Bold"/>
+											<table:template>
+												<Input value="{oSalesOrgDataModel>taxClassification8}"/>
+											</table:template>
+										</table:Column>
+										<table:Column width="12em" hAlign="Center">
+											<Label text="{i18n>TAXCAT9}" design="Bold"/>
+											<table:template>
+												<Input value="{oSalesOrgDataModel>taxCategory9}"/>
+											</table:template>
+										</table:Column>
+										<table:Column width="12em" hAlign="Center">
+											<Label text="{i18n>TAXCLASSIFI9}" design="Bold"/>
+											<table:template>
+												<Input value="{oSalesOrgDataModel>taxClassification9}"/>
+											</table:template>
+										</table:Column>
+										<table:Column width="12em" hAlign="Center">
+											<Label text="{i18n>TAXINDICATOR}" design="Bold"/>
+											<table:template>
+												<Input value="{oSalesOrgDataModel>taxIndicator}"/>
+											</table:template>
+										</table:Column>
+									</table:columns>
+								</table:Table>
+							</VBox>
+						</items>
+					</VBox>
+				</l:Splitter>
+			</l:Grid>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer></ToolbarSpacer>
+				<Button text="{i18n>SAVE}" press="onSave"></Button>
+				<Button text="{i18n>VALIDATE}" press="onValidate"></Button>
+				<Button text="{i18n>SUBMIT}" press="onSubmit"></Button>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

@@ -1,0 +1,56 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" class="sapUiSizeCompact" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table">
+	<VBox>
+		<Toolbar height="2rem" class="basicDataToolbarBrdClass">
+			<HBox>
+				<Text text="{i18n>GENERAL_DATA}" class="hdrTextClass"></Text>
+			</HBox>
+			<VBox class="basicDataHLineClass sapUiSmallMarginBegin" width="100%"></VBox>
+		</Toolbar>
+		<l:Grid defaultSpan="XL3 L3 M6 S12">
+			<l:content>
+				<VBox>
+					<Label text="{i18n>SERIAL_NUMBER_LEVEL}:" class="sapUiTinyMarginTop"></Label>
+					<Input value="{oBasicDataCollectionModel>/basicDataDto/serialNumberLevel}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
+				</VBox>
+				<VBox class="sapUiSmallMarginBegin">
+					<Label text="{i18n>CATALOG_PROFILE}:" class="sapUiTinyMarginTop"></Label>
+					<ComboBox items="{oDropdownLookupsModel>/catalogprofiles}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+						selectedKey="{oBasicDataCollectionModel>/basicDataDto/catalogProfile}" showSecondaryValues="true" width="100%">
+						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
+						<customData>
+							<core:CustomData key="target" value="DROP_DOWN"/>
+						</customData>
+					</ComboBox>
+				</VBox>
+			</l:content>
+		</l:Grid>
+		<Toolbar height="2rem" class="basicDataToolbarBrdClass sapUiSmallMarginTop">
+			<HBox>
+				<Text text="{i18n>OTHER_DATA}" class="hdrTextClass"></Text>
+			</HBox>
+			<VBox class="basicDataHLineClass sapUiSmallMarginBegin" width="100%"></VBox>
+		</Toolbar>
+		<l:Grid defaultSpan="XL3 L3 M6 S12">
+			<l:content>
+				<VBox>
+					<Label text="{i18n>PC_HOST_FLAG}:" class="sapUiTinyMarginTop"></Label>
+					<CheckBox selected="{oBasicDataCollectionModel>/basicDataDto/pcHostFlag}" editable="{oSpecTblDataModel>/isBasicEditable}"/>
+				</VBox>
+			</l:content>
+		</l:Grid>
+		<Toolbar height="2rem" class="basicDataToolbarBrdClass sapUiSmallMarginTop">
+			<HBox>
+				<Text text="{i18n>PROCUREMENT_DATA}" class="hdrTextClass"></Text>
+			</HBox>
+			<VBox class="basicDataHLineClass sapUiSmallMarginBegin" width="100%"></VBox>
+		</Toolbar>
+		<l:Grid defaultSpan="XL3 L3 M6 S12">
+			<l:content>
+				<VBox>
+					<Label text="{i18n>QM_PROC_ACTIVE}:" class="sapUiTinyMarginTop"></Label>
+					<CheckBox selected="{oBasicDataCollectionModel>/basicDataDto/qmProcActive}" editable="{oSpecTblDataModel>/isBasicEditable}"/>
+				</VBox>
+			</l:content>
+		</l:Grid>
+	</VBox>
+</core:FragmentDefinition>

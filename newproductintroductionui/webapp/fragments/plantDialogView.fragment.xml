@@ -1,0 +1,141 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table">
+	<Dialog showHeader="false" class="plantDialogClass">
+		<Toolbar height="2rem" class="toolBarClass">
+			<Label text="{i18n>PLANTS}"></Label>
+		</Toolbar>
+		<!--<HBox>-->
+		<!--		<l:Grid>
+			<l:content>-->
+		<!--<HBox width="100%" class="sapUiTinyMargin">-->
+		<Panel expandable="false" expanded="true" headerText="Selected Set Context:" class="npiPanelStyle iconPanelHdng">
+			<l:Grid defaultSpan="XL4 L4 M6 S12">
+				<l:content>
+					<l:Grid defaultSpan="XL6 L6 M12 S12">
+						<l:content>
+							<!--<Label text="{i18n>CLUSTER}:" class="sapUiTinyMarginTop"></Label>-->
+							<!--<Input value="" enabled="false"></Input>-->
+							<Label text="{i18n>COUNTRY}:" class="sapUiTinyMarginTop"></Label>
+							<Input value="" enabled="false"></Input>
+							<Label text="{i18n>ROLE}:" class="sapUiTinyMarginTop"></Label>
+							<Input value="" enabled="false"></Input>
+							<Label text="{i18n>PHASE}:" class="sapUiTinyMarginTop"></Label>
+							<Input value="" enabled="false"></Input>
+							<Label text="{i18n>DUE_DATE}:" class="sapUiTinyMarginTop"></Label>
+							<Input value="" enabled="false"></Input>
+						</l:content>
+					</l:Grid>
+					<l:Grid defaultSpan="XL6 L6 M12 S12">
+						<l:content>
+							<Label text="{i18n>VERSION}:" class="sapUiTinyMarginTop"></Label>
+							<Input value="" enabled="false"></Input>
+							<Label text="{i18n>CREATED_ON}:" class="sapUiTinyMarginTop"></Label>
+							<Input value="" enabled="false"></Input>
+							<Label text="{i18n>CREATED_BY}:" class="sapUiTinyMarginTop"></Label>
+							<Input value="" enabled="false"></Input>
+							<Label text="{i18n>STATUS}:" class="sapUiTinyMarginTop"></Label>
+							<Input value="" enabled="false"></Input>
+						</l:content>
+					</l:Grid>
+					<l:Grid defaultSpan="XL6 L6 M12 S12">
+						<l:content>
+							<Label text="{i18n>SET_NO}:" class="sapUiTinyMarginTop"></Label>
+							<Input value="" enabled="false"></Input>
+							<Label text="{i18n>SCENARIO}:" class="sapUiTinyMarginTop"></Label>
+							<Input value="" enabled="false"></Input>
+							<Label text="{i18n>DESCRIPTION}:" class="sapUiTinyMarginTop"></Label>
+							<Input value="" enabled="false"></Input>
+							<Label text="{i18n>VARIANT}:" class="sapUiTinyMarginTop"></Label>
+							<Input value="" enabled="false"></Input>
+						</l:content>
+					</l:Grid>
+				</l:content>
+			</l:Grid>
+		</Panel>
+		<!--<table:Table rows="" visibleRowCount="5">
+						<table:columns>
+							<table:Column>
+								<Label text="{i18n>OBJECT}"/>
+								<table:template>
+									<Text text="" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column >
+								<Label text="{i18n>COUNT}"/>
+								<table:template>
+									<Text text="" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<Label text="{i18n>COMPLETED}"/>
+								<table:template>
+									<Text text="" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<Label text="{i18n>IN_PROCESS}"/>
+								<table:template>
+									<Text text="" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<Label text="{i18n>CANCELLED}"/>
+								<table:template>
+									<Text text="" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<Label text="{i18n>HELD}"/>
+								<table:template>
+									<Text text="" wrapping="false"/>
+								</table:template>
+							</table:Column>
+						</table:columns>
+					</table:Table>-->
+		<!--</HBox>-->
+		<!--	<layoutData>
+						<l:GridData span="XL4 L4 M2 S2"/>
+					</layoutData>
+				</HBox>
+			</l:Grid >-->
+		<Panel expandable="false" expanded="true" headerText="{i18n>ASSIGNED_PLANTS}:" class="npiPanelStyle iconPanelHdng">
+			<content>
+				<Toolbar height="2rem" class="toolBarClass">
+					<Button text="{i18n>ADD_PLANT}"></Button>
+					<Button text="{i18n>DELETE_PLANT}"></Button>
+				</Toolbar>
+				<table:Table rows="">
+					<table:columns>
+						<table:Column width="10rem">
+							<Label text="{i18n>PLANT_GROUP}"/>
+							<table:template>
+								<Text text="" wrapping="false"/>
+							</table:template>
+						</table:Column>
+						<table:Column>
+							<Label text="{i18n>Type}"/>
+							<table:template>
+								<Text text="" wrapping="false"/>
+							</table:template>
+						</table:Column>
+						<table:Column>
+							<Label text="{i18n>DESCRIPTION}"/>
+							<table:template>
+								<Text text="" wrapping="false"/>
+							</table:template>
+						</table:Column>
+						<table:Column>
+							<Label text="{i18n>NEW}"/>
+							<table:template>
+								<Text text="" wrapping="false"/>
+							</table:template>
+						</table:Column>
+					</table:columns>
+				</table:Table>
+			</content>
+		</Panel>
+		<Toolbar height="2rem">
+			<Button text="{i18n>APPLY}" press="onApplyScenario"></Button>
+			<Button text="{i18n>CANCEL}" press="closeScenarioPlantsPopUp"></Button>
+		</Toolbar>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,130 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" class="sapUiSizeCompact" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table">
+	<VBox>
+		<Toolbar height="2rem" class="basicDataToolbarBrdClass">
+			<HBox>
+				<Text text="{i18n>GENERAL_DATA}" class="hdrTextClass"></Text>
+			</HBox>
+			<VBox class="basicDataHLineClass sapUiSmallMarginBegin" width="100%"></VBox>
+		</Toolbar>
+		<l:Grid defaultSpan="XL3 L3 M6 S12">
+			<l:content>
+				<VBox>
+					<Label text="{i18n>TEMP_CONDITION}:" class="sapUiTinyMarginTop"></Label>
+					<!--	<Select forceSelection="false" selectedKey="{oBasicDataCollectionModel>/basicDataDto/tempCondition}"
+						items="{oDropdownLookupsModel>/tempconditions}" width="100%">
+						<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
+					</Select>-->
+					<ComboBox items="{oDropdownLookupsModel>/tempconditions}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+						selectedKey="{oBasicDataCollectionModel>/basicDataDto/tempCondition}" showSecondaryValues="true" width="100%">
+						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
+						<customData>
+							<core:CustomData key="target" value="DROP_DOWN"/>
+						</customData>
+					</ComboBox>
+				</VBox>
+				<VBox class="sapUiSmallMarginBegin">
+					<Label text="{i18n>STORAGE_CONDITIONS}:" class="sapUiTinyMarginTop"></Label>
+					<!--	<Select forceSelection="false" selectedKey="{oBasicDataCollectionModel>/basicDataDto/storageConditions}"
+						items="{oDropdownLookupsModel>/storageconditions}" width="100%">
+						<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
+					</Select>-->
+					<ComboBox items="{oDropdownLookupsModel>/storageconditions}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+						selectedKey="{oBasicDataCollectionModel>/basicDataDto/storageConditions}" showSecondaryValues="true" width="100%">
+						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
+						<customData>
+							<core:CustomData key="target" value="DROP_DOWN"/>
+						</customData>
+					</ComboBox>
+				</VBox>
+				<VBox class="sapUiSmallMarginBegin">
+					<Label text="{i18n>CONTAINER_REQUIREMENTS}:" class="sapUiTinyMarginTop"></Label>
+					<!--<Select forceSelection="false" selectedKey="{oBasicDataCollectionModel>/basicDataDto/containerRequirements}"
+						items="{oDropdownLookupsModel>/containerrequirements}" width="100%">
+						<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
+					</Select>-->
+					<ComboBox items="{oDropdownLookupsModel>/containerrequirements}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+						selectedKey="{oBasicDataCollectionModel>/basicDataDto/containerRequirements}" showSecondaryValues="true" width="100%">
+						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
+						<customData>
+							<core:CustomData key="target" value="DROP_DOWN"/>
+						</customData>
+					</ComboBox>
+				</VBox>
+				<VBox class="sapUiSmallMarginBegin">
+					<Label text="{i18n>NUMBER_OF_GR_SLIPS}:" class="sapUiTinyMarginTop"></Label>
+					<Input value="{oBasicDataCollectionModel>/basicDataDto/numberOfGrSlips}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
+				</VBox>
+				<VBox>
+					<Label text="{i18n>LABEL_TYPE}:" class="sapUiTinyMarginTop"></Label>
+					<!--<Select forceSelection="false" selectedKey="{oBasicDataCollectionModel>/basicDataDto/labelType}" width="100%"
+						items="{oDropdownLookupsModel>/labeltypes}">
+						<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
+					</Select>-->
+					<ComboBox items="{oDropdownLookupsModel>/labeltypes}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+						selectedKey="{oBasicDataCollectionModel>/basicDataDto/labelType}" showSecondaryValues="true" width="100%">
+						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
+						<customData>
+							<core:CustomData key="target" value="DROP_DOWN"/>
+						</customData>
+					</ComboBox>
+				</VBox>
+				<VBox class="sapUiSmallMarginBegin">
+					<Label text="{i18n>LABEL_FORM}:" class="sapUiTinyMarginTop"></Label>
+					<!--<Select forceSelection="false" selectedKey="{oBasicDataCollectionModel>/basicDataDto/labelForm}" width="100%"
+						items="{oDropdownLookupsModel>/labelforms}">
+						<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
+					</Select>-->
+					<ComboBox items="{oDropdownLookupsModel>/labelforms}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+						selectedKey="{oBasicDataCollectionModel>/basicDataDto/labelForm}" showSecondaryValues="true" width="100%">
+						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
+						<customData>
+							<core:CustomData key="target" value="DROP_DOWN"/>
+						</customData>
+					</ComboBox>
+				</VBox>
+				<VBox class="sapUiSmallMarginBegin">
+					<Label text="{i18n>HAZ_MATERIAL_NUMBER}:" class="sapUiTinyMarginTop"></Label>
+					<Input value="{oBasicDataCollectionModel>/basicDataDto/hazMaterialNumber}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
+				</VBox>
+				<VBox class="sapUiSmallMarginBegin">
+					<Label text="{i18n>BATCH_RECORD_REQUIRED}:" class="sapUiTinyMarginTop"></Label>
+					<CheckBox selected="{oBasicDataCollectionModel>/basicDataDto/batchRecordRequired}" editable="{oSpecTblDataModel>/isBasicEditable}"/>
+				</VBox>
+				<VBox>
+					<Label text="{i18n>BATCH_MANAGEMENT}:"></Label>
+					<CheckBox selected="{oBasicDataCollectionModel>/basicDataDto/batchManagement}" editable="{oSpecTblDataModel>/isBasicEditable}"/>
+				</VBox>
+			</l:content>
+		</l:Grid>
+		<Toolbar height="2rem" class="basicDataToolbarBrdClass sapUiSmallMarginTop">
+			<HBox>
+				<Text text="{i18n>SHELF_LIFE_DATA}" class="hdrTextClass"></Text>
+			</HBox>
+			<VBox class="basicDataHLineClass sapUiSmallMarginBegin" width="100%"></VBox>
+		</Toolbar>
+		<l:Grid defaultSpan="XL3 L3 M6 S12">
+			<l:content>
+				<VBox>
+					<Label text="{i18n>MIN_REMAINING_SHELF_LIFE}:" class="sapUiTinyMarginTop"></Label>
+					<Input value="{oBasicDataCollectionModel>/basicDataDto/minRemShelfLife}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
+				</VBox>
+				<VBox class="sapUiSmallMarginBegin">
+					<Label text="{i18n>TOTAL_SHELF_LIFE}:" class="sapUiTinyMarginTop"></Label>
+					<Input value="{oBasicDataCollectionModel>/basicDataDto/totalShelfLife}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
+				</VBox>
+				<VBox class="sapUiSmallMarginBegin">
+					<Label text="{i18n>PERIOD_INDICATOR_FOR_SLED}:" class="sapUiTinyMarginTop"></Label>
+					<Input value="{oBasicDataCollectionModel>/basicDataDto/periodIndFrSled}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
+				</VBox>
+				<VBox class="sapUiSmallMarginBegin">
+					<Label text="{i18n>ROUNDING_RULE_SLED}:" class="sapUiTinyMarginTop"></Label>
+					<Input value="{oBasicDataCollectionModel>/basicDataDto/roundingRuleSled}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
+				</VBox>
+				<VBox>
+					<Label text="{i18n>STORAGE_PERCENTAGE}:" class="sapUiTinyMarginTop"></Label>
+					<Input value="{oBasicDataCollectionModel>/basicDataDto/storagePercentage}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
+				</VBox>
+			</l:content>
+		</l:Grid>
+	</VBox>
+</core:FragmentDefinition>

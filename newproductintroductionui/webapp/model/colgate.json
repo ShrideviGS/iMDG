@@ -1,0 +1,809 @@
+{
+	"tabData": [{
+		"x": "1",
+		"altUOM": "CS",
+		"y": "1",
+		"bUOM": "ZUN"
+	}, {
+		"x": "1",
+		"altUOM": "ZPS",
+		"y": "1",
+		"bUOM": "ZUN"
+	}, {
+		"x": "1",
+		"altUOM": "MM-ISAUD7",
+		"y": "1",
+		"bUOM": "ZUN"
+	}],
+	"tableData": [{
+		"code": "819",
+		"description": "MP-HYSRRA"
+	}, {
+		"code": "811",
+		"description": "UI-VJSUIJW09"
+	}, {
+		"code": "812",
+		"description": "MM-ISAUD7"
+	}, {
+		"code": "803",
+		"description": "OO-WWNSUI"
+	}, {
+		"code": "810",
+		"description": "WM-JJDSC"
+	}, {
+		"code": "830",
+		"description": "ZZ-MEEUDYW"
+	}, {
+		"code": "821",
+		"description": "OS-UADSJ"
+	}, {
+		"code": "891",
+		"description": "BV-BSTTHOR"
+	}, {
+		"code": "839",
+		"description": "NB-MSCHEA"
+	}, {
+		"code": "817",
+		"description": "HS-IOIUAS07"
+	}],
+	"scenarios": [{
+		"scNo": "1",
+		"cluster": "BENELUX",
+		"country": "BE",
+		"role": "Produce",
+		"phase": "",
+		"scenario": "Produce in house A220",
+		"description": "Produce in house A220",
+		"readyDate": "04/02/2021",
+		"variant": "Standard",
+		"comments": ""
+	}],
+	"materials": [{
+		"setNo": "1",
+		"scenario": "Produce in house A220",
+		"objectType": "Basic",
+		"key": "10",
+		"subKey": "NA",
+		"description": "RYRYHFH"
+	}, {
+		"setNo": "1",
+		"scenario": "Produce in house A220",
+		"objectType": "Plant",
+		"key": "A220",
+		"subKey": "",
+		"description": "UBF-BE Lipton SU"
+	}, {
+		"setNo": "1",
+		"scenario": "Produce in house A220",
+		"objectType": "Sorg",
+		"key": "9000",
+		"subKey": "20",
+		"description": "USCC"
+	}, {
+		"setNo": "1",
+		"scenario": "Produce in house A220",
+		"objectType": "Whouse",
+		"key": "E10",
+		"subKey": "",
+		"description": "Brussels Lipton SU WH"
+	}],
+	"materials1": [{
+		"setNo": "1",
+		"scenario": "Company Stores",
+		"objectType": "Basic Group",
+		"key": "2032953",
+		"subKey": "NA",
+		"description": "RC 1"
+	}, {
+		"setNo": "1",
+		"scenario": "Company Stores",
+		"objectType": "SORG",
+		"key": "5487",
+		"subKey": "40",
+		"description": "Unilever Ascc AG"
+	}, {
+		"setNo": "1",
+		"scenario": "Company Stores",
+		"objectType": "SORG",
+		"key": "0005",
+		"subKey": "40",
+		"description": "B&J Homemade"
+	}, {
+		"setNo": "1",
+		"scenario": "Company Stores",
+		"objectType": "SORG",
+		"key": "5322",
+		"subKey": "40",
+		"description": "U.L  MANUF'G. (US) INC"
+	}],
+	"materials2": [{
+		"setNo": "2",
+		"scenario": "PR_Retail",
+		"objectType": "Basic Group",
+		"key": "2032953",
+		"subKey": "NA",
+		"description": "RC 1"
+	}, {
+		"setNo": "2",
+		"scenario": "PR_Retail",
+		"objectType": "SORG",
+		"key": "5487",
+		"subKey": "40",
+		"description": "Unilever ASSC AG"
+	}, {
+		"setNo": "2",
+		"scenario": "PR_Retail",
+		"objectType": "SORG",
+		"key": "PR01",
+		"subKey": "02",
+		"description": "PR - HPF Retail"
+	}, {
+		"setNo": "2",
+		"scenario": "PR_Retail",
+		"objectType": "SORG",
+		"key": "PR01",
+		"subKey": "50",
+		"description": "PR - HPF Retail"
+	}],
+	"mattab": [{
+		"line": "10",
+		"action": "Produce in house A220",
+		"gCode": "",
+		"rCode": "",
+		"specID": "",
+		"spGrp": "DU",
+		"gDesc": "GD",
+		"rDesc": "RUJBFF",
+		"regMatType": "FERT, Finished Products",
+		"gtinReq": "true",
+		"sumStatus": "ACTION REQUIRED"
+	}, {
+		"line": "20",
+		"action": "Produce in house B920",
+		"gCode": "",
+		"rCode": "",
+		"specID": "",
+		"spGrp": "DU",
+		"gDesc": "Global Materail",
+		"rDesc": "Regional Materail",
+		"regMatType": "FERT, Finished Products",
+		"gtinReq": "true",
+		"sumStatus": "ACTION REQUIRED"
+	}, {
+		"line": "30",
+		"action": "Produce in house A566",
+		"gCode": "",
+		"rCode": "",
+		"specID": "",
+		"spGrp": "CU",
+		"gDesc": "Global M2",
+		"rDesc": "Regional M2",
+		"regMatType": "HALB, SemiFinished",
+		"gtinReq": "true",
+		"sumStatus": "ACTION REQUIRED"
+	}, {
+		"line": "40",
+		"action": "Produce in house B120",
+		"gCode": "",
+		"rCode": "",
+		"specID": "",
+		"spGrp": "ART",
+		"gDesc": "Global Package",
+		"rDesc": "Regional Package",
+		"regMatType": "PACK, Packing",
+		"gtinReq": "false",
+		"sumStatus": "ACTION REQUIRED"
+	}],
+	"action": [{
+		"value": "Add GC",
+		"key": "addGC"
+	}],
+	"spGroup": [{
+		"value": "DU",
+		"key": "du"
+	}, {
+		"value": "CU",
+		"key": "cu"
+	}, {
+		"value": "ART",
+		"key": "art"
+	}],
+	"regionalType": [{
+		"value": "FERT,Finished Products",
+		"key": "du"
+	}, {
+		"value": "HALB,SemiFinished Products",
+		"key": "cu"
+	}, {
+		"value": "PACK,Packaging",
+		"key": "art"
+	}],
+	"finResTab": [{
+		"set": "1",
+		"scenarios": "Produce in house A220",
+		"material": "381768",
+		"matDesc": "HFSDY",
+		"specGrp": "DU",
+		"matType": "FERT",
+		"extnType": "BASIC",
+		"code": "10",
+		"subCode": "NA",
+		"cluster": "BENELUX",
+		"country": "BE",
+		"useCase": "SIR_BASIC_VAN"
+	}, {
+		"set": "1",
+		"scenarios": "Produce in house B920",
+		"material": "973562",
+		"matDesc": "OWWGH",
+		"specGrp": "CU",
+		"matType": "HALB",
+		"extnType": "PLANT",
+		"code": "920",
+		"subCode": "NA",
+		"cluster": "NA",
+		"country": "CA",
+		"useCase": "NA_MRP_FICO_COSTING"
+	}, {
+		"set": "1",
+		"scenarios": "Produce in house A566",
+		"material": "371897",
+		"matDesc": "UHRFV",
+		"specGrp": "CU",
+		"matType": "FERT",
+		"extnType": "SORG",
+		"code": "90",
+		"subCode": "NA",
+		"cluster": "LA",
+		"country": "LA",
+		"useCase": "LA_SORG_QIS"
+	}, {
+		"set": "1",
+		"scenarios": "Produce in house A001",
+		"material": "387623",
+		"matDesc": "JDSCC",
+		"specGrp": "DU",
+		"matType": "FERT",
+		"extnType": "WHOUSE",
+		"code": "A01",
+		"subCode": "12",
+		"cluster": "BENELUX",
+		"country": "BE",
+		"useCase": "SIR_WHM_CPF"
+	}, {
+		"set": "1",
+		"scenarios": "Produce in house B120",
+		"material": "378910",
+		"matDesc": "HFSDY",
+		"specGrp": "CU",
+		"matType": "FERT",
+		"extnType": "WHOUSE",
+		"code": "B210",
+		"subCode": "NA",
+		"cluster": "BENELUX",
+		"country": "BE",
+		"useCase": "SIR_WHM"
+	}],
+	"confident": [{
+		"value": "OPEN",
+		"key": "1"
+	}],
+	"priority": [{
+		"value": "Normal",
+		"key": "1"
+	}],
+	"prrojectType": [{
+		"value": "Promotional Projects",
+		"key": "1"
+	}, {
+		"value": "Sample Projects",
+		"key": "2"
+	}, {
+		"value": "Lower Levels Creation",
+		"key": "3"
+	}, {
+		"value": "Innovation",
+		"key": "4"
+	}, {
+		"value": "Relocation",
+		"key": "5"
+	}],
+	"leadingCategory": [{
+		"value": "Beverages",
+		"key": "1"
+	}, {
+		"value": "Skin Care",
+		"key": "2"
+	}, {
+		"value": "Hair Care",
+		"key": "3"
+	}, {
+		"value": "Oral Care",
+		"key": "4"
+	}, {
+		"value": "Skin Cleansing",
+		"key": "5"
+	}],
+	"region": [{
+		"value": "CORDILLERA",
+		"key": "1"
+	}, {
+		"value": "SIRIUS",
+		"key": "2"
+	}, {
+		"value": "U2K2",
+		"key": "3"
+	}, {
+		"value": "FUSION",
+		"key": "4"
+	}],
+	"phases": [{
+		"row": ". 1",
+		"lCluster": "N_A",
+		"lCountry": "NA",
+		"role": "Produce & Sell",
+		"readyByDate": "20.02.19",
+		"suppliedFrom": "",
+		"selfManaged": true,
+		"taskCategory": "",
+		"dsDone": false,
+		"summaryStatus": "NOT ASSIGNED"
+	}],
+	"scenarioVariant": [{
+		"scenario": "Company Stores",
+		"description": "Company Stores",
+		"variant": "Standard",
+		"primaryPlant": "",
+		"CFMPrimaryPlant": ""
+	}, {
+		"scenario": "PR_Detail",
+		"description": "PR_Detail",
+		"variant": "Standard",
+		"primaryPlant": "",
+		"CFMPrimaryPlant": ""
+	}, {
+		"scenario": "US_Retail_0001",
+		"description": "US_Retail_0001",
+		"variant": "Standard",
+		"primaryPlant": "",
+		"CFMPrimaryPlant": ""
+	}, {
+		"scenario": "Unilever_ASCC",
+		"description": "Unilever_ASCC",
+		"variant": "Standard",
+		"primaryPlant": "",
+		"CFMPrimaryPlant": ""
+	}, {
+		"scenario": "CA_Retail_0001",
+		"description": "CA_Retail_0001",
+		"variant": "Standard",
+		"primaryPlant": "",
+		"CFMPrimaryPlant": ""
+	}],
+	"DashboardData": [{
+		"incidentID": "1",
+		"maintainanceCount": "Company Stores",
+		"startDate": "26282929",
+		"description": "",
+		"lineOfBusiness": "DU",
+		"status": "FERT",
+		"Reported By": "Basic Group",
+		"urgentCount": "5267818",
+		"priority": "NA",
+		"endDate1": "NA",
+		"endDate2": "NA",
+		"endDate3": "Basic FERT"
+	}, {
+		"incidentID": "1",
+		"maintainanceCount": "Company Stores",
+		"startDate": "26282929",
+		"description": "",
+		"lineOfBusiness": "DU",
+		"status": "FERT",
+		"Reported By": "SORG",
+		"urgentCount": "0055",
+		"priority": "40",
+		"endDate1": "NA",
+		"endDate2": "NA",
+		"endDate3": "Basic FERT"
+	}, {
+		"incidentID": "1",
+		"maintainanceCount": "Company Stores",
+		"startDate": "26282929",
+		"description": "",
+		"lineOfBusiness": "DU",
+		"status": "FERT",
+		"Reported By": "Basic Group",
+		"urgentCount": "5487",
+		"priority": "40",
+		"endDate1": "NA",
+		"endDate2": "NA",
+		"endDate3": "Basic FERT"
+	}, {
+		"incidentID": "1",
+		"maintainanceCount": "Company Stores",
+		"startDate": "26282929",
+		"description": "",
+		"lineOfBusiness": "DU",
+		"status": "FERT",
+		"Reported By": "SORG",
+		"urgentCount": "0005",
+		"priority": "40",
+		"endDate1": "NA",
+		"endDate2": "NA",
+		"endDate3": "Basic FERT"
+	}, {
+		"incidentID": "1",
+		"maintainanceCount": "Company Stores",
+		"startDate": "26282929",
+		"description": "",
+		"lineOfBusiness": "DU",
+		"status": "FERT",
+		"Reported By": "Basic Group",
+		"urgentCount": "5322",
+		"priority": "NA",
+		"endDate1": "NA",
+		"endDate2": "NA",
+		"endDate3": "Basic FERT"
+	}, {
+		"incidentID": "1",
+		"maintainanceCount": "PR_Retail",
+		"startDate": "26282929",
+		"description": "",
+		"lineOfBusiness": "DU",
+		"status": "FERT",
+		"Reported By": "SORG",
+		"urgentCount": "5495",
+		"priority": "NA",
+		"endDate1": "NA",
+		"endDate2": "NA",
+		"endDate3": "Basic FERT"
+	}, {
+		"incidentID": "1",
+		"maintainanceCount": "PR_Retail",
+		"startDate": "26282929",
+		"description": "",
+		"lineOfBusiness": "DU",
+		"status": "FERT",
+		"Reported By": "Basic Group",
+		"urgentCount": "2032953",
+		"priority": "40",
+		"endDate1": "NA",
+		"endDate2": "NA",
+		"endDate3": "Basic FERT"
+	}, {
+		"incidentID": "1",
+		"maintainanceCount": "PR_Retail",
+		"startDate": "26282929",
+		"description": "",
+		"lineOfBusiness": "DU",
+		"status": "FERT",
+		"Reported By": "SORG",
+		"urgentCount": "PR01",
+		"priority": "40",
+		"endDate1": "NA",
+		"endDate2": "NA",
+		"endDate3": "Basic FERT"
+	}, {
+		"incidentID": "1",
+		"maintainanceCount": "PR_Retail",
+		"startDate": "26282929",
+		"description": "",
+		"lineOfBusiness": "DU",
+		"status": "FERT",
+		"Reported By": "Basic Group",
+		"urgentCount": "PR01",
+		"priority": "40",
+		"endDate1": "NA",
+		"endDate2": "NA",
+		"endDate3": "Basic FERT"
+	}, {
+		"incidentID": "1",
+		"maintainanceCount": "PR_Retail",
+		"startDate": "26282929",
+		"description": "",
+		"lineOfBusiness": "DU",
+		"status": "FERT",
+		"Reported By": "Basic Group",
+		"urgentCount": "0055",
+		"priority": "40",
+		"endDate1": "NA",
+		"endDate2": "NA",
+		"endDate3": "Basic FERT"
+	}, {
+		"incidentID": "1",
+		"maintainanceCount": "Company Stores",
+		"startDate": "26282929",
+		"description": "",
+		"lineOfBusiness": "DU",
+		"status": "FERT",
+		"Reported By": "Basic Group",
+		"urgentCount": "0055",
+		"priority": "NA",
+		"endDate1": "NA",
+		"endDate2": "NA",
+		"endDate3": "Basic FERT"
+	}, {
+		"incidentID": "1",
+		"maintainanceCount": "Company Stores",
+		"startDate": "26282929",
+		"description": "",
+		"lineOfBusiness": "DU",
+		"status": "FERT",
+		"Reported By": "SORG",
+		"urgentCount": "5267818",
+		"priority": "NA",
+		"endDate1": "NA",
+		"endDate2": "NA",
+		"endDate3": "Basic FERT"
+	}, {
+		"incidentID": "1",
+		"maintainanceCount": "Company Stores",
+		"startDate": "26282929",
+		"description": "",
+		"lineOfBusiness": "DU",
+		"status": "FERT",
+		"Reported By": "SORG",
+		"urgentCount": "5267818",
+		"priority": "NA",
+		"endDate1": "NA",
+		"endDate2": "NA",
+		"endDate3": "Basic FERT"
+	}, {
+		"incidentID": "1",
+		"maintainanceCount": "Company Stores",
+		"startDate": "26282929",
+		"description": "",
+		"lineOfBusiness": "DU",
+		"status": "FERT",
+		"Reported By": "SORG",
+		"urgentCount": "5267818",
+		"priority": "NA",
+		"endDate1": "NA",
+		"endDate2": "NA",
+		"endDate3": "Basic FERT"
+	}, {
+		"incidentID": "1",
+		"maintainanceCount": "Company Stores",
+		"startDate": "26282929",
+		"description": "",
+		"lineOfBusiness": "DU",
+		"status": "FERT",
+		"Reported By": "SORG",
+		"urgentCount": "5267818",
+		"priority": "NA",
+		"endDate1": "NA",
+		"endDate2": "NA",
+		"endDate3": "Basic FERT"
+	}, {
+		"incidentID": "1",
+		"maintainanceCount": "Company Stores",
+		"startDate": "26282929",
+		"description": "",
+		"lineOfBusiness": "DU",
+		"status": "FERT",
+		"Reported By": "Basic Group",
+		"urgentCount": "5267818",
+		"priority": "NA",
+		"endDate1": "NA",
+		"endDate2": "NA",
+		"endDate3": "Basic FERT"
+	}, {
+		"incidentID": "1",
+		"maintainanceCount": "Company Stores",
+		"startDate": "26282929",
+		"description": "",
+		"lineOfBusiness": "DU",
+		"status": "FERT",
+		"Reported By": "SORG",
+		"urgentCount": "5267818",
+		"priority": "NA",
+		"endDate1": "NA",
+		"endDate2": "NA",
+		"endDate3": "Basic FERT"
+	}, {
+		"incidentID": "1",
+		"maintainanceCount": "Company Stores",
+		"startDate": "26282929",
+		"description": "",
+		"lineOfBusiness": "DU",
+		"status": "FERT",
+		"Reported By": "Basic Group",
+		"urgentCount": "5267818",
+		"priority": "NA",
+		"endDate1": "NA",
+		"endDate2": "NA",
+		"endDate3": "Basic FERT"
+	}, {
+		"incidentID": "1",
+		"maintainanceCount": "Company Stores",
+		"startDate": "26282929",
+		"description": "",
+		"lineOfBusiness": "DU",
+		"status": "FERT",
+		"Reported By": "Basic Group",
+		"urgentCount": "5267818",
+		"priority": "NA",
+		"endDate1": "NA",
+		"endDate2": "NA",
+		"endDate3": "Basic FERT"
+	}, {
+		"incidentID": "1",
+		"maintainanceCount": "Company Stores",
+		"startDate": "26282929",
+		"description": "",
+		"lineOfBusiness": "DU",
+		"status": "FERT",
+		"Reported By": "Basic Group",
+		"urgentCount": "5267818",
+		"priority": "NA",
+		"endDate1": "NA",
+		"endDate2": "NA",
+		"endDate3": "Basic FERT"
+	}, {
+		"incidentID": "1",
+		"maintainanceCount": "Company Stores",
+		"startDate": "26282929",
+		"description": "",
+		"lineOfBusiness": "DU",
+		"status": "FERT",
+		"Reported By": "Basic Group",
+		"urgentCount": "5267818",
+		"priority": "NA",
+		"endDate1": "NA",
+		"endDate2": "NA",
+		"endDate3": "Basic FERT"
+	}],
+	"inbox": [{
+		"taskName": "Basic Data",
+		"project": "67982",
+		"cat": "SCA",
+		"node": "M2.4.1",
+		"object": "Basic",
+		"key": "20",
+		"sKey": "BPMCEREMOTE",
+		"material": "67637924",
+		"materialDesc": "R2",
+		"type": "FERT",
+		"country": "N_A.NA",
+		"group": "DU",
+		"creationDate": "Oct 22, 2018",
+		"dueDate": "Oct 24, 2018",
+		"status": "IN_PROGRESS",
+		"prority": "MEDIUM",
+		"taskTitle": "P#67982"
+	}, {
+		"taskName": "Detail Scoping",
+		"project": "456123",
+		"cat": "SCA",
+		"node": "DS1.1",
+		"object": "Scoping",
+		"key": "Produce & Sell",
+		"sKey": "",
+		"material": "",
+		"materialDesc": "",
+		"type": "",
+		"country": "NA",
+		"group": "",
+		"creationDate": "",
+		"dueDate": "",
+		"status": "READY",
+		"prority": "Medium",
+		"taskTitle": ""
+	}, {
+		"taskName": "",
+		"project": "",
+		"cat": "",
+		"node": "",
+		"object": "",
+		"key": "",
+		"sKey": "",
+		"material": "",
+		"materialDesc": "",
+		"type": "",
+		"country": "",
+		"group": "",
+		"creationDate": "",
+		"dueDate": "",
+		"status": "",
+		"prority": "",
+		"taskTitle": ""
+	}, {
+		"taskName": "",
+		"project": "",
+		"cat": "",
+		"node": "",
+		"object": "",
+		"key": "",
+		"sKey": "",
+		"material": "",
+		"materialDesc": "",
+		"type": "",
+		"country": "",
+		"group": "",
+		"creationDate": "",
+		"dueDate": "",
+		"status": "",
+		"prority": "",
+		"taskTitle": ""
+	}, {
+		"taskName": "",
+		"project": "",
+		"cat": "",
+		"node": "",
+		"object": "",
+		"key": "",
+		"sKey": "",
+		"material": "",
+		"materialDesc": "",
+		"type": "",
+		"country": "",
+		"group": "",
+		"creationDate": "",
+		"dueDate": "",
+		"status": "",
+		"prority": "",
+		"taskTitle": ""
+	}, {
+		"taskName": "",
+		"project": "",
+		"cat": "",
+		"node": "",
+		"object": "",
+		"key": "",
+		"sKey": "",
+		"material": "",
+		"materialDesc": "",
+		"type": "",
+		"country": "",
+		"group": "",
+		"creationDate": "",
+		"dueDate": "",
+		"status": "",
+		"prority": "",
+		"taskTitle": ""
+	}],
+	"basicTable": [{
+		"denominator": "1",
+		"unit": "EA",
+		"numerator": "1",
+		"ean": "",
+		"eanCategory": "",
+		"length": "0",
+		"width": "0",
+		"height": "",
+		"lwh": "",
+		"volume": "",
+		"volumeUnit": "",
+		"grossWeight": "",
+		"netWeight": "",
+		"weightUnit": "KG"
+	}, {
+		"denominator": "1",
+		"unit": "PUM",
+		"numerator": "1",
+		"ean": "",
+		"eanCategory": "",
+		"length": "0",
+		"width": "0",
+		"height": "",
+		"lwh": "",
+		"volume": "",
+		"volumeUnit": "",
+		"grossWeight": "",
+		"netWeight": "",
+		"weightUnit": ""
+	}],
+	"openTask": [{
+		"value": "Open Tasks",
+		"key": "1"
+	}],
+	"allTask": [{
+		"value": "All Tasks",
+		"key": "1"
+	}],
+	"successVisible": false,
+	"errorVisible": false,
+	"projectId": "",
+	"roleTableVisible": false
+}

@@ -1,0 +1,264 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "newproductintroductionui.newproductintroductionui",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		},
+		"dataSources": {
+			"oModelData": {
+				"uri": "model/colgate.json",
+				"type": "JSON"
+			},
+			"oSpecTblData": {
+				"uri": "model/specData.json",
+				"type": "JSON"
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "newproductintroductionui.newproductintroductionui.view.App",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "newproductintroductionui.newproductintroductionui.i18n.i18n"
+				}
+			},
+			"oProjectDetailTblModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"oProjectSearchModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"oProjectDetailModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"oTempObjectModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"oLocalJsonDataModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "oModelData"
+			},
+			"oDropdownLookupsModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"oUiElementVisibilityModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"oScenarioModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"oUserModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"oSpecTblDataModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "oSpecTblData"
+			},
+			"oBasicDataCollectionModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"oBasicDataMandatoryFldModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"oTaskDataModel": {
+				"type": "sap.ui.model.json.JSONModel"
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "newproductintroductionui.newproductintroductionui.view",
+				"controlAggregation": "pages",
+				"controlId": "NPI_APP_VIEW",
+				"routerClass": "sap.m.routing.Router",
+				"clearControlAggregation": false
+			},
+			"routes": [
+				{
+					"name": "",
+					"pattern": "",
+					"target": [
+						"scoping"
+					]
+				},
+				{
+					"name": "basicDataCollection",
+					"pattern": "basicDataCollection/{taskId}",
+					"target": [
+						"basicDataCollection"
+					]
+				},
+				{
+					"name": "detailScopingView",
+					"pattern": "detailScopingView/{taskId}",
+					"target": [
+						"detailScopingView"
+					]
+				},
+				{
+					"name": "mrpView",
+					"pattern": "mrpView/{taskId}",
+					"target": [
+						"mrpView"
+					]
+				},
+				{
+					"name": "warehouseView",
+					"pattern": "warehouseView/{taskId}",
+					"target": [
+						"warehouseView"
+					]
+				},
+				{
+					"name": "createNewProject",
+					"pattern": "createNewProject/{bVal}",
+					"target": [
+						"createNewProject"
+					]
+				},
+				{
+					"name": "ficoView",
+					"pattern": "ficoView/{taskId}",
+					"target": [
+						"ficoView"
+					]
+				},
+				{
+					"name": "salesOrgView",
+					"pattern": "salesOrgView/{taskId}",
+					"target": [
+						"salesOrgView"
+					]
+				}
+			],
+			"targets": {
+				"scoping": {
+					"viewType": "XML",
+					"viewName": "scoping",
+					"viewPath": "newproductintroductionui.newproductintroductionui.view",
+					"routerClass": "sap.m.routing.Router",
+					"controlAggregation": "pages",
+					"controlId": "NPI_APP_VIEW"
+				},
+				"basicDataCollection": {
+					"viewType": "XML",
+					"viewName": "basicDataCollection",
+					"viewPath": "newproductintroductionui.newproductintroductionui.view",
+					"controlAggregation": "pages",
+					"routerClass": "sap.m.routing.Router",
+					"controlId": "NPI_APP_VIEW"
+				},
+				"launchPage": {
+					"viewType": "XML",
+					"viewName": "launchPage",
+					"viewPath": "newproductintroductionui.newproductintroductionui.view",
+					"controlAggregation": "pages",
+					"routerClass": "sap.m.routing.Router",
+					"controlId": "NPI_APP_VIEW"
+				},
+				"detailScopingView": {
+					"viewType": "XML",
+					"viewName": "detailScopingView",
+					"viewPath": "newproductintroductionui.newproductintroductionui.view",
+					"controlAggregation": "pages",
+					"routerClass": "sap.m.routing.Router",
+					"controlId": "NPI_APP_VIEW"
+				},
+				"mrpView": {
+					"viewType": "XML",
+					"viewName": "mrpView",
+					"viewPath": "newproductintroductionui.newproductintroductionui.view",
+					"controlAggregation": "pages",
+					"routerClass": "sap.m.routing.Router",
+					"controlId": "NPI_APP_VIEW"
+				},
+				"warehouseView": {
+					"viewType": "XML",
+					"viewName": "warehouseView",
+					"viewPath": "newproductintroductionui.newproductintroductionui.view",
+					"controlAggregation": "pages",
+					"routerClass": "sap.m.routing.Router",
+					"controlId": "NPI_APP_VIEW"
+				},
+				"createNewProject": {
+					"viewType": "XML",
+					"viewName": "createNewProject"
+				},
+				"ficoView": {
+					"viewType": "XML",
+					"viewName": "ficoView",
+					"viewPath": "newproductintroductionui.newproductintroductionui.view",
+					"controlAggregation": "pages",
+					"routerClass": "sap.m.routing.Router",
+					"controlId": "NPI_APP_VIEW"
+				},
+				"salesOrgView": {
+					"viewType": "XML",
+					"viewName": "salesOrgView",
+					"viewPath": "newproductintroductionui.newproductintroductionui.view",
+					"controlAggregation": "pages",
+					"routerClass": "sap.m.routing.Router",
+					"controlId": "NPI_APP_VIEW"
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "",
+		"_version": "1.1.0"
+	}
+}

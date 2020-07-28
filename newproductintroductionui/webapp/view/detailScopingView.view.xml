@@ -1,0 +1,198 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table"
+	controllerName="newproductintroductionui.newproductintroductionui.controller.detailScopingView" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page showHeader="false" class="createProjectBackgroundColor sapUiSizeCompact" floatingFooter="true">
+		<content>
+			<!--<MessageStrip text="{oScenarioModel>/successErrorMsg}" type="{oScenarioModel>/messageType}" visible="{oScenarioModel>/successMsgVisible}"
+				showIcon="true" showCloseButton="false"></MessageStrip>-->
+			<!--Process Flow -->
+			<FlexBox justifyContent="Center" class="sapUiSmallMarginTop processFLowMarginCls">
+				<items>
+					<HBox>
+						<core:Icon src="sap-icon://begin" class="dtlScopBeginIconClass"></core:Icon>
+						<HBox class="lineHBoxStylenew"></HBox>
+					</HBox>
+					<VBox>
+						<HBox>
+							<Button text="1" press="onScenarioPress" class="sapUiSizeCozy"></Button>
+							<HBox class="lineHBoxStylenew1"></HBox>
+						</HBox>
+						<Label text="{i18n>SCENARIOS}"/>
+					</VBox>
+					<VBox>
+						<HBox>
+							<Button text="2" press="openScenarioMaterials" class="sapUiSizeCozy"></Button>
+							<HBox class="lineHBoxStylenew1"></HBox>
+						</HBox>
+						<Label text="{i18n>MATERIALS}"/>
+					</VBox>
+					<VBox>
+						<HBox>
+							<Button text="3" press="openScenarioSalesArea" class="sapUiSizeCozy"></Button>
+							<HBox class="lineHBoxStylenew1"></HBox>
+						</HBox>
+						<Label text="{i18n>SALESAREA}"/>
+					</VBox>
+					<VBox>
+						<HBox>
+							<Button class="sapUiSizeCozy" press="openScenarioPlantPopup" text="4"></Button>
+							<HBox class="lineHBoxStylenew1"></HBox>
+						</HBox>
+						<Label text="{i18n>PLANTS}"/>
+					</VBox>
+					<VBox>
+						<HBox>
+							<Button class="sapUiSizeCozy" press="openScenarioWarehouse" text="5"></Button>
+							<HBox class="lineHBoxStylenew1"></HBox>
+						</HBox>
+						<Label text="{i18n>WAREHOUSE}"/>
+					</VBox>
+					<HBox>
+						<VBox class="sizeVBoxStylenew1"></VBox>
+					</HBox>
+				</items>
+			</FlexBox>
+			<!--Process Flow -->
+			<VBox class="sapUiSmallMarginTop sapUiTinyMarginBeginEnd">
+				<Toolbar class="basicDataToolbarBrdClass" height="2rem">
+					<HBox>
+						<Text text="{i18n>SCENARIOS_AND_DUE_DATE_SUMMARY}" class="hdrTextClass"></Text>
+					</HBox>
+					<VBox class="basicDataHLineClass sapUiSmallMarginBegin sapUiTinyMarginEnd" width="100%"></VBox>
+				</Toolbar>
+				<FlexBox alignItems="Start" justifyContent="Start" class="sapUiTinyMarginTop sapUiTinyMarginBeginEnd">
+					<items>
+						<!--<HBox class="sapUiSmallMarginEnd">-->
+						<!--	<Label text="{i18n>CLUSTER}" class="sapUiTinyMarginTop sapUiSmallMarginEnd"/>-->
+						<!--	<Select forceSelection="false" selectedKey="{oScenarioModel>/contextData/leadCluster}" items="{oDropdownLookupsModel>/cluster}"-->
+						<!--		enabled="false">-->
+						<!--		<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>-->
+						<!--	</Select>-->
+						<!--</HBox>-->
+						<HBox class="sapUiSmallMarginEnd">
+							<Label text="{i18n>COUNTRY}" class="sapUiTinyMarginTop sapUiSmallMarginEnd"/>
+							<Select forceSelection="false" selectedKey="{oScenarioModel>/contextData/leadCountry}" items="{oDropdownLookupsModel>/countryList}"
+								enabled="false">
+								<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>name}"/>
+							</Select>
+						</HBox>
+						<HBox class="sapUiSmallMarginEnd">
+							<Label text="{i18n>ROLE}" class="sapUiTinyMarginTop sapUiSmallMarginEnd"/>
+							<Select forceSelection="false" selectedKey="{oScenarioModel>/contextData/role}" enabled="false" items="{oDropdownLookupsModel>/roles}">
+								<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
+							</Select>
+						</HBox>
+						<!--commented by shridevi (INC01057)-->
+						<!--<HBox class="sapUiSmallMarginEnd">-->
+						<!--	<Label text="{i18n>PHASE}" class="sapUiTinyMarginTop sapUiSmallMarginEnd"/>-->
+						<!--	<Input value="{oScenarioModel>/contextData/phase}" enabled="false"/>-->
+						<!--</HBox>-->
+						<!--commented by shridevi (INC01057)-->
+					</items>
+				</FlexBox>
+				<table:Table rows="{oScenarioModel>/scenarios}" selectionMode="Single" id="MM_DETAIL_SCOPING_TBL" rowSelectionChange="showScenarioExt"
+					visibleRowCount="8" alternateRowColors="true" rowHeight="40px" showNoData="true"
+					class="sapUiTinyMarginTop sapUiTinyMarginBeginEnd sapUiTableBorderClass">
+					<table:columns>
+						<table:Column>
+							<Label text="{i18n>SCENARION_NO}" design="Bold"/>
+							<table:template>
+								<Text text="{oScenarioModel>scenario/setNumber}" wrapping="false"/>
+							</table:template>
+						</table:Column>
+						<table:Column>
+							<Label text="{i18n>SCENARIO}" design="Bold"/>
+							<table:template>
+								<Text text="{oScenarioModel>scenario/scenarioCode}" wrapping="false"/>
+							</table:template>
+						</table:Column>
+						<table:Column>
+							<Label text="{i18n>DESCRIPTION}" design="Bold"/>
+							<table:template>
+								<Text text="{oScenarioModel>scenario/scenarioDescription}" wrapping="false"/>
+							</table:template>
+						</table:Column>
+						<table:Column>
+							<Label text="{i18n>READY_BY_DATE}" design="Bold"/>
+							<table:template>
+								<Text
+									text="{path:'oScenarioModel>scenario/readyByDate', formatter:'newproductintroductionui.newproductintroductionui.formatter.formatter.formatDateObject'}"/>
+							</table:template>
+						</table:Column>
+						<table:Column>
+							<Label text="{i18n>VARIANT}" design="Bold"/>
+							<table:template>
+								<Text text="{oScenarioModel>scenario/variant}" wrapping="false"/>
+							</table:template>
+						</table:Column>
+						<table:Column>
+							<Label text="{i18n>COMMENTS}" design="Bold"/>
+							<table:template>
+								<Text text="{oScenarioModel>scenario/comments}" wrapping="false"/>
+							</table:template>
+						</table:Column>
+					</table:columns>
+				</table:Table>
+			</VBox>
+			<VBox class="sapUiSmallMarginTop sapUiTinyMarginBeginEnd">
+				<Toolbar class="sapUiTinyMarginBegin basicDataToolbarBrdClass" height="2rem">
+					<HBox>
+						<Text text="Assigned Materials and Organizational Units to the selected set" class="hdrTextClass"></Text>
+					</HBox>
+					<VBox class="basicDataHLineClass sapUiSmallMarginBegin sapUiTinyMarginEnd" width="100%"></VBox>
+				</Toolbar>
+				<table:Table selectionMode="Single" id="MM_DETAIL_SCOPING_PLANT_TBL" rowSelectionChange="onAddPlantsForScenarioExt"
+					alternateRowColors="true" rowHeight="40px" showNoData="true" selectionBehavior="RowOnly" visibleRowCount="5"
+					class="sapUiTinyMarginTopBottom sapUiTinyMarginBeginEnd sapUiTableBorderClass">
+					<table:columns>
+						<!--commented by shridevi (INC01057)-->
+						<!--<table:Column>-->
+						<!--	<Label text="{i18n>SET_NO}" design="Bold"/>-->
+						<!--	<table:template>-->
+						<!--		<Text text="{oScenarioModel>scenarioNumber}" wrapping="false"/>-->
+						<!--	</table:template>-->
+						<!--</table:Column>-->
+						<!--<table:Column>-->
+						<!--	<Label text="{i18n>SCENARIO}" design="Bold"/>-->
+						<!--	<table:template>-->
+						<!--		<Text text="{oScenarioModel>scenarioNumber}" wrapping="false"/>-->
+						<!--	</table:template>-->
+						<!--</table:Column>-->
+						<!--commented by shridevi INC01057-->
+						<table:Column>
+							<Label text="{i18n>OBJECT_TYPE}" design="Bold"/>
+							<table:template>
+								<Text text="{oScenarioModel>objectType}" wrapping="false"/>
+							</table:template>
+						</table:Column>
+						<table:Column>
+							<Label text="{i18n>KEY}" design="Bold"/>
+							<table:template>
+								<Text text="{oScenarioModel>key}" wrapping="false"/>
+							</table:template>
+						</table:Column>
+						<table:Column>
+							<Label text="{i18n>SUBKEY}" design="Bold"/>
+							<table:template>
+								<Text text="{oScenarioModel>subKey}" wrapping="false"/>
+							</table:template>
+						</table:Column>
+						<table:Column>
+							<Label text="{i18n>DESCRIPTION}" design="Bold"/>
+							<table:template>
+								<Text text="{oScenarioModel>description}" wrapping="false"/>
+							</table:template>
+						</table:Column>
+					</table:columns>
+				</table:Table>
+			</VBox>
+		</content>
+		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button text="{i18n>CLOSE}" type="Reject"></Button>
+				<Button text="{i18n>SAVE}" type="Accept" press="onSaveDetailScope"></Button>
+				<Button text="{i18n>SUBMIT}" type="Emphasized" press="onCompletetask"></Button>
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

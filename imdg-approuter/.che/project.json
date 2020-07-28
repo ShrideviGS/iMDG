@@ -1,0 +1,1 @@
+{"type":"approuter.nodejs","builders":{"default":"sap.nodejs","configs":{}},"runners":{"configs":{}},"attributes":{},"description":"imdg-approuter","mixinTypes":["mtamodule"]}

@@ -1,0 +1,76 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" class="sapUiSizeCompact" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table">
+	<VBox>
+		<Toolbar height="2rem" class="basicDataToolbarBrdClass">
+			<HBox>
+				<Text text="{i18n>GENERAL_DATA}" class="hdrTextClass"></Text>
+			</HBox>
+			<VBox class="basicDataHLineClass sapUiSmallMarginBegin" width="100%"></VBox>
+		</Toolbar>
+		<l:Grid defaultSpan="XL3 L3 M6 S12">
+			<l:content>
+				<VBox>
+					<Label text="{i18n>ORDER_UNIT}:" class="sapUiTinyMarginTop"></Label>
+					<ComboBox items="{oDropdownLookupsModel>/orderUnits}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+						selectedKey="{oBasicDataCollectionModel>/basicDataDto/orderUnit}" showSecondaryValues="true" width="100%">
+						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>uomDesc30}" additionalText="{oDropdownLookupsModel>code}"/>
+						<customData>
+							<core:CustomData key="target" value="DROP_DOWN"/>
+						</customData>
+					</ComboBox>
+				</VBox>
+				<VBox class="sapUiSmallMarginBegin">
+					<Label text="{i18n>VARIABLE_UNIT}:" class="sapUiTinyMarginTop"></Label>
+					<Input value="{oBasicDataCollectionModel>/basicDataDto/variableOrderUnit}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
+				</VBox>
+			</l:content>
+		</l:Grid>
+		<Toolbar height="2rem" class="basicDataToolbarBrdClass sapUiSmallMarginTop">
+			<HBox>
+				<Text text="{i18n>STAGING}" class="hdrTextClass"></Text>
+			</HBox>
+			<VBox class="basicDataHLineClass sapUiSmallMarginBegin" width="100%"></VBox>
+		</Toolbar>
+		<l:Grid defaultSpan="XL3 L3 M6 S12">
+			<l:content>
+				<VBox>
+					<Label text="{i18n>MANUFACTURER}:" class="sapUiTinyMarginTop"></Label>
+					<ComboBox items="{oDropdownLookupsModel>/manufacturers}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+						selectedKey="{oBasicDataCollectionModel>/basicDataDto/manufacturer}" showSecondaryValues="true" width="100%">
+						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
+						<customData>
+							<core:CustomData key="target" value="DROP_DOWN"/>
+						</customData>
+					</ComboBox>
+				</VBox>
+				<VBox class="sapUiSmallMarginBegin">
+					<Label text="{i18n>MFR_PART_NUMBER}:" class="sapUiTinyMarginTop"></Label>
+					<Input value="{oBasicDataCollectionModel>/basicDataDto/mfrPartNumber}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
+				</VBox>
+				<VBox class="sapUiSmallMarginBegin">
+					<Label text="{i18n>MFR_PART_PROFILE}:" class="sapUiTinyMarginTop"></Label>
+					<Input value="{oBasicDataCollectionModel>/basicDataDto/mfrPartProfile}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
+				</VBox>
+			</l:content>
+		</l:Grid>
+		<Toolbar height="2rem" class="basicDataToolbarBrdClass sapUiSmallMarginTop">
+			<HBox>
+				<Text text="{i18n>PURCHASING_VALUES}" class="hdrTextClass"></Text>
+			</HBox>
+			<VBox class="basicDataHLineClass sapUiSmallMarginBegin" width="100%"></VBox>
+		</Toolbar>
+		<l:Grid defaultSpan="XL3 L3 M6 S12">
+			<l:content>
+				<VBox>
+					<Label text="{i18n>PURCHASING_VALUE_KEY}:" class="sapUiTinyMarginTop"></Label>
+					<ComboBox items="{oDropdownLookupsModel>/purchvaluekeys}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+						selectedKey="{oBasicDataCollectionModel>/basicDataDto/purchaseValueKey}" showSecondaryValues="true" width="100%">
+						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>code}" additionalText="{oDropdownLookupsModel>code}"/>
+						<customData>
+							<core:CustomData key="target" value="DROP_DOWN"/>
+						</customData>
+					</ComboBox>
+				</VBox>
+			</l:content>
+		</l:Grid>
+	</VBox>
+</core:FragmentDefinition>

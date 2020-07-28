@@ -1,0 +1,46 @@
+{
+	"tableData": [{
+		"specData": "Minimum remaining shelf life",
+		"min": "-",
+		"target": "-",
+		"max": "-"
+	}, {
+		"specData": "Minimum remaining shelf life",
+		"min": "-",
+		"target": "-",
+		"max": "-"
+	}, {
+		"specData": "Total shelf life",
+		"min": "-",
+		"target": "-",
+		"max": "-"
+	}, {
+		"specData": "Total shelf life",
+		"min": "-",
+		"target": "-",
+		"max": "-"
+	}, {
+		"specData": "Storage temperature",
+		"min": "-",
+		"target": "-",
+		"max": "-"
+	}, {
+		"specData": "Transportation temperature",
+		"min": "-",
+		"target": "-",
+		"max": "-"
+	}, {
+		"specData": "Flash Point",
+		"min": "-",
+		"target": "-",
+		"max": "-"
+	}],
+
+	"aTree": {
+		"aTreeSub": {
+			"hierarchies": []
+		}
+
+	}
+
+}

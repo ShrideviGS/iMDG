@@ -1,0 +1,280 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" class="sapUiSizeCompact" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table">
+	<VBox>
+		<Toolbar height="2rem" class="basicDataToolbarBrdClass">
+			<HBox>
+				<Text text="{i18n>GENERAL_DATA}" class="hdrTextClass sapUiSizeCompact"></Text>
+			</HBox>
+			<VBox class="basicDataHLineClass sapUiSmallMarginBegin" width="100%"></VBox>
+		</Toolbar>
+		<l:Grid defaultSpan="XL3 L3 M6 S12" vSpacing="1" hSpacing="1">
+			<l:content>
+				<VBox>
+					<Label text="{i18n>BASE_UNIT}:" class="sapUiTinyMarginTop"></Label>
+					<!--	<Select forceSelection="false" enabled="false" selectedKey="{oBasicDataCollectionModel>/basicDataDto/baseUnit}"
+						items="{oDropdownLookupsModel>/baseUnits}" width="100%">
+						<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
+					</Select>-->
+					<ComboBox items="{oDropdownLookupsModel>/baseUnits}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+						selectedKey="{oBasicDataCollectionModel>/basicDataDto/baseUnit}" showSecondaryValues="true" width="100%">
+						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>uomDesc30}" additionalText="{oDropdownLookupsModel>code}"/>
+						<customData>
+							<core:CustomData key="target" value="DROP_DOWN"/>
+						</customData>
+					</ComboBox>
+				</VBox>
+				<VBox >
+					<Label text="{i18n>MATERIAL_GROUP}:" class="sapUiTinyMarginTop" required="true"></Label>
+					<!--<Select forceSelection="false" selectedKey="{oBasicDataCollectionModel>/basicDataDto/materialGroup}"
+						items="{oDropdownLookupsModel>/materialgroups}" width="100%">
+						<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
+					</Select>-->
+					<ComboBox items="{oDropdownLookupsModel>/materialgroups}" id="mara_matkl" change="onChangeComboBox"
+						editable="{oSpecTblDataModel>/isBasicEditable}" selectedKey="{oBasicDataCollectionModel>/basicDataDto/materialGroup}"
+						showSecondaryValues="true" width="100%">
+						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
+						<customData>
+							<core:CustomData key="target" value="DROP_DOWN"/>
+						</customData>
+					</ComboBox>
+				</VBox>
+				<VBox >
+					<Label text="{i18n>OLD_MATERIAL_NUMBER}:" class="sapUiTinyMarginTop"></Label>
+					<Input value="{oBasicDataCollectionModel>/basicDataDto/oldMatNumber}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
+				</VBox>
+				<!--<VBox class="sapUiSmallMarginBegin">-->
+				<!--<Label text="{i18n>EXTERNAL_MATERIAL_GROUP}:" class="sapUiTinyMarginTop" required="true"></Label>-->
+				<!--	<Select forceSelection="false" id="EXT_MAT_GRP_ID" selectedKey="{oBasicDataCollectionModel>/basicDataDto/extnlMatGroup}"
+						items="{oDropdownLookupsModel>/extMaterialGroup}" width="100%">
+						<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
+					</Select>-->
+				<!--<ComboBox items="{oDropdownLookupsModel>/extMaterialGroup}" id="mara_extwg" change="onChangeComboBox"-->
+				<!--	valueState="{oTempObjectModel>/extMatGrpState}" selectedKey="{oBasicDataCollectionModel>/basicDataDto/extnlMatGroup}"-->
+				<!--	showSecondaryValues="true" width="100%">-->
+				<!--	<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>-->
+				<!--	<customData>-->
+				<!--		<core:CustomData key="target" value="DROP_DOWN"/>-->
+				<!--	</customData>-->
+				<!--</ComboBox>-->
+				<!--</VBox>-->
+				<VBox>
+					<Label text="{i18n>DIVISION}:" class="sapUiTinyMarginTop"></Label>
+					<!--<Select forceSelection="false" selectedKey="{oBasicDataCollectionModel>/basicDataDto/salesDivision}"
+						items="{oDropdownLookupsModel>/divisionUnits}" width="100%">
+						<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>code}"/>
+					</Select>-->
+					<ComboBox items="{oDropdownLookupsModel>/divisionUnits}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+						selectedKey="{oBasicDataCollectionModel>/basicDataDto/salesDivision}" showSecondaryValues="true" width="100%">
+						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>code}" additionalText="{oDropdownLookupsModel>code}"/>
+						<customData>
+							<core:CustomData key="target" value="DROP_DOWN"/>
+						</customData>
+					</ComboBox>
+				</VBox>
+				<VBox >
+					<Label text="{i18n>LAB_OFFICE}:" class="sapUiTinyMarginTop"></Label>
+					<!--<Select forceSelection="false" width="100%" selectedKey="{oBasicDataCollectionModel>/basicDataDto/labOffice}"
+						items="{oDropdownLookupsModel>/labOffices}">
+						<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
+					</Select>-->
+					<ComboBox items="{oDropdownLookupsModel>/labOffices}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+						selectedKey="{oBasicDataCollectionModel>/basicDataDto/labOffice}" showSecondaryValues="true" width="100%">
+						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
+						<customData>
+							<core:CustomData key="target" value="DROP_DOWN"/>
+						</customData>
+					</ComboBox>
+				</VBox>
+				<VBox>
+					<Label text="{i18n>GEN_ITEM_CAT_GROUP}:" class="sapUiTinyMarginTop" required="true"></Label>
+					<!--<Select forceSelection="false" selectedKey="{oBasicDataCollectionModel>/basicDataDto/genItemCatGroup}"
+						items="{oDropdownLookupsModel>/generalItemCategory}" width="100%">
+						<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
+					</Select>-->
+					<ComboBox items="{oDropdownLookupsModel>/generalItemCategory}" id="mara_mtpos_mara" change="onChangeComboBox"
+						editable="{oSpecTblDataModel>/isBasicEditable}" selectedKey="{oBasicDataCollectionModel>/basicDataDto/genItemCatGroup}"
+						showSecondaryValues="true" width="100%">
+						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
+						<customData>
+							<core:CustomData key="target" value="DROP_DOWN"/>
+						</customData>
+					</ComboBox>
+				</VBox>
+				<VBox>
+					<Label text="{i18n>PRODUCT_ALLOCATION}:" class="sapUiTinyMarginTop"></Label>
+					<!--	<Select forceSelection="false" selectedKey="{oBasicDataCollectionModel>/basicDataDto/productAllocation}"
+						items="{oDropdownLookupsModel>/productAllocations}" width="100%">
+						<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
+					</Select>-->
+					<ComboBox items="{oDropdownLookupsModel>/productAllocations}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+						selectedKey="{oBasicDataCollectionModel>/basicDataDto/productAllocation}" showSecondaryValues="true" width="100%">
+						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
+						<customData>
+							<core:CustomData key="target" value="DROP_DOWN"/>
+						</customData>
+					</ComboBox>
+				</VBox>
+				<VBox>
+					<Label text="{i18n>X_PLANT_MAT_STATUS}:" class="sapUiTinyMarginTop"></Label>
+					<!--<Select forceSelection="false" selectedKey="{oBasicDataCollectionModel>/basicDataDto/xplantMatStatus}"
+						items="{oDropdownLookupsModel>/XplantStatus}" width="100%">
+						<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
+					</Select>-->
+					<ComboBox items="{oDropdownLookupsModel>/XplantStatus}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+						selectedKey="{oBasicDataCollectionModel>/basicDataDto/xplantMatStatus}" showSecondaryValues="true" width="100%">
+						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
+						<customData>
+							<core:CustomData key="target" value="DROP_DOWN"/>
+						</customData>
+					</ComboBox>
+				</VBox>
+				<VBox>
+					<Label text="{i18n>X_PLANT_VALID_FROM}:" class="sapUiTinyMarginTop"></Label>
+					<DatePicker valueFormat="yyyy-MM-dd" displayFormat="yyyy-MM-dd" editable="{oSpecTblDataModel>/isBasicEditable}"
+						value="{path:'{oBasicDataCollectionModel>/basicDataDto/xplantValidFrom}', formatter:'newproductintroductionui.newproductintroductionui.formatter.formatter.formatDateObject'}"/>
+				</VBox>
+				<VBox>
+					<Label text="{i18n>X_D_CHAIN_STATUS}:" class="sapUiTinyMarginTop"></Label>
+					<!--<Select forceSelection="false" selectedKey="{oBasicDataCollectionModel>/basicDataDto/xdchainStatus}"
+						items="{oDropdownLookupsModel>/dChainStatus}" width="100%">
+						<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
+					</Select>-->
+					<ComboBox items="{oDropdownLookupsModel>/dChainStatus}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+						selectedKey="{oBasicDataCollectionModel>/basicDataDto/xdchainStatus}" showSecondaryValues="true" width="100%">
+						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
+						<customData>
+							<core:CustomData key="target" value="DROP_DOWN"/>
+						</customData>
+					</ComboBox>
+				</VBox>
+				<VBox>
+					<Label text="{i18n>X_D_CHAIN_VALID_FROM}:" class="sapUiTinyMarginTop"></Label>
+					<DatePicker valueFormat="yyyy-MM-dd" displayFormat="yyyy-MM-dd" editable="{oSpecTblDataModel>/isBasicEditable}"
+						value="{path:'{oBasicDataCollectionModel>/basicDataDto/xdchainValidFrom}', formatter:'newproductintroductionui.newproductintroductionui.formatter.formatter.formatDateObject'}"/>
+				</VBox>
+				<!--	<VBox>
+							<Label text="{i18n>REPACK_INDICATOR}:" class="sapUiTinyMarginTop"></Label>
+							<Select forceSelection="false" selectedKey="{oBasicDataCollectionModel>/basicDataDto/xdchainValidFrom}">
+								<core:Item key="" text=""/>
+							</Select>
+						</VBox>-->
+				<!--	<l:Grid defaultSpan="XL6 L6 M12 S12">
+							<l:content>
+								<Label text="{i18n>BASE_UNIT}:" class="sapUiTinyMarginTop"></Label>
+								<Input value="" enabled="false"></Input>
+								<Label text="{i18n>EXTERNAL_MATERIAL_GROUP}:" class="sapUiTinyMarginTop"></Label>
+								<Select forceSelection="false" selectedKey="">
+									<core:Item key="" text=""/>
+								</Select>
+								<Label text="" class="sapUiTinyMarginTop"></Label>
+								<Input value="" enabled="false" class="noInputBorder"></Input>
+								<Label text="{i18n>X_PLANT_MAT_STATUS}:" class="sapUiTinyMarginTop"></Label>
+								<Select forceSelection="false" selectedKey="">
+									<core:Item key="" text=""/>
+								</Select>
+								<Label text="{i18n>X_D_CHAIN_VALID_FROM}:" class="sapUiTinyMarginTop"></Label>
+								<Select forceSelection="false" selectedKey="">
+									<core:Item key="" text=""/>
+								</Select>
+							</l:content>
+						</l:Grid>
+						<l:Grid defaultSpan="XL6 L6 M12 S12">
+							<l:content>
+								<Label text="{i18n>MATERIAL_GROUP}:" class="sapUiTinyMarginTop"></Label>
+								<Select forceSelection="false" selectedKey="">
+									<core:Item key="" text=""/>
+								</Select>
+								<Label text="{i18n>DIVISION}:" class="sapUiTinyMarginTop"></Label>
+								<Select forceSelection="false" selectedKey="">
+									<core:Item key="" text=""/>
+								</Select>
+								<Label text="{i18n>GEN_ITEM_CAT_GROUP}:" class="sapUiTinyMarginTop"></Label>
+								<Select forceSelection="false" selectedKey="">
+									<core:Item key="" text=""/>
+								</Select>
+								<Label text="{i18n>X_PLANT_VALID_FROM}:" class="sapUiTinyMarginTop"></Label>
+								<Select forceSelection="false" selectedKey="">
+									<core:Item key="" text=""/>
+								</Select>
+								<Label text="{i18n>REPACK_INDICATOR}:" class="sapUiTinyMarginTop"></Label>
+								<Select forceSelection="false" selectedKey="">
+									<core:Item key="" text=""/>
+								</Select>
+							</l:content>
+						</l:Grid>
+						<l:Grid defaultSpan="XL6 L6 M12 S12">
+							<l:content>
+								<Label text="{i18n>OLD_MATERIAL_NUMBER}:" class="sapUiTinyMarginTop"></Label>
+								<Input value=""></Input>
+								<Label text="{i18n>LAB_OFFICE}:" class="sapUiTinyMarginTop"></Label>
+								<Select forceSelection="false" selectedKey="">
+									<core:Item key="" text=""/>
+								</Select>
+								<Label text="{i18n>PRODUCT_ALLOCATION}:" class="sapUiTinyMarginTop"></Label>
+								<Select forceSelection="false" selectedKey="">
+									<core:Item key="" text=""/>
+								</Select>
+								<Label text="{i18n>X_D_CHAIN_STATUS}:" class="sapUiTinyMarginTop"></Label>
+								<Select forceSelection="false" selectedKey="">
+									<core:Item key="" text=""/>
+								</Select>
+							</l:content>
+						</l:Grid>-->
+			</l:content>
+		</l:Grid>
+		<!--<HBox>
+							<VBox>
+								<Label text="{i18n>MATERIAL_GROUP_PACKAGING}:" class="sapUiTinyMarginTop"></Label>
+								<Select forceSelection="false" selectedKey="">
+									<core:Item key="" text=""/>
+								</Select>
+							</VBox>
+							<VBox>
+								<Label text="{i18n>PRODUCT_COMPOSITION}:" class="sapUiTinyMarginTop"></Label>
+								<CheckBox selected="false"/>
+							</VBox>
+						</HBox>-->
+		<Toolbar height="2rem" class="basicDataToolbarBrdClass sapUiSmallMarginTop">
+			<HBox>
+				<Text text="{i18n>PACKING_MAT_DATA}" class="hdrTextClass"></Text>
+			</HBox>
+			<VBox class="basicDataHLineClass sapUiSmallMarginBegin" width="100%"></VBox>
+		</Toolbar>
+		<l:Grid defaultSpan="XL3 L3 M6 S12">
+			<l:content>
+				<VBox>
+					<Label text="{i18n>MATERIAL_GROUP_PACKAGING}:" class="sapUiTinyMarginTop"></Label>
+					<!--	<Select forceSelection="false" selectedKey="{oBasicDataCollectionModel>/basicDataDto/matGroupPack}"
+						items="{oDropdownLookupsModel>/packmaterialgroups}" width="100%">
+						<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
+					</Select>-->
+					<ComboBox items="{oDropdownLookupsModel>/packmaterialgroups}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+						selectedKey="{oBasicDataCollectionModel>/basicDataDto/matGroupPack}" showSecondaryValues="true" width="100%">
+						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
+						<customData>
+							<core:CustomData key="target" value="DROP_DOWN"/>
+						</customData>
+					</ComboBox>
+				</VBox>
+				<VBox class="sapUiSmallMarginBegin">
+					<Label text="{i18n>PRODUCT_COMPOSITION}:" class="sapUiTinyMarginTop"></Label>
+					<CheckBox selected="{oBasicDataCollectionModel>/basicDataDto/productComposition}" editable="{oSpecTblDataModel>/isBasicEditable}"/>
+				</VBox>
+			</l:content>
+		</l:Grid>
+		<Toolbar height="2rem" class="basicDataToolbarBrdClass sapUiSmallMarginTop">
+			<HBox>
+				<Text text="{i18n>HEIRARCHY}" class="hdrTextClass"></Text>
+			</HBox>
+			<VBox class="basicDataHLineClass sapUiSmallMarginBegin" width="100%"></VBox>
+		</Toolbar>
+		<l:Grid defaultSpan="XL3 L3 M6 S12">
+			<l:content>
+				<VBox>
+					<Label text="{i18n>PRODUCT_HIREARCHY}:" class="sapUiTinyMarginTop"></Label>
+					<Input showValueHelp="true" valueHelpRequest="onOpenProductHir" editable="{oSpecTblDataModel>/isBasicEditable}"
+						value="{oBasicDataCollectionModel>/basicDataDto/newProdHierarchy}"/>
+				</VBox>
+			</l:content>
+		</l:Grid>
+	</VBox>
+</core:FragmentDefinition>

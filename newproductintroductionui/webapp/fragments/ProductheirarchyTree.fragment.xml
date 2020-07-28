@@ -1,0 +1,38 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:t="sap.ui.table" xmlns:core="sap.ui.core"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Dialog id="AllocationDayDialog" stretch="true" title="{i18n>PRODUCT_HIERARCHY}" titleAlignment="Center"
+		class="sapMDialogHeader sapUiSizeCompact">
+		<content>
+			<!--<VBox height="100%" width="100%">-->
+			<t:TreeTable id="id_product_mylan_TreeTableId" class="siggaTableSpace container leftTable" selectionMode="Single" selectionBehavior="Row"
+				enableColumnReordering="false" visibleRowCount="13" expandFirstLevel="false" collapseRecursive="false" enableSelectAll="false"
+				rows="{path : 'oSpecTblDataModel>/aTree/aTreeSub', parameters : { arrayNames:['hierarchies'] }}" visibleRowCountMode="Fixed">
+				<t:columns>
+					<t:Column width="30%" tooltip="{i18n>HIERARCHY}">
+						<Label text="{i18n>HIERARCHY}"/>
+						<t:template>
+							<Text text="{oSpecTblDataModel>hierarchy}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="10%" tooltip="{i18n>LEVEL}">
+						<Label text="{i18n>LEVEL}"/>
+						<t:template>
+							<Text text="{oSpecTblDataModel>level}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="10%" tooltip="{i18n>DESCRIPTION_PROD}">
+						<Label text="{i18n>DESCRIPTION_PROD}"/>
+						<t:template>
+							<Text text="{oSpecTblDataModel>description}"/>
+						</t:template>
+					</t:Column>
+				</t:columns>
+			</t:TreeTable>
+			<!--</VBox>-->
+		</content>
+		<buttons>
+			<Button text="{i18n>SUBMIT_PROD}" press="onProdSubmit" class="sapMCustbtn sapUiSizeCompact"/>
+			<Button text="{i18n>CLOSE_PROD}" press="onProdCancel" class="sapMCustbtn sapUiSizeCompact"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

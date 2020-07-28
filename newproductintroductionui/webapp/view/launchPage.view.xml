@@ -1,0 +1,32 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="newproductintroductionui.newproductintroductionui.controller.launchPage" xmlns:html="http://www.w3.org/1999/xhtml">
+	<!--<App>
+		<pages>-->
+			<Page title="Title" showHeader="false" class="launchPageClass">
+				<content>
+						<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Primary Scoping"
+							press="onPressScoping">
+							<!--<TileContent>
+								<ImageContent src="test-resources/sap/m/demokit/sample/GenericTileAsLaunchTile/images/SAPLogoLargeTile_28px_height.png" />
+							</TileContent>-->
+						</GenericTile>
+						<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Detail Scoping"
+							press="onPressDetailScoping">
+							<!--<TileContent>
+								<ImageContent src="test-resources/sap/m/demokit/sample/GenericTileAsLaunchTile/images/SAPLogoLargeTile_28px_height.png" />
+							</TileContent>-->
+						</GenericTile>
+						<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Basic Data Collection"
+							press="onPressBasicData">
+							<!--<TileContent>
+								<ImageContent src="test-resources/sap/m/demokit/sample/GenericTileAsLaunchTile/images/SAPLogoLargeTile_28px_height.png" />
+							</TileContent>-->
+						</GenericTile>
+					<!--<Button text="Primary Scoping" press="onPressScoping"></Button>
+					<Button text="Detail Scoping" press="onPressDetailScoping"></Button>
+					<Button text="Basic Data Collection" press="onPressBasicData"></Button>-->
+				</content>
+			</Page>
+	<!--	</pages>
+	</App>-->
+</mvc:View>

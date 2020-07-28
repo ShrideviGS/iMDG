@@ -1,0 +1,1180 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	controllerName="newproductintroductionui.newproductintroductionui.controller.mrpView" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="{i18n>PAGE_TITLE}" class="sapUiSizeCompact" showHeader="false" floatingFooter="true">
+		<content>
+			<!--<l:Grid defaultSpan="L3 M4 S6" class="sapUiSizeCompact sapUiSmallMarginTop hdrGridClass">
+				<VBox>
+					<Label text="{i18n>GLBL_MAT}" design="Bold"></Label>
+					<Input enabled="false" class="sapUiSizeCompact"></Input>
+				</VBox>
+				<VBox>
+					<Label text="{i18n>MAT_DESC}" design="Bold"></Label>
+					<Input enabled="false" class="sapUiSizeCompact"></Input>
+				</VBox>
+			</l:Grid>-->
+			<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+				<Label text="{i18n>REGIONAL_CODE_DATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+				<HBox width="100%" class="hdrTxtLineClass"></HBox>
+			</HBox>
+			<HBox class="sapUiSizeCompact sapUiSmallMarginEnd">
+				<l:Grid defaultSpan="L3 M4 S6" class="sapUiSizeCompact">
+					<VBox>
+						<Label text="{i18n>PROJECT_NUM}" design="Bold"></Label>
+						<Input enabled="false" class="sapUiSizeCompact" value="{oMRPContextModel>/projectId}"></Input>
+					</VBox>
+					<!--<VBox>
+						<Label text="{i18n>MAT_DUE_DATE}" design="Bold"></Label>
+						<Input enabled="false" class="sapUiSizeCompact"></Input>
+					</VBox>-->
+					<VBox>
+						<Label text="{i18n>MATERIAL}" design="Bold"></Label>
+						<Input enabled="false" class="sapUiSizeCompact" value="{oMRPContextModel>/materialId}"></Input>
+					</VBox>
+					<VBox>
+						<Label text="{i18n>MAT_DESC}" design="Bold"></Label>
+						<Input enabled="false" class="sapUiSizeCompact" value="{oMRPContextModel>/materialDescription}"></Input>
+					</VBox>
+					<VBox>
+						<Label text="{i18n>BUOM}" design="Bold"></Label>
+						<Input enabled="false" class="sapUiSizeCompact" value="{oMRPContextModel>/baseUoM}"></Input>
+					</VBox>
+					<VBox>
+						<Label text="{i18n>MATERIAL_TYPE}" design="Bold"></Label>
+						<Input enabled="false" class="sapUiSizeCompact" value="{oMRPContextModel>/materialType}"></Input>
+					</VBox>
+					<VBox>
+						<Label text="{i18n>PLANT}" design="Bold"></Label>
+						<Input enabled="false" class="sapUiSizeCompact" value="{oMRPContextModel>/plantCode}"></Input>
+					</VBox>
+					<l:layoutData>
+						<FlexItemData styleClass="hdrGridClass"/>
+					</l:layoutData>
+				</l:Grid>
+				<!--<HBox></HBox>
+				<Table class="tblBoxClass">
+					<columns>
+						<Column>
+							<Label text="{i18n>HDR_COL1}" tooltip="{i18n>HDR_COL1}" design="Bold"></Label>
+						</Column>
+						<Column>
+							<Label text="{i18n>HDR_COL2}" tooltip="{i18n>HDR_COL2}" design="Bold"></Label>
+						</Column>
+						<Column>
+							<Label text="{i18n>HDR_COL3}" tooltip="{i18n>HDR_COL3}" design="Bold"></Label>
+						</Column>
+						<Column>
+							<Label text="{i18n>HDR_COL4}" tooltip="{i18n>HDR_COL4}" design="Bold"></Label>
+						</Column>
+					</columns>
+					<layoutData>
+						<FlexItemData styleClass="hdrTblClass"/>
+					</layoutData>
+				</Table>-->
+			</HBox>
+			<l:Grid defaultSpan="L12 M12 S12" class="sapUiSizeCompact splitterGridClass">
+				<l:Splitter class="sapUiSizeCompact splitterBGClass">
+					<List id="idMasterList" showSeparators="None" class="sapUiSizeCompact leftContentClass" mode="SingleSelectMaster" itemPress="onItemPress">
+						<items>
+							<StandardListItem id="MRP1" title="{i18n>MRP1}" type="Active" class="masterListClass" press="onItemPress"></StandardListItem>
+							<StandardListItem id="MRP2" title="{i18n>MRP2}" type="Active" class="masterListClass" press="onItemPress"></StandardListItem>
+							<StandardListItem id="MRP3" title="{i18n>MRP3}" type="Active" class="masterListClass" press="onItemPress"></StandardListItem>
+							<StandardListItem id="MRP4" title="{i18n>MRP4}" type="Active" class="masterListClass" press="onItemPress"></StandardListItem>
+							<StandardListItem id="WRK_SCHEDULE" title="{i18n>WRK_SCHEDULE}" type="Active" class="masterListClass" press="onItemPress"></StandardListItem>
+							<StandardListItem id="PLANT_DATA_STORAGE1" title="{i18n>PLANT_DATA_STORAGE1}" type="Active" class="masterListClass" press="onItemPress"></StandardListItem>
+							<StandardListItem id="PLANT_DATA_STORAGE2" title="{i18n>PLANT_DATA_STORAGE2}" type="Active" class="masterListClass" press="onItemPress"></StandardListItem>
+							<StandardListItem id="STORAGE_LOC" title="{i18n>STORAGE_LOC}" type="Active" class="masterListClass" press="onItemPress" visible="false"></StandardListItem>
+							<StandardListItem id="PURCHASING" title="{i18n>PURCHASING}" type="Active" class="masterListClass" press="onItemPress"></StandardListItem>
+							<StandardListItem id="FOREIGN_TRADE_EXPORT" title="{i18n>FOREIGN_TRADE_EXPORT}" type="Active" class="masterListClass" press="onItemPress"></StandardListItem>
+							<StandardListItem id="SALES_GENERAL_PLANT" title="{i18n>SALES_GENERAL_PLANT}" type="Active" class="masterListClass" press="onItemPress"></StandardListItem>
+							<StandardListItem id="QUALITY_MGMT" title="{i18n>QUALITY_MGMT}" type="Active" class="masterListClass" press="onItemPress"></StandardListItem>
+						</items>
+						<layoutData>
+							<l:SplitterLayoutData size="20%" resizable="false"/>
+						</layoutData>
+					</List>
+					<VBox>
+						<items>
+							<!-- MRP 1 Tab -->
+							<VBox visible="{oVisModel>/oMRP1Box}">
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>GENERAL_DATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>PURCHASING_GRP}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_ekgrp" showSecondaryValues="true" items="{oPGrpModel>/results}"
+												selectedKey="{oMRPDataModel>/purchasingGroup}">
+												<core:ListItem key="{oPGrpModel>code}" text="{oPGrpModel>description}" additionalText="{oPGrpModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>ABC_IND}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_maabc" showSecondaryValues="true" items="{oABCIndModel>/results}"
+												selectedKey="{oMRPDataModel>/abcIndicator}">
+												<core:ListItem key="{oABCIndModel>code}" text="{oABCIndModel>description}" additionalText="{oABCIndModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PLANT_SP_MAT_STATUS}" design="Bold"></Label>
+											<!-- Rohit -->
+											<Input class="sapUiSizeCompact" id="test1" value="{oMRPDataModel>/plantSpecificStatus}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>VALID_FROM}" design="Bold"></Label>
+											<!-- Rohit -->
+											<DatePicker class="sapUiSizeCompact" displayFormat="MM/dd/yyyy" width="100%" id="test2"
+												value="{path:'oMRPDataModel>/validFrom', formatter:'newproductintroductionui.newproductintroductionui.formatter.formatter.formatDate'}"></DatePicker>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>MRP_PROCEDURE}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>MRP_TYPE}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_dismm" showSecondaryValues="true" items="{oMRPTypesModel>/results}" selectedKey="{oMRPDataModel>/mrpType}">
+												<core:ListItem key="{oMRPTypesModel>code}" text="{oMRPTypesModel>description}" additionalText="{oMRPTypesModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>REORDER_POINT}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_minbe" value="{oMRPDataModel>/reorderPoint}" type="Number"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PLAN_TIME_FENCE}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_fxhor" value="{oMRPDataModel>/planningTimeFence}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PLAN_CYCLE}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_lfrhy" showSecondaryValues="true" items="{oPlanCycleModel>/results}"
+												selectedKey="{oMRPDataModel>/planningCycle}">
+												<core:ListItem key="{oPlanCycleModel>code}" text="{oPlanCycleModel>description}" additionalText="{oPlanCycleModel>code}"/>
+											</ComboBox>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>LOT_SIZE_DATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>LOT_SIZE}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_disls" showSecondaryValues="true" items="{oLotSizeModel>/results}" selectedKey="{oMRPDataModel>/lotSize}">
+												<core:ListItem key="{oLotSizeModel>code}" text="{oLotSizeModel>description}" additionalText="{oLotSizeModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>MIN_LOT_SIZE}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_bstmi" value="{oMRPDataModel>/minimumLotSize}" type="Number"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>MAX_LOT_SIZE}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_bstma" value="{oMRPDataModel>/maximumLotSize}" type="Number"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>FIXED_LOT_SIZE}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_bstfe" value="{oMRPDataModel>/fixedLotSize}" type="Number"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>MAX_STOCK_LEVEL}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_mabst" value="{oMRPDataModel>/maximumStockLevel}" type="Number"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>ORDER_COST}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_losfx" value="{oMRPDataModel>/orderingCosts}" type="Number"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>STORAGE_COST_IND}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_lagpr" showSecondaryValues="false" items="{oStrgCostIndModel>/results}"
+												selectedKey="{oMRPDataModel>/storageCostInd}">
+												<core:ListItem key="{oStrgCostIndModel>code}" text="{oStrgCostIndModel>code}" additionalText="{oStrgCostIndModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>ASSEMBLY_SCRAP}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_ausss" value="{oMRPDataModel>/assemblyScrapePercent}" type="Number"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>TAKT_TIME}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_takzt" value="{oMRPDataModel>/talkTime}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>ROUNDING_PROFILE}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_rdprf" showSecondaryValues="true" items="{oRoundProfModel>/results}"
+												selectedKey="{oMRPDataModel>/roundingProfile}">
+												<core:ListItem key="{oRoundProfModel>code}" text="{oRoundProfModel>description}" additionalText="{oRoundProfModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>ROUNDING_VALUE}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_bstrf" value="{oMRPDataModel>/roundingValue}"></Input>
+										</VBox>
+									</l:content>
+								</l:Grid>
+							</VBox>
+							<!-- MRP 1 Tab -->
+							<!-- MRP 2 Tab -->
+							<VBox visible="{oVisModel>/oMRP2Box}">
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>PROCUREMENT}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>BATCH_ENTRY}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_kzech" showSecondaryValues="true" items="{oBatchEntryModel>/results}"
+												selectedKey="{oMRPDataModel>/batchEntry}">
+												<core:ListItem key="{oBatchEntryModel>code}" text="{oBatchEntryModel>description}" additionalText="{oBatchEntryModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>QUOTA_USAGE}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_usequ" showSecondaryValues="true" items="{oQuotaArrUsageModel>/results}"
+												selectedKey="{oMRPDataModel>/quotaArrUsage}">
+												<core:ListItem key="{oQuotaArrUsageModel>code}" text="{oQuotaArrUsageModel>quotaSystemApplied}" additionalText="{oQuotaArrUsageModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>BACK_FLUSH}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_rgekz" showSecondaryValues="true" items="{oBackFlushModel>/results}"
+												selectedKey="{oMRPDataModel>/backflush}">
+												<core:ListItem key="{oBackFlushModel>code}" text="{oBackFlushModel>description}" additionalText="{oBackFlushModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>STOCK_GRP}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_eprio" showSecondaryValues="false" items="{oStockDetGrpModel>/results}"
+												selectedKey="{oMRPDataModel>/stockDetGroup}">
+												<core:ListItem key="{oStockDetGrpModel>code}" text="{oStockDetGrpModel>code}" additionalText="{oStockDetGrpModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>JIT_DEL_SCHEDULE}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_fabkz" showSecondaryValues="true" items="{oJITDelSchModel>/results}"
+												selectedKey="{oMRPDataModel>/jitDeliverySchedule}">
+												<core:ListItem key="{oJITDelSchModel>code}" text="{oJITDelSchModel>description}" additionalText="{oJITDelSchModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>BULK_MATERIAL}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" id="marc_schgt" selected="{oMRPDataModel>/bulkMaterial}"></CheckBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>CO_PROD}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" id="marc_kzkup" selected="{oMRPDataModel>/coProduct}"></CheckBox>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>SCHEDULING}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>IN_HOUSE_PROD}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_dzeit" value="{oMRPDataModel>/inHouseProduction}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>GR_PROCESS_TIME}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_webaz" value="{oMRPDataModel>/grProcessingTime}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PLAN_DEL_TIME}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_plifz" value="{oMRPDataModel>/plannedDelivTime}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PLAN_CALENDAR}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_mrppp" value="{oMRPDataModel>/planningCalendar}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>SCHED_MARGIN_KEY}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_fhori" showSecondaryValues="false" items="{oShdMarginModel>/results}"
+												selectedKey="{oMRPDataModel>/schedMarginKey}">
+												<core:ListItem key="{oShdMarginModel>code}" text="{oShdMarginModel>code}" additionalText="{oShdMarginModel>code}"/>
+											</ComboBox>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>NET_REQ_CAL}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>SAFETY_STOCK}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_eisbe" value="{oMRPDataModel>/safetyStock}" type="Number"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>SERV_LEVEL}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_lgrad" value="{oMRPDataModel>/serviceLevelPercent}" type="Number"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>MIN_SAFETY_STOCK}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_eislo" value="{oMRPDataModel>/minSafetyStock}" type="Number"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>COVERAGE_PROFILE}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_rwpro" showSecondaryValues="true" items="{oCoverageProfModel>/results}"
+												selectedKey="{oMRPDataModel>/coverageProfile}">
+												<core:ListItem key="{oCoverageProfModel>code}" text="{oCoverageProfModel>description}" additionalText="{oCoverageProfModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>SAFETY_TIME_IND}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_shflg" showSecondaryValues="true" items="{oSafetyTimeIndModel>/results}"
+												selectedKey="{oMRPDataModel>/safetyTimeInd}">
+												<core:ListItem key="{oSafetyTimeIndModel>code}" text="{oSafetyTimeIndModel>description}" additionalText="{oSafetyTimeIndModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>SAFETY_TIME_COV}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_shzet" value="{oMRPDataModel>/safetyTimeActCov}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>SAFETY_TIME_PERIOD_PROFILE}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_shpro" showSecondaryValues="true" items="{oSTimePeriodProfModel>/results}"
+												selectedKey="{oMRPDataModel>/sTimePeriodProfile}">
+												<core:ListItem key="{oSTimePeriodProfModel>code}" text="{oSTimePeriodProfModel>description}" additionalText="{oSTimePeriodProfModel>code}"/>
+											</ComboBox>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>PP_ADD_MRP_DATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>MMI_MAT_NUM}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_zzmmino" value="{oMRPDataModel>/mmiMaterialNo}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>MPS_CATEGORY}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_zzmpscat" showSecondaryValues="true" items="{oMPSCatModel>/results}"
+												selectedKey="{oMRPDataModel>/mpsCategory}">
+												<core:ListItem key="{oMPSCatModel>code}" text="{oMPSCatModel>description}" additionalText="{oMPSCatModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PRODUCT_PRIO}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_zzpropr" value="{oMRPDataModel>/productPriority}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>STOCK_STATUS_CLASSIF}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_zzssclsf" showSecondaryValues="true" items="{oStockStatusClassifModel>/results}"
+												selectedKey="{oMRPDataModel>/stockStatusClassif}">
+												<core:ListItem key="{oStockStatusClassifModel>code}" text="{oStockStatusClassifModel>description}"
+													additionalText="{oStockStatusClassifModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>SILO_CODE}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_zzslocd" value="{oMRPDataModel>/siloCode}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>UNIT_WEIGHT}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_zzunitweight" value="{oMRPDataModel>/unitWeight}" type="Number"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>RIM_MIX_TYPE}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_zzrimmix" showSecondaryValues="true" items="{oRIMMixTypeModel>/results}"
+												selectedKey="{oMRPDataModel>/rimMixType}">
+												<core:ListItem key="{oRIMMixTypeModel>code}" text="{oRIMMixTypeModel>description}" additionalText="{oRIMMixTypeModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PRINT_LABEL}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" id="marc_zzprntlb" selected="{oMRPDataModel>/printLabel}"></CheckBox>
+										</VBox>
+									</l:content>
+								</l:Grid>
+							</VBox>
+							<!-- MRP 2 Tab -->
+							<!-- MRP 3 Tab -->
+							<VBox visible="{oVisModel>/oMRP3Box}">
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>FORECAST_REQ}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>PERIOD_IND}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_perkz" showSecondaryValues="true" items="{oPeriodIndModel>/results}"
+												selectedKey="{oMRPDataModel>/periodIndicator}">
+												<core:ListItem key="{oPeriodIndModel>code}" text="{oPeriodIndModel>description}" additionalText="{oPeriodIndModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>SPLIT_IND}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_auftl" showSecondaryValues="false" items="{oSplitIndModel>/results}"
+												selectedKey="{oMRPDataModel>/splittingIndicator}">
+												<core:ListItem key="{oSplitIndModel>code}" text="{oSplitIndModel>code}" additionalText="{oSplitIndModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>FISCAL_YEAR_VARIANT}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_periv" showSecondaryValues="true" items="{oFiscalYearVarModel>/results}"
+												selectedKey="{oMRPDataModel>/fiscalYearVariant}">
+												<core:ListItem key="{oFiscalYearVarModel>code}" text="{oFiscalYearVarModel>description}" additionalText="{oFiscalYearVarModel>code}"/>
+											</ComboBox>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>AVAILABILITY_CHECK}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>CROSS_PROJECT}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_kzpsp" showSecondaryValues="true" items="{oCrossProjModel>/results}"
+												selectedKey="{oMRPDataModel>/crossProject}">
+												<core:ListItem key="{oCrossProjModel>code}" text="{oCrossProjModel>description}" additionalText="{oCrossProjModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>AVAILABILITY_CHECK}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_mtvfp" showSecondaryValues="true" items="{oAvailCheckModel>/results}"
+												selectedKey="{oMRPDataModel>/availabilityCheck}">
+												<core:ListItem key="{oAvailCheckModel>code}" text="{oAvailCheckModel>description}" additionalText="{oAvailCheckModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>TOT_REPL_LEAD_TIME}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_wzeit" value="{oMRPDataModel>/totReplenishLeadTime}" type="Number"></Input>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>PLANNING}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>STRATEGY_GRP}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_strgr" showSecondaryValues="true" items="{oStrategyGrpModel>/results}"
+												selectedKey="{oMRPDataModel>/strategyGroup}">
+												<core:ListItem key="{oStrategyGrpModel>code}" text="{oStrategyGrpModel>description}" additionalText="{oStrategyGrpModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PLANNING_PLANT}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="mpgd_prwrk" value="{oMRPDataModel>/planningPlantCode}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>MIXED_MRP}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_miskz" showSecondaryValues="true" items="{oMixedMRPModel>/results}" selectedKey="{oMRPDataModel>/mixedMRP}">
+												<core:ListItem key="{oMixedMRPModel>code}" text="{oMixedMRPModel>description}" additionalText="{oMixedMRPModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>CONSUMPTION_MODE}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_vrmod" showSecondaryValues="true" items="{oConModModel>/results}"
+												selectedKey="{oMRPDataModel>/consumptionMode}">
+												<core:ListItem key="{oConModModel>code}" text="{oConModModel>description}" additionalText="{oConModModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>BWD_CONSUMPTION_PER}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_vint1" value="{oMRPDataModel>/bwdConsumptionPer}" type="Number"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>FWD_CONSUMPTION_PER}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_vint2" value="{oMRPDataModel>/fwdConsumptionPer}" type="Number"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PLANNING_MATERIAL}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="mpgd_prgrp" value="{oMRPDataModel>/planningMaterial}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PLANNING_CONV_FACTOR}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="mpgd_umref" value="{oMRPDataModel>/planningConvFactor}"></Input>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>PLANT_SPECIFIC_CONF}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>CONFIG_MAT}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_stdpd" value="{oMRPDataModel>/configurableMaterial}"></Input>
+										</VBox>
+									</l:content>
+								</l:Grid>
+							</VBox>
+							<!-- MRP 3 Tab -->
+							<!-- MRP 4 Tab -->
+							<VBox visible="{oVisModel>/oMRP4Box}">
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>BOM_EXPLOSION_DEP_REQ}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>SELECTION_METHOD}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_altsl" showSecondaryValues="true" items="{oSelMethodModel>/results}"
+												selectedKey="{oMRPDataModel>/selectionMethod}">
+												<core:ListItem key="{oSelMethodModel>code}" text="{oSelMethodModel>description}" additionalText="{oSelMethodModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>MRP_DEP_REQ}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_ahdis" showSecondaryValues="true" items="{oMRPDepModel>/results}"
+												selectedKey="{oMRPDataModel>/mrpDependentReq}">
+												<core:ListItem key="{oMRPDepModel>code}" text="{oMRPDepModel>description}" additionalText="{oMRPDepModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>REQ_GRP}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_kzbed" showSecondaryValues="true" items="{oReqGrpModel>/results}"
+												selectedKey="{oMRPDataModel>/requirementsGroup}">
+												<core:ListItem key="{oReqGrpModel>code}" text="{oReqGrpModel>description}" additionalText="{oReqGrpModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>INDIVIDUAL_COLL}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_sbdkz" showSecondaryValues="true" items="{oIndColsModel>/results}"
+												selectedKey="{oMRPDataModel>/individualColl}">
+												<core:ListItem key="{oIndColsModel>code}" text="{oIndColsModel>description}" additionalText="{oIndColsModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>COMP_SCRAP}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_kausf" value="{oMRPDataModel>/componentScrapPercent}" type="Number"></Input>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>DISCONTINUED_PARTS}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>EFFECTIVE_OUT_DATE}" design="Bold"></Label>
+											<DatePicker class="sapUiSizeCompact" displayFormat="MM/dd/yyyy" width="100%" id="marc_ausdt"
+												value="{path:'oMRPDataModel>/effectiveOutDate', formatter:'newproductintroductionui.newproductintroductionui.formatter.formatter.formatDate'}"></DatePicker>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>DISCONTINUATION_IND}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_kzaus" showSecondaryValues="true" items="{oDisIndModel>/results}"
+												selectedKey="{oMRPDataModel>/discontinuationInd}">
+												<core:ListItem key="{oDisIndModel>code}" text="{oDisIndModel>description}" additionalText="{oDisIndModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>FOLLOW_UP_MATERIAL}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_nfmat" value="{oMRPDataModel>/followUpMaterial}"></Input>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>REP_MANUFACTURING}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>PUSH_DIST}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_dplpu" showSecondaryValues="true" items="{oPushDistModel>/results}"
+												selectedKey="{oMRPDataModel>/pushDistribution}">
+												<core:ListItem key="{oPushDistModel>code}" text="{oPushDistModel>description}" additionalText="{oPushDistModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>DEPLOY_HORIZON}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_dplho" value="{oMRPDataModel>/deploymentHorizon}" type="Number"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>ACTION_CTRL}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_mdach" value="{oMRPDataModel>/actionControl}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>FAIR_SHARE_RULE}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_dplfs" showSecondaryValues="true" items="{oFairShareRuleModel>/results}"
+												selectedKey="{oMRPDataModel>/fairShareRule}">
+												<core:ListItem key="{oFairShareRuleModel>code}" text="{oFairShareRuleModel>description}" additionalText="{oFairShareRuleModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>REM_PROFILE}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_sfepr" showSecondaryValues="true" items="{oRemProfModel>/results}" selectedKey="{oMRPDataModel>/remProfile}">
+												<core:ListItem key="{oRemProfModel>code}" text="{oRemProfModel>description}" additionalText="{oRemProfModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>REP_MANU}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" id="marc_sauft" selected="{oMRPDataModel>/repetitiveManufacturing}"></CheckBox>
+										</VBox>
+									</l:content>
+								</l:Grid>
+							</VBox>
+							<!-- MRP 4 Tab -->
+							<!-- Work Scheduling Tab -->
+							<VBox visible="{oVisModel>/oWSBox}">
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>GENERAL_DATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>UNIT_OF_ISSUE}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_ausme" value="{oMRPDataModel>/unitOfIssue}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>PRODUCTION_SUPERVISOR}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="test3" value="{oMRPDataModel>/test}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>BATCH_MGMT}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" id="mara_xchpf" selected="{oMRPDataModel>/batchManagement}"></CheckBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>CRITICAL_PART}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" id="marc_kzkri" selected="{oMRPDataModel>/criticalPart}"></CheckBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PROD_UNIT}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_frtme" value="{oMRPDataModel>/productionUnit}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>INSPECTION_STOCK}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" id="marc_insmk" selected="{oMRPDataModel>/inspectionStock}"></CheckBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>MATERIAL_GROUPING}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_matgr" value="{oMRPDataModel>/materialGrouping}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PROD_SCHEDULING_PROFILE}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_sfcpf" showSecondaryValues="true" items="{oProdSchedProfModel>/results}"
+												selectedKey="{oMRPDataModel>/prodSchedulingProfile}">
+												<core:ListItem key="{oProdSchedProfModel>code}" text="{oProdSchedProfModel>description}" additionalText="{oProdSchedProfModel>code}"/>
+											</ComboBox>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>IN_HOUSE_PROD_TIME}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>SETUP_TEARDOWN_TIME}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_ruezt" value="{oMRPDataModel>/setupAndTeardownTime}" type="Number"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>BASE_QTY}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_basmg" value="{oMRPDataModel>/baseQuantity}" type="Number"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>PROCESS_TIME}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_bearz" value="{oMRPDataModel>/processingTime}" type="Number"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>INTEROP}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_tranz" value="{oMRPDataModel>/interOperation}" type="Number"></Input>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>TOLERANCE_DATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>OVER_DELIVERY_TOLERANCE}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_ueeto" value="{oMRPDataModel>/overDeliveryTolerance}" type="Number"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>UNDER_DELIVERY_TOLERANCE}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_uneto" value="{oMRPDataModel>/underDeliveryTolerance}" type="Number"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>UNLIMITED_OVER_DELIVERY}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" id="marc_ueetk" selected="{oMRPDataModel>/unlimitedOverDelivery}"></CheckBox>
+										</VBox>
+									</l:content>
+								</l:Grid>
+							</VBox>
+							<!-- Work Scheduling Tab -->
+							<!-- Plant Data Storage 1 Tab -->
+							<VBox visible="{oVisModel>/oPDS1Box}">
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>GENERAL_DATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>CC_PHYSICAL_INV_IND}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_abcin" showSecondaryValues="false" items="{oCCPhyInvIndModel>/results}"
+												selectedKey="{oMRPDataModel>/ccPhysicalInvIndicator}">
+												<core:ListItem key="{oCCPhyInvIndModel>code}" text="{oCCPhyInvIndModel>code}" additionalText="{oCCPhyInvIndModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>CC_FIXED}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" id="marc_ccfix" selected="{oMRPDataModel>/ccFixed}"></CheckBox>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>SHELF_LIFE_DATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>TIME_UNIT}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_lzeih" value="{oMRPDataModel>/timeUnit}"></Input>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>MAX_STORAGE_PERIOD}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_maxlz" value="{oMRPDataModel>/maxStoragePeriod}" type="Number"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>MIN_REM_SHELF_LIFE}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="test4" value="{oMRPDataModel>/minRemShelfLife}" type="Number"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>TOTAL_SHELF_LIFE}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="test5" value="{oMRPDataModel>/totalShelfLife}" type="Number"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>PERIOD_IND_SLED}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="test6" value="{oMRPDataModel>/periodIndFrSled}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>ROUND_RULE_SLED}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="test7" value="{oMRPDataModel>/roundingRuleSled}"></Input>
+										</VBox>
+									</l:content>
+								</l:Grid>
+							</VBox>
+							<!-- Plant Data Storage 1 Tab -->
+							<!-- Plant Data Storage 2 Tab -->
+							<VBox visible="{oVisModel>/oPDS2Box}">
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>GENERAL_PLANT_PARAM}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<Label text="{i18n>PROFIT_CENTER}" design="Bold"></Label>
+											<ComboBox width="100%" id="marc_prctr" showSecondaryValues="false" items="{oProfitCenterModel>/results}"
+												selectedKey="{oMRPDataModel>/profitCenter}">
+												<core:ListItem key="{oProfitCenterModel>code}" text="{oProfitCenterModel>code}" additionalText="{oProfitCenterModel>code}"/>
+											</ComboBox>
+										</VBox>
+										<VBox>
+											<Label text="{i18n>NEGATIVE_STOCKS_PLANT}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" id="marc_xmcng" selected="{oMRPDataModel>/negativeStocksInPlant}"></CheckBox>
+										</VBox>
+									</l:content>
+								</l:Grid>
+							</VBox>
+							<!-- Plant Data Storage 2 Tab -->
+							<!-- Storage Location Tab -->
+							<VBox visible="{oVisModel>/oSLBox}">
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>STORAGE_LOCATIONS}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<VBox class="storageLocBoxClass sapUiSizeCompact">
+									<Table class="tblBoxClass" mode="MultiSelect">
+										<columns>
+											<Column>
+												<Label text="{i18n>PLANT}" tooltip="{i18n>PLANT}" design="Bold"></Label>
+											</Column>
+											<Column>
+												<Label text="{i18n>STORAGE_LOC}" tooltip="{i18n>STORAGE_LOC}" design="Bold"></Label>
+											</Column>
+											<Column>
+												<Label text="{i18n>DESCRIPTION}" tooltip="{i18n>DESCRIPTION}" design="Bold"></Label>
+											</Column>
+										</columns>
+									</Table>
+									<Table class="tblBoxClass" mode="MultiSelect">
+										<headerToolbar>
+											<Toolbar class="sapUiSizeCompact">
+												<content>
+													<ToolbarSpacer></ToolbarSpacer>
+													<Button text="{i18n>REMOVE}" icon="sap-icon://delete"></Button>
+												</content>
+											</Toolbar>
+										</headerToolbar>
+										<columns>
+											<Column>
+												<Label text="{i18n>PLANT}" tooltip="{i18n>PLANT}" design="Bold"></Label>
+											</Column>
+											<Column>
+												<Label text="{i18n>SLOC}" tooltip="{i18n>STORAGE_LOC}" design="Bold"></Label>
+											</Column>
+											<Column>
+												<Label text="{i18n>SLOC_DESC}" tooltip="{i18n>DESCRIPTION}" design="Bold"></Label>
+											</Column>
+											<Column>
+												<Label text="{i18n>SLOC_MRP_IND}" tooltip="{i18n>PLANT}" design="Bold"></Label>
+											</Column>
+											<Column>
+												<Label text="{i18n>PICKING_LIST_GRP}" tooltip="{i18n>STORAGE_LOC}" design="Bold"></Label>
+											</Column>
+											<Column>
+												<Label text="{i18n>PICKING_SEQ}" tooltip="{i18n>DESCRIPTION}" design="Bold"></Label>
+											</Column>
+											<Column>
+												<Label text="{i18n>STORAGE_BIN}" tooltip="{i18n>PLANT}" design="Bold"></Label>
+											</Column>
+											<Column>
+												<Label text="{i18n>SOI_SMI}" tooltip="{i18n>STORAGE_LOC}" design="Bold"></Label>
+											</Column>
+											<Column>
+												<Label text="{i18n>BATCH_NOTATION}" tooltip="{i18n>DESCRIPTION}" design="Bold"></Label>
+											</Column>
+										</columns>
+									</Table>
+								</VBox>
+							</VBox>
+							<!-- Storage Location Tab -->
+							<!-- Purchasing Tab -->
+							<VBox visible="{oVisModel>/oPurchasingBox}">
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>GENERAL_DATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>PURCHASING_GRP}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_ekgrp1" value="{oMRPDataModel>/purchasingGroup}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>TAX_IND_MAT}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="test8" value="{oMRPDataModel>/test8}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>AUTOMATIC_PO}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_kautb" value="{oMRPDataModel>/test9}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>MAT_FREIGHT_GRP}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="test10" value="{oMRPDataModel>/test10}"></Input>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>OTHER_MANUF_DATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>SOURCING_LIST}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" id="marc_kordb" selected="{oMRPDataModel>/test11}"></CheckBox>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>PURCHASING_ADDITIONAL_FIELDS}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>SPECIAL_TAX_GRP}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_zzfcg" value="{oMRPDataModel>/test12}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>PUCHASE_ORDER_CTRL}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_zzprctm" value="{oMRPDataModel>/test13}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>HALAL_STATUS}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_zzhalal" value="{oMRPDataModel>/test14}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>SOURCING_TYPE}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_zzidsourcetype" value="{oMRPDataModel>/test15}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>ORIGINAL_VENDOR_NO}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_zzmfrnr" value="{oMRPDataModel>/test16}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>SMS_IND}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" id="marc_zzsmsind" selected="{oMRPDataModel>/test17}"></CheckBox>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>TU_PSU_IDENTIFIER}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_zztupsu" value="{oMRPDataModel>/test18}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>CONTRACT_COMP}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" id="marc_zzcontractcom" selected="{oMRPDataModel>/test19}"></CheckBox>
+										</VBox>
+									</l:content>
+								</l:Grid>
+							</VBox>
+							<!-- Purchasing Tab -->
+							<!-- Foreign Trade Export Tab -->
+							<VBox visible="{oVisModel>/oFTEBox}">
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>FOREIGN_TRADE_DATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>COMMODITY_IMPORT_CODE}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="test20" value="{oMRPDataModel>/test20}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>EXPORT_IMPORT_GRP}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="test21" value="{oMRPDataModel>/test21}"></Input>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>LEGAL_CTRL}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>EXEMPTION_CERT_NO}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="test22" value="{oMRPDataModel>/test22}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>EXEMPTION_CERT}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="test23" value="{oMRPDataModel>/test23}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>ISSUE_DATE_EX_CERT}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="test24" value="{oMRPDataModel>/test24}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>MILITARY_GGODS}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" id="test25" selected="{oMRPDataModel>/test25}"></CheckBox>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>ORIGIN_PREF}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>COUNTRY_ORIGIN}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="test26" value="{oMRPDataModel>/test26}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>REGION_ORIGIN}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="test27" value="{oMRPDataModel>/test27}"></Input>
+										</VBox>
+									</l:content>
+								</l:Grid>
+							</VBox>
+							<!-- Foreign Trade Export Tab -->
+							<!-- Sales General/Plant Tab -->
+							<VBox visible="{oVisModel>/oSGPBox}">
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>GENERAL_DATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>MAT_FREIGHT_GRP}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="test28" value="{oMRPDataModel>/test28}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>REPLACEMENT_PART}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="test29" value="{oMRPDataModel>/test29}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>AVAILABILITY_CHECK}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_mtvfp1" value="{oMRPDataModel>/availabilityCheck}"></Input>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>SHIPPING_DATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>LOADING_GRP}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="test30" value="{oMRPDataModel>/test30}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>SHIP_PROCESS_TIME}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="test31" value="{oMRPDataModel>/test31}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>SHIP_SETUP_TIME}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="test32" value="{oMRPDataModel>/test32}"></Input>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>GENERAL_PLANT_PARAM}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>PROFIT_CENTER}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_prctr1" value="{oMRPDataModel>/profitCenter}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>NEGATIVE_STOCKS_PLANT}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" id="marc_xmcng1" selected="{oMRPDataModel>/negativeStocksInPlant}"></CheckBox>
+										</VBox>
+									</l:content>
+								</l:Grid>
+							</VBox>
+							<!-- Sales General/Plant Tab -->
+							<!-- Quality Management Tab -->
+							<VBox visible="{oVisModel>/oQMBox}">
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>GENERAL_DATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>UNIT_ISSUE}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="test33" value="{oMRPDataModel>/unitOfIssue}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>INSPECTION_INTERVAL}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_prfrq" value="{oMRPDataModel>/test34}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>GR_PROCESS_TIME}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_webaz1" value="{oMRPDataModel>/grProcessingTime}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>DOC_REQ}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" id="marc_kzdkz" selected="{oMRPDataModel>/test35}"></CheckBox>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>QM_AUTH_GRP}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_qmata" value="{oMRPDataModel>/test36}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>INSPECTION_STOCK}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" id="marc_insmk1" selected="{oMRPDataModel>/inspectionStock}"></CheckBox>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>CATALOG_PROFILE}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="test37" value="{oMRPDataModel>/test37}"></Input>
+										</VBox>
+									</l:content>
+								</l:Grid>
+								<HBox width="100%" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+									<Label text="{i18n>PROCUREMENT_DATA}" design="Bold" class="sapUiSmallMarginBegin greyLblColorClass"></Label>
+									<HBox width="100%" class="hdrTxtLineClass"></HBox>
+								</HBox>
+								<l:Grid defaultSpan="L3 M6 S12">
+									<l:content>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>QM_CTRL_KEY}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_ssqss" value="{oMRPDataModel>/test38}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>CERT_TYPE}" design="Bold"></Label>
+											<Input class="sapUiSizeCompact" id="marc_qzgtp" value="{oMRPDataModel>/test39}"></Input>
+										</VBox>
+										<VBox>
+											<!-- Rohit -->
+											<Label text="{i18n>QM_PROC_ACTIVE}" design="Bold"></Label>
+											<CheckBox class="sapUiSizeCompact" id="test40" selected="{oMRPDataModel>/test40}"></CheckBox>
+										</VBox>
+									</l:content>
+								</l:Grid>
+							</VBox>
+							<!-- Quality Management Tab -->
+						</items>
+					</VBox>
+				</l:Splitter>
+			</l:Grid>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer></ToolbarSpacer>
+				<Button text="{i18n>SAVE}" press="onSave"></Button>
+				<Button text="{i18n>VALIDATE}" press="onValidate"></Button>
+				<Button text="{i18n>SUBMIT}" press="onSubmit"></Button>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

@@ -1,0 +1,346 @@
+.npiPanelStyle,
+.plantPanelStyle {
+    box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .5)
+}
+
+.launchPageClass {
+    background-color: #e1e2fa
+}
+
+.tileLayout {
+    float: left;
+    background-color: #c0c8f1
+}
+
+.appBgColorClass {
+    background-color: #00f1a
+}
+
+.npiPanelStyle .sapMPanelHdr {
+    height: 2rem!important;
+    line-height: 2rem!important;
+    padding: 0 1rem!important;
+    font-weight: 700!important;
+    font-size: .7rem!important;
+    font-family: Arial, Helvetica, sans-serif!important;
+    background-color: #c0c8f1!important
+}
+
+.npiPanelStyle .sapMPanelExpandableIcon {
+    left: 95%
+}
+
+.npiPanelStyle .sapMPanelBGTranslucent {
+    background: #e1e2fa
+}
+
+.npiPanelStyle {
+    background: 0 0;
+    width: auto!important
+}
+
+.iconPanelHdng {
+    margin: 1rem;
+    border-radius: 5px
+}
+
+.projectTablePanelClass .sapMPanelContent {
+    padding: 0!important
+}
+
+.confirmHdrViewPanel .sapMPanelHdr,
+.plantPanelStyle .sapMPanelHdr {
+    line-height: 2rem!important;
+    padding: 0 1rem!important;
+    font-weight: 700!important;
+    font-size: .7rem!important;
+    font-family: Arial, Helvetica, sans-serif!important
+}
+
+.projectHdrLabel {
+    font-weight: 700!important;
+    color: green
+}
+
+.confirmHdrViewPanel .sapMPanelHdr {
+    height: 2rem!important
+}
+
+.confirmHdrViewPanel .sapMPanelExpandableIcon {
+    left: 90%
+}
+
+.confirmHdrViewPanel .sapMPanelBGTranslucent {
+    background: #e1e2fa
+}
+
+.confirmHdrViewPanel {
+    background: 0 0
+}
+
+.detailScopingToolBarClass {
+    background-color: #00f;
+    border: 1px solid #00f
+}
+
+.detailScopingToolBarLblClass {
+    color: #fff!important;
+    font-weight: 700!important
+}
+
+.processFlowButttonClass {
+    width: 2rem;
+    height: 2rem;
+    background: #e2f1f2;
+    border-radius: 0;
+    border: 1px solid #7f91aa
+}
+
+.processFlowButttonClass .sapMBtnInner {
+    background-color: #e2f1f2!important;
+    border: 0 solid #ababab!important
+}
+
+.dtlScopBeginIconClass {
+    color: #7f91aa;
+    margin-top: .55rem
+}
+
+.processHbox {
+    margin-top: 1rem
+}
+
+.lineHBoxStylenew,
+.lineHBoxStylenew2 {
+    width: 2.5rem;
+    background-color: #7f91aa;
+    height: .1rem;
+    margin-top: 1rem
+}
+
+.lineHBoxStylenew1 {
+    width: 4rem;
+    background-color: #7f91aa;
+    height: .1rem;
+    margin-top: 1rem
+}
+
+.sizeVBoxStylenew {
+    width: 2rem;
+    height: 2rem;
+    background: #e2f1f2;
+    border-radius: 0;
+    border: 1px solid #7f91aa
+}
+
+.sizeVBoxStylenew1 {
+    width: .2rem;
+    margin-top: .55rem;
+    height: 1rem;
+    background: #7f91aa;
+    border-radius: 0;
+    border: 1px solid #7f91aa
+}
+
+.plantPanelStyle .sapMPanelHdr {
+    height: 2rem!important
+}
+
+.plantPanelStyle .sapMPanelExpandableIcon {
+    left: 95%
+}
+
+.plantPanelStyle .sapMPanelBGTranslucent {
+    background: #e1e2fa
+}
+
+.plantPanelStyle {
+    background: 0 0;
+    width: 35rem!important
+}
+
+.noInputBorder .sapMInputBaseContentWrapper {
+    border: none;
+    border-radius: 0;
+    background: 0 0
+}
+
+.basicDataToolBarClass {
+    background: #f7f7f7!important
+}
+
+.basicDataListClass {
+    background: #f6f6f6
+}
+
+.basicDataListBoxClass {
+    background: #f6f6f6;
+    border-right: 1px solid #c5c2c2
+}
+
+.basicDataPanelStyle .sapMPanelContent {
+    padding-top: 0!important
+}
+
+.basicDataIconTabClass .sapMITBContent {
+    border-bottom: 0 solid #d1e0ee!important
+}
+
+.addErrorStateClass {
+    border: 1px solid red!important
+}
+
+.removeErrorStateClass {
+    border: 1px solid #bfbfbf!important
+}
+
+.hdrTBClass {
+    margin-bottom: 25px;
+    margin-left: 15px;
+    margin-right: 15px
+}
+
+.hdrGridClass {
+    width: 100%
+}
+
+.hdrTblClass {
+    width: 50%
+}
+
+.hdrTxtLineClass {
+    border: .5px solid #dadada;
+    height: 0;
+    margin-top: 8px;
+    margin-left: 5px;
+    margin-right: 15px
+}
+
+.greyLblColorClass {
+    color: #c1c1c1
+}
+
+.tblBoxClass {
+    border: 1px solid #dadada
+}
+
+.masterListClass {
+    background: 0 0;
+    padding-top: 10px;
+    padding-bottom: 10px
+}
+
+.masterListClass .sapMSLITitleOnly {
+    color: #adadad
+}
+
+.greyTitleColorClass .sapMSLITitleOnly {
+    color: #828282;
+    font-weight: 700
+}
+
+.masterListClass.sapMLIB.sapMLIBSelected {
+    background: 0 0;
+    border-left: 5px solid #828282;
+    border-right: 15px solid #828282;
+    outline: 0
+}
+
+.splitterGridClass {
+    padding: 0!important
+}
+
+.splitterGridClass.sapUiRespGrid.sapUiRespGridVSpace1>div {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%
+}
+
+.splitterBGClass {
+    background: #fff;
+    border-top: 1px solid #e6e6e6
+}
+
+.leftContentClass {
+    background: #fbfbfd;
+    border-right: 1px solid #e6e6e6;
+    padding-top: 10px
+}
+
+.rightContentClass {
+    background: #fff
+}
+
+.memoBoxClass,
+.storageLocBoxClass {
+    margin-left: 15px;
+    margin-right: 15px
+}
+
+.createProjectBackgroundColor {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0, rgba(56, 110, 176, .3166841736694677) 150%)
+}
+
+.sapPageBackgroundColor {
+    background: FFFFFF
+}
+
+.sapMPanel .sapMPanelWrappingDivTb .sapMIBar.sapMTB>:first-child,
+.sapPanelHeaderLabelCls .sapMPanel .sapMPanelWrappingDiv .sapMPanelHdr>:first-child {
+    margin-left: 0;
+    color: #58789C;
+    text-shadow: 0 0 .125rem #fff
+}
+
+.sapCreateProjectPanel .sapMPanelContent:not(.sapMPanelBGTransparent) {
+    border-bottom: 0 solid #ccc
+}
+
+.sapIconTabBar .sapMITH,
+.sapMPanelWrappingDiv,
+.sapMPanelWrappingDivTb,
+.sapPanelBottomBorderClass .sapMPanel>.sapMPanelHdr {
+    border-bottom: .08rem solid #69a3d2
+}
+
+.sapIconTabMarginTop {
+    margin-top: .1rem
+}
+
+.sapUiSizeCompact .sapUiTableColCell>.sapMLabel,
+.sapUiSizeCondensed .sapUiTableCell .sapMLabel,
+.sapUiSizeCondensed .sapUiTableColCell>.sapMLabel,
+.tableHeaderLabelClss .sapUiSizeCompact .sapUiTableCell .sapMLabel {
+    font-weight: 400;
+    font-size: .7rem
+}
+
+.sapIconTabBar .sapMITH {
+    box-shadow: inset 0 0 0 0 #d1e0ee;
+    height: 3.9rem
+}
+
+.toolbarBorderClass .sapMTBStandard {
+    border-bottom: 0
+}
+
+.processFLowMarginCls {
+    margin-right: 4%
+}
+
+.basicDataHLineClass {
+    border-top: 1px solid #69a3d2;
+    margin-top: .2rem
+}
+
+.basicDataToolbarBrdClass {
+    border-bottom: 0!important
+}
+
+.hdrTextClass {
+    color: #58789C
+}
+
+.sapUiTableBorderClass {
+    box-shadow: 0 0 14px 0 rgba(0, 0, 0, .1)
+}

@@ -1,0 +1,30 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" class="sapUiSizeCompact" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table">
+	<!--	<Panel expandable="false" expanded="true" class="npiPanelStyle" headerText="{i18n>MULTILINGUAL_MAT_DESC}">
+		<content>-->
+	<table:Table rows="{oBasicDataCollectionModel>/listBasicDescDto}" selectionMode="Single" alternateRowColors="true" showNoData="true"
+		class="sapUiTableBorderClass">
+		<table:columns>
+			<!--	<table:Column>
+				<Label text="{i18n>REGIONAL_MATERIAL_CODE}"/>
+				<table:template>
+					<Text text="" wrapping="false"/>
+				</table:template>
+			</table:Column>-->
+			<table:Column hAlign="Center">
+				<Label text="{i18n>LANGUAGE}" design="Bold"/>
+				<table:template>
+					<Text text="{oBasicDataCollectionModel>language}" wrapping="false"/>
+				</table:template>
+			</table:Column>
+			<table:Column hAlign="Center">
+				<Label text="{i18n>DESCRIPTION}" design="Bold"/>
+				<table:template>
+					<Input value="{oBasicDataCollectionModel>description}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
+					<!--<Text text="{oBasicDataCollectionModel>description}" wrapping="false"/>-->
+				</table:template>
+			</table:Column>
+		</table:columns>
+	</table:Table>
+	<!--	</content>
+	</Panel>-->
+</core:FragmentDefinition>
