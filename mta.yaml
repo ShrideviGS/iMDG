@@ -34,6 +34,13 @@ modules:
         - npm run build
       supported-platforms: []
       build-result: dist
+  - name: IMDG_Workflow_Module
+    type: com.sap.application.content
+    path: IMDG_Workflow_Module
+    requires:
+      - name: workflow_iMDG
+        parameters:
+          content-target: true
 resources:
   - name: iMDG_html5_repo_runtime
     parameters:
@@ -55,4 +62,9 @@ resources:
     parameters:
       service-plan: lite
       service: destination
+    type: org.cloudfoundry.managed-service
+  - name: workflow_iMDG
+    parameters:
+      service-plan: standard
+      service: workflow
     type: org.cloudfoundry.managed-service
