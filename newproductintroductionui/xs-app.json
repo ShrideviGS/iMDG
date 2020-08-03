@@ -5,11 +5,6 @@
 		"logoutEndpoint": "/do/logout"
 	},
 	"routes": [{
-		"source": "^(.*)$",
-		"target": "$1",
-		"service": "html5-apps-repo-rt",
-		"authenticationType": "xsuaa"
-	}, {
 		"source": "^/npiservices",
 		"target": "/",
 		"destination": "npiservicesimdg"
@@ -21,5 +16,10 @@
 		"source": "^/bpmworkflowruntime",
 		"target": "/",
 		"destination": "bpmworkflowruntime"
+	},{
+		"source": "^(.*)$",
+		"target": "$1",
+		"service": "html5-apps-repo-rt",
+		"authenticationType": "xsuaa"
 	}]
 }
