@@ -13,6 +13,7 @@ modules:
     requires:
       - name: iMDG_html5_repo_runtime
       - name: uaa_iMDG
+      - name: dest_iMDG
   - name: iMDG_ui_deployer
     type: com.sap.html5.application-content
     path: iMDG_ui_deployer
@@ -34,13 +35,7 @@ modules:
         - npm run build
       supported-platforms: []
       build-result: dist
-  - name: IMDG_Workflow_Module
-    type: com.sap.application.content
-    path: IMDG_Workflow_Module
-    requires:
-      - name: workflow_iMDG
-        parameters:
-          content-target: true
+  
 resources:
   - name: iMDG_html5_repo_runtime
     parameters:
