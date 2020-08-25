@@ -14,7 +14,7 @@
 						items="{oDropdownLookupsModel>/tempconditions}" width="100%">
 						<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
 					</Select>-->
-					<ComboBox items="{oDropdownLookupsModel>/tempconditions}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+					<ComboBox items="{path: 'oDropdownLookupsModel>/tempconditions'}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
 						selectedKey="{oBasicDataCollectionModel>/basicDataDto/tempCondition}" showSecondaryValues="true" width="100%">
 						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
 						<customData>
@@ -28,7 +28,7 @@
 						items="{oDropdownLookupsModel>/storageconditions}" width="100%">
 						<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
 					</Select>-->
-					<ComboBox items="{oDropdownLookupsModel>/storageconditions}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+					<ComboBox items="{path: 'oDropdownLookupsModel>/storageconditions'}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
 						selectedKey="{oBasicDataCollectionModel>/basicDataDto/storageConditions}" showSecondaryValues="true" width="100%">
 						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
 						<customData>
@@ -42,7 +42,7 @@
 						items="{oDropdownLookupsModel>/containerrequirements}" width="100%">
 						<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
 					</Select>-->
-					<ComboBox items="{oDropdownLookupsModel>/containerrequirements}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+					<ComboBox items="{path: 'oDropdownLookupsModel>/containerrequirements'}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
 						selectedKey="{oBasicDataCollectionModel>/basicDataDto/containerRequirements}" showSecondaryValues="true" width="100%">
 						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
 						<customData>
@@ -60,7 +60,7 @@
 						items="{oDropdownLookupsModel>/labeltypes}">
 						<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
 					</Select>-->
-					<ComboBox items="{oDropdownLookupsModel>/labeltypes}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+					<ComboBox items="{path: 'oDropdownLookupsModel>/labeltypes'}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
 						selectedKey="{oBasicDataCollectionModel>/basicDataDto/labelType}" showSecondaryValues="true" width="100%">
 						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
 						<customData>
@@ -74,7 +74,7 @@
 						items="{oDropdownLookupsModel>/labelforms}">
 						<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
 					</Select>-->
-					<ComboBox items="{oDropdownLookupsModel>/labelforms}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+					<ComboBox items="{path: 'oDropdownLookupsModel>/labelforms'}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
 						selectedKey="{oBasicDataCollectionModel>/basicDataDto/labelForm}" showSecondaryValues="true" width="100%">
 						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
 						<customData>

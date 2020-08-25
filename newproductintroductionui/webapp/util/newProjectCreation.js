@@ -8,6 +8,7 @@ newproductintroductionui.newproductintroductionui.util.newProjectCreation = {
 		oProjectDetailModel.setSizeLimit(999);
 		var oUiElementVisibilityModel = oController.oUiElementVisibilityModel;
 		var oPayload = {
+			
 			"description": oProjectDetailModel.getProperty("/projectDto/description"),
 			"leadCategoryCode": oProjectDetailModel.getProperty("/projectDto/leadCategoryCode"),
 			// "leadClusterCode": oProjectDetailModel.getProperty("/projectDto/leadClusterCode"),
@@ -34,6 +35,7 @@ newproductintroductionui.newproductintroductionui.util.newProjectCreation = {
 		oModel.attachRequestCompleted(function (oEvent) {
 			if (oEvent.getParameter("success")) {
 				var resultData = oEvent.getSource().getData();
+				resultData.entity = resultData.projectId;
 				oProjectDetailModel.setProperty("/projectDto/projectId", resultData.entity);
 				oProjectDetailModel.refresh();
 				oController.onFetchProjectDetails(resultData.entity, "HEADER_CFRM");
@@ -71,7 +73,10 @@ newproductintroductionui.newproductintroductionui.util.newProjectCreation = {
 		oProjectDetailModel.setProperty("/projectDto/dateUpdated", updatedOn);
 		var projectId = oProjectDetailModel.getProperty("/projectDto/projectId");
 		oProjectDetailModel.setProperty("/projectDto/projectStatusCode", 0);
-
+		 var Prt=oProjectDetailModel.getProperty("/projectDto");
+		 Prt.regionalMaterialUniqueId="17";
+		var MAT=oProjectDetailModel.getProperty("/materialLines");
+		MAT[0].regionalMaterialUniqueId="17";
 		var oPayload = {
 			"projectDto": oProjectDetailModel.getProperty("/projectDto"),
 			"materialLines": oProjectDetailModel.getProperty("/materialLines"),

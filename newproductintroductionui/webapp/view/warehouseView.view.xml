@@ -110,7 +110,7 @@
 										</VBox>
 										<VBox>
 											<Label text="{i18n>PICKING_STORAGE_TYPE}" design="Bold"></Label>
-											<ComboBox width="100%" showSecondaryValues="true" items="{oPickStorageTypeModel>/results}"
+											<ComboBox width="100%" showSecondaryValues="true" items="{path: 'oPickStorageTypeModel>/results'}"
 												selectedKey="{oWarehouseDataModel>/pickingStorageType}">
 												<core:ListItem key="{oPickStorageTypeModel>code}" text="{oPickStorageTypeModel>description}" additionalText="{oPickStorageTypeModel>code}"/>
 											</ComboBox>
@@ -141,21 +141,21 @@
 										</VBox>
 										<VBox>
 											<Label text="{i18n>STORAGE_SECTION_IND}" design="Bold"></Label>
-											<ComboBox width="100%" showSecondaryValues="true" items="{oStorageSelIndModel>/results}"
+											<ComboBox width="100%" showSecondaryValues="true" items="{path: 'oStorageSelIndModel>/results'}"
 												selectedKey="{oWarehouseDataModel>/storageSectionInd}">
 												<core:ListItem key="{oStorageSelIndModel>code}" text="{oStorageSelIndModel>description}" additionalText="{oStorageSelIndModel>code}"/>
 											</ComboBox>
 										</VBox>
 										<VBox>
 											<Label text="{i18n>BULK_STORAGE}" design="Bold"></Label>
-											<ComboBox width="100%" showSecondaryValues="true" items="{oBulkStorageModel>/results}"
+											<ComboBox width="100%" showSecondaryValues="true" items="{path: 'oBulkStorageModel>/results'}"
 												selectedKey="{oWarehouseDataModel>/bulkStorage}">
 												<core:ListItem key="{oBulkStorageModel>code}" text="{oBulkStorageModel>description}" additionalText="{oBulkStorageModel>code}"/>
 											</ComboBox>
 										</VBox>
 										<VBox>
 											<Label text="{i18n>SPECIAL_MOVEMENT}" design="Bold"></Label>
-											<ComboBox width="100%" showSecondaryValues="true" items="{oSpclMovementModel>/results}"
+											<ComboBox width="100%" showSecondaryValues="true" items="{path: 'oSpclMovementModel>/results'}"
 												selectedKey="{oWarehouseDataModel>/specialMovement}">
 												<core:ListItem key="{oSpclMovementModel>code}" text="{oSpclMovementModel>description}" additionalText="{oSpclMovementModel>code}"/>
 											</ComboBox>
@@ -166,7 +166,7 @@
 										</VBox>
 										<VBox>
 											<Label text="{i18n>TWO_STEP_PICKING}" design="Bold"></Label>
-											<ComboBox width="100%" showSecondaryValues="true" items="{oTwoStepPickModel>/results}"
+											<ComboBox width="100%" showSecondaryValues="true" items="{path: 'oTwoStepPickModel>/results'}"
 												selectedKey="{oWarehouseDataModel>/picking2Steps}">
 												<core:ListItem key="{oTwoStepPickModel>code}" text="{oTwoStepPickModel>description}" additionalText="{oTwoStepPickModel>code}"/>
 											</ComboBox>
@@ -214,19 +214,19 @@
 									<l:content>
 										<Input class="sapUiSizeCompact" value="{oWarehouseDataModel>/loadingEquipmentQuantity1}"></Input>
 										<Input class="sapUiSizeCompact" value="{oWarehouseDataModel>/loadingEquipmentUom1}"></Input>
-										<ComboBox width="100%" showSecondaryValues="true" items="{oStorageUnitTypeModel>/results}"
+										<ComboBox width="100%" showSecondaryValues="true" items="{path: 'oStorageUnitTypeModel>/results'}"
 											selectedKey="{oWarehouseDataModel>/storageUnitType1}">
 											<core:ListItem key="{oStorageUnitTypeModel>code}" text="{oStorageUnitTypeModel>description}" additionalText="{oStorageUnitTypeModel>code}"/>
 										</ComboBox>
 										<Input class="sapUiSizeCompact" value="{oWarehouseDataModel>/loadingEquipmentQuantity2}"></Input>
 										<Input class="sapUiSizeCompact" value="{oWarehouseDataModel>/loadingEquipmentUom2}"></Input>
-										<ComboBox width="100%" showSecondaryValues="true" items="{oStorageUnitTypeModel>/results}"
+										<ComboBox width="100%" showSecondaryValues="true" items="{path: 'oStorageUnitTypeModel>/results'}"
 											selectedKey="{oWarehouseDataModel>/storageUnitType2}">
 											<core:ListItem key="{oStorageUnitTypeModel>code}" text="{oStorageUnitTypeModel>description}" additionalText="{oStorageUnitTypeModel>code}"/>
 										</ComboBox>
 										<Input class="sapUiSizeCompact" value="{oWarehouseDataModel>/loadingEquipmentQuantity3}"></Input>
 										<Input class="sapUiSizeCompact" value="{oWarehouseDataModel>/loadingEquipmentUom3}"></Input>
-										<ComboBox width="100%" showSecondaryValues="true" items="{oStorageUnitTypeModel>/results}"
+										<ComboBox width="100%" showSecondaryValues="true" items="{path: 'oStorageUnitTypeModel>/results'}"
 											selectedKey="{oWarehouseDataModel>/storageUnitType3}">
 											<core:ListItem key="{oStorageUnitTypeModel>code}" text="{oStorageUnitTypeModel>description}" additionalText="{oStorageUnitTypeModel>code}"/>
 										</ComboBox>

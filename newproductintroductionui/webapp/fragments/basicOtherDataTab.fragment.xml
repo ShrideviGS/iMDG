@@ -14,7 +14,7 @@
 				</VBox>
 				<VBox class="sapUiSmallMarginBegin">
 					<Label text="{i18n>CATALOG_PROFILE}:" class="sapUiTinyMarginTop"></Label>
-					<ComboBox items="{oDropdownLookupsModel>/catalogprofiles}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+					<ComboBox items="{path: 'oDropdownLookupsModel>/catalogprofiles'}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
 						selectedKey="{oBasicDataCollectionModel>/basicDataDto/catalogProfile}" showSecondaryValues="true" width="100%">
 						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
 						<customData>

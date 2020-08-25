@@ -70,7 +70,8 @@ sap.ui.define([
 			//commented by shridevi
 			var taskId = this.getTaskIdFromUrl();
 			var oScenarioModel = this.oScenarioModel;
-			var sUrl = "/bpmworkflowruntime/workflow-service/rest/v1/task-instances/" + taskId + "/context";
+		//	var sUrl = "/bpmworkflowruntime/workflow-service/rest/v1/task-instances/" + taskId + "/context";
+		var sUrl = "/bpmworkflowruntime/workflow-service/rest/v1/task-instances/" + taskId + "/context";
 			var oModel = new sap.ui.model.json.JSONModel();
 			oModel.loadData(sUrl, true, "GET", false, false);
 			oModel.attachRequestCompleted(function (oEvent) {
