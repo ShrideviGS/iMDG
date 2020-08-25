@@ -32,7 +32,7 @@
 				</VBox>
 				<VBox class="sapUiSmallMarginBegin">
 					<Label text="{i18n>ALLOWED_PKG_WEIGHT_UOM}:" class="sapUiTinyMarginTop"></Label>
-					<ComboBox items="{oDropdownLookupsModel>/pkgWeigthUOM}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+					<ComboBox items="{path: 'oDropdownLookupsModel>/pkgWeigthUOM'}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
 						selectedKey="{oBasicDataCollectionModel>/basicDataDto/allowedPkgWeightUom}" showSecondaryValues="true" width="100%">
 						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>uomDesc30}" additionalText="{oDropdownLookupsModel>code}"/>
 						<customData>
@@ -58,7 +58,7 @@
 				</VBox>
 				<VBox class="sapUiSmallMarginBegin">
 					<Label text="{i18n>ALLOWED_PKG_VOLUME_UOM}:" class="sapUiTinyMarginTop"></Label>
-					<ComboBox items="{oDropdownLookupsModel>/pkgVolumeUOM}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+					<ComboBox items="{path: 'oDropdownLookupsModel>/pkgVolumeUOM'}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
 						selectedKey="{oBasicDataCollectionModel>/basicDataDto/allowedPkgVolumeUom}" showSecondaryValues="true" width="100%">
 						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>uomDesc30}" additionalText="{oDropdownLookupsModel>code}"/>
 						<customData>
@@ -68,7 +68,7 @@
 				</VBox>
 				<VBox>
 					<Label text="{i18n>PACKAGING_MAT_TYPE}:" class="sapUiTinyMarginTop"></Label>
-					<ComboBox items="{oDropdownLookupsModel>/packmaterialtypes}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+					<ComboBox items="{path: 'oDropdownLookupsModel>/packmaterialtypes'}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
 						selectedKey="{oBasicDataCollectionModel>/basicDataDto/packagingMatType}" showSecondaryValues="true" width="100%">
 						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>uomDesc30}" additionalText="{oDropdownLookupsModel>code}"/>
 						<customData>
@@ -92,7 +92,7 @@
 			<l:content>
 				<VBox>
 					<Label text="{i18n>TRANSPORTATION_GROUP}:" class="sapUiTinyMarginTop" required="true"></Label>
-					<ComboBox items="{oDropdownLookupsModel>/transportgroups}" id="mara_tragr" change="onChangeComboBox"
+					<ComboBox items="{path: 'oDropdownLookupsModel>/transportgroups'}" id="mara_tragr" change="onChangeComboBox"
 						editable="{oSpecTblDataModel>/isBasicEditable}" selectedKey="{oBasicDataCollectionModel>/basicDataDto/transportGroup}"
 						showSecondaryValues="true" width="100%">
 						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>

@@ -104,14 +104,14 @@
 									<l:content>
 										<VBox>
 											<Label text="{i18n>PURCHASING_GRP}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_ekgrp" showSecondaryValues="true" items="{oPGrpModel>/results}"
+											<ComboBox width="100%" id="marc_ekgrp" showSecondaryValues="true" items="{path: 'oPGrpModel>/results'}"
 												selectedKey="{oMRPDataModel>/purchasingGroup}">
 												<core:ListItem key="{oPGrpModel>code}" text="{oPGrpModel>description}" additionalText="{oPGrpModel>code}"/>
 											</ComboBox>
 										</VBox>
 										<VBox>
 											<Label text="{i18n>ABC_IND}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_maabc" showSecondaryValues="true" items="{oABCIndModel>/results}"
+											<ComboBox width="100%" id="marc_maabc" showSecondaryValues="true" items="{path: 'oABCIndModel>/results'}"
 												selectedKey="{oMRPDataModel>/abcIndicator}">
 												<core:ListItem key="{oABCIndModel>code}" text="{oABCIndModel>description}" additionalText="{oABCIndModel>code}"/>
 											</ComboBox>
@@ -137,7 +137,7 @@
 									<l:content>
 										<VBox>
 											<Label text="{i18n>MRP_TYPE}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_dismm" showSecondaryValues="true" items="{oMRPTypesModel>/results}" selectedKey="{oMRPDataModel>/mrpType}">
+											<ComboBox width="100%" id="marc_dismm" showSecondaryValues="true" items="{path: 'oMRPTypesModel>/results'}" selectedKey="{oMRPDataModel>/mrpType}">
 												<core:ListItem key="{oMRPTypesModel>code}" text="{oMRPTypesModel>description}" additionalText="{oMRPTypesModel>code}"/>
 											</ComboBox>
 										</VBox>
@@ -151,7 +151,7 @@
 										</VBox>
 										<VBox>
 											<Label text="{i18n>PLAN_CYCLE}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_lfrhy" showSecondaryValues="true" items="{oPlanCycleModel>/results}"
+											<ComboBox width="100%" id="marc_lfrhy" showSecondaryValues="true" items="{path: 'oPlanCycleModel>/results'}"
 												selectedKey="{oMRPDataModel>/planningCycle}">
 												<core:ListItem key="{oPlanCycleModel>code}" text="{oPlanCycleModel>description}" additionalText="{oPlanCycleModel>code}"/>
 											</ComboBox>
@@ -166,7 +166,7 @@
 									<l:content>
 										<VBox>
 											<Label text="{i18n>LOT_SIZE}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_disls" showSecondaryValues="true" items="{oLotSizeModel>/results}" selectedKey="{oMRPDataModel>/lotSize}">
+											<ComboBox width="100%" id="marc_disls" showSecondaryValues="true" items="{path: 'oLotSizeModel>/results'}" selectedKey="{oMRPDataModel>/lotSize}">
 												<core:ListItem key="{oLotSizeModel>code}" text="{oLotSizeModel>description}" additionalText="{oLotSizeModel>code}"/>
 											</ComboBox>
 										</VBox>
@@ -192,7 +192,7 @@
 										</VBox>
 										<VBox>
 											<Label text="{i18n>STORAGE_COST_IND}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_lagpr" showSecondaryValues="false" items="{oStrgCostIndModel>/results}"
+											<ComboBox width="100%" id="marc_lagpr" showSecondaryValues="false" items="{path: 'oStrgCostIndModel>/results'}"
 												selectedKey="{oMRPDataModel>/storageCostInd}">
 												<core:ListItem key="{oStrgCostIndModel>code}" text="{oStrgCostIndModel>code}" additionalText="{oStrgCostIndModel>code}"/>
 											</ComboBox>
@@ -207,7 +207,7 @@
 										</VBox>
 										<VBox>
 											<Label text="{i18n>ROUNDING_PROFILE}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_rdprf" showSecondaryValues="true" items="{oRoundProfModel>/results}"
+											<ComboBox width="100%" id="marc_rdprf" showSecondaryValues="true" items="{path: 'oRoundProfModel>/results'}"
 												selectedKey="{oMRPDataModel>/roundingProfile}">
 												<core:ListItem key="{oRoundProfModel>code}" text="{oRoundProfModel>description}" additionalText="{oRoundProfModel>code}"/>
 											</ComboBox>
@@ -230,35 +230,35 @@
 									<l:content>
 										<VBox>
 											<Label text="{i18n>BATCH_ENTRY}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_kzech" showSecondaryValues="true" items="{oBatchEntryModel>/results}"
+											<ComboBox width="100%" id="marc_kzech" showSecondaryValues="true" items="{path: 'oBatchEntryModel>/results'}"
 												selectedKey="{oMRPDataModel>/batchEntry}">
 												<core:ListItem key="{oBatchEntryModel>code}" text="{oBatchEntryModel>description}" additionalText="{oBatchEntryModel>code}"/>
 											</ComboBox>
 										</VBox>
 										<VBox>
 											<Label text="{i18n>QUOTA_USAGE}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_usequ" showSecondaryValues="true" items="{oQuotaArrUsageModel>/results}"
+											<ComboBox width="100%" id="marc_usequ" showSecondaryValues="true" items="{path: 'oQuotaArrUsageModel>/results'}"
 												selectedKey="{oMRPDataModel>/quotaArrUsage}">
 												<core:ListItem key="{oQuotaArrUsageModel>code}" text="{oQuotaArrUsageModel>quotaSystemApplied}" additionalText="{oQuotaArrUsageModel>code}"/>
 											</ComboBox>
 										</VBox>
 										<VBox>
 											<Label text="{i18n>BACK_FLUSH}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_rgekz" showSecondaryValues="true" items="{oBackFlushModel>/results}"
+											<ComboBox width="100%" id="marc_rgekz" showSecondaryValues="true" items="{path: 'oBackFlushModel>/results'}"
 												selectedKey="{oMRPDataModel>/backflush}">
 												<core:ListItem key="{oBackFlushModel>code}" text="{oBackFlushModel>description}" additionalText="{oBackFlushModel>code}"/>
 											</ComboBox>
 										</VBox>
 										<VBox>
 											<Label text="{i18n>STOCK_GRP}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_eprio" showSecondaryValues="false" items="{oStockDetGrpModel>/results}"
+											<ComboBox width="100%" id="marc_eprio" showSecondaryValues="false" items="{path: 'oStockDetGrpModel>/results'}"
 												selectedKey="{oMRPDataModel>/stockDetGroup}">
 												<core:ListItem key="{oStockDetGrpModel>code}" text="{oStockDetGrpModel>code}" additionalText="{oStockDetGrpModel>code}"/>
 											</ComboBox>
 										</VBox>
 										<VBox>
 											<Label text="{i18n>JIT_DEL_SCHEDULE}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_fabkz" showSecondaryValues="true" items="{oJITDelSchModel>/results}"
+											<ComboBox width="100%" id="marc_fabkz" showSecondaryValues="true" items="{path: 'oJITDelSchModel>/results'}"
 												selectedKey="{oMRPDataModel>/jitDeliverySchedule}">
 												<core:ListItem key="{oJITDelSchModel>code}" text="{oJITDelSchModel>description}" additionalText="{oJITDelSchModel>code}"/>
 											</ComboBox>
@@ -297,7 +297,7 @@
 										</VBox>
 										<VBox>
 											<Label text="{i18n>SCHED_MARGIN_KEY}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_fhori" showSecondaryValues="false" items="{oShdMarginModel>/results}"
+											<ComboBox width="100%" id="marc_fhori" showSecondaryValues="false" items="{path: 'oShdMarginModel>/results'}"
 												selectedKey="{oMRPDataModel>/schedMarginKey}">
 												<core:ListItem key="{oShdMarginModel>code}" text="{oShdMarginModel>code}" additionalText="{oShdMarginModel>code}"/>
 											</ComboBox>
@@ -324,14 +324,14 @@
 										</VBox>
 										<VBox>
 											<Label text="{i18n>COVERAGE_PROFILE}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_rwpro" showSecondaryValues="true" items="{oCoverageProfModel>/results}"
+											<ComboBox width="100%" id="marc_rwpro" showSecondaryValues="true" items="{path: 'oCoverageProfModel>/results'}"
 												selectedKey="{oMRPDataModel>/coverageProfile}">
 												<core:ListItem key="{oCoverageProfModel>code}" text="{oCoverageProfModel>description}" additionalText="{oCoverageProfModel>code}"/>
 											</ComboBox>
 										</VBox>
 										<VBox>
 											<Label text="{i18n>SAFETY_TIME_IND}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_shflg" showSecondaryValues="true" items="{oSafetyTimeIndModel>/results}"
+											<ComboBox width="100%" id="marc_shflg" showSecondaryValues="true" items="{path: 'oSafetyTimeIndModel>/results'}"
 												selectedKey="{oMRPDataModel>/safetyTimeInd}">
 												<core:ListItem key="{oSafetyTimeIndModel>code}" text="{oSafetyTimeIndModel>description}" additionalText="{oSafetyTimeIndModel>code}"/>
 											</ComboBox>
@@ -342,7 +342,7 @@
 										</VBox>
 										<VBox>
 											<Label text="{i18n>SAFETY_TIME_PERIOD_PROFILE}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_shpro" showSecondaryValues="true" items="{oSTimePeriodProfModel>/results}"
+											<ComboBox width="100%" id="marc_shpro" showSecondaryValues="true" items="{path: 'oSTimePeriodProfModel>/results'}"
 												selectedKey="{oMRPDataModel>/sTimePeriodProfile}">
 												<core:ListItem key="{oSTimePeriodProfModel>code}" text="{oSTimePeriodProfModel>description}" additionalText="{oSTimePeriodProfModel>code}"/>
 											</ComboBox>
@@ -361,7 +361,7 @@
 										</VBox>
 										<VBox>
 											<Label text="{i18n>MPS_CATEGORY}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_zzmpscat" showSecondaryValues="true" items="{oMPSCatModel>/results}"
+											<ComboBox width="100%" id="marc_zzmpscat" showSecondaryValues="true" items="{path: 'oMPSCatModel>/results'}"
 												selectedKey="{oMRPDataModel>/mpsCategory}">
 												<core:ListItem key="{oMPSCatModel>code}" text="{oMPSCatModel>description}" additionalText="{oMPSCatModel>code}"/>
 											</ComboBox>
@@ -372,7 +372,7 @@
 										</VBox>
 										<VBox>
 											<Label text="{i18n>STOCK_STATUS_CLASSIF}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_zzssclsf" showSecondaryValues="true" items="{oStockStatusClassifModel>/results}"
+											<ComboBox width="100%" id="marc_zzssclsf" showSecondaryValues="true" items="{path: 'oStockStatusClassifModel>/results'}"
 												selectedKey="{oMRPDataModel>/stockStatusClassif}">
 												<core:ListItem key="{oStockStatusClassifModel>code}" text="{oStockStatusClassifModel>description}"
 													additionalText="{oStockStatusClassifModel>code}"/>
@@ -388,7 +388,7 @@
 										</VBox>
 										<VBox>
 											<Label text="{i18n>RIM_MIX_TYPE}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_zzrimmix" showSecondaryValues="true" items="{oRIMMixTypeModel>/results}"
+											<ComboBox width="100%" id="marc_zzrimmix" showSecondaryValues="true" items="{path: 'oRIMMixTypeModel>/results'}"
 												selectedKey="{oMRPDataModel>/rimMixType}">
 												<core:ListItem key="{oRIMMixTypeModel>code}" text="{oRIMMixTypeModel>description}" additionalText="{oRIMMixTypeModel>code}"/>
 											</ComboBox>
@@ -411,21 +411,21 @@
 									<l:content>
 										<VBox>
 											<Label text="{i18n>PERIOD_IND}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_perkz" showSecondaryValues="true" items="{oPeriodIndModel>/results}"
+											<ComboBox width="100%" id="marc_perkz" showSecondaryValues="true" items="{path: 'oPeriodIndModel>/results'}"
 												selectedKey="{oMRPDataModel>/periodIndicator}">
 												<core:ListItem key="{oPeriodIndModel>code}" text="{oPeriodIndModel>description}" additionalText="{oPeriodIndModel>code}"/>
 											</ComboBox>
 										</VBox>
 										<VBox>
 											<Label text="{i18n>SPLIT_IND}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_auftl" showSecondaryValues="false" items="{oSplitIndModel>/results}"
+											<ComboBox width="100%" id="marc_auftl" showSecondaryValues="false" items="{path: 'oSplitIndModel>/results'}"
 												selectedKey="{oMRPDataModel>/splittingIndicator}">
 												<core:ListItem key="{oSplitIndModel>code}" text="{oSplitIndModel>code}" additionalText="{oSplitIndModel>code}"/>
 											</ComboBox>
 										</VBox>
 										<VBox>
 											<Label text="{i18n>FISCAL_YEAR_VARIANT}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_periv" showSecondaryValues="true" items="{oFiscalYearVarModel>/results}"
+											<ComboBox width="100%" id="marc_periv" showSecondaryValues="true" items="{path: 'oFiscalYearVarModel>/results'}"
 												selectedKey="{oMRPDataModel>/fiscalYearVariant}">
 												<core:ListItem key="{oFiscalYearVarModel>code}" text="{oFiscalYearVarModel>description}" additionalText="{oFiscalYearVarModel>code}"/>
 											</ComboBox>
@@ -440,14 +440,14 @@
 									<l:content>
 										<VBox>
 											<Label text="{i18n>CROSS_PROJECT}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_kzpsp" showSecondaryValues="true" items="{oCrossProjModel>/results}"
+											<ComboBox width="100%" id="marc_kzpsp" showSecondaryValues="true" items="{path: 'oCrossProjModel>/results'}"
 												selectedKey="{oMRPDataModel>/crossProject}">
 												<core:ListItem key="{oCrossProjModel>code}" text="{oCrossProjModel>description}" additionalText="{oCrossProjModel>code}"/>
 											</ComboBox>
 										</VBox>
 										<VBox>
 											<Label text="{i18n>AVAILABILITY_CHECK}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_mtvfp" showSecondaryValues="true" items="{oAvailCheckModel>/results}"
+											<ComboBox width="100%" id="marc_mtvfp" showSecondaryValues="true" items="{path: 'oAvailCheckModel>/results'}"
 												selectedKey="{oMRPDataModel>/availabilityCheck}">
 												<core:ListItem key="{oAvailCheckModel>code}" text="{oAvailCheckModel>description}" additionalText="{oAvailCheckModel>code}"/>
 											</ComboBox>
@@ -466,7 +466,7 @@
 									<l:content>
 										<VBox>
 											<Label text="{i18n>STRATEGY_GRP}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_strgr" showSecondaryValues="true" items="{oStrategyGrpModel>/results}"
+											<ComboBox width="100%" id="marc_strgr" showSecondaryValues="true" items="{path: 'oStrategyGrpModel>/results'}"
 												selectedKey="{oMRPDataModel>/strategyGroup}">
 												<core:ListItem key="{oStrategyGrpModel>code}" text="{oStrategyGrpModel>description}" additionalText="{oStrategyGrpModel>code}"/>
 											</ComboBox>
@@ -477,13 +477,13 @@
 										</VBox>
 										<VBox>
 											<Label text="{i18n>MIXED_MRP}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_miskz" showSecondaryValues="true" items="{oMixedMRPModel>/results}" selectedKey="{oMRPDataModel>/mixedMRP}">
+											<ComboBox width="100%" id="marc_miskz" showSecondaryValues="true" items="{path: 'oMixedMRPModel>/results'}" selectedKey="{oMRPDataModel>/mixedMRP}">
 												<core:ListItem key="{oMixedMRPModel>code}" text="{oMixedMRPModel>description}" additionalText="{oMixedMRPModel>code}"/>
 											</ComboBox>
 										</VBox>
 										<VBox>
 											<Label text="{i18n>CONSUMPTION_MODE}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_vrmod" showSecondaryValues="true" items="{oConModModel>/results}"
+											<ComboBox width="100%" id="marc_vrmod" showSecondaryValues="true" items="{path: 'oConModModel>/results'}"
 												selectedKey="{oMRPDataModel>/consumptionMode}">
 												<core:ListItem key="{oConModModel>code}" text="{oConModModel>description}" additionalText="{oConModModel>code}"/>
 											</ComboBox>
@@ -530,28 +530,28 @@
 									<l:content>
 										<VBox>
 											<Label text="{i18n>SELECTION_METHOD}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_altsl" showSecondaryValues="true" items="{oSelMethodModel>/results}"
+											<ComboBox width="100%" id="marc_altsl" showSecondaryValues="true" items="{path: 'oSelMethodModel>/results'}"
 												selectedKey="{oMRPDataModel>/selectionMethod}">
 												<core:ListItem key="{oSelMethodModel>code}" text="{oSelMethodModel>description}" additionalText="{oSelMethodModel>code}"/>
 											</ComboBox>
 										</VBox>
 										<VBox>
 											<Label text="{i18n>MRP_DEP_REQ}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_ahdis" showSecondaryValues="true" items="{oMRPDepModel>/results}"
+											<ComboBox width="100%" id="marc_ahdis" showSecondaryValues="true" items="{path: 'oMRPDepModel>/results'}"
 												selectedKey="{oMRPDataModel>/mrpDependentReq}">
 												<core:ListItem key="{oMRPDepModel>code}" text="{oMRPDepModel>description}" additionalText="{oMRPDepModel>code}"/>
 											</ComboBox>
 										</VBox>
 										<VBox>
 											<Label text="{i18n>REQ_GRP}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_kzbed" showSecondaryValues="true" items="{oReqGrpModel>/results}"
+											<ComboBox width="100%" id="marc_kzbed" showSecondaryValues="true" items="{path: 'oReqGrpModel>/results'}"
 												selectedKey="{oMRPDataModel>/requirementsGroup}">
 												<core:ListItem key="{oReqGrpModel>code}" text="{oReqGrpModel>description}" additionalText="{oReqGrpModel>code}"/>
 											</ComboBox>
 										</VBox>
 										<VBox>
 											<Label text="{i18n>INDIVIDUAL_COLL}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_sbdkz" showSecondaryValues="true" items="{oIndColsModel>/results}"
+											<ComboBox width="100%" id="marc_sbdkz" showSecondaryValues="true" items="{path: 'oIndColsModel>/results'}"
 												selectedKey="{oMRPDataModel>/individualColl}">
 												<core:ListItem key="{oIndColsModel>code}" text="{oIndColsModel>description}" additionalText="{oIndColsModel>code}"/>
 											</ComboBox>
@@ -575,7 +575,7 @@
 										</VBox>
 										<VBox>
 											<Label text="{i18n>DISCONTINUATION_IND}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_kzaus" showSecondaryValues="true" items="{oDisIndModel>/results}"
+											<ComboBox width="100%" id="marc_kzaus" showSecondaryValues="true" items="{path: 'oDisIndModel>/results'}"
 												selectedKey="{oMRPDataModel>/discontinuationInd}">
 												<core:ListItem key="{oDisIndModel>code}" text="{oDisIndModel>description}" additionalText="{oDisIndModel>code}"/>
 											</ComboBox>
@@ -594,7 +594,7 @@
 									<l:content>
 										<VBox>
 											<Label text="{i18n>PUSH_DIST}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_dplpu" showSecondaryValues="true" items="{oPushDistModel>/results}"
+											<ComboBox width="100%" id="marc_dplpu" showSecondaryValues="true" items="{path: 'oPushDistModel>/results'}"
 												selectedKey="{oMRPDataModel>/pushDistribution}">
 												<core:ListItem key="{oPushDistModel>code}" text="{oPushDistModel>description}" additionalText="{oPushDistModel>code}"/>
 											</ComboBox>
@@ -609,14 +609,14 @@
 										</VBox>
 										<VBox>
 											<Label text="{i18n>FAIR_SHARE_RULE}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_dplfs" showSecondaryValues="true" items="{oFairShareRuleModel>/results}"
+											<ComboBox width="100%" id="marc_dplfs" showSecondaryValues="true" items="{path: 'oFairShareRuleModel>/results'}"
 												selectedKey="{oMRPDataModel>/fairShareRule}">
 												<core:ListItem key="{oFairShareRuleModel>code}" text="{oFairShareRuleModel>description}" additionalText="{oFairShareRuleModel>code}"/>
 											</ComboBox>
 										</VBox>
 										<VBox>
 											<Label text="{i18n>REM_PROFILE}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_sfepr" showSecondaryValues="true" items="{oRemProfModel>/results}" selectedKey="{oMRPDataModel>/remProfile}">
+											<ComboBox width="100%" id="marc_sfepr" showSecondaryValues="true" items="{path: 'oRemProfModel>/results'}" selectedKey="{oMRPDataModel>/remProfile}">
 												<core:ListItem key="{oRemProfModel>code}" text="{oRemProfModel>description}" additionalText="{oRemProfModel>code}"/>
 											</ComboBox>
 										</VBox>
@@ -730,7 +730,7 @@
 									<l:content>
 										<VBox>
 											<Label text="{i18n>CC_PHYSICAL_INV_IND}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_abcin" showSecondaryValues="false" items="{oCCPhyInvIndModel>/results}"
+											<ComboBox width="100%" id="marc_abcin" showSecondaryValues="false" items="{path: 'oCCPhyInvIndModel>/results'}"
 												selectedKey="{oMRPDataModel>/ccPhysicalInvIndicator}">
 												<core:ListItem key="{oCCPhyInvIndModel>code}" text="{oCCPhyInvIndModel>code}" additionalText="{oCCPhyInvIndModel>code}"/>
 											</ComboBox>
@@ -789,7 +789,7 @@
 									<l:content>
 										<VBox>
 											<Label text="{i18n>PROFIT_CENTER}" design="Bold"></Label>
-											<ComboBox width="100%" id="marc_prctr" showSecondaryValues="false" items="{oProfitCenterModel>/results}"
+											<ComboBox width="100%" id="marc_prctr" showSecondaryValues="false" items="{path: 'oProfitCenterModel>/results'}"
 												selectedKey="{oMRPDataModel>/profitCenter}">
 												<core:ListItem key="{oProfitCenterModel>code}" text="{oProfitCenterModel>code}" additionalText="{oProfitCenterModel>code}"/>
 											</ComboBox>

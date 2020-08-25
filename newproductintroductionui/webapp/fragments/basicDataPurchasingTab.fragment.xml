@@ -10,7 +10,7 @@
 			<l:content>
 				<VBox>
 					<Label text="{i18n>ORDER_UNIT}:" class="sapUiTinyMarginTop"></Label>
-					<ComboBox items="{oDropdownLookupsModel>/orderUnits}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+					<ComboBox items="{path: 'oDropdownLookupsModel>/orderUnits'}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
 						selectedKey="{oBasicDataCollectionModel>/basicDataDto/orderUnit}" showSecondaryValues="true" width="100%">
 						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>uomDesc30}" additionalText="{oDropdownLookupsModel>code}"/>
 						<customData>
@@ -34,7 +34,7 @@
 			<l:content>
 				<VBox>
 					<Label text="{i18n>MANUFACTURER}:" class="sapUiTinyMarginTop"></Label>
-					<ComboBox items="{oDropdownLookupsModel>/manufacturers}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+					<ComboBox items="{path: 'oDropdownLookupsModel>/manufacturers'}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
 						selectedKey="{oBasicDataCollectionModel>/basicDataDto/manufacturer}" showSecondaryValues="true" width="100%">
 						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
 						<customData>
@@ -62,7 +62,7 @@
 			<l:content>
 				<VBox>
 					<Label text="{i18n>PURCHASING_VALUE_KEY}:" class="sapUiTinyMarginTop"></Label>
-					<ComboBox items="{oDropdownLookupsModel>/purchvaluekeys}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
+					<ComboBox items="{path: 'oDropdownLookupsModel>/purchvaluekeys'}" change="onChangeComboBox" editable="{oSpecTblDataModel>/isBasicEditable}"
 						selectedKey="{oBasicDataCollectionModel>/basicDataDto/purchaseValueKey}" showSecondaryValues="true" width="100%">
 						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>code}" additionalText="{oDropdownLookupsModel>code}"/>
 						<customData>

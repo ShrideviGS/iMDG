@@ -60,7 +60,7 @@
 										<Label text="{i18n>LEADING_CATEGORY}" design="Bold"/>
 										<table:template>
 											<Select forceSelection="false" enabled="false" width="100%" selectedKey="{oProjectDetailTblModel>leadCategoryCode}"
-												items="{oDropdownLookupsModel>/leadCategory,templateShareable:'true'}">
+												items="{path: 'oDropdownLookupsModel>/leadCategory',templateShareable:'true'}">
 												<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
 											</Select>
 										</table:template>
@@ -75,7 +75,7 @@
 										<Label text="{i18n>PROJECT_TYPE}" design="Bold"/>
 										<table:template>
 											<Select forceSelection="false" enabled="false" width="100%" selectedKey="{oProjectDetailTblModel>projectTypeCode}"
-												items="{oDropdownLookupsModel>/projectTypes,templateShareable:'true'}">
+												items="{path: 'oDropdownLookupsModel>/projectTypes',templateShareable:'true'}">
 												<core:Item key="{oDropdownLookupsModel>serialId}" text="{oDropdownLookupsModel>displayValue}"/>
 											</Select>
 											<!--<Text text="{oProjectDetailTblModel>projectTypeCode}" wrapping="false"/>-->
@@ -91,7 +91,7 @@
 										<Label text="{i18n>STATUS}" design="Bold"/>
 										<table:template>
 											<Select forceSelection="false" enabled="false" width="100%" selectedKey="{oProjectDetailTblModel>projectStatusCode}"
-												items="{oDropdownLookupsModel>/projectStatus,templateShareable:'true'}">
+												items="{path: 'oDropdownLookupsModel>/projectStatus',templateShareable:'true'}">
 												<core:Item key="{oDropdownLookupsModel>serialId}" text="{oDropdownLookupsModel>displayValue}"/>
 											</Select>
 										</table:template>
@@ -156,14 +156,15 @@
 									</VBox>
 									<VBox class="sapUiSmallMarginEnd">
 										<Label text="{i18n>PROJECT_TYPE}:" class="sapUiTinyMarginTop"></Label>
-										<Select forceSelection="false" width="100%" selectedKey="{oProjectSearchModel>/projectType}" items="{oDropdownLookupsModel>/projectTypes,templateShareable:'true'}">
+										<Select forceSelection="false" width="100%" selectedKey="{oProjectSearchModel>/projectType}" items="{ path: 'oDropdownLookupsModel>/projectTypes',templateShareable:'true'}" >
 											<core:Item key="{oDropdownLookupsModel>serialId}" text="{oDropdownLookupsModel>displayValue}"/>
+										<!--	items="{oDropdownLookupsModel>/projectTypes,templateShareable:'true'}"-->
 										</Select>
 									</VBox>
 									<VBox class="sapUiSmallMarginEnd">
 										<Label text="{i18n>PROJECT_STATUS}:" class="sapUiTinyMarginTop"></Label>
 										<Select forceSelection="false" width="100%" selectedKey="{oProjectSearchModel>/projectStatus}"
-											items="{oDropdownLookupsModel>/projectStatus,templateShareable:'true'}">
+											items="{path: 'oDropdownLookupsModel>/projectStatus',templateShareable:'true'}">
 											<core:Item key="{oDropdownLookupsModel>serialId}" text="{oDropdownLookupsModel>displayValue}"/>
 										</Select>
 									</VBox>
@@ -192,7 +193,7 @@
 									</VBox>
 									<VBox class="sapUiSmallMarginEnd">
 										<Label text="{i18n>LEADING_CATEGORY}:" class="sapUiTinyMarginTop"></Label>
-										<Select forceSelection="false" width="100%" selectedKey="{oProjectSearchModel>/leadCategory}" items="{oDropdownLookupsModel>/leadCategory,templateShareable:'true'}">
+										<Select forceSelection="false" width="100%" selectedKey="{oProjectSearchModel>/leadCategory}" items="{path: 'oDropdownLookupsModel>/leadCategory',templateShareable:'true'}">
 											<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
 										</Select>
 									</VBox>
