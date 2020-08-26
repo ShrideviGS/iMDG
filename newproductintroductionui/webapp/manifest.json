@@ -22,6 +22,19 @@
 				"uri": "model/specData.json",
 				"type": "JSON"
 			}
+		},
+		"crossNavigation": {
+			"inbounds": {
+				"intent1": {
+					"signature": {
+						"parameters": {},
+						"additionalParameters": "allowed"
+					},
+					"semanticObject": "newproductintroductionui",
+					"action": "display",
+					"title": "Create-New-Project"
+				}
+			}
 		}
 	},
 	"sap.ui": {
@@ -39,10 +52,7 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": [
-			"sap_hcb",
-			"sap_belize"
-		]
+		"supportedThemes": ["sap_hcb", "sap_belize"]
 	},
 	"sap.ui5": {
 		"rootView": {
@@ -111,11 +121,9 @@
 			}
 		},
 		"resources": {
-			"css": [
-				{
-					"uri": "css/style.css"
-				}
-			]
+			"css": [{
+				"uri": "css/style.css"
+			}]
 		},
 		"routing": {
 			"config": {
@@ -127,64 +135,39 @@
 				"routerClass": "sap.m.routing.Router",
 				"clearControlAggregation": false
 			},
-			"routes": [
-				{
-					"name": "",
-					"pattern": "",
-					"target": [
-						"scoping"
-					]
-				},
-				{
-					"name": "basicDataCollection",
-					"pattern": "basicDataCollection/{taskId}",
-					"target": [
-						"basicDataCollection"
-					]
-				},
-				{
-					"name": "detailScopingView",
-					"pattern": "detailScopingView/{taskId}",
-					"target": [
-						"detailScopingView"
-					]
-				},
-				{
-					"name": "mrpView",
-					"pattern": "mrpView/{taskId}",
-					"target": [
-						"mrpView"
-					]
-				},
-				{
-					"name": "warehouseView",
-					"pattern": "warehouseView/{taskId}",
-					"target": [
-						"warehouseView"
-					]
-				},
-				{
-					"name": "createNewProject",
-					"pattern": "createNewProject/{bVal}",
-					"target": [
-						"createNewProject"
-					]
-				},
-				{
-					"name": "ficoView",
-					"pattern": "ficoView/{taskId}",
-					"target": [
-						"ficoView"
-					]
-				},
-				{
-					"name": "salesOrgView",
-					"pattern": "salesOrgView/{taskId}",
-					"target": [
-						"salesOrgView"
-					]
-				}
-			],
+			"routes": [{
+				"name": "",
+				"pattern": "",
+				"target": ["scoping"]
+			}, {
+				"name": "basicDataCollection",
+				"pattern": "basicDataCollection/{taskId}",
+				"target": ["basicDataCollection"]
+			}, {
+				"name": "detailScopingView",
+				"pattern": "detailScopingView/{taskId}",
+				"target": ["detailScopingView"]
+			}, {
+				"name": "mrpView",
+				"pattern": "mrpView/{taskId}",
+				"target": ["mrpView"]
+			}, {
+				"name": "warehouseView",
+				"pattern": "warehouseView/{taskId}",
+				"target": ["warehouseView"]
+			}, {
+				"name": "createNewProject",
+				"pattern": "createNewProject/{bVal}",
+				"target": ["createNewProject"]
+			}, {
+				"name": "ficoView",
+				"pattern": "ficoView/{taskId}",
+				"target": ["ficoView"]
+			}, {
+				"name": "salesOrgView",
+				"pattern": "salesOrgView/{taskId}",
+				"target": ["salesOrgView"]
+			}],
 			"targets": {
 				"scoping": {
 					"viewType": "XML",
