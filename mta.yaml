@@ -12,9 +12,9 @@ modules:
       memory: 256M
     requires:
       - name: iMDG_html5_repo_runtime
-      - name: uaa_iMDG
       - name: dest_iMDG
       - name: portal_resources_iMDG
+      - name: uaa_iMDG
   - name: iMDG_ui_deployer
     type: com.sap.html5.application-content
     path: iMDG_ui_deployer
@@ -26,6 +26,10 @@ modules:
           artifacts:
             - './*'
           target-path: resources/newproductintroductionui
+        - name: Kpireports
+          artifacts:
+            - './*'
+          target-path: resources/Kpireports
   - name: newproductintroductionui
     type: html5
     path: newproductintroductionui
@@ -48,6 +52,16 @@ modules:
       - name: uaa_iMDG
       - name: iMDG_html5_repo_host
       - name: iMDG_ui_deployer
+  - name: Kpireports
+    type: html5
+    path: Kpireports
+    build-parameters:
+      builder: custom
+      commands:
+        - npm install
+        - npm run build
+      supported-platforms: []
+      build-result: dist
 resources:
   - name: iMDG_html5_repo_runtime
     parameters:

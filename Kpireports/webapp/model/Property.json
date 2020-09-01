@@ -1,0 +1,294 @@
+{
+
+	"selNavigationKey": "kCycleTIme",
+
+	"aTimelineData": [{
+		"Week": "Basic Data",
+		"Revenue": 431000.22
+	}, {
+		"Week": "MRP",
+		"Revenue": 494000.30
+	}, {
+		"Week": "FI/CO",
+		"Revenue": 491000.17
+	}, {
+		"Week": "QM",
+		"Revenue": 536000.34
+	}, {
+		"Week": "Warehouse",
+		"Revenue": 675000.00
+	}, {
+		"Week": "Sales Org",
+		"Revenue": 680000.00
+	}],
+
+	"aDataQuality": [{
+		"Week": "Basic Data",
+		"Revenue": 431000.22,
+		"Cost": 536000.34
+	}, {
+		"Week": "MRP",
+		"Revenue": 494000.30,
+		"Cost": 680000.00
+	}, {
+		"Week": "FI/CO",
+		"Revenue": 491000.17,
+		"Cost": 57403.00
+	}, {
+		"Week": "QM",
+		"Revenue": 536000.34,
+		"Cost": 431000.22
+	}, {
+		"Week": "Warehouse",
+		"Revenue": 675000.00,
+		"Cost": 491000.17
+	}, {
+		"Week": "Sales Org",
+		"Revenue": 680000.00,
+		"Cost": 57403.00
+	}],
+
+	"aMaterialsCreationRate": [{
+		"Week": "January",
+		"Revenue": 431000.22
+	}, {
+		"Week": "February",
+		"Revenue": 494000.30
+	}, {
+		"Week": "March",
+		"Revenue": 491000.17
+	}, {
+		"Week": "April",
+		"Revenue": 536000.34
+	}, {
+		"Week": "May",
+		"Revenue": 675000.00
+	}, {
+		"Week": "June",
+		"Revenue": 680000.00
+	}],
+
+	"oSearchParam": {
+		"sPlant": "",
+		"sMaterial": "",
+		"sSalesorg": "",
+		"sWareHourse": ""
+	},
+
+	"aChangeHistory": [{
+		"sAttribute": "Base Unit",
+		"sOldValue": "L",
+		"sNewValue": "M",
+		"sUpdatedBy": "P1099205",
+		"sUpdatedOn": "07/01/2020"
+	}, {
+		"sAttribute": "Weight Unit",
+		"sOldValue": "12",
+		"sNewValue": "5",
+		"sUpdatedBy": "P1099205",
+		"sUpdatedOn": "21/04/2020"
+	}, {
+		"sAttribute": "Material Group",
+		"sOldValue": "LOH",
+		"sNewValue": "POH",
+		"sUpdatedBy": "P1099205",
+		"sUpdatedOn": "08/19/2020"
+	}, {
+		"sAttribute": "Division",
+		"sOldValue": "Sales",
+		"sNewValue": "Market",
+		"sUpdatedBy": "P1099205",
+		"sUpdatedOn": "09/23/2020"
+	}, {
+		"sAttribute": "Volume",
+		"sOldValue": "2385",
+		"sNewValue": "49493",
+		"sUpdatedBy": "P1099206",
+		"sUpdatedOn": "09/23/2020"
+	}, {
+		"sAttribute": "Inspection Type",
+		"sOldValue": "0001",
+		"sNewValue": "0234",
+		"sUpdatedBy": "P1099205",
+		"sUpdatedOn": "07/01/2020"
+	}, {
+		"sAttribute": "QM in Procurement is Active",
+		"sOldValue": "first",
+		"sNewValue": "second",
+		"sUpdatedBy": "P1099205",
+		"sUpdatedOn": "07/01/2020"
+	}, {
+		"sAttribute": "QM Material auth",
+		"sOldValue": "Single Modification",
+		"sNewValue": "Sample Projects",
+		"sUpdatedBy": "P1099205",
+		"sUpdatedOn": "07/01/2020"
+	}, {
+		"sAttribute": "Material Auth Groou for Activities in QM",
+		"sOldValue": "2385",
+		"sNewValue": "49493",
+		"sUpdatedBy": "P1099206",
+		"sUpdatedOn": "09/23/2020"
+	}, {
+		"sAttribute": "Certificate Type",
+		"sOldValue": "0001",
+		"sNewValue": "0234",
+		"sUpdatedBy": "P1099205",
+		"sUpdatedOn": "07/01/2020"
+	}, {
+		"sAttribute": "Control for QM in Procurement",
+		"sOldValue": "first",
+		"sNewValue": "second",
+		"sUpdatedBy": "P1099205",
+		"sUpdatedOn": "07/01/2020"
+	}, {
+		"sAttribute": "Goods Receipt Processing Time in Days",
+		"sOldValue": "XXXXX",
+		"sNewValue": "0005",
+		"sUpdatedBy": "P1099205",
+		"sUpdatedOn": "07/01/2020"
+	}],
+
+	"aSearchMaterial": [],
+	"aReports": [{
+		"sProjectID": "001",
+		"sCycleTime": "20s",
+		"sInitiatedBy": "P0001234",
+		"sStatus": "In Progress"
+	}, {
+		"sProjectID": "002",
+		"sCycleTime": "567s",
+		"sInitiatedBy": "P0001234",
+		"sStatus": "Completed"
+	}, {
+		"sProjectID": "003",
+		"sCycleTime": "345s",
+		"sInitiatedBy": "P0001234",
+		"sStatus": "Completed"
+	}, {
+		"sProjectID": "004",
+		"sCycleTime": "560s",
+		"sInitiatedBy": "P0001232",
+		"sStatus": "In Progress"
+	}, {
+		"sProjectID": "005",
+		"sCycleTime": "230s",
+		"sInitiatedBy": "P0001634",
+		"sStatus": "In Progress"
+	}, {
+		"sProjectID": "006",
+		"sCycleTime": "250s",
+		"sInitiatedBy": "P0005234",
+		"sStatus": "In Progress"
+	}, {
+		"sProjectID": "007",
+		"sCycleTime": "220s",
+		"sInitiatedBy": "P0001234",
+		"sStatus": "In Progress"
+	}, {
+		"sProjectID": "008",
+		"sCycleTime": "202s",
+		"sInitiatedBy": "P0003233",
+		"sStatus": "In Progress"
+	}, {
+		"sProjectID": "000",
+		"sCycleTime": "204s",
+		"sInitiatedBy": "P0001284",
+		"sStatus": "In Progress"
+	}, {
+		"sProjectID": "010",
+		"sCycleTime": "20s",
+		"sInitiatedBy": "P0001284",
+		"sStatus": "In Progress"
+	}],
+
+	"aDonutFirst": [{
+		"sLabel": "India",
+		"value": 40.0,
+		"displayedValue": "40hr",
+		"bSelected": false
+	}, {
+		"sLabel": "Canada",
+		"value": 50.6,
+		"displayedValue": "50.6hr",
+		"bSelected": false
+	}, {
+		"sLabel": "Germany",
+		"value": 20.6,
+		"displayedValue": "20.6hr",
+		"bSelected": false
+	}],
+
+	"aDonutSecond": [{
+		"sLabel": "Scenario 1",
+		"value": 40.0,
+		"displayedValue": "40hr",
+		"bSelected": false
+	}],
+
+	"aDonutThird": [{
+		"sLabel": "MRP view",
+		"value": 40.0,
+		"displayedValue": "40hr",
+		"bSelected": false
+	}, {
+		"sLabel": "Basic data",
+		"value": 50.6,
+		"displayedValue": "50.6hr",
+		"bSelected": false
+	}, {
+		"sLabel": "FI/CO",
+		"value": 20.6,
+		"displayedValue": "20.6hr",
+		"bSelected": false
+	}, {
+		"sLabel": "Warehouse",
+		"value": 20.6,
+		"displayedValue": "20.6hr",
+		"bSelected": false
+	}],
+
+	"oVisible": {
+		"bDonutSecond": true,
+		"bDonutThird": true,
+		"bProjects": false,
+		"bProjTable": false,
+		"bViews": false,
+		"bCountry" : false
+	},
+
+	"aProjects": [],
+	"aCountrySegments": [],
+	"aScenarioSegmentList": [],
+	"aViewSegmentList": [],
+	"aRoleSegmentList": [],
+	"aProjectCompletedProjBckUp": [],
+	"aProjectPendingProjBckUp": [],
+	"aProjectCompletedViewBckUp": [],
+	"aProjectPendingViewBckUp": [],
+	"aProjectProj": [],
+	"aProjectViews": [],
+
+	"oParam": {
+		"isCountry": false,
+		"isView": false,
+		"isRole": false,
+		"isScenario": false
+	},
+
+	"oNewParam": {
+		"isCountry": false,
+		"isView": false,
+		"isRole": false,
+		"isScenario": false
+	},
+
+	"sProjects": {
+		"sMatCompleted": "0",
+		"sMatPending": "0",
+		"sProjPending": "0",
+		"sProjComplted": "0",
+		"sCycleTPending": "0",
+		"sCycleTComplete": "0"
+	}
+}

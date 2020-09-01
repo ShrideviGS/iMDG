@@ -1,0 +1,151 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "com.incture.NewProductIntroduction_UI.Kpireports",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		},
+		"crossNavigation": {
+			"inbounds": {
+				"intent1": {
+					"signature": {
+						"parameters": {},
+						"additionalParameters": "allowed"
+					},
+					"semanticObject": "kpireports",
+					"action": "display",
+					"title": "KPI-Reports"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "com.incture.NewProductIntroduction_UI.Kpireports.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "App"
+		},
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.incture.NewProductIntroduction_UI.Kpireports.i18n.i18n"
+				}
+			},
+			"mCommon": {
+				"type": "sap.ui.model.json.JSONModel"
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "com.incture.NewProductIntroduction_UI.Kpireports.view",
+				"controlAggregation": "pages",
+				"controlId": "id_npi_Appcontainer",
+				"clearControlAggregation": false
+			},
+			"routes": [{
+				"name": "App",
+				"pattern": "App",
+				"target": ["CycletimeModified"]
+			}, {
+				"name": "Reports",
+				"pattern": "Reports",
+				"target": ["Reports"]
+			}, {
+				"name": "Dataqualityreport",
+				"pattern": "Dataqualityreport",
+				"target": ["Dataqualityreport"]
+			}, {
+				"name": "Changehistory",
+				"pattern": "Changehistory",
+				"target": ["Changehistory"]
+			}, {
+				"name": "Cycletime",
+				"pattern": "Cycletime",
+				"target": ["Cycletime"]
+			}, {
+				"name": "Dataquality",
+				"pattern": "Dataquality",
+				"target": ["Dataquality"]
+			}, {
+				"name": "CycletimeModified",
+				"pattern": "",
+				"target": ["CycletimeModified"]
+			}],
+			"targets": {
+				"TargetApp": {
+					"viewId": "App",
+					"viewName": "App"
+				},
+				"Reports": {
+					"viewName": "Reports"
+				},
+				"Dataqualityreport": {
+					"viewName": "Dataqualityreport"
+				},
+				"Changehistory": {
+					"viewName": "Changehistory"
+				},
+				"Cycletime": {
+					"viewName": "Cycletime"
+				},
+				"Dataquality": {
+					"viewName": "Dataquality"
+				},
+				"CycletimeModified": {
+					"viewName": "CycletimeModified"
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}
