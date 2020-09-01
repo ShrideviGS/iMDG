@@ -14,7 +14,6 @@ modules:
       - name: iMDG_html5_repo_runtime
       - name: uaa_iMDG
       - name: dest_iMDG
-      - name: portal_resources_iMDG
   - name: iMDG_ui_deployer
     type: com.sap.html5.application-content
     path: iMDG_ui_deployer
@@ -36,18 +35,7 @@ modules:
         - npm run build
       supported-platforms: []
       build-result: dist
-  - name: imdgFLP
-    type: com.sap.portal.content
-    path: imdgFLP
-    parameters:
-      stack: cflinuxfs3
-      memory: 128M
-      buildpack: 'https://github.com/cloudfoundry/nodejs-buildpack/releases/download/v1.6.39/nodejs-buildpack-cflinuxfs3-v1.6.39.zip'
-    requires:
-      - name: portal_resources_iMDG
-      - name: uaa_iMDG
-      - name: iMDG_html5_repo_host
-      - name: iMDG_ui_deployer
+  
 resources:
   - name: iMDG_html5_repo_runtime
     parameters:
@@ -74,9 +62,4 @@ resources:
     parameters:
       service-plan: standard
       service: workflow
-    type: org.cloudfoundry.managed-service
-  - name: portal_resources_iMDG
-    parameters:
-      service-plan: standard
-      service: portal
     type: org.cloudfoundry.managed-service
