@@ -1,0 +1,46 @@
+<mvc:View controllerName="com.incture.NewProductIntroduction_UI.Kpireports.controller.App" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m" xmlns:tnt="sap.tnt">
+	<!--<App id="id_npi_Appcontainer"></App>-->
+	<tnt:ToolPage sideExpanded="true">
+		<!--<tnt:header>-->
+		<!--	<tnt:ToolHeader class="sapTntToolHeader">-->
+		<!--		<Button class="sapCoreColor" icon="sap-icon://menu2" type="Transparent" press="onSideNavigation" id="sideNavigationToggleButton">-->
+		<!--			<layoutData>-->
+		<!--				<OverflowToolbarLayoutData priority="NeverOverflow"/>-->
+		<!--			</layoutData>-->
+		<!--		</Button>-->
+		<!--		<tnt:ToolHeaderUtilitySeparator/>-->
+		<!--		<ToolbarSpacer width="2rem">-->
+		<!--			<layoutData>-->
+		<!--				<OverflowToolbarLayoutData priority="NeverOverflow"/>-->
+		<!--			</layoutData>-->
+		<!--		</ToolbarSpacer>-->
+		<!--		<Button class="sapMbtn" id="id_UnPlannedOrder_ClearAll" text="{i18n>CLEAR_ALL}" icon="sap-icon://sys-cancel" iconFirst="true"-->
+		<!--			enabled="{mCommon>/bIsEditable}" visible="{mCommon>/visible/bClearAll}" press="onClearAll">-->
+		<!--			<layoutData>-->
+		<!--				<OverflowToolbarLayoutData priority="NeverOverflow"/>-->
+		<!--			</layoutData>-->
+		<!--		</Button>-->
+		<!--		<Button class="sapMbtn" text="{i18n>SUBMIT}" icon="sap-icon://accept" iconFirst="true" enabled="{mCommon>/bIsEditable}"-->
+		<!--			visible="{mCommon>/visible/bSubmit}" press="onSubmit">-->
+		<!--			<layoutData>-->
+		<!--				<OverflowToolbarLayoutData priority="NeverOverflow"/>-->
+		<!--			</layoutData>-->
+		<!--		</Button>-->
+		<!--	</tnt:ToolHeader>-->
+		<!--</tnt:header>-->
+		<tnt:sideContent>
+			<tnt:SideNavigation expanded="true" itemSelect="onItemChange" class="sapTntToolBar" selectedKey="kCycleTIme">
+				<tnt:NavigationList class="sapTntToolBar">
+					<tnt:NavigationListItem text="{i18n>CYCLE_TIME}" icon="sap-icon://donut-chart" key="kCycleTIme"/>
+					<tnt:NavigationListItem text="{i18n>CHANGE_HISTORY}" icon="sap-icon://history" key="kHistory"/>
+					<tnt:NavigationListItem text="{i18n>DATA_QUALITY_REPORT}" icon="sap-icon://horizontal-bar-chart-2" key="kDQuality"/>
+					<!--<tnt:NavigationListItem text="{i18n>DATA_READINESS_REPORT}" icon="sap-icon://horizontal-bar-chart-2" key="kDataQuality"/>-->
+				</tnt:NavigationList>
+			</tnt:SideNavigation>
+		</tnt:sideContent>
+		<tnt:mainContents>
+			<NavContainer id="id_npi_Appcontainer"></NavContainer>
+		</tnt:mainContents>
+	</tnt:ToolPage>
+</mvc:View>

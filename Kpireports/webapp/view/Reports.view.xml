@@ -1,0 +1,109 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	controllerName="com.incture.NewProductIntroduction_UI.Kpireports.controller.Reports" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:viz.data="sap.viz.ui5.data" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz="sap.viz.ui5.controls">
+	<Page showHeader="false" class="sapUiSizeCompact">
+		<content>
+			<!--<IconTabBar expanded="true" class="sapUiResponsiveContentPadding sapMiconbar">-->
+			<!--	<items>-->
+			<!--		<IconTabFilter text="{i18n>MATERIAL_CREATION_RATE}" key="Materiallist">-->
+			<!--			<HBox height="100%" width="100%" justifyContent="Center">-->
+			<!--				<HBox class="sapMMaterials"></HBox>-->
+			<!--				<Label text="# of Materials" class="sapUiTinyMarginBegin" design="Bold"/>-->
+			<!--			</HBox>-->
+			<!--			<viz:Popover id="idPopOverArea"></viz:Popover>-->
+			<!--			<viz:VizFrame id="idVizFrameArea" uiConfig="{applicationSet:'fiori'}" legendVisible="false" width="100%"-->
+			<!--				vizProperties="{plotArea: { colorPalette: ['#f4c882','#f4c882','#f4c882','#ffcccc'] }, title:{ text:''}}" vizType='area'>-->
+			<!--				<viz:dataset>-->
+			<!--					<viz.data:FlattenedDataset data="{/aMaterialsCreationRate}">-->
+			<!--						<viz.data:dimensions>-->
+			<!--							<viz.data:DimensionDefinition name="Week" value="{Week}"/>-->
+			<!--						</viz.data:dimensions>-->
+			<!--						<viz.data:measures>-->
+			<!--							<viz.data:MeasureDefinition name="Materials" value="{Revenue}"/>-->
+										<!--<viz.data:MeasureDefinition name="Cost" value="{Cost}"/>-->
+			<!--						</viz.data:measures>-->
+			<!--					</viz.data:FlattenedDataset>-->
+			<!--				</viz:dataset>-->
+			<!--				<viz:feeds>-->
+			<!--					<viz.feeds:FeedItem id='valueAxisFeedArea' uid="valueAxis" type="Measure" values="Materials"/>-->
+			<!--					<viz.feeds:FeedItem id='categoryAxisFeedArea' uid="categoryAxis" type="Dimension" values="Week"/>-->
+			<!--				</viz:feeds>-->
+			<!--			</viz:VizFrame>-->
+			<!--		</IconTabFilter>-->
+			<!--		<IconTabFilter text="{i18n>TIMELINE_VIEW}" key="timelineview">-->
+			<!--			<HBox height="100%" width="100%" justifyContent="Center">-->
+			<!--				<HBox class="sapMInternalFmg"></HBox>-->
+			<!--				<Label text="# Hours(Internal Mfg)" class="sapUiTinyMarginBegin" design="Bold"/>-->
+			<!--			</HBox>-->
+			<!--			<viz:Popover id="idPopOver"></viz:Popover>-->
+			<!--			<viz:VizFrame id="idVizFrameHours" uiConfig="{applicationSet:'fiori'}" legendVisible="false" width="100%" vizType='column'>-->
+			<!--				<viz:dataset>-->
+			<!--					<viz.data:FlattenedDataset data="{/aTimelineData}">-->
+			<!--						<viz.data:dimensions>-->
+			<!--							<viz.data:DimensionDefinition name="Week" value="{Week}"/>-->
+			<!--						</viz.data:dimensions>-->
+			<!--						<viz.data:measures>-->
+			<!--							<viz.data:MeasureDefinition name="Hours(Internal Mfg)" value="{Revenue}"/>-->
+										<!--<viz.data:MeasureDefinition name="Cost" value="{Cost}"/>-->
+			<!--						</viz.data:measures>-->
+			<!--					</viz.data:FlattenedDataset>-->
+			<!--				</viz:dataset>-->
+			<!--				<viz:feeds>-->
+			<!--					<viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure" values="Hours(Internal Mfg)"/>-->
+			<!--					<viz.feeds:FeedItem id='categoryAxisFeed' uid="categoryAxis" type="Dimension" values="Week"/>-->
+			<!--				</viz:feeds>-->
+			<!--			</viz:VizFrame>-->
+			<!--			<HBox height="100%" width="100%" justifyContent="Center">-->
+			<!--				<HBox class="sapMPlantsAbroad"></HBox>-->
+			<!--				<Label text="# Hours(Plant Abroad Buying)" class="sapUiTinyMarginBegin" design="Bold"/>-->
+			<!--			</HBox>-->
+			<!--			<viz:Popover id="idPopOverSecond"></viz:Popover>-->
+			<!--			<viz:VizFrame id="idVizFramesecond" uiConfig="{applicationSet:'fiori'}"-->
+			<!--				vizProperties="{plotArea: { colorPalette: ['#008fb3','#008fb3','#ffbb33','#ffcccc'] }, title:{ text:''}}" vizType='column'-->
+			<!--				legendVisible="false" width="100%">-->
+			<!--				<viz:dataset>-->
+			<!--					<viz.data:FlattenedDataset data="{/aTimelineData}">-->
+			<!--						<viz.data:dimensions>-->
+			<!--							<viz.data:DimensionDefinition name="Week" value="{Week}"/>-->
+			<!--						</viz.data:dimensions>-->
+			<!--						<viz.data:measures>-->
+			<!--							<viz.data:MeasureDefinition name="Hours(Plant Abroad Buying)" value="{Revenue}"/>-->
+										<!--<viz.data:MeasureDefinition name="Cost" value="{Cost}"/>-->
+			<!--						</viz.data:measures>-->
+			<!--					</viz.data:FlattenedDataset>-->
+			<!--				</viz:dataset>-->
+			<!--				<viz:feeds>-->
+			<!--					<viz.feeds:FeedItem id='valueAxisFeedSecond' uid="valueAxis" type="Measure" values="Hours(Plant Abroad Buying)"/>-->
+			<!--					<viz.feeds:FeedItem id='categoryAxisFeedSecond' uid="categoryAxis" type="Dimension" values="Week"/>-->
+			<!--				</viz:feeds>-->
+			<!--			</viz:VizFrame>-->
+			<!--			<HBox height="100%" width="100%" justifyContent="Center">-->
+			<!--				<HBox class="sapMSellingPlant"></HBox>-->
+			<!--				<Label text="# Hours(Selling Plant to End customer)" class="sapUiTinyMarginBegin" design="Bold"/>-->
+			<!--			</HBox>-->
+			<!--			<viz:Popover id="idPopOverThird"></viz:Popover>-->
+			<!--			<viz:VizFrame id="idVizFrameThird" vizProperties="{plotArea: { colorPalette: ['#20c997','#008fb3','#ffbb33','#ffcccc'] }, title:{ text:''}}"-->
+			<!--				uiConfig="{applicationSet:'fiori'}" vizType='column' legendVisible="false" width="100%">-->
+			<!--				<viz:dataset>-->
+			<!--					<viz.data:FlattenedDataset data="{/aTimelineData}">-->
+			<!--						<viz.data:dimensions>-->
+			<!--							<viz.data:DimensionDefinition name="Week" value="{Week}"/>-->
+			<!--						</viz.data:dimensions>-->
+			<!--						<viz.data:measures>-->
+			<!--							<viz.data:MeasureDefinition name="Hours(Selling Plant to End customer)" value="{Revenue}"/>-->
+										<!--<viz.data:MeasureDefinition name="Cost" value="{Cost}"/>-->
+			<!--						</viz.data:measures>-->
+			<!--					</viz.data:FlattenedDataset>-->
+			<!--				</viz:dataset>-->
+			<!--				<viz:feeds>-->
+			<!--					<viz.feeds:FeedItem id='valueAxisFeedThird' uid="valueAxis" type="Measure" values="Hours(Selling Plant to End customer)"/>-->
+			<!--					<viz.feeds:FeedItem id='categoryAxisFeedThird' uid="categoryAxis" type="Dimension" values="Week"/>-->
+			<!--				</viz:feeds>-->
+			<!--			</viz:VizFrame>-->
+			<!--		</IconTabFilter>-->
+			<!--		<IconTabFilter text="{i18n>DATA_READINESS_REPORT}" key="datareadness"></IconTabFilter>-->
+			<!--	</items>-->
+			<!--</IconTabBar>-->
+		</content>
+	</Page>
+</mvc:View>

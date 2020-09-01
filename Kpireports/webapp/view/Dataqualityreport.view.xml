@@ -1,0 +1,32 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:viz.data="sap.viz.ui5.data"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz="sap.viz.ui5.controls"
+	controllerName="com.incture.NewProductIntroduction_UI.Kpireports.controller.Dataqualityreport" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page showHeader="false" class="sapUiSizeCompact">
+		<content>
+			<HBox height="6%" width="100%" justifyContent="Center" class="sapUiTinyMarginTopBottom">
+				<!--<HBox class="sapMInternalFmg"></HBox>-->
+				<!--<Label text="# Hours(Internal Mfg)" class="sapUiTinyMarginBegin" design="Bold"/>-->
+			</HBox>
+			<!--<viz:Popover id="idPopOverReports"></viz:Popover>-->
+			<!--<viz:VizFrame id="idVizFrameReports" selectData="myOnClickHandler" uiConfig="{applicationSet:'fiori'}" legendVisible="true" width="100%" vizType='stacked_bar'>-->
+			<!--	<viz:dataset>-->
+			<!--		<viz.data:FlattenedDataset data="{/aDataQuality}">-->
+			<!--			<viz.data:dimensions>-->
+			<!--				<viz.data:DimensionDefinition name="# of Materials" value="{Week}"/>-->
+							<!--<viz.data:DimensionDefinition name="Measurure" value="{Cost}"/>-->
+			<!--			</viz.data:dimensions>-->
+			<!--			<viz.data:measures>-->
+			<!--				<viz.data:MeasureDefinition name="Completed" value="{Revenue}"/>-->
+			<!--				<viz.data:MeasureDefinition name="In-Progress" value="{Cost}"/>-->
+			<!--			</viz.data:measures>-->
+			<!--		</viz.data:FlattenedDataset>-->
+			<!--	</viz:dataset>-->
+			<!--	<viz:feeds>-->
+			<!--		<viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure" values="Completed,In-Progress"/>-->
+			<!--		<viz.feeds:FeedItem id='categoryAxisFeed' uid="categoryAxis" type="Dimension" values="# of Materials"/>-->
+					<!--<viz.feeds:FeedItem id='color' uid="color" type="Dimension" values="Measurure"/>-->
+			<!--	</viz:feeds>-->
+			<!--</viz:VizFrame>-->
+		</content>
+	</Page>
+</mvc:View>

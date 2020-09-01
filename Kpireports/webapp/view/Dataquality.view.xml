@@ -1,0 +1,90 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:viz.data="sap.viz.ui5.data"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz="sap.viz.ui5.controls" height="100%"
+	controllerName="com.incture.NewProductIntroduction_UI.Kpireports.controller.Dataquality" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page showHeader="false">
+		<content>
+			<ObjectHeader title="{i18n>DATA_QUALITY_EVALUATION_FOR_MATERIAL}" backgroundDesign="Solid" number="3356">
+				<!--<statuses>-->
+				<!--	<ObjectStatus text="3356" state="Success" />-->
+				<!--</statuses>-->
+			</ObjectHeader>
+			<Toolbar>
+				<ToolbarSpacer width="63%"/>
+				<SearchField width="35%"/>
+			</Toolbar>
+			<IconTabBar expanded="true" class="sapMIconTabBar" >
+				<items>
+					<IconTabFilter icon="sap-icon://activity-2" design="Horizontal" text="Evaluation" count="100%">
+						<l:Grid hSpacing="1" vSpacing="1" defaultSpan="XL6 L6 M12 S12">
+							<VBox height="100%" width="100%" class="sapMBrdBtm">
+								<VBox height="50%" width="100%" class="sapMBrdBtm">
+									<VBox height="20%" width="100%" class="sapMBrdBtm">
+										<Text text="{i18n>STEP_MESSAGES}" class="chartHeaderTitle sapUiTinyMarginBottom"/>
+									</VBox>
+									<HBox height="80%" width="100%">
+										<VBox height="50%" width="100%" class="sapMpaddingArnd">
+											<Text text="30" class="sapHeaderL1"/>
+											<Text text="{i18n>ERRORS}"/>
+										</VBox>
+										<VBox height="50%" width="100%" class="sapMpaddingArnd">
+											<Text text="40" class="sapHeaderL1"/>
+											<Text text="{i18n>WARNINGS}"/>
+										</VBox>
+									</HBox>
+								</VBox>
+								<VBox height="50%" class="sapMBrdBtm sapUiMediumMarginTop">
+									<VBox height="20%" width="100%" class="sapMBrdBtm">
+										<Text text="{i18n>EVALUATION_RESULTS}" class="chartHeaderTitle sapUiTinyMarginBottom"/>
+									</VBox>
+									<HBox height="80%" width="100%">
+										<VBox height="50%" width="100%" class="sapMpaddingSecond">
+											<Text text="40.7K" class="sapHeaderL1 sapGreeclr"/>
+											<Text text="{i18n>COMPLETD}" class="sapUiSmallMarginBegin"/>
+										</VBox>
+										<VBox height="50%" width="100%" class="sapMpaddingSecond">
+											<Text text="49.6K" class="sapHeaderL1 sapRedclr"/>
+											<Text text="{i18n>IN_PROGRESS}" class="sapUiSmallMarginBegin"/>
+										</VBox>
+									</HBox>
+								</VBox>
+								<layoutData>
+									<l:GridData span="XL4 L4 M12 S12"/>
+								</layoutData>
+							</VBox>
+							<VBox height="100%" width="100%" class="sapMBrdBtm">
+								<VBox class="sapMBrdBtm">
+									<Text text="{i18n>RESULTS(EVALUATION)}" class="chartHeaderTitle sapUiTinyMarginBottom"/>
+								</VBox>
+								<VBox height="100%">
+									<viz:Popover id="idPopOverQuality"></viz:Popover>
+									<viz:VizFrame id="idVizFrameFif" height="25rem" uiConfig="{applicationSet:'fiori'}" legendVisible="true" width="100%"
+										vizType='100_stacked_bar'>
+										<viz:dataset>
+											<viz.data:FlattenedDataset data="{/aDataQuality}">
+												<viz.data:dimensions>
+													<viz.data:DimensionDefinition name="# of Materials" value="{Week}"/>
+												</viz.data:dimensions>
+												<viz.data:measures>
+													<viz.data:MeasureDefinition name="Completed" value="{Revenue}"/>
+													<viz.data:MeasureDefinition name="In-Progress" value="{Cost}"/>
+												</viz.data:measures>
+											</viz.data:FlattenedDataset>
+										</viz:dataset>
+										<viz:feeds>
+											<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Completed,In-Progress"/>
+											<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="# of Materials"/>
+										</viz:feeds>
+									</viz:VizFrame>
+								</VBox>
+								<layoutData>
+									<l:GridData span="XL8 L8 M12 S12"/>
+								</layoutData>
+							</VBox>
+						</l:Grid>
+					</IconTabFilter>
+					<IconTabSeparator icon="sap-icon://flag"/>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>

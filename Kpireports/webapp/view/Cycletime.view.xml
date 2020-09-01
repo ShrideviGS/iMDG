@@ -1,0 +1,140 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns="sap.suite.ui.microchart" xmlns:l="sap.ui.layout"
+	xmlns:uxap="sap.uxap" xmlns:ui="sap.ui.table" controllerName="com.incture.NewProductIntroduction_UI.Kpireports.controller.Cycletime"
+	xmlns:html="http://www.w3.org/1999/xhtml" class="sapUiSizeCompact">
+	<m:Page showHeader="false">
+		<l:DynamicSideContent sideContentFallDown="BelowM" sideContentVisibility="AlwaysShow" containerQuery="false">
+			<l:mainContent class="sapPageBackground">
+				<l:FixFlex>
+					<l:fixContent ></l:fixContent>
+					<l:flexContent >
+						<ui:Table rows="{mCommon>/aProjects}" selectionMode="None" visibleRowCountMode="Auto" alternateRowColors="true"
+							enableColumnReordering="false" class="sapUiMediumMarginBegin sapUiMediumMarginEnd sapFbfilterbar sapUiTableNoColBorders">
+							<ui:extension>
+								<m:Toolbar height="2.6rem">
+									<m:content>
+										<m:ToolbarSpacer width="70%"/>
+										<m:SearchField placeholder="{i18n>SEARCH}" showRefreshButton="true" liveChange="onSearchGroup"/>
+									</m:content>
+								</m:Toolbar>
+							</ui:extension>
+							<ui:columns>
+								<ui:Column tooltip="{i18n>PROJECT_ID}">
+									<m:Label text="{i18n>PROJECT_ID}" wrapping="true" design="Bold"/>
+									<ui:template >
+										<m:Text text="{mCommon>projectNumber}"/>
+									</ui:template>
+								</ui:Column>
+								<ui:Column tooltip="{i18n>CYCLE_TIME_HRS}">
+									<m:Label text="{i18n>CYCLE_TIME_HRS}" wrapping="true" design="Bold"/>
+									<ui:template >
+										<m:Text text="{mCommon>durationInSeconds}" maxLines="1"/>
+									</ui:template>
+								</ui:Column>
+								<ui:Column tooltip="{i18n>INITIATED_BY}">
+									<m:Label text="{i18n>INITIATED_BY}" wrapping="true" design="Bold"/>
+									<ui:template >
+										<m:Text text="{mCommon>createdBy}" maxLines="1"/>
+									</ui:template>
+								</ui:Column>
+								<ui:Column tooltip="{i18n>STATUS}">
+									<m:Label text="{i18n>STATUS}" wrapping="true" design="Bold"/>
+									<ui:template >
+										<m:Text text="{mCommon>status}" maxLines="1"/>
+									</ui:template>
+								</ui:Column>
+							</ui:columns>
+						</ui:Table>
+					</l:flexContent>
+				</l:FixFlex>
+			</l:mainContent>
+			<l:sideContent>
+				<m:VBox class="sapUiLargeMarginTop">
+					<m:Text text="{i18n>WLC_TEXTP1}" class="chartHeaderTitle sapUiTinyMarginBottom"/>
+					<!--<Text text="{i18n>WLC_TEXTP2}" class="chartHeaderTitle"/>-->
+				</m:VBox>
+				<m:Label text="Countries" design="Bold" class="sapUiSmallMarginBegin sapUiTinyMarginTop sapMLabelcut"/>
+				<m:FlexBox height="10rem" justifyContent="SpaceBetween" class="sapUiTinyMarginTop">
+					<m:items>
+						<InteractiveDonutChart selectionChanged="onSelectionCountryChanged" displayedSegments="8" segments="{mCommon>/aCountrySegments}">
+							<segments>
+								<InteractiveDonutChartSegment label="{mCommon>label}" selected="{mCommon>bSelected}" value="{mCommon>value}"
+									displayedValue="{mCommon>displayValue}" color="Error"/>
+								<!--<InteractiveDonutChartSegment label="Implementation Phase" value="40.0" displayedValue="40.0%" color="Error"/>-->
+								<!--<InteractiveDonutChartSegment label="Design Phase" value="21.5" displayedValue="21.5%" color="Critical"/>-->
+								<!--<InteractiveDonutChartSegment label="Test Phase" value="38.5" displayedValue="38.5%" color="Good"/>-->
+							</segments>
+						</InteractiveDonutChart>
+					</m:items>
+				</m:FlexBox>
+				<m:Label text="Roles" design="Bold" class="sapUiSmallMarginBegin sapMLabelcut"/>
+				<m:FlexBox height="10rem" justifyContent="SpaceBetween" class="sapUiTinyMarginTop">
+					<m:items>
+						<InteractiveDonutChart selectionChanged="onSelectionRolesChanged" displayedSegments="8" segments="{mCommon>/aRoleSegmentList}">
+							<segments>
+								<InteractiveDonutChartSegment label="{mCommon>label}" selected="{mCommon>bSelected}" value="{mCommon>value}"
+									displayedValue="{mCommon>displayValue}" color="Error"/>
+								<!--<InteractiveDonutChartSegment label="Design Phase" value="21.5" displayedValue="21.5%" color="Critical"/>-->
+								<!--<InteractiveDonutChartSegment label="Test Phase" value="38.5" displayedValue="38.5%" color="Good"/>-->
+							</segments>
+						</InteractiveDonutChart>
+					</m:items>
+				</m:FlexBox>
+				<m:Label text="Scenarios" design="Bold" class="sapUiSmallMarginBegin sapMLabelcut"/>
+				<m:FlexBox height="10rem" justifyContent="SpaceBetween" class="sapUiTinyMarginTop">
+					<m:items>
+						<InteractiveDonutChart selectionChanged="onSelectionScenarioChanged" displayedSegments="8" segments="{mCommon>/aScenarioSegmentList}">
+							<segments>
+								<InteractiveDonutChartSegment label="{mCommon>label}" selected="{mCommon>bSelected}" value="{mCommon>value}"
+									displayedValue="{mCommon>displayValue}" color="Error"/>
+								<!--<InteractiveDonutChartSegment label="Implementation Phase" value="40.0" displayedValue="40.0%" color="Error"/>-->
+								<!--<InteractiveDonutChartSegment label="Design Phase" value="21.5" displayedValue="21.5%" color="Critical"/>-->
+								<!--<InteractiveDonutChartSegment label="Test Phase" value="38.5" displayedValue="38.5%" color="Good"/>-->
+							</segments>
+						</InteractiveDonutChart>
+					</m:items>
+				</m:FlexBox>
+				<m:FlexBox justifyContent="SpaceBetween" class="sapUiSmallMarginTop">
+					<m:items>
+						<InteractiveDonutChart selectionChanged="onSelectionFirstDonutChanged" displayedSegments="8" segments="{mCommon>/aCountrySegments}">
+							<segments>
+								<InteractiveDonutChartSegment label="{mCommon>label}" selected="{mCommon>bSelected}" value="{mCommon>value}"
+									displayedValue="{mCommon>displayValue}" color="Error"/>
+								<!--<InteractiveDonutChartSegment label="Design Phase" value="21.5" displayedValue="21.5%" color="Critical"/>-->
+								<!--<InteractiveDonutChartSegment label="Test Phase" value="38.5" displayedValue="38.5%" color="Good"/>-->
+							</segments>
+						</InteractiveDonutChart>
+					</m:items>
+				</m:FlexBox>
+				<m:Label text="Views" design="Bold" class="sapUiSmallMarginBegin sapMLabelcut"/>
+				<m:FlexBox height="10rem" justifyContent="SpaceBetween" class="sapUiTinyMarginTop">
+					<m:items>
+						<InteractiveDonutChart selectionChanged="onSelectionViewChanged" displayedSegments="8" selectionEnabled="false"
+							segments="{mCommon>/aViewSegmentList}">
+							<segments>
+								<InteractiveDonutChartSegment label="{mCommon>label}" selected="{mCommon>bSelected}" value="{mCommon>value}"
+									displayedValue="{mCommon>displayValue}" color="Error"/>
+								<!--<InteractiveDonutChartSegment label="Design Phase" value="21.5" displayedValue="21.5%" color="Critical"/>-->
+								<!--<InteractiveDonutChartSegment label="Test Phase" value="38.5" displayedValue="38.5%" color="Good"/>-->
+							</segments>
+						</InteractiveDonutChart>
+					</m:items>
+				</m:FlexBox>
+				<m:FlexBox justifyContent="SpaceBetween" class="sapUiSmallMarginTop">
+					<m:items>
+						<InteractiveDonutChart selectionChanged="onSelectionFirstDonutChanged" displayedSegments="8" segments="{mCommon>/aViewSegmentList}">
+							<segments>
+								<InteractiveDonutChartSegment label="{mCommon>label}" selected="{mCommon>bSelected}" value="{mCommon>value}"
+									displayedValue="{mCommon>displayValue}" color="Error"/>
+								<!--<InteractiveDonutChartSegment label="Design Phase" value="21.5" displayedValue="21.5%" color="Critical"/>-->
+								<!--<InteractiveDonutChartSegment label="Test Phase" value="38.5" displayedValue="38.5%" color="Good"/>-->
+							</segments>
+						</InteractiveDonutChart>
+					</m:items>
+				</m:FlexBox>
+			</l:sideContent>
+		</l:DynamicSideContent>
+	</m:Page>
+	<!--<Page showHeader="false">-->
+	<!--	<content></content>-->
+	<!--</Page>-->
+</mvc:View>

@@ -30,6 +30,10 @@
 					"id": "newproductintroductionui.newproductintroductionui-0-1598438566031",
 					"appId": "newproductintroductionui.newproductintroductionui",
 					"vizId": "newproductintroductionui-display"
+				}, {
+					"id": "com.incture.NewProductIntroduction_UI.Kpireports-1-1598940257104",
+					"appId": "com.incture.NewProductIntroduction_UI.Kpireports",
+					"vizId": "kpireports-display"
 				}]
 			}
 		}],

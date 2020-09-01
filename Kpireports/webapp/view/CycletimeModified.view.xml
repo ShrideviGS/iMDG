@@ -1,0 +1,179 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:ui="sap.ui.table"
+	xmlns:viz.data="sap.viz.ui5.data" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz="sap.viz.ui5.controls"
+	controllerName="com.incture.NewProductIntroduction_UI.Kpireports.controller.CycletimeModified" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page showHeader="false" class="sapUiSizeCompact">
+		<content>
+			<Toolbar height="2.6rem">
+				<content>
+					<ToolbarSpacer/>
+					<Button text="{i18n>RELOAD}" type="Transparent" icon="sap-icon://refresh" press="onReload"/>
+				</content>
+			</Toolbar>
+			<Label text="Scenarios" design="Bold" class="sapUiMediumMarginBegin sapUiSmallMarginTop sapMLabelcut"/>
+			<l:Grid hSpacing="1" vSpacing="1" defaultSpan="XL4 L4 M6 S12" content="{mCommon>/aScenarioSegmentList}"
+				class="sapUiSmallMarginBegin sapUiTinyMarginTop">
+				<l:content>
+					<!--<HBox height="100%" width="100%">-->
+					<CustomListItem type="Active" class="customListItem" press="onScenarioPress">
+						<VBox height="100%" width="100%">
+							<HBox height="100%" width="100%" justifyContent="Center" class="sapMCountryNameClass">
+								<Text text="{mCommon>label}" maxLines="1" class="sapMTextCountryCustCls"/>
+							</HBox>
+							<HBox height="100%" width="100%" justifyContent="Center" class="sapMCountryNameClass">
+								<Text text="{mCommon>value}" maxLines="1" class="sapBlueclr sapHeaderL5"/>
+							</HBox>
+						</VBox>
+					</CustomListItem>
+					<!--</HBox>-->
+				</l:content>
+			</l:Grid>
+			<Label text="Plants" design="Bold" class="sapUiMediumMarginBegin sapUiSmallMarginTop sapMLabelcut" visible="{mCommon>/oVisible/bCountry}"/>
+			<l:Grid hSpacing="1" vSpacing="1" defaultSpan="XL4 L4 M6 S12" content="{mCommon>/aCountrySegments}"
+				class="sapUiSmallMarginBegin sapUiTinyMarginTop" visible="{mCommon>/oVisible/bCountry}">
+				<l:content>
+					<!--<HBox height="100%" width="100%">-->
+					<CustomListItem type="Active" class="customListItem" press="onCountryPress">
+						<VBox height="100%" width="100%">
+							<HBox height="100%" width="100%" justifyContent="Center" class="sapMCountryNameClass">
+								<Text text="{mCommon>Newlabel}" maxLines="1" class="sapMTextCountryCustCls"/>
+							</HBox>
+							<HBox height="100%" width="100%" justifyContent="Center" class="sapMCountryNameClass">
+								<Text text="{mCommon>value}" maxLines="1" class="sapBlueclr sapHeaderL5"/>
+							</HBox>
+						</VBox>
+					</CustomListItem>
+					<!--</HBox>-->
+				</l:content>
+			</l:Grid>
+			<Label text="Projects" design="Bold" class="sapUiMediumMarginBegin sapUiTinyMarginTop sapMLabelcut" visible="{mCommon>/oVisible/bProjects}"/>
+			<l:Grid hSpacing="1" vSpacing="1" defaultSpan="XL4 L4 M6 S12" class="sapUiSmallMarginBegin sapUiTinyMarginTop"
+				visible="{mCommon>/oVisible/bProjects}">
+				<!--<l:content>-->
+				<VBox class="sapMProjectsParContainer" height="100%" width="100%">
+					<l:Grid hSpacing="0" vSpacing="0" defaultSpan="XL6 L6 M6 S12">
+						<CustomListItem type="Active" press="onCompleted" class="sapMbrderright">
+							<VBox height="100%" width="100%" justifyContent="Center" class="sapMbrderBtm alingCls sapMPad5per">
+								<Text text="Completed" class="sapGreeclr"/>
+							</VBox>
+							<VBox height="100%" width="100%" justifyContent="Center" class="alingCls sapMPad5per">
+								<HBox>
+									<Text text="{mCommon>/sProjects/sProjComplted}" class="sapGreeclr sapHeaderL1"/>
+									<Text text="({mCommon>/sProjects/sMatCompleted} Materials)" class="sapGreeclr sapUiTinyMarginTop sapUiTinyMarginBegin"/>
+								</HBox>
+							</VBox>
+						</CustomListItem>
+						<CustomListItem type="Active" press="onPending">
+							<VBox height="100%" width="100%" justifyContent="Center" class="sapMbrderBtm alingCls sapMPad5per">
+								<Text text="Pending" class="sapRedclr"/>
+							</VBox>
+							<VBox height="100%" width="100%" justifyContent="Center" class="sapMbrderBtm alingCls sapMPad5per">
+								<HBox>
+									<Text text="{mCommon>/sProjects/sProjPending}" class="sapRedclr sapHeaderL1"/>
+									<Text text="({mCommon>/sProjects/sMatPending} Materials)" class="sapRedclr sapUiTinyMarginTop sapUiTinyMarginBegin"/>
+								</HBox>
+							</VBox>
+						</CustomListItem>
+						<!--<HBox height="100%" width="100%" justifyContent="Center" class="sapMbrderBtm sapMPad3per">-->
+						<!--	<Text text="Materials" class="sapMTextCountryCustCls"/>-->
+						<!--	<layoutData>-->
+						<!--		<l:GridData span="XL12 L12 M12 S12"/>-->
+						<!--	</layoutData>-->
+						<!--</HBox>-->
+						<!--<CustomListItem type="Inactive" class="alingCls sapMbrderright">-->
+						<!--	<VBox height="100%" width="100%" justifyContent="Center" class="alingCls sapMPad5per">-->
+						<!--		<Text text="5" class="sapGreeclr sapHeaderL1"/>-->
+						<!--	</VBox>-->
+						<!--</CustomListItem>-->
+						<!--<CustomListItem type="Inactive" >-->
+						<!--	<VBox height="100%" width="100%" justifyContent="Center" class="alingCls sapMPad5per">-->
+						<!--		<Text text="52" class="sapRedclr sapHeaderL1"/>-->
+						<!--	</VBox>-->
+						<!--</CustomListItem>-->
+						<HBox height="100%" width="100%" justifyContent="Center" class="sapMbrderBtm sapMPad3per">
+							<Text text="Cycle Time" class="sapMTextCountryCustCls sapMtopbtmPadding"/>
+							<layoutData>
+								<l:GridData span="XL12 L12 M12 S12"/>
+							</layoutData>
+						</HBox>
+						<CustomListItem type="Active" press="onCycleCompleted" class="alingCls sapMbrderright">
+							<VBox height="4rem" width="100%" justifyContent="Center" class="alingCls sapMPad2per">
+								<Text text="{mCommon>/sProjects/sCycleTComplete}" class="sapGreeclr sapHeaderL2"/>
+							</VBox>
+						</CustomListItem>
+						<CustomListItem type="Active" press="onCyclePending" class="alingCls ">
+							<VBox height="4rem" width="100%" justifyContent="Center" class="alingCls sapMPad2per">
+								<Text text="{mCommon>/sProjects/sCycleTPending}" class="sapRedclr sapHeaderL2"/>
+							</VBox>
+						</CustomListItem>
+					</l:Grid>
+				</VBox>
+				<!--</l:content>-->
+			</l:Grid>
+			<ui:Table rows="{mCommon>/aProjectProj}" selectionMode="None" visibleRowCountMode="Fixed" visibleRowCount="6" alternateRowColors="true"
+				visible="{mCommon>/oVisible/bProjTable}" enableColumnReordering="false"
+				class="sapUiMediumMarginBegin sapUiMediumMarginEnd sapUiMediumMarginBottom sapFbfilterbar sapUiTableNoColBorders">
+				<ui:extension>
+					<Toolbar height="2.6rem">
+						<content>
+							<ToolbarSpacer width="70%"/>
+							<SearchField placeholder="{i18n>SEARCH}" showRefreshButton="true" liveChange="onSearchGroup"/>
+						</content>
+					</Toolbar>
+				</ui:extension>
+				<ui:columns>
+					<ui:Column tooltip="{i18n>PROJECT_ID}">
+						<Label text="{i18n>PROJECT_ID}" wrapping="true" design="Bold"/>
+						<ui:template >
+							<Text text="{mCommon>projectNumber}"/>
+						</ui:template>
+					</ui:Column>
+					<ui:Column tooltip="{i18n>PROJECT_DESCRIPTION}">
+						<Label text="{i18n>PROJECT_DESCRIPTION}" wrapping="true" design="Bold"/>
+						<ui:template >
+							<Text text="{mCommon>description}"/>
+						</ui:template>
+					</ui:Column>
+					<ui:Column tooltip="{i18n>CYCLE_TIME_HRS}">
+						<Label text="{i18n>CYCLE_TIME_HRS}" wrapping="true" design="Bold"/>
+						<ui:template >
+							<Text text="{mCommon>durationInSeconds}" maxLines="1"/>
+						</ui:template>
+					</ui:Column>
+					<ui:Column tooltip="{i18n>INITIATED_BY}">
+						<Label text="{i18n>INITIATED_BY}" wrapping="true" design="Bold"/>
+						<ui:template >
+							<Text text="{mCommon>createdBy}" maxLines="1"/>
+						</ui:template>
+					</ui:Column>
+					<ui:Column tooltip="{i18n>STATUS}">
+						<Label text="{i18n>STATUS}" wrapping="true" design="Bold"/>
+						<ui:template >
+							<Text text="{mCommon>status}" maxLines="1"/>
+						</ui:template>
+					</ui:Column>
+				</ui:columns>
+			</ui:Table>
+			<Label text="Cycle Time" design="Bold" class="sapUiMediumMarginBegin sapUiTinyMarginTop sapMLabelcut" visible="{mCommon>/oVisible/bViews}"/>
+			<VBox visible="{mCommon>/oVisible/bViews}">
+				<viz:Popover id="idPopOver"></viz:Popover>
+				<viz:VizFrame id="idVizFrameHours" uiConfig="{applicationSet:'fiori'}" legendVisible="false" width="100%" vizType='column'>
+					<viz:dataset>
+						<viz.data:FlattenedDataset data="{/aProjectViews}">
+							<viz.data:dimensions>
+								<viz.data:DimensionDefinition name="label" value="{label}"/>
+							</viz.data:dimensions>
+							<viz.data:measures>
+								<viz.data:MeasureDefinition name="Hours(Internal Mfg)" value="{value}"/>
+								<!--<viz.data:MeasureDefinition name="Cost" value="{Cost}"/>-->
+							</viz.data:measures>
+						</viz.data:FlattenedDataset>
+					</viz:dataset>
+					<viz:feeds>
+						<viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure" values="Hours(Internal Mfg)"/>
+						<viz.feeds:FeedItem id='categoryAxisFeed' uid="categoryAxis" type="Dimension" values="label"/>
+					</viz:feeds>
+				</viz:VizFrame>
+			</VBox>
+		</content>
+	</Page>
+</mvc:View>
