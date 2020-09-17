@@ -23,8 +23,12 @@ modules:
     build-parameters:
       requires:
         - name: newproductintroductionui
+          artifacts:
+            - './*'
           target-path: resources/newproductintroductionui
         - name: Kpireports
+          artifacts:
+            - './*'
           target-path: resources/Kpireports
   - name: newproductintroductionui
     type: html5
