@@ -34,6 +34,10 @@
 					"id": "com.incture.NewProductIntroduction_UI.Kpireports-1-1600324174614",
 					"appId": "com.incture.NewProductIntroduction_UI.Kpireports",
 					"vizId": "kpireports-display"
+				}, {
+					"id": "viewRule.viewRule-2-1600846178727",
+					"appId": "viewRule.viewRule",
+					"vizId": "viewRule-display"
 				}]
 			}
 		}],

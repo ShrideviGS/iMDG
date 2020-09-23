@@ -11,7 +11,7 @@
 	}, {
 		"source": "^/bpmworkflowruntime",
 		"target": "/",
-		"destination": "bpmworkflowruntime"
+		"destination": "NPI_Workflow"
 	},{
 		"source": "^(.*)$",
 		"target": "$1",

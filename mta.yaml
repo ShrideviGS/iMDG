@@ -14,13 +14,13 @@ modules:
       - name: iMDG_html5_repo_runtime
       - name: dest_iMDG
       - name: portal_resources_iMDG
-      - name: uaa_iMDG
       - name: UserNode_api
         group: destinations
         properties:
           name: UserNode_api
           url: '~{url}'
           forwardAuthToken: true
+      - name: uaa_iMDG
   - name: iMDG_ui_deployer
     type: com.sap.html5.application-content
     path: iMDG_ui_deployer
@@ -36,6 +36,10 @@ modules:
           artifacts:
             - './*'
           target-path: resources/Kpireports
+        - name: viewRule
+          artifacts:
+            - './*'
+          target-path: resources/viewRule
   - name: newproductintroductionui
     type: html5
     path: newproductintroductionui
@@ -68,19 +72,27 @@ modules:
         - npm run build
       supported-platforms: []
       build-result: dist
-
   - name: UserNode
     type: nodejs
     path: UserNode
     provides:
-     - name: UserNode_api
-       properties:
-          url: ${default-url}
+      - name: UserNode_api
+        properties:
+          url: '${default-url}'
     properties:
-         UAA_SERVICE_NAME: uaa_iMDG
+      UAA_SERVICE_NAME: uaa_iMDG
     requires:
       - name: uaa_iMDG
-
+  - name: viewRule
+    type: html5
+    path: viewRule
+    build-parameters:
+      builder: custom
+      commands:
+        - npm install
+        - npm run build
+      supported-platforms: []
+      build-result: dist
 resources:
   - name: iMDG_html5_repo_runtime
     parameters:

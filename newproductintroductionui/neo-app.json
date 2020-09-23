@@ -33,7 +33,7 @@
 		"path": "/bpmworkflowruntime",
 		"target": {
 			"type": "destination",
-			"name": "bpmworkflowruntime"
+			"name": "NPI_Workflow"
 		}
 	}],
 	"sendWelcomeFileRedirect": true
