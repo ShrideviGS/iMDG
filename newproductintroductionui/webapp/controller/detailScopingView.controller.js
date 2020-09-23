@@ -1494,8 +1494,8 @@ sap.ui.define([
 			oCurrentDate = oCurrentDate.getTime();
 
 			var oUserModel = this.oUserModel;
-			var oDisplayName = oUserModel.getProperty("/displayName");
-			var oName = oUserModel.getProperty("/name");
+			var oDisplayName = oUserModel.getProperty("/UserId");
+			var oName = oUserModel.getProperty("/UserId");
 			var oTempObj = {
 				"scenario": {
 					"projectId": "", //Int

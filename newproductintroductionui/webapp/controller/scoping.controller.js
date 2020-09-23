@@ -65,6 +65,20 @@ sap.ui.define([
 			this.onSearchProject();
 		},
 
+		// onAfterRendering: function () {
+		// 	// var g = this;
+		// 	$.ajax({
+		// 		url: "../user"
+		// 	}).done(function (data, status, jqxhr) {
+		// 		debugger;
+		// 		var user = "Welcome! " + data;
+		// 		// var oText = new sap.m.Text({
+		// 		// 	text: user
+		// 		// });
+		// 		// g.getView().byId("userVBox").addItem(oText);
+		// 	});
+		// },
+
 		//Function to open a ui for New Project Creation
 		onCreateNewProject: function (oEvent) {
 			this.resetCreateProjectFields();
@@ -148,7 +162,7 @@ sap.ui.define([
 						"projectDescription": oProjectSearchModel.getProperty("/projectDescription"),
 						"projectType": oProjectSearchModel.getProperty("/projectType"),
 						"projectStatus": oProjectSearchModel.getProperty("/projectStatus"),
-						"loggedInUser": oUserModel.getProperty("/name"),
+						"loggedInUser": oUserModel.getProperty("/UserId"),
 						"projectId": oProjectSearchModel.getProperty("/projectId"),
 						"userCreated": oProjectSearchModel.getProperty("/createdBy"),
 						"launchFromDate": oProjectSearchModel.getProperty("/launchDateFrom"),
@@ -171,7 +185,7 @@ sap.ui.define([
 						"projectDescription": "",
 						"projectType": "",
 						"projectStatus": "",
-						"loggedInUser": oUserModel.getProperty("/name"),
+						"loggedInUser": oUserModel.getProperty("/UserId"),
 						"projectId": "",
 						"userCreated": "",
 						"launchFromDate": "",

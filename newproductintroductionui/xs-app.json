@@ -9,10 +9,6 @@
 		"target": "/",
 		"destination": "npiservicesimdg"
 	}, {
-		"source": "^/userapi",
-		"target": "/",
-		"destination": "userapi"
-	}, {
 		"source": "^/bpmworkflowruntime",
 		"target": "/",
 		"destination": "bpmworkflowruntime"

@@ -1,17 +1,17 @@
 {
-	"authenticationMethod": "none",
+	"authenticationMethod": "route",
 	"routes": [{
 		"source": "^/npiservices",
 		"target": "/",
 		"destination": "npiservicesimdg"
 	}, {
-		"source": "^/userapi",
-		"target": "/",
-		"destination": "userapi"
-	}, {
 		"source": "^/bpmworkflowruntime",
 		"target": "/",
 		"destination": "bpmworkflowruntime"
+	}, {
+		"source": "^/(.*)$",
+		"target": "$1",
+		"destination": "UserNode_api"
 	}],
 	"welcomeFile": "/cp.portal"
 }

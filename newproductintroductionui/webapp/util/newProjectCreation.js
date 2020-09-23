@@ -14,18 +14,18 @@ newproductintroductionui.newproductintroductionui.util.newProjectCreation = {
 			// "leadClusterCode": oProjectDetailModel.getProperty("/projectDto/leadClusterCode"),
 			"leadClusterCode": "AMS",
 			"leadCountryCode": oProjectDetailModel.getProperty("/projectDto/leadCountryCode"),
-			"lockedByUser": oUserModel.getProperty("/name"),
+			"lockedByUser": oUserModel.getProperty("/UserId"),
 			"projectStatusCode": 0,
 			"projectTypeCode": parseInt(oProjectDetailModel.getProperty("/projectDto/projectTypeCode")),
 			"regionCode": oProjectDetailModel.getProperty("/projectDto/regionCode"),
-			"userCreated": oUserModel.getProperty("/name"),
+			"userCreated": oUserModel.getProperty("/UserId"),
 			"launchDate": oProjectDetailModel.getProperty("/projectDto/launchDate"),
 			"firstProductionDate": oProjectDetailModel.getProperty("/projectDto/firstProductionDate"),
 			"dateCreated": new Date().getTime(),
 			"updatedBy": new Date().getTime()
 		};
 
-		var updatedBy = oUserModel.getProperty("/name");
+		var updatedBy = oUserModel.getProperty("/UserId");
 		oProjectDetailModel.setProperty("/projectDto/userUpdated", updatedBy);
 
 		var oModel = new sap.ui.model.json.JSONModel();
@@ -66,7 +66,7 @@ newproductintroductionui.newproductintroductionui.util.newProjectCreation = {
 		var oProjectDetailModel = oController.oProjectDetailModel;
 		var oUiElementVisibilityModel = oController.oUiElementVisibilityModel;
 
-		var updatedBy = oUserModel.getProperty("/name");
+		var updatedBy = oUserModel.getProperty("/UserId");
 		oProjectDetailModel.setProperty("/projectDto/userUpdated", updatedBy);
 
 		var updatedOn = new Date().getTime();

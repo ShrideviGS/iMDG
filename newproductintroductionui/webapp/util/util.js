@@ -11,7 +11,7 @@ newproductintroductionui.newproductintroductionui.util.util = {
 	//Function to get logged in user
 	getUserDetails: function (oController, oUserModel) {
 		var that = this;
-		var sUrl = "/userapi/currentUser";
+		var sUrl = "../user";
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
 		oModel.loadData(sUrl, true, "GET", false, false);
@@ -19,7 +19,11 @@ newproductintroductionui.newproductintroductionui.util.util = {
 			if (oEvent.getParameter("success")) {
 				var resultData = oEvent.getSource().getData();
 				if (resultData) {
-					oUserModel.setData(resultData);
+					oUserModel.setProperty("/UserId", resultData.id);
+					oUserModel.setProperty("/sEmial", resultData.emails[0].value);
+					oUserModel.setProperty("/sFirstName", resultData.name.givenName);
+					oUserModel.setProperty("/sLastName", resultData.name.familyName);
+					// oUserModel.setData(resultData);
 				}
 			} else {
 				that.toastMessage("Internal Server Error");
