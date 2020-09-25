@@ -199,7 +199,7 @@ sap.ui.define([
 				};
 			}
 			var oModel = new sap.ui.model.json.JSONModel();
-			var sUrl = "/npiservices/primaryscoping/projects";
+			var sUrl = "/npiservices/npi/primaryscoping/projects";
 			oModel.loadData(sUrl, JSON.stringify(oPayload), true, "POST", false, false, this.oHeader);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -250,7 +250,7 @@ sap.ui.define([
 			that.oRouter.navTo("createNewProject", {
 				bVal: oProjectId
 			});
-			/*var sUrl = "/npiservices/primaryscoping/projectdata/" + oProjectId + "/" + startIndex + "/" + batchIndex;
+			/*var sUrl = "/npiservices/npi/primaryscoping/projectdata/" + oProjectId + "/" + startIndex + "/" + batchIndex;
 			var oModel = new sap.ui.model.json.JSONModel();
 			oModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oModel.attachRequestCompleted(function (oEvent) {

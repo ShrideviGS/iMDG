@@ -95,7 +95,7 @@ sap.ui.define([
 				startIndex = 0,
 				batchIndex = 20;
 			var oProjectDetailModel = this.oProjectDetailModel;
-			var sUrl = "/npiservices/primaryscoping/projectdata/" + oProjectId + "/" + startIndex + "/" + batchIndex;
+			var sUrl = "/npiservices/npi/primaryscoping/projectdata/" + oProjectId + "/" + startIndex + "/" + batchIndex;
 			var oModel = new sap.ui.model.json.JSONModel();
 			oModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oModel.attachRequestCompleted(function (oEvent) {

@@ -70,8 +70,8 @@ sap.ui.define([
 			//commented by shridevi
 			var taskId = this.getTaskIdFromUrl();
 			var oScenarioModel = this.oScenarioModel;
-		//	var sUrl = "/bpmworkflowruntime/workflow-service/rest/v1/task-instances/" + taskId + "/context";
-		var sUrl = "/bpmworkflowruntime/workflow-service/rest/v1/task-instances/" + taskId + "/context";
+		//	var sUrl = "/bpmworkflowruntime/" + taskId + "/context";
+		var sUrl = "/bpmworkflowruntime/" + taskId + "/context";
 			var oModel = new sap.ui.model.json.JSONModel();
 			oModel.loadData(sUrl, true, "GET", false, false);
 			oModel.attachRequestCompleted(function (oEvent) {
@@ -97,7 +97,7 @@ sap.ui.define([
 			var that = this;
 			var oScenarioModel = this.oScenarioModel;
 			var oModel = new sap.ui.model.json.JSONModel();
-			var sUrl = "/npiservices/detailedscoping/loadscenarios/" + projectId + "/" + rowNumber;
+			var sUrl = "/npiservices/npi/detailedscoping/loadscenarios/" + projectId + "/" + rowNumber;
 			oModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -278,7 +278,7 @@ sap.ui.define([
 			this.busy.open();
 			var oScenarioModel = this.oScenarioModel;
 			var oModel = new sap.ui.model.json.JSONModel();
-			var sUrl = "/npiservices/lookup/scenario";
+			var sUrl = "/npiservices/npi/lookup/scenario";
 			oModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -464,7 +464,7 @@ sap.ui.define([
 			};
 
 			var oModel = new sap.ui.model.json.JSONModel();
-			var sUrl = "/npiservices/detailedscoping/loadscenariosextensions";
+			var sUrl = "/npiservices/npi/detailedscoping/loadscenariosextensions";
 			oModel.loadData(sUrl, JSON.stringify(oPayload), true, "POST", false, false, this.oHeader);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -663,7 +663,7 @@ sap.ui.define([
 			this.busy.open();
 			var oScenarioModel = this.oScenarioModel;
 			var oModel = new sap.ui.model.json.JSONModel();
-			var sUrl = "/npiservices/lookup/sorgs";
+			var sUrl = "/npiservices/npi/lookup/sorgs";
 			oModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -900,7 +900,7 @@ sap.ui.define([
 			this.busy.open();
 			var oScenarioModel = this.oScenarioModel;
 			var oModel = new sap.ui.model.json.JSONModel();
-			var sUrl = "/npiservices/lookup/plants";
+			var sUrl = "/npiservices/npi/lookup/plants";
 			oModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -1138,7 +1138,7 @@ sap.ui.define([
 			this.busy.open();
 			var oScenarioModel = this.oScenarioModel;
 			var oModel = new sap.ui.model.json.JSONModel();
-			var sUrl = "/npiservices/lookup/warehouse";
+			var sUrl = "/npiservices/npi/lookup/warehouse";
 			oModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -1320,7 +1320,7 @@ sap.ui.define([
 			var oScenarioModel = this.oScenarioModel;
 			var projectId = oScenarioModel.getProperty("/contextData/projectId");
 			var oModel = new sap.ui.model.json.JSONModel();
-			var sUrl = "/npiservices/primaryscoping/materiallines/" + projectId + "/0/20";
+			var sUrl = "/npiservices/npi/primaryscoping/materiallines/" + projectId + "/0/20";
 			oModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -1450,7 +1450,7 @@ sap.ui.define([
 			};
 
 			var oModel = new sap.ui.model.json.JSONModel();
-			var sUrl = "/npiservices/detailedscoping/update";
+			var sUrl = "/npiservices/npi/detailedscoping/update";
 			oModel.loadData(sUrl, JSON.stringify(scenarios), true, "POST", false, false, this.oHeader);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -1561,7 +1561,7 @@ sap.ui.define([
 				"status": "COMPLETED"
 			};
 			var taskId = this.getTaskIdFromUrl();
-			var oUrl = "/bpmworkflowruntime/workflow-service/rest/v1/task-instances/" + taskId;
+			var oUrl = "/bpmworkflowruntime/" + taskId;
 			$.ajax({
 				url: oUrl,
 				method: "PATCH",

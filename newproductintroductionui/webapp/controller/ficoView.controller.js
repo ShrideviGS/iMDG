@@ -53,7 +53,7 @@ sap.ui.define([
 			var oMRPContextModel = this.getView().getModel("oMRPContextModel");
 			var taskId = this.getTaskIdFromUrl();
 			// var taskId = "42f85c41-1efe-11e9-b488-00163e82bb6e";
-			var sUrl = "/bpmworkflowruntime/workflow-service/rest/v1/task-instances/" + taskId + "/context";
+			var sUrl = "/bpmworkflowruntime/" + taskId + "/context";
 			var oSrvModel = new JSONModel();
 			oSrvModel.loadData(sUrl, true, "GET", false, false);
 			oSrvModel.attachRequestCompleted(function (oEvent) {

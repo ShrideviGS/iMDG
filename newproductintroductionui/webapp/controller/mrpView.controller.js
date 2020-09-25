@@ -111,7 +111,7 @@ sap.ui.define([
 			var oMRPContextModel = this.getView().getModel("oMRPContextModel");
 			var taskId = this.getTaskIdFromUrl();
 			// var taskId = "42f85c41-1efe-11e9-b488-00163e82bb6e";
-			var sUrl = "/bpmworkflowruntime/workflow-service/rest/v1/task-instances/" + taskId + "/context";
+			var sUrl = "/bpmworkflowruntime/" + taskId + "/context";
 			var oSrvModel = new JSONModel();
 			oSrvModel.loadData(sUrl, true, "GET", false, false);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
@@ -157,7 +157,7 @@ sap.ui.define([
 			var taskId = oUrlSplit[oUrlSplit.length - 1];
 			var oModel = new sap.ui.model.json.JSONModel();
 			oModel.setSizeLimit(999);
-			oModel.loadData("/bpmworkflowruntime/workflow-service/rest/v1/task-instances/" + taskId + "/attributes", "", true, "GET", false,
+			oModel.loadData("/bpmworkflowruntime/" + taskId + "/attributes", "", true, "GET", false,
 				false);
 			oModel.attachRequestCompleted(function (oEvent) {
 				var nodeId;
@@ -231,7 +231,7 @@ sap.ui.define([
 			var that = this;
 			var oSrvModel = new JSONModel();
 			var oMRPDataModel = this.getView().getModel("oMRPDataModel");
-			var sUrl = "/npiservices/mrp/load/" + materialUniqueId + "/" + plantCode + "/" + startIndex + "/" + batchSize;
+			var sUrl = "/npiservices/npi/mrp/load/" + materialUniqueId + "/" + plantCode + "/" + startIndex + "/" + batchSize;
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -268,7 +268,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oPGrpModel = new JSONModel();
 			this.getView().setModel(oPGrpModel, "oPGrpModel");
-			var sUrl = "/npiservices/lookup/purchasinggroups";
+			var sUrl = "/npiservices/npi/lookup/purchasinggroups";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -304,7 +304,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oABCIndModel = new JSONModel();
 			this.getView().setModel(oABCIndModel, "oABCIndModel");
-			var sUrl = "/npiservices/lookup/abcindicators";
+			var sUrl = "/npiservices/npi/lookup/abcindicators";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -340,7 +340,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oMRPTypesModel = new JSONModel();
 			this.getView().setModel(oMRPTypesModel, "oMRPTypesModel");
-			var sUrl = "/npiservices/lookup/mrptypes";
+			var sUrl = "/npiservices/npi/lookup/mrptypes";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -378,7 +378,7 @@ sap.ui.define([
 			var oMRPContextModel = this.getView().getModel("oMRPContextModel");
 			var sPlantCode = oMRPContextModel.getProperty("/plantCode");
 			this.getView().setModel(oPlanCycleModel, "oPlanCycleModel");
-			var sUrl = "/npiservices/lookup/planningcycles/" + sPlantCode;
+			var sUrl = "/npiservices/npi/lookup/planningcycles/" + sPlantCode;
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -414,7 +414,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oLotSizeModel = new JSONModel();
 			this.getView().setModel(oLotSizeModel, "oLotSizeModel");
-			var sUrl = "/npiservices/lookup/lotsizes";
+			var sUrl = "/npiservices/npi/lookup/lotsizes";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -452,7 +452,7 @@ sap.ui.define([
 			this.getView().setModel(oStrgCostIndModel, "oStrgCostIndModel");
 			var oMRPContextModel = this.getView().getModel("oMRPContextModel");
 			var sPlantCode = oMRPContextModel.getProperty("/plantCode");
-			var sUrl = "/npiservices/lookup/storagecostindicators/" + sPlantCode;
+			var sUrl = "/npiservices/npi/lookup/storagecostindicators/" + sPlantCode;
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -490,7 +490,7 @@ sap.ui.define([
 			this.getView().setModel(oRoundProfModel, "oRoundProfModel");
 			var oMRPContextModel = this.getView().getModel("oMRPContextModel");
 			var sPlantCode = oMRPContextModel.getProperty("/plantCode");
-			var sUrl = "/npiservices/lookup/roundingprofiles/" + sPlantCode;
+			var sUrl = "/npiservices/npi/lookup/roundingprofiles/" + sPlantCode;
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -526,7 +526,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oBatchEntryModel = new JSONModel();
 			this.getView().setModel(oBatchEntryModel, "oBatchEntryModel");
-			var sUrl = "/npiservices/lookup/bacthentries";
+			var sUrl = "/npiservices/npi/lookup/bacthentries";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -562,7 +562,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oQuotaArrUsageModel = new JSONModel();
 			this.getView().setModel(oQuotaArrUsageModel, "oQuotaArrUsageModel");
-			var sUrl = "/npiservices/lookup/quotaarrusages";
+			var sUrl = "/npiservices/npi/lookup/quotaarrusages";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -598,7 +598,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oBackFlushModel = new JSONModel();
 			this.getView().setModel(oBackFlushModel, "oBackFlushModel");
-			var sUrl = "/npiservices/lookup/backflushindicators";
+			var sUrl = "/npiservices/npi/lookup/backflushindicators";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -634,7 +634,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oStockDetGrpModel = new JSONModel();
 			this.getView().setModel(oStockDetGrpModel, "oStockDetGrpModel");
-			var sUrl = "/npiservices/lookup/stockdetgroups";
+			var sUrl = "/npiservices/npi/lookup/stockdetgroups";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -670,7 +670,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oJITDelSchModel = new JSONModel();
 			this.getView().setModel(oJITDelSchModel, "oJITDelSchModel");
-			var sUrl = "/npiservices/lookup/jitdelschedules";
+			var sUrl = "/npiservices/npi/lookup/jitdelschedules";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -708,7 +708,7 @@ sap.ui.define([
 			this.getView().setModel(oShdMarginModel, "oShdMarginModel");
 			var oMRPContextModel = this.getView().getModel("oMRPContextModel");
 			var sPlantCode = oMRPContextModel.getProperty("/plantCode");
-			var sUrl = "/npiservices/lookup/scheduledmargins/" + sPlantCode;
+			var sUrl = "/npiservices/npi/lookup/scheduledmargins/" + sPlantCode;
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -744,7 +744,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oCoverageProfModel = new JSONModel();
 			this.getView().setModel(oCoverageProfModel, "oCoverageProfModel");
-			var sUrl = "/npiservices/lookup/coverageprofiles";
+			var sUrl = "/npiservices/npi/lookup/coverageprofiles";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -780,7 +780,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oSafetyTimeIndModel = new JSONModel();
 			this.getView().setModel(oSafetyTimeIndModel, "oSafetyTimeIndModel");
-			var sUrl = "/npiservices/lookup/safetytimeindicators";
+			var sUrl = "/npiservices/npi/lookup/safetytimeindicators";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -816,7 +816,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oSTimePeriodProfModel = new JSONModel();
 			this.getView().setModel(oSTimePeriodProfModel, "oSTimePeriodProfModel");
-			var sUrl = "/npiservices/lookup/safetytimeperiodprofiles";
+			var sUrl = "/npiservices/npi/lookup/safetytimeperiodprofiles";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -852,7 +852,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oMPSCatModel = new JSONModel();
 			this.getView().setModel(oMPSCatModel, "oMPSCatModel");
-			var sUrl = "/npiservices/lookup/mpscategories";
+			var sUrl = "/npiservices/npi/lookup/mpscategories";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -888,7 +888,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oStockStatusClassifModel = new JSONModel();
 			this.getView().setModel(oStockStatusClassifModel, "oStockStatusClassifModel");
-			var sUrl = "/npiservices/lookup/stockstatusclassifications";
+			var sUrl = "/npiservices/npi/lookup/stockstatusclassifications";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -924,7 +924,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oRIMMixTypeModel = new JSONModel();
 			this.getView().setModel(oRIMMixTypeModel, "oRIMMixTypeModel");
-			var sUrl = "/npiservices/lookup/rimmixtypes";
+			var sUrl = "/npiservices/npi/lookup/rimmixtypes";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -960,7 +960,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oPeriodIndModel = new JSONModel();
 			this.getView().setModel(oPeriodIndModel, "oPeriodIndModel");
-			var sUrl = "/npiservices/lookup/periodindicators";
+			var sUrl = "/npiservices/npi/lookup/periodindicators";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -996,7 +996,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oSplitIndModel = new JSONModel();
 			this.getView().setModel(oSplitIndModel, "oSplitIndModel");
-			var sUrl = "/npiservices/lookup/splittingindicators";
+			var sUrl = "/npiservices/npi/lookup/splittingindicators";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -1032,7 +1032,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oFiscalYearVarModel = new JSONModel();
 			this.getView().setModel(oFiscalYearVarModel, "oFiscalYearVarModel");
-			var sUrl = "/npiservices/lookup/fiscalyearvariants";
+			var sUrl = "/npiservices/npi/lookup/fiscalyearvariants";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -1068,7 +1068,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oCrossProjModel = new JSONModel();
 			this.getView().setModel(oCrossProjModel, "oCrossProjModel");
-			var sUrl = "/npiservices/lookup/crossprojects";
+			var sUrl = "/npiservices/npi/lookup/crossprojects";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -1104,7 +1104,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oAvailCheckModel = new JSONModel();
 			this.getView().setModel(oAvailCheckModel, "oAvailCheckModel");
-			var sUrl = "/npiservices/lookup/availablitychecks";
+			var sUrl = "/npiservices/npi/lookup/availablitychecks";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -1140,7 +1140,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oStrategyGrpModel = new JSONModel();
 			this.getView().setModel(oStrategyGrpModel, "oStrategyGrpModel");
-			var sUrl = "/npiservices/lookup/strategygroups";
+			var sUrl = "/npiservices/npi/lookup/strategygroups";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -1176,7 +1176,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oMixedMRPModel = new JSONModel();
 			this.getView().setModel(oMixedMRPModel, "oMixedMRPModel");
-			var sUrl = "/npiservices/lookup/mixedmrps";
+			var sUrl = "/npiservices/npi/lookup/mixedmrps";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -1212,7 +1212,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oConModModel = new JSONModel();
 			this.getView().setModel(oConModModel, "oConModModel");
-			var sUrl = "/npiservices/lookup/consumptionmodes";
+			var sUrl = "/npiservices/npi/lookup/consumptionmodes";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -1248,7 +1248,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oSelMethodModel = new JSONModel();
 			this.getView().setModel(oSelMethodModel, "oSelMethodModel");
-			var sUrl = "/npiservices/lookup/selectionmethods";
+			var sUrl = "/npiservices/npi/lookup/selectionmethods";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -1284,7 +1284,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oMRPDepModel = new JSONModel();
 			this.getView().setModel(oMRPDepModel, "oMRPDepModel");
-			var sUrl = "/npiservices/lookup/mrpdepartmentrequirements";
+			var sUrl = "/npiservices/npi/lookup/mrpdepartmentrequirements";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -1320,7 +1320,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oReqGrpModel = new JSONModel();
 			this.getView().setModel(oReqGrpModel, "oReqGrpModel");
-			var sUrl = "/npiservices/lookup/requirementgroups";
+			var sUrl = "/npiservices/npi/lookup/requirementgroups";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -1356,7 +1356,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oIndColsModel = new JSONModel();
 			this.getView().setModel(oIndColsModel, "oIndColsModel");
-			var sUrl = "/npiservices/lookup/individualcols";
+			var sUrl = "/npiservices/npi/lookup/individualcols";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -1392,7 +1392,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oDisIndModel = new JSONModel();
 			this.getView().setModel(oDisIndModel, "oDisIndModel");
-			var sUrl = "/npiservices/lookup/discontinuityindicators";
+			var sUrl = "/npiservices/npi/lookup/discontinuityindicators";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -1428,7 +1428,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oPushDistModel = new JSONModel();
 			this.getView().setModel(oPushDistModel, "oPushDistModel");
-			var sUrl = "/npiservices/lookup/pushdistributions";
+			var sUrl = "/npiservices/npi/lookup/pushdistributions";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -1464,7 +1464,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oFairShareRuleModel = new JSONModel();
 			this.getView().setModel(oFairShareRuleModel, "oFairShareRuleModel");
-			var sUrl = "/npiservices/lookup/fairsharerules";
+			var sUrl = "/npiservices/npi/lookup/fairsharerules";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -1500,7 +1500,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oRemProfModel = new JSONModel();
 			this.getView().setModel(oRemProfModel, "oRemProfModel");
-			var sUrl = "/npiservices/lookup/remprofiles";
+			var sUrl = "/npiservices/npi/lookup/remprofiles";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -1536,7 +1536,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oProdSchedProfModel = new JSONModel();
 			this.getView().setModel(oProdSchedProfModel, "oProdSchedProfModel");
-			var sUrl = "/npiservices/lookup/proschedulingprofiles";
+			var sUrl = "/npiservices/npi/lookup/proschedulingprofiles";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -1572,7 +1572,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oCCPhyInvIndModel = new JSONModel();
 			this.getView().setModel(oCCPhyInvIndModel, "oCCPhyInvIndModel");
-			var sUrl = "/npiservices/lookup/phyinventoryindicators";
+			var sUrl = "/npiservices/npi/lookup/phyinventoryindicators";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -1608,7 +1608,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oProfitCenterModel = new JSONModel();
 			this.getView().setModel(oProfitCenterModel, "oProfitCenterModel");
-			var sUrl = "/npiservices/lookup/profitcenters";
+			var sUrl = "/npiservices/npi/lookup/profitcenters";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -1870,7 +1870,7 @@ sap.ui.define([
 		onSave: function () {
 			var that = this;
 			this.oBusyDialog.open();
-			var oSrvUrl = "/npiservices/mrp/update";
+			var oSrvUrl = "/npiservices/npi/mrp/update";
 			var oSrvModel = new JSONModel();
 			var oMRPDataModel = this.getView().getModel("oMRPDataModel");
 			var oPayload = oMRPDataModel.getData();
@@ -1990,7 +1990,7 @@ sap.ui.define([
 			var oMatType = oMRPContextModel.getData().materialType;
 			var oPlantCode = oMRPContextModel.getData().plantCode;
 			var oNodeId = oMRPContextModel.getData().nodeId;
-			var oSrvUrl = "/npiservices/mrp/mandatory/fields/" + oLeadCat + "/" + oMatType + "/" + oPlantCode + "/" +
+			var oSrvUrl = "/npiservices/npi/mrp/mandatory/fields/" + oLeadCat + "/" + oMatType + "/" + oPlantCode + "/" +
 				oNodeId;
 			var oSrvModel = new JSONModel();
 			oSrvModel.loadData(oSrvUrl, "", true, "GET", false, false, this.oHeader);
