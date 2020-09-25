@@ -6,7 +6,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 			var that = this;
 			var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 			var oModel = new sap.ui.model.json.JSONModel();
-			oModel.loadData("/npiservices/npi/lookup/countries", "", true, "GET", false, false);
+			oModel.loadData("/npiservices/lookup/countries", "", true, "GET", false, false);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
 					var data = oEvent.getSource().getData();
@@ -29,7 +29,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 			var that = this;
 			var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 			var oModel = new sap.ui.model.json.JSONModel();
-			oModel.loadData("/npiservices/npi/lookup/materialgroup", "", true, "GET", false, false);
+			oModel.loadData("/npiservices/lookup/materialgroup", "", true, "GET", false, false);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
 					var data = oEvent.getSource().getData();
@@ -52,7 +52,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 		var that = this;
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
-		oModel.loadData("/npiservices/npi/lookup/generalItemCategory", "", true, "GET", false, false);
+		oModel.loadData("/npiservices/lookup/generalItemCategory", "", true, "GET", false, false);
 		oModel.attachRequestCompleted(function (oEvent) {
 			if (oEvent.getParameter("success")) {
 				var data = oEvent.getSource().getData();
@@ -75,7 +75,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 			var that = this;
 			var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 			var oModel = new sap.ui.model.json.JSONModel();
-			oModel.loadData("/npiservices/npi/lookup/regionalStatus", "", true, "GET", false, false);
+			oModel.loadData("/npiservices/lookup/regionalStatus", "", true, "GET", false, false);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
 					var data = oEvent.getSource().getData();
@@ -98,7 +98,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 			var that = this;
 			var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 			var oModel = new sap.ui.model.json.JSONModel();
-			oModel.loadData("/npiservices/npi/lookup/businessScenario", "", true, "GET", false, false);
+			oModel.loadData("/npiservices/lookup/businessScenario", "", true, "GET", false, false);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
 					var data = oEvent.getSource().getData();
@@ -121,7 +121,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
-		oModel.loadData("/npiservices/npi/lookup/projecttypes", "", true, "GET", false, false);
+		oModel.loadData("/npiservices/lookup/projecttypes", "", true, "GET", false, false);
 		oModel.attachRequestCompleted(function (oEvent) {
 			if (oEvent.getParameter("success")) {
 				var data = oEvent.getSource().getData();
@@ -145,7 +145,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
-		oModel.loadData("/npiservices/npi/lookup/projectstatus", "", true, "GET", false, false);
+		oModel.loadData("/npiservices/lookup/projectstatus", "", true, "GET", false, false);
 		oModel.attachRequestCompleted(function (oEvent) {
 			if (oEvent.getParameter("success")) {
 				var data = oEvent.getSource().getData();
@@ -169,7 +169,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
-		oModel.loadData("/npiservices/npi/lookup/leadCategory", "", true, "GET", false, false);
+		oModel.loadData("/npiservices/lookup/leadCategory", "", true, "GET", false, false);
 		oModel.attachRequestCompleted(function (oEvent) {
 			if (oEvent.getParameter("success")) {
 				var data = oEvent.getSource().getData();
@@ -193,7 +193,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
-		oModel.loadData("/npiservices/npi/lookup/region", "", true, "GET", false, false);
+		oModel.loadData("/npiservices/lookup/region", "", true, "GET", false, false);
 		oModel.attachRequestCompleted(function (oEvent) {
 			if (oEvent.getParameter("success")) {
 				var data = oEvent.getSource().getData();
@@ -217,7 +217,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
-		oModel.loadData("/npiservices/npi/lookup/cluster", "", true, "GET", false, false);
+		oModel.loadData("/npiservices/lookup/cluster", "", true, "GET", false, false);
 		oModel.attachRequestCompleted(function (oEvent) {
 			if (oEvent.getParameter("success")) {
 				var data = oEvent.getSource().getData();
@@ -247,7 +247,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
-		oModel.loadData("/npiservices/npi/lookup/materialAction", "", true, "GET", false, false);
+		oModel.loadData("/npiservices/lookup/materialAction", "", true, "GET", false, false);
 		oModel.attachRequestCompleted(function (oEvent) {
 			if (oEvent.getParameter("success")) {
 				var data = oEvent.getSource().getData();
@@ -271,7 +271,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
-		oModel.loadData("/npiservices/npi/lookup/roles", "", true, "GET", false, false);
+		oModel.loadData("/npiservices/lookup/roles", "", true, "GET", false, false);
 		oModel.attachRequestCompleted(function (oEvent) {
 			if (oEvent.getParameter("success")) {
 				var data = oEvent.getSource().getData();
@@ -301,7 +301,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
-		oModel.loadData("/npiservices/npi/lookup/regionalmaterialtypes", "", true, "GET", false, false);
+		oModel.loadData("/npiservices/lookup/regionalmaterialtypes", "", true, "GET", false, false);
 		oModel.attachRequestCompleted(function (oEvent) {
 			if (oEvent.getParameter("success")) {
 				var data = oEvent.getSource().getData();
@@ -325,7 +325,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
-		oModel.loadData("/npiservices/npi/lookup/countries", "", true, "GET", false, false);
+		oModel.loadData("/npiservices/lookup/countries", "", true, "GET", false, false);
 		oModel.attachRequestCompleted(function (oEvent) {
 			if (oEvent.getParameter("success")) {
 				var data = oEvent.getSource().getData();
@@ -347,7 +347,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 	//Function to get distributiin channel 
 	getDistributionChannel: function (oController, soCode, startIndex, batchSize) {
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
-		var sUrl = "/npiservices/npi/lookup/distritbutionchannels/" + soCode + "/" + startIndex + "/" + batchSize;
+		var sUrl = "/npiservices/lookup/distritbutionchannels/" + soCode + "/" + startIndex + "/" + batchSize;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
 		oModel.loadData(sUrl, "", true, "GET", false, false);
@@ -371,7 +371,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 		var that = this;
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
-		oModel.loadData("/npiservices/npi/lookup/regionalmaterialtypes", "", true, "GET", false, false);
+		oModel.loadData("/npiservices/lookup/regionalmaterialtypes", "", true, "GET", false, false);
 		oModel.attachRequestCompleted(function (oEvent) {
 			if (oEvent.getParameter("success")) {
 				var data = oEvent.getSource().getData();
@@ -394,7 +394,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 			var that = this;
 			var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 			var oModel = new sap.ui.model.json.JSONModel();
-			oModel.loadData("/npiservices/npi/lookup/scenarios", "", true, "GET", false, false);
+			oModel.loadData("/npiservices/lookup/scenarios", "", true, "GET", false, false);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
 					var data = oEvent.getSource().getData();
@@ -417,7 +417,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 			var that = this;
 			var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 			var oModel = new sap.ui.model.json.JSONModel();
-			oModel.loadData("/npiservices/npi/lookup/plants", "", true, "GET", false, false);
+			oModel.loadData("/npiservices/lookup/plants", "", true, "GET", false, false);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
 					var data = oEvent.getSource().getData();
@@ -440,7 +440,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 		var that = this;
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
-		oModel.loadData("/npiservices/npi/lookup/productAllocations", "", true, "GET", false, false);
+		oModel.loadData("/npiservices/lookup/productAllocations", "", true, "GET", false, false);
 		oModel.attachRequestCompleted(function (oEvent) {
 			if (oEvent.getParameter("success")) {
 				var data = oEvent.getSource().getData();
@@ -463,7 +463,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 			var that = this;
 			var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 			var oModel = new sap.ui.model.json.JSONModel();
-			oModel.loadData("/npiservices/npi/lookup/plantStatus", "", true, "GET", false, false);
+			oModel.loadData("/npiservices/lookup/plantStatus", "", true, "GET", false, false);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
 					var data = oEvent.getSource().getData();
@@ -486,7 +486,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 	//Function to get Material Group
 	getBasicMaterialGroup: function (oController) {
 		var that = this;
-		var sUrl = "/npiservices/npi/lookup/materialgroups";
+		var sUrl = "/npiservices/lookup/materialgroups";
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
@@ -512,7 +512,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 	//Function to get External Material Group
 	getExternalMaterialGroup: function (oController) {
 		var that = this;
-		var sUrl = "/npiservices/npi/lookup/extMaterialGroup";
+		var sUrl = "/npiservices/lookup/extMaterialGroup";
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
@@ -538,7 +538,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 	//Function to get division Unit
 	getDivisionUnits: function (oController) {
 		var that = this;
-		var sUrl = "/npiservices/npi/lookup/divisions";
+		var sUrl = "/npiservices/lookup/divisions";
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
@@ -564,7 +564,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 	//Function to get Lab/Office
 	getLabOffice: function (oController) {
 		var that = this;
-		var sUrl = "/npiservices/npi/lookup/labOffices";
+		var sUrl = "/npiservices/lookup/labOffices";
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
@@ -592,7 +592,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
-		oModel.loadData("/npiservices/npi/lookup/generalItemCategory", "", true, "GET", false, false);
+		oModel.loadData("/npiservices/lookup/generalItemCategory", "", true, "GET", false, false);
 		oModel.attachRequestCompleted(function (oEvent) {
 			if (oEvent.getParameter("success")) {
 				var data = oEvent.getSource().getData();
@@ -616,7 +616,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
-		oModel.loadData("/npiservices/npi/lookup/productAllocations", "", true, "GET", false, false);
+		oModel.loadData("/npiservices/lookup/productAllocations", "", true, "GET", false, false);
 		oModel.attachRequestCompleted(function (oEvent) {
 			if (oEvent.getParameter("success")) {
 				var data = oEvent.getSource().getData();
@@ -638,7 +638,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 	//Function to get XPlantMaterialStatus
 	getXPlantMaterialStatus: function (oController) {
 		var that = this;
-		var sUrl = "/npiservices/npi/lookup/XplantStatus";
+		var sUrl = "/npiservices/lookup/XplantStatus";
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
@@ -664,7 +664,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 	//Function to get XPlantMaterialStatus
 	getDChainStatus: function (oController) {
 		var that = this;
-		var sUrl = "/npiservices/npi/lookup/dChainStatus";
+		var sUrl = "/npiservices/lookup/dChainStatus";
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
@@ -690,7 +690,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 	//Function to get Material group Packaging
 	getMaterialGroupPackaging: function (oController) {
 		var that = this;
-		var sUrl = "/npiservices/npi/lookup/packmaterialgroups";
+		var sUrl = "/npiservices/lookup/packmaterialgroups";
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
@@ -719,7 +719,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 		var dimensionKey = "ALL",
 			startIndex = "0",
 			batchSize = "20";
-		var sUrl = "/npiservices/npi/lookup/units/" + dimensionKey +
+		var sUrl = "/npiservices/lookup/units/" + dimensionKey +
 			"/" + startIndex + "/" + batchSize;
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
@@ -745,7 +745,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 	//Function to get Catalog Profile
 	getCatalogProfile: function (oController) {
 		var that = this;
-		var sUrl = "/npiservices/npi/lookup/catalogprofiles";
+		var sUrl = "/npiservices/lookup/catalogprofiles";
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
@@ -771,7 +771,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 	//Function to get Container Requirements
 	getContainerRequirements: function (oController) {
 		var that = this;
-		var sUrl = "/npiservices/npi/lookup/containerrequirements";
+		var sUrl = "/npiservices/lookup/containerrequirements";
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
@@ -797,7 +797,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 	//Function to get Label Type
 	getLabelType: function (oController) {
 		var that = this;
-		var sUrl = "/npiservices/npi/lookup/labeltypes";
+		var sUrl = "/npiservices/lookup/labeltypes";
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
@@ -823,7 +823,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 	//Function to get Label form        
 	getLabelFrom: function (oController) {
 		var that = this;
-		var sUrl = "/npiservices/npi/lookup/labelforms";
+		var sUrl = "/npiservices/lookup/labelforms";
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
@@ -849,7 +849,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 	//Function to get Storage Conditions        
 	getStorageConditions: function (oController) {
 		var that = this;
-		var sUrl = "/npiservices/npi/lookup/storageconditions";
+		var sUrl = "/npiservices/lookup/storageconditions";
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
@@ -875,7 +875,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 	//Function to get Temp Conditions            
 	getTempConditions: function (oController) {
 		var that = this;
-		var sUrl = "/npiservices/npi/lookup/tempconditions";
+		var sUrl = "/npiservices/lookup/tempconditions";
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
@@ -901,7 +901,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 	//Function to get Purchasing Value Key   
 	getPurchasingValue: function (oController) {
 		var that = this;
-		var sUrl = "/npiservices/npi/lookup/purchvaluekeys";
+		var sUrl = "/npiservices/lookup/purchvaluekeys";
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
@@ -927,7 +927,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 	//Function to get Manufacturer 
 	getManufacturer: function (oController) {
 		var that = this;
-		var sUrl = "/npiservices/npi/lookup/manufacturers";
+		var sUrl = "/npiservices/lookup/manufacturers";
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
@@ -956,7 +956,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 		var dimensionKey = "MASS",
 			startIndex = "0",
 			batchSize = "20";
-		var sUrl = "/npiservices/npi/lookup/units/" + dimensionKey +
+		var sUrl = "/npiservices/lookup/units/" + dimensionKey +
 			"/" + startIndex + "/" + batchSize;
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
@@ -986,7 +986,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 		var dimensionKey = "VOLUME",
 			startIndex = "0",
 			batchSize = "20";
-		var sUrl = "/npiservices/npi/lookup/units/" + dimensionKey +
+		var sUrl = "/npiservices/lookup/units/" + dimensionKey +
 			"/" + startIndex + "/" + batchSize;
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
@@ -1013,7 +1013,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 	//Function to get Packaging Mat Type      
 	getPackagingMatType: function (oController) {
 		var that = this;
-		var sUrl = "/npiservices/npi/lookup/packmaterialtypes";
+		var sUrl = "/npiservices/lookup/packmaterialtypes";
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
@@ -1039,7 +1039,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 	//Function to Transportation Group          
 	getTransportationGroup: function (oController) {
 		var that = this;
-		var sUrl = "/npiservices/npi/lookup/transportgroups";
+		var sUrl = "/npiservices/lookup/transportgroups";
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
@@ -1068,7 +1068,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 		var dimensionKey = "ALL",
 			startIndex = "0",
 			batchSize = "20";
-		var sUrl = "/npiservices/npi/lookup/units/" + dimensionKey +
+		var sUrl = "/npiservices/lookup/units/" + dimensionKey +
 			"/" + startIndex + "/" + batchSize;
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
@@ -1095,7 +1095,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 	//Function to get EAN category
 	getEANCategory: function (oController) {
 		var that = this;
-		var sUrl = "/npiservices/npi/lookup/eancategories";
+		var sUrl = "/npiservices/lookup/eancategories";
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
@@ -1124,7 +1124,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 		var dimensionKey = "LENGTH",
 			startIndex = "0",
 			batchSize = "20";
-		var sUrl = "/npiservices/npi/lookup/units/" + dimensionKey +
+		var sUrl = "/npiservices/lookup/units/" + dimensionKey +
 			"/" + startIndex + "/" + batchSize;
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
@@ -1154,7 +1154,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 		var dimensionKey = "VOLUME",
 			startIndex = "0",
 			batchSize = "20";
-		var sUrl = "/npiservices/npi/lookup/units/" + dimensionKey +
+		var sUrl = "/npiservices/lookup/units/" + dimensionKey +
 			"/" + startIndex + "/" + batchSize;
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();
@@ -1184,7 +1184,7 @@ newproductintroductionui.newproductintroductionui.util.dropdownLookupServices = 
 		var dimensionKey = "MASS",
 			startIndex = "0",
 			batchSize = "20";
-		var sUrl = "/npiservices/npi/lookup/units/" + dimensionKey +
+		var sUrl = "/npiservices/lookup/units/" + dimensionKey +
 			"/" + startIndex + "/" + batchSize;
 		var oDropdownLookupsModel = oController.oDropdownLookupsModel;
 		var oModel = new sap.ui.model.json.JSONModel();

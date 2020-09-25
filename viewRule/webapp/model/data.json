@@ -1,0 +1,34 @@
+{
+    "rule": {
+      "categories": [
+        {"name": "Basic Data 1", "categories": [
+          {"name":"General Data", "categories": [
+              {"name": "Base Unit", "visible": "true", "enabled": "true"},
+              {"name": "Material Group", "visible": "true", "enabled": "true"},
+              {"name": "Old Material Number", "visible": "true", "enabled": "true"},
+              {"name": "Division", "visible": "true", "enabled": "true"},
+              {"name": "Lab/Office", "visible": "true", "enabled": "true"},
+              {"name": "Gen Item Cat Group", "visible": "true", "enabled": "true"},
+              {"name": "Product Allocation", "visible": "true", "enabled": "true"},
+              {"name": "X-Plant Mat Status", "visible": "true", "enabled": "true"},
+              {"name": "X-Plant Valid From", "visible": "true", "enabled": "true"},
+              {"name": "X D-Chain Status", "visible": "true", "enabled": "true"},
+              {"name": "X D-ChainValid From", "visible": "true", "enabled": "true"}
+            ]},
+          {"name":"Packing Material Data", "categories": [
+              {"name": "Material Group Packaging", "visible": "true", "enabled": "true"},
+              {"name": "Product Composition", "visible": "true", "enabled": "true"}
+            ]},
+          {"name":"Hierarchy", "categories": [
+            {"name": "Product Hierarchy", "visible": "true", "enabled": "true"}
+          ]}
+        ]}
+        ]},
+  "apps": [
+    {"key": "basicDataCollection", "value": "Basic Data Collection"},
+    {"key": "mrpView", "value": "MRP View"},
+    {"key": "salesOrgView", "value": "Sales Org View"},
+    {"key": "warehouseView", "value": "Warehouse View"},
+    {"key": "ficoView", "value": "FICO View"}
+  ]
+  }

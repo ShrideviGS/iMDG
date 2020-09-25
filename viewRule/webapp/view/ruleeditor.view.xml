@@ -1,11 +1,45 @@
-<mvc:View controllerName="viewRule.viewRule.controller.ruleeditor" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
-	<Shell id="shell">
-		<App id="app">
-			<pages>
-				<Page id="page" title="{i18n>title}">
-					<content></content>
-				</Page>
-			</pages>
-		</App>
-	</Shell>
+<mvc:View controllerName="viewRule.viewRule.controller.ruleeditor" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core">
+	<App id="app">
+		<pages>
+			<Page id="page" title="{i18n>title}">
+				<content>
+					<table:TreeTable id="TreeTableBasic" rows="{path:'/rule', parameters: {arrayNames:['categories']}}" selectionMode="None"
+						enableSelectAll="false" ariaLabelledBy="title">
+						<table:extension>
+							<OverflowToolbar>
+								<Label text="Select Application"/>
+								<Select items="{path: '/sizes', templateShareable: true}" selectedKey="{size}" forceSelection="false">
+									<core:Item key="{key}" text="{value}"/>
+								</Select>
+								<ToolbarSpacer/>
+								<Button text="Collapse all" press="onCollapseAll"/>
+								<Button type="Accept" text="Update" press="onUpdate"/>
+							</OverflowToolbar>
+						</table:extension>
+						<table:columns>
+							<table:Column width="80%">
+								<Label text="Name"/>
+								<table:template>
+									<Text text="{name}" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="10%">
+								<Label text="Visible"/>
+								<table:template>
+									<CheckBox selected="{amount}"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="10%">
+								<Label text="Editable"/>
+								<table:template>
+									<CheckBox selected="{amount}"/>
+								</table:template>
+							</table:Column>
+						</table:columns>
+					</table:TreeTable>
+				</content>
+			</Page>
+		</pages>
+	</App>
 </mvc:View>

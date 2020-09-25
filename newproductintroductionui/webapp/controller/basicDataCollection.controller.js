@@ -87,7 +87,7 @@ sap.ui.define([
 			var oTaskDataModel = this.oTaskDataModel;
 			var matUniqId = oTaskDataModel.getData().materialUniqueId;
 			var regionCode = oTaskDataModel.getData().region;
-			oModel.loadData("/npiservices/npi/basicdata/load/" + matUniqId + "/" + regionCode, "", true, "GET", false, false);
+			oModel.loadData("/npiservices/basicdata/load/" + matUniqId + "/" + regionCode, "", true, "GET", false, false);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
 					var data = oEvent.getSource().getData();
@@ -114,7 +114,7 @@ sap.ui.define([
 			var that = this;
 			var oSpecTblDataModel = this.getOwnerComponent().getModel("oSpecTblDataModel");
 			var sNodeID = oSpecTblDataModel.getProperty("/sNodeID");
-			var sUrl = "/npiservices/npi/mrp/mandatory/fields/BEV/FERT/4321/" + sNodeID;
+			var sUrl = "/npiservices/mrp/mandatory/fields/BEV/FERT/4321/" + sNodeID;
 			var oModel = new sap.ui.model.json.JSONModel();
 			var oBasicDataMandatoryFldModel = this.oBasicDataMandatoryFldModel;
 			oModel.loadData(sUrl, "", true, "GET", false, false);
@@ -187,7 +187,7 @@ sap.ui.define([
 			// data.basicDataDto.newProdHierarchy = ProdHir;
 			data = JSON.stringify(data);
 			var oModel = new sap.ui.model.json.JSONModel();
-			oModel.loadData("/npiservices/npi/basicdata/update", data, true, "POST", false, false, that.oHeader);
+			oModel.loadData("/npiservices/basicdata/update", data, true, "POST", false, false, that.oHeader);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
 					if (actionType === "SUBMIT") {
@@ -258,7 +258,7 @@ sap.ui.define([
 				newproductintroductionui.newproductintroductionui.util.util.toastMessage(Message);
 				return;
 			}
-			var sUrl = "/npiservices/npi/basicdata/nextGtin/AMS";
+			var sUrl = "/npiservices/basicdata/nextGtin/AMS";
 			var oModel = new sap.ui.model.json.JSONModel();
 			oModel.loadData(sUrl, "", true, "GET", false, false);
 			oModel.attachRequestCompleted(function (oEvent) {
@@ -302,7 +302,7 @@ sap.ui.define([
 			var that = this;
 			var oSrvModel = new JSONModel();
 			var oSpecTblDataModel = this.oSpecTblDataModel;
-			var sUrl = "/npiservices/npi/lookup/hierarchies";
+			var sUrl = "/npiservices/lookup/hierarchies";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {

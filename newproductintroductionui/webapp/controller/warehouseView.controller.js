@@ -128,7 +128,7 @@ sap.ui.define([
 			var that = this;
 			var oSrvModel = new JSONModel();
 			var oWarehouseDataModel = this.getView().getModel("oWarehouseDataModel");
-			var sUrl = "/npiservices/npi/warehouse/load/" + materialUniqueId + "/" + warehouseCode + "/" + startIndex + "/" +
+			var sUrl = "/npiservices/warehouse/load/" + materialUniqueId + "/" + warehouseCode + "/" + startIndex + "/" +
 				batchSize;
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
@@ -225,7 +225,7 @@ sap.ui.define([
 		onSave: function () {
 			var that = this;
 			this.oBusyDialog.open();
-			var oSrvUrl = "/npiservices/npi/warehouse/update";
+			var oSrvUrl = "/npiservices/warehouse/update";
 			var oSrvModel = new JSONModel();
 			var oWarehouseDataModel = this.getView().getModel("oWarehouseDataModel");
 			var oPayload = oWarehouseDataModel.getData();
@@ -318,7 +318,7 @@ sap.ui.define([
 			var oMatType = oWarehouseContextModel.getData().materialType;
 			var oPlantCode = oWarehouseContextModel.getData().plantCode;
 			var oNodeId = oWarehouseContextModel.getData().nodeId;
-			var oSrvUrl = "/npiservices/npi/mrp/mandatory/fields/" + oLeadCat + "/" + oMatType + "/" + oPlantCode + "/" +
+			var oSrvUrl = "/npiservices/mrp/mandatory/fields/" + oLeadCat + "/" + oMatType + "/" + oPlantCode + "/" +
 				oNodeId;
 			var oSrvModel = new JSONModel();
 			oSrvModel.loadData(oSrvUrl, "", true, "GET", false, false, this.oHeader);
@@ -365,7 +365,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oStorageSelIndModel = new JSONModel();
 			this.getView().setModel(oStorageSelIndModel, "oStorageSelIndModel");
-			var sUrl = "/npiservices/npi/lookup/storageselectionindicators";
+			var sUrl = "/npiservices/lookup/storageselectionindicators";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -401,7 +401,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oBulkStorageModel = new JSONModel();
 			this.getView().setModel(oBulkStorageModel, "oBulkStorageModel");
-			var sUrl = "/npiservices/npi/lookup/bulkstorages";
+			var sUrl = "/npiservices/lookup/bulkstorages";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -437,7 +437,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oSpclMovementModel = new JSONModel();
 			this.getView().setModel(oSpclMovementModel, "oSpclMovementModel");
-			var sUrl = "/npiservices/npi/lookup/specialmovementindicators";
+			var sUrl = "/npiservices/lookup/specialmovementindicators";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -473,7 +473,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oTwoStepPickModel = new JSONModel();
 			this.getView().setModel(oTwoStepPickModel, "oTwoStepPickModel");
-			var sUrl = "/npiservices/npi/lookup/steppicks";
+			var sUrl = "/npiservices/lookup/steppicks";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -509,7 +509,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oStorageUnitTypeModel = new JSONModel();
 			this.getView().setModel(oStorageUnitTypeModel, "oStorageUnitTypeModel");
-			var sUrl = "/npiservices/npi/lookup/storageunittypes";
+			var sUrl = "/npiservices/lookup/storageunittypes";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -545,7 +545,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oPickStorageTypeModel = new JSONModel();
 			this.getView().setModel(oPickStorageTypeModel, "oPickStorageTypeModel");
-			var sUrl = "/npiservices/npi/lookup/storagetypes";
+			var sUrl = "/npiservices/lookup/storagetypes";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {

@@ -30,7 +30,7 @@ newproductintroductionui.newproductintroductionui.util.newProjectCreation = {
 
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
-		var sUrl = "/npiservices/npi/primaryscoping/createprojectheader";
+		var sUrl = "/npiservices/primaryscoping/createprojectheader";
 		oModel.loadData(sUrl, JSON.stringify(oPayload), true, "POST", false, false, oController.oHeader);
 		oModel.attachRequestCompleted(function (oEvent) {
 			if (oEvent.getParameter("success")) {
@@ -84,7 +84,7 @@ newproductintroductionui.newproductintroductionui.util.newProjectCreation = {
 		};
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
-		var sUrl = "/npiservices/npi/primaryscoping/updateproject";
+		var sUrl = "/npiservices/primaryscoping/updateproject";
 		oModel.loadData(sUrl, JSON.stringify(oPayload), true, "POST", false, false, oController.oHeader);
 		oModel.attachRequestCompleted(function (oEvent) {
 			if (oEvent.getParameter("success")) {
@@ -138,7 +138,7 @@ newproductintroductionui.newproductintroductionui.util.newProjectCreation = {
 		};
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
-		var sUrl = "/npiservices/npi/primaryscoping/startproject";
+		var sUrl = "/npiservices/primaryscoping/startproject";
 		oModel.loadData(sUrl, JSON.stringify(oPayload), true, "POST", false, false, oController.oHeader);
 		oModel.attachRequestCompleted(function (oEvent) {
 			if (oEvent.getParameter("success")) {
