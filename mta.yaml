@@ -14,6 +14,7 @@ modules:
       - name: iMDG_html5_repo_runtime
       - name: dest_iMDG
       - name: portal_resources_iMDG
+      - name: workflow_iMDG
       - name: UserNode_api
         group: destinations
         properties:
@@ -62,6 +63,7 @@ modules:
       - name: uaa_iMDG
       - name: iMDG_html5_repo_host
       - name: iMDG_ui_deployer
+      - name: workflow_iMDG
   - name: Kpireports
     type: html5
     path: Kpireports
@@ -119,7 +121,7 @@ resources:
     parameters:
       service-plan: standard
       service: workflow
-    type: org.cloudfoundry.managed-service
+    type: org.cloudfoundry.existing-service
   - name: portal_resources_iMDG
     parameters:
       service-plan: standard
