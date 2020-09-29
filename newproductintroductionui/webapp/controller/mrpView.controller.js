@@ -111,7 +111,7 @@ sap.ui.define([
 			var oMRPContextModel = this.getView().getModel("oMRPContextModel");
 			var taskId = this.getTaskIdFromUrl();
 			// var taskId = "42f85c41-1efe-11e9-b488-00163e82bb6e";
-			var sUrl = "/bpmworkflowruntime/" + taskId + "/context";
+			var sUrl = "/bpmworkflowruntime/v1/task-instances/" + taskId + "/context";
 			var oSrvModel = new JSONModel();
 			oSrvModel.loadData(sUrl, true, "GET", false, false);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
@@ -157,7 +157,7 @@ sap.ui.define([
 			var taskId = oUrlSplit[oUrlSplit.length - 1];
 			var oModel = new sap.ui.model.json.JSONModel();
 			oModel.setSizeLimit(999);
-			oModel.loadData("/bpmworkflowruntime/" + taskId + "/attributes", "", true, "GET", false,
+			oModel.loadData("/bpmworkflowruntime/v1/task-instances/" + taskId + "/attributes", "", true, "GET", false,
 				false);
 			oModel.attachRequestCompleted(function (oEvent) {
 				var nodeId;

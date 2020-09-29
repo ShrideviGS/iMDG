@@ -12,7 +12,7 @@ newproductintroductionui.newproductintroductionui.util.taskServices = {
 		// var taskId = "9338c5aa-afc9-11ea-a068-00163ea54f93";
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
-		oModel.loadData("/bpmworkflowruntime/" + taskId + "/context", "", true, "GET", false, false);
+		oModel.loadData("/bpmworkflowruntime/v1/task-instances/" + taskId + "/context", "", true, "GET", false, false);
 		oModel.attachRequestCompleted(function (oEvent) {
 			if (oEvent.getParameter("success")) {
 				var data = oEvent.getSource().getData();
@@ -44,7 +44,7 @@ newproductintroductionui.newproductintroductionui.util.taskServices = {
 		// var taskId = "9338c5aa-afc9-11ea-a068-00163ea54f93";
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
-		oModel.loadData("/bpmworkflowruntime/" + taskId + "/attributes", "", true, "GET", false, false);
+		oModel.loadData("/bpmworkflowruntime/v1/task-instances/" + taskId + "/attributes", "", true, "GET", false, false);
 		oModel.attachRequestCompleted(function (oEvent) {
 			if (oEvent.getParameter("success")) {
 				oController.getFieldsEnabled(oEvent.getSource().getData());
@@ -72,7 +72,7 @@ newproductintroductionui.newproductintroductionui.util.taskServices = {
 		data = JSON.stringify(data);
 
 		$.ajax({
-			url: "/bpmworkflowruntime/" + taskId,
+			url: "/bpmworkflowruntime/v1/task-instances/" + taskId,
 			method: "PATCH",
 			contentType: "application/json",
 			async: true,
@@ -107,7 +107,7 @@ newproductintroductionui.newproductintroductionui.util.taskServices = {
 					"X-CSRF-Token": token
 				};
 			var oModel = new sap.ui.model.json.JSONModel();
-			oModel.loadData("/bpmworkflowruntime/" + taskId, data, true, "PATCH", false, false, oHeader);
+			oModel.loadData("/bpmworkflowruntime/v1/task-instances/" + taskId, data, true, "PATCH", false, false, oHeader);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
 					var data = oEvent.getSource().getData();
@@ -127,7 +127,7 @@ newproductintroductionui.newproductintroductionui.util.taskServices = {
 	fetchToken: function () {
 		var token;
 		$.ajax({
-			url: "/bpmworkflowruntime/workflow-service/rest/v1/xsrf-token",
+			url: "/bpmworkflowruntime/v1/task-instances/workflow-service/rest/v1/xsrf-token",
 			method: "GET",
 			async: false,
 			headers: {
