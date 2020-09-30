@@ -8,11 +8,23 @@ sap.ui.define([
 	return Controller.extend("newproductintroductionui.newproductintroductionui.controller.App", {
 
 		onInit: function () {
-			this.oHeader = {
-				"Accept": "application/json",
-				"Content-Type": "application/json"
+			// this.oHeader = {
+			// 	"Accept": "application/json",
+			// 	"Content-Type": "application/json"
+			// };
+			var that=this;
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/bpmworkflowruntime/v1/xsrf-token", false);
+			xhr.setRequestHeader("X-CSRF-Token", "Fetch");
+			xhr.onreadystatechange = function () {
+				// alert();
+				that.oHeader = {
+					"Accept": "application/json",
+					"Content-Type": "application/json",
+					"x-csrf-token": xhr.getResponseHeader("X-CSRF-Token")
+				};
 			};
-
+			xhr.send(null);
 			var oUserModel = this.getOwnerComponent().getModel("oUserModel");
 			util.getUserDetails(this, oUserModel);
 			oUserModel.setSizeLimit(999);

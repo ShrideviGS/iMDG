@@ -16,11 +16,22 @@ sap.ui.define([
 			var oResourceModel = this.getOwnerComponent().getModel("i18n");
 			this.oResourceModel = oResourceModel.getResourceBundle();
 
-			this.oHeader = {
-				"Accept": "application/json",
-				"Content-Type": "application/json"
+			// this.oHeader = {
+			// 	"Accept": "application/json",
+			// 	"Content-Type": "application/json"
+			// };
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/bpmworkflowruntime/v1/xsrf-token", false);
+			xhr.setRequestHeader("X-CSRF-Token", "Fetch");
+			xhr.onreadystatechange = function () {
+				// alert();
+				that.oHeader = {
+					"Accept": "application/json",
+					"Content-Type": "application/json",
+					"x-csrf-token": xhr.getResponseHeader("X-CSRF-Token")
+				};
 			};
-
+			xhr.send(null);
 			var oDropdownLookupsModel = this.getOwnerComponent().getModel("oDropdownLookupsModel");
 			oDropdownLookupsModel.setSizeLimit(999);
 			this.oDropdownLookupsModel = oDropdownLookupsModel;
@@ -70,10 +81,10 @@ sap.ui.define([
 			//commented by shridevi
 			var taskId = this.getTaskIdFromUrl();
 			var oScenarioModel = this.oScenarioModel;
-		//	var sUrl = "/bpmworkflowruntime/v1/task-instances/" + taskId + "/context";
-		var sUrl = "/bpmworkflowruntime/v1/task-instances/" + taskId + "/context";
+			//	var sUrl = "/bpmworkflowruntime/v1/task-instances/" + taskId + "/context";
+			var sUrl = "/bpmworkflowruntime/v1/task-instances/" + taskId + "/context";
 			var oModel = new sap.ui.model.json.JSONModel();
-			oModel.loadData(sUrl, true, "GET", false, false);
+			oModel.loadData(sUrl, true, "GET", false, false,this.oHeader);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
 					var resultData = oEvent.getSource().getData();
@@ -265,7 +276,8 @@ sap.ui.define([
 			oScenarioModel.setProperty("/scenarioPath", sPath);
 
 			if (!this.scenarioVariantsDialog) {
-				this.scenarioVariantsDialog = sap.ui.xmlfragment("newproductintroductionui.newproductintroductionui.fragments.scenarioVariantsTbl", this);
+				this.scenarioVariantsDialog = sap.ui.xmlfragment("newproductintroductionui.newproductintroductionui.fragments.scenarioVariantsTbl",
+					this);
 				this.getView().addDependent(this.scenarioVariantsDialog);
 			}
 			this.getScenariosVariants();
@@ -580,7 +592,8 @@ sap.ui.define([
 				return;
 			}
 			if (!this.scenarioSalesAreaPopUp) {
-				this.scenarioSalesAreaPopUp = sap.ui.xmlfragment("newproductintroductionui.newproductintroductionui.fragments.scenarioSalesArea", this);
+				this.scenarioSalesAreaPopUp = sap.ui.xmlfragment("newproductintroductionui.newproductintroductionui.fragments.scenarioSalesArea",
+					this);
 				this.getView().addDependent(this.scenarioSalesAreaPopUp);
 			}
 			var oScenarioModel = this.oScenarioModel;
@@ -650,7 +663,8 @@ sap.ui.define([
 			var sPath = bindingContext.getPath();
 			oScenarioModel.setProperty("/salesOrgsPath", sPath);
 			if (!this.salesAreaValuehelp) {
-				this.salesAreaValuehelp = sap.ui.xmlfragment("newproductintroductionui.newproductintroductionui.fragments.scenarioSalesAreaValuehelp", this);
+				this.salesAreaValuehelp = sap.ui.xmlfragment(
+					"newproductintroductionui.newproductintroductionui.fragments.scenarioSalesAreaValuehelp", this);
 				this.getView().addDependent(this.salesAreaValuehelp);
 			}
 			this.getScenariosSalesOrg();
@@ -887,7 +901,8 @@ sap.ui.define([
 			var sPath = bindingContext.getPath();
 			oScenarioModel.setProperty("/plantsPath", sPath);
 			if (!this.plantLookUpDialog) {
-				this.plantLookUpDialog = sap.ui.xmlfragment("newproductintroductionui.newproductintroductionui.fragments.scenarioPlantsValuehelp", this);
+				this.plantLookUpDialog = sap.ui.xmlfragment("newproductintroductionui.newproductintroductionui.fragments.scenarioPlantsValuehelp",
+					this);
 				this.getView().addDependent(this.plantLookUpDialog);
 			}
 			this.scenarioPlantsValueHelp();
@@ -1054,7 +1069,8 @@ sap.ui.define([
 				return;
 			}
 			if (!this.scenarioWarehousePopUp) {
-				this.scenarioWarehousePopUp = sap.ui.xmlfragment("newproductintroductionui.newproductintroductionui.fragments.scenarioWarehouse", this);
+				this.scenarioWarehousePopUp = sap.ui.xmlfragment("newproductintroductionui.newproductintroductionui.fragments.scenarioWarehouse",
+					this);
 				this.getView().addDependent(this.scenarioWarehousePopUp);
 			}
 			var oScenarioModel = this.oScenarioModel;
@@ -1125,7 +1141,8 @@ sap.ui.define([
 			var sPath = bindingContext.getPath();
 			oScenarioModel.setProperty("/oWarehouseObj", sPath);
 			if (!this.warehouseLookUpDialog) {
-				this.warehouseLookUpDialog = sap.ui.xmlfragment("newproductintroductionui.newproductintroductionui.fragments.scenarioWarehouseValuehelp", this);
+				this.warehouseLookUpDialog = sap.ui.xmlfragment(
+					"newproductintroductionui.newproductintroductionui.fragments.scenarioWarehouseValuehelp", this);
 				this.getView().addDependent(this.warehouseLookUpDialog);
 			}
 			this.getScenarioWareHouseValueHelp();
@@ -1294,7 +1311,8 @@ sap.ui.define([
 				return;
 			}
 			if (!this.scenarioMaterialPopUp) {
-				this.scenarioMaterialPopUp = sap.ui.xmlfragment("newproductintroductionui.newproductintroductionui.fragments.scenarioMaterial", this);
+				this.scenarioMaterialPopUp = sap.ui.xmlfragment("newproductintroductionui.newproductintroductionui.fragments.scenarioMaterial",
+					this);
 				this.getView().addDependent(this.scenarioMaterialPopUp);
 			}
 
@@ -1539,9 +1557,7 @@ sap.ui.define([
 				url: oUrl,
 				method: "GET",
 				async: false,
-				headers: {
-					"X-CSRF-Token": "Fetch"
-				},
+				headers: this.oHeader,
 				success: function (result, xhr, data) {
 					token = data.getResponseHeader("X-CSRF-Token");
 					that.completeBpmtask(token);
@@ -1568,9 +1584,7 @@ sap.ui.define([
 				async: false,
 				contentType: "application/json",
 				data: JSON.stringify(oPayload),
-				headers: {
-					"X-CSRF-Token": token
-				},
+				headers: this.oHeader,
 				success: function (result, xhr, data) {
 					var projectId = oScenarioModel.getProperty("/contextData/projectId");
 					var successErrorMsg = "Project #" + projectId + ", Submitted Successfully";

@@ -22,10 +22,22 @@ sap.ui.define([
 			var oResourceModel = this.getOwnerComponent().getModel("i18n");
 			this.oResourceModel = oResourceModel.getResourceBundle();
 
-			this.oHeader = {
-				"Accept": "application/json",
-				"Content-Type": "application/json"
+			// this.oHeader = {
+			// 	"Accept": "application/json",
+			// 	"Content-Type": "application/json"
+			// };
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/bpmworkflowruntime/v1/xsrf-token", false);
+			xhr.setRequestHeader("X-CSRF-Token", "Fetch");
+			xhr.onreadystatechange = function () {
+				// alert();
+				that.oHeader = {
+					"Accept": "application/json",
+					"Content-Type": "application/json",
+					"x-csrf-token": xhr.getResponseHeader("X-CSRF-Token")
+				};
 			};
+			xhr.send(null);
 
 			var oDropdownLookupsModel = this.getOwnerComponent().getModel("oDropdownLookupsModel");
 			oDropdownLookupsModel.setSizeLimit(999);

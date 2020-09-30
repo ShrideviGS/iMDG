@@ -14,10 +14,22 @@ sap.ui.define([
 
 		onInit: function () {
 			var that = this;
-			this.oHeader = {
-				"Accept": "application/json",
-				"Content-Type": "application/json"
+			// this.oHeader = {
+			// 	"Accept": "application/json",
+			// 	"Content-Type": "application/json"
+			// };
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/bpmworkflowruntime/v1/xsrf-token", false);
+			xhr.setRequestHeader("X-CSRF-Token", "Fetch");
+			xhr.onreadystatechange = function () {
+				// alert();
+				that.oHeader = {
+					"Accept": "application/json",
+					"Content-Type": "application/json",
+					"x-csrf-token": xhr.getResponseHeader("X-CSRF-Token")
+				};
 			};
+			xhr.send(null);
 			var oBasicDataCollectionModel = this.getOwnerComponent().getModel("oBasicDataCollectionModel");
 			oBasicDataCollectionModel.setSizeLimit(999);
 			this.oBasicDataCollectionModel = oBasicDataCollectionModel;
@@ -87,7 +99,7 @@ sap.ui.define([
 			var oTaskDataModel = this.oTaskDataModel;
 			var matUniqId = oTaskDataModel.getData().materialUniqueId;
 			var regionCode = oTaskDataModel.getData().region;
-			oModel.loadData("/npiservices/npi/basicdata/load/" + matUniqId + "/" + regionCode, "", true, "GET", false, false);
+			oModel.loadData("/npiservices/npi/basicdata/load/" + matUniqId + "/" + regionCode, "", true, "GET", false, false,this.oHeader);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
 					var data = oEvent.getSource().getData();
@@ -117,7 +129,7 @@ sap.ui.define([
 			var sUrl = "/npiservices/npi/mrp/mandatory/fields/BEV/FERT/4321/" + sNodeID;
 			var oModel = new sap.ui.model.json.JSONModel();
 			var oBasicDataMandatoryFldModel = this.oBasicDataMandatoryFldModel;
-			oModel.loadData(sUrl, "", true, "GET", false, false);
+			oModel.loadData(sUrl, "", true, "GET", false, false,this.oHeader);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
 					var count = 0;
@@ -260,7 +272,7 @@ sap.ui.define([
 			}
 			var sUrl = "/npiservices/npi/basicdata/nextGtin/AMS";
 			var oModel = new sap.ui.model.json.JSONModel();
-			oModel.loadData(sUrl, "", true, "GET", false, false);
+			oModel.loadData(sUrl, "", true, "GET", false, false,this.oHeader);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
 					var data = oEvent.getSource().getData();
@@ -285,7 +297,8 @@ sap.ui.define([
 		onOpenProductHir: function () {
 			var oThisController = this;
 			if (!oThisController.ProductHierarchyLevel1) {
-				oThisController.ProductHierarchyLevel1 = sap.ui.xmlfragment("newproductintroductionui.newproductintroductionui.fragments.ProductheirarchyTree",
+				oThisController.ProductHierarchyLevel1 = sap.ui.xmlfragment(
+					"newproductintroductionui.newproductintroductionui.fragments.ProductheirarchyTree",
 					oThisController);
 				oThisController.getView().addDependent(oThisController.ProductHierarchyLevel1);
 			}

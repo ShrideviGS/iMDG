@@ -15,10 +15,22 @@ sap.ui.define([
 			var that = this;
 			var oComponent = this.getOwnerComponent();
 			this.oBusyDialog = new BusyDialog();
-			this.oHeader = {
-				"Accept": "application/json",
-				"Content-Type": "application/json"
+			// this.oHeader = {
+			// 	"Accept": "application/json",
+			// 	"Content-Type": "application/json"
+			// };
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/bpmworkflowruntime/v1/xsrf-token", false);
+			xhr.setRequestHeader("X-CSRF-Token", "Fetch");
+			xhr.onreadystatechange = function () {
+				// alert();
+				that.oHeader = {
+					"Accept": "application/json",
+					"Content-Type": "application/json",
+					"x-csrf-token": xhr.getResponseHeader("X-CSRF-Token")
+				};
 			};
+			xhr.send(null);
 			this.oSubmit = false;
 			var oMRPContextModel = new JSONModel();
 			this.getView().setModel(oMRPContextModel, "oWarehouseContextModel");
@@ -82,7 +94,7 @@ sap.ui.define([
 			// var taskId = "44408e52-1d63-11e9-a01b-00163e7f9cbb";
 			var sUrl = "/bpmworkflowruntime/v1/task-instances/" + taskId + "/context";
 			var oSrvModel = new JSONModel();
-			oSrvModel.loadData(sUrl, true, "GET", false, false);
+			oSrvModel.loadData(sUrl, true, "GET", false, false,this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
 					var resultData = oEvent.getSource().getData();

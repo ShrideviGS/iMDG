@@ -12,7 +12,7 @@ newproductintroductionui.newproductintroductionui.util.taskServices = {
 		// var taskId = "9338c5aa-afc9-11ea-a068-00163ea54f93";
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
-		oModel.loadData("/bpmworkflowruntime/v1/task-instances/" + taskId + "/context", "", true, "GET", false, false);
+		oModel.loadData("/bpmworkflowruntime/v1/task-instances/" + taskId + "/context", "", true, "GET", false, false,oController.oHeader);
 		oModel.attachRequestCompleted(function (oEvent) {
 			if (oEvent.getParameter("success")) {
 				var data = oEvent.getSource().getData();
@@ -44,7 +44,7 @@ newproductintroductionui.newproductintroductionui.util.taskServices = {
 		// var taskId = "9338c5aa-afc9-11ea-a068-00163ea54f93";
 		var oModel = new sap.ui.model.json.JSONModel();
 		oModel.setSizeLimit(999);
-		oModel.loadData("/bpmworkflowruntime/v1/task-instances/" + taskId + "/attributes", "", true, "GET", false, false);
+		oModel.loadData("/bpmworkflowruntime/v1/task-instances/" + taskId + "/attributes", "", true, "GET", false, false,oController.oHeader);
 		oModel.attachRequestCompleted(function (oEvent) {
 			if (oEvent.getParameter("success")) {
 				oController.getFieldsEnabled(oEvent.getSource().getData());
@@ -77,9 +77,7 @@ newproductintroductionui.newproductintroductionui.util.taskServices = {
 			contentType: "application/json",
 			async: true,
 			data: data,
-			headers: {
-				"X-CSRF-Token": token
-			},
+			headers: oController.oHeader,
 			success: function () {
 				var msg = "Task submitted successfully";
 				newproductintroductionui.newproductintroductionui.util.util.toastMessage(msg);
@@ -126,17 +124,25 @@ newproductintroductionui.newproductintroductionui.util.taskServices = {
 	//Function to fetch XSRF-Token 
 	fetchToken: function () {
 		var token;
-		$.ajax({
-			url: "/bpmworkflowruntime/v1/xsrf-token",
-			method: "GET",
-			async: false,
-			headers: {
-				"X-CSRF-Token": "Fetch"
-			},
-			success: function (result, xhr, data) {
-				token = data.getResponseHeader("X-CSRF-Token");
-			}
-		});
+		// $.ajax({
+		// 	url: "/bpmworkflowruntime/v1/xsrf-token",
+		// 	method: "GET",
+		// 	async: false,
+		// 	headers: {
+		// 		"X-CSRF-Token": "Fetch"
+		// 	},
+		// 	success: function (result, xhr, data) {
+		// 		token = data.getResponseHeader("X-CSRF-Token");
+		// 	}
+		// });
+		var xhr = new XMLHttpRequest();
+		xhr.open("GET", "/bpmworkflowruntime/v1/xsrf-token", false);
+		xhr.setRequestHeader("X-CSRF-Token", "Fetch");
+		xhr.onreadystatechange = function () {
+			// alert();
+			token = xhr.getResponseHeader("X-CSRF-Token");
+		};
+		xhr.send(null);
 		return token;
 	}
 };
