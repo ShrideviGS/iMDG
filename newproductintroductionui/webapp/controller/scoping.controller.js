@@ -16,11 +16,35 @@ sap.ui.define([
 
 			var oResourceModel = this.getOwnerComponent().getModel("i18n");
 			this.oResourceModel = oResourceModel.getResourceBundle();
-
-			this.oHeader = {
-				"Accept": "application/json",
-				"Content-Type": "application/json"
+			// var csrfToken = this.getView().getModel().oHeaders["x-csrf-token"];
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/bpmworkflowruntime/v1/xsrf-token", false);
+			xhr.setRequestHeader("X-CSRF-Token", "Fetch");
+			xhr.onreadystatechange = function () {
+				// alert();
+				that.oHeader = {
+						"Accept": "application/json",
+						"Content-Type": "application/json",
+						"x-csrf-token": xhr.getResponseHeader("X-CSRF-Token")
+					};
 			};
+			xhr.send(null);
+			// $.ajax({
+			// 	url: "/bpmworkflowruntime/v1/xsrf-token",
+			// 	method: "GET",
+			// 	async: false,
+			// 	headers: {
+			// 		"X-CSRF-Token": "Fetch"
+			// 	},
+			// 	success: function (result, xhr, data) {
+			// 		token = data.getResponseHeader("X-CSRF-Token");
+			// 		this.oHeader = {
+			// 			"Accept": "application/json",
+			// 			"Content-Type": "application/json",
+			// 			"x-csrf-token": token
+			// 		};
+			// 	}
+			// });
 
 			var oDropdownLookupsModel = this.getOwnerComponent().getModel("oDropdownLookupsModel");
 			oDropdownLookupsModel.setSizeLimit(999);

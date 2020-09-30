@@ -127,7 +127,7 @@ newproductintroductionui.newproductintroductionui.util.taskServices = {
 	fetchToken: function () {
 		var token;
 		$.ajax({
-			url: "/bpmworkflowruntime/v1/task-instances/workflow-service/rest/v1/xsrf-token",
+			url: "/bpmworkflowruntime/v1/xsrf-token",
 			method: "GET",
 			async: false,
 			headers: {
