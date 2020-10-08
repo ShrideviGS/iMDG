@@ -30,6 +30,7 @@ sap.ui.define([
 					"Content-Type": "application/json",
 					"x-csrf-token": xhr.getResponseHeader("X-CSRF-Token")
 				};
+				that.token=xhr.getResponseHeader("X-CSRF-Token");
 			};
 			xhr.send(null);
 			var oDropdownLookupsModel = this.getOwnerComponent().getModel("oDropdownLookupsModel");
@@ -1552,7 +1553,11 @@ sap.ui.define([
 		generateCSRFToken: function () {
 			var token;
 			var that = this;
-			var oUrl = "/bpmworkflowruntime/v1/task-instances/workflow-service/rest/v1/xsrf-token";
+			var oUrl = "/bpmworkflowruntime/v1/xsrf-token";
+			if(this.token){
+				that.completeBpmtask(this.token);
+				return this.token;
+			}else{
 			$.ajax({
 				url: oUrl,
 				method: "GET",
@@ -1567,6 +1572,7 @@ sap.ui.define([
 				}
 			});
 			return token;
+			}
 		},
 
 		//Function to complete task
