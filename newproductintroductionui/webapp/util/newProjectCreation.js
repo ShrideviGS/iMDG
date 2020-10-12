@@ -74,9 +74,9 @@ newproductintroductionui.newproductintroductionui.util.newProjectCreation = {
 		var projectId = oProjectDetailModel.getProperty("/projectDto/projectId");
 		oProjectDetailModel.setProperty("/projectDto/projectStatusCode", 0);
 		 var Prt=oProjectDetailModel.getProperty("/projectDto");
-		 Prt.regionalMaterialUniqueId="17";
+		 Prt.regionalMaterialUniqueId="18";
 		var MAT=oProjectDetailModel.getProperty("/materialLines");
-		MAT[0].regionalMaterialUniqueId="17";
+		MAT[0].regionalMaterialUniqueId="18";
 		var oPayload = {
 			"projectDto": oProjectDetailModel.getProperty("/projectDto"),
 			"materialLines": oProjectDetailModel.getProperty("/materialLines"),

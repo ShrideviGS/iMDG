@@ -129,7 +129,7 @@ newproductintroductionui.newproductintroductionui.util.taskServices = {
 		data = JSON.stringify(data);
 
 		$.ajax({
-			url: "/bpmworkflowruntime/v1/task-instances/" + taskId,
+			url: "/npiservices/npi/workflow/material/v1/task-instances/" + taskId,
 			method: "PATCH",
 			contentType: "application/json",
 			async: true,

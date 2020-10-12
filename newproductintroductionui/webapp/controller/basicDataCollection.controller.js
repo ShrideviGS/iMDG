@@ -135,22 +135,22 @@ sap.ui.define([
 					var count = 0;
 					var data = oEvent.getSource().getData();
 					oBasicDataMandatoryFldModel.setData(data);
-					for (var i = 0; i < data.entity.length; i++) {
-						var id = data.entity[i].technicalName;
-						var manField = that.getView().byId(id);
-						var fieldType = manField.getCustomData()[0].getValue();
-						if (fieldType === "INPUT") {
-							var selFieldValue = manField.getValue();
-						} else {
-							var selFieldValue = manField.getSelectedKey();
-						}
-						if (selFieldValue === "") {
-							count++;
-							manField.setValueState("Error");
-						} else {
-							manField.setValueState("None");
-						}
-					}
+					// for (var i = 0; i < data.entity.length; i++) {
+					// 	var id = data.entity[i].technicalName;
+					// 	var manField = that.getView().byId(id);
+					// 	var fieldType = manField.getCustomData()[0].getValue();
+					// 	if (fieldType === "INPUT") {
+					// 		var selFieldValue = manField.getValue();
+					// 	} else {
+					// 		var selFieldValue = manField.getSelectedKey();
+					// 	}
+					// 	if (selFieldValue === "") {
+					// 		count++;
+					// 		manField.setValueState("Error");
+					// 	} else {
+					// 		manField.setValueState("None");
+					// 	}
+					// }
 					if (count > 0) {
 						var Message = "Please fill mandatory fields";
 						newproductintroductionui.newproductintroductionui.util.util.toastMessage(Message);
@@ -176,12 +176,12 @@ sap.ui.define([
 		onChangeComboBox: function (oEvent) {
 			var selectedKey = oEvent.getSource().getSelectedKey();
 			var selectedValue = oEvent.getSource().getValue();
-			if (selectedKey === "" && selectedValue !== "") {
-				oEvent.getSource().setValue("");
-				var message = "Please select a value from dropdown";
-				newproductintroductionui.newproductintroductionui.util.util.toastMessage(message);
-				return;
-			}
+			// if (selectedKey === "" && selectedValue !== "") {
+			// 	oEvent.getSource().setValue("");
+			// 	var message = "Please select a value from dropdown";
+			// 	newproductintroductionui.newproductintroductionui.util.util.toastMessage(message);
+			// 	return;
+			// }
 		},
 
 		//Function to submit data
