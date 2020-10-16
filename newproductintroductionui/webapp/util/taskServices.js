@@ -48,64 +48,7 @@ newproductintroductionui.newproductintroductionui.util.taskServices = {
 		oModel.attachRequestCompleted(function (oEvent) {
 			if (oEvent.getParameter("success")) {
 				oController.getFieldsEnabled(oEvent.getSource().getData());
-			// } else {
-			// 	var mydata = [{
-			// 		"id": "ProjectId",
-			// 		"label": "Project Id",
-			// 		"type": "string",
-			// 		"value": "94"
-			// 	}, {
-			// 		"id": "MaterialId",
-			// 		"label": "Material Id",
-			// 		"type": "string",
-			// 		"value": "1058"
-			// 	}, {
-			// 		"id": "ProjectDescription",
-			// 		"label": "Project Description",
-			// 		"type": "string",
-			// 		"value": "test 7 oct"
-			// 	}, {
-			// 		"id": "MaterialDescription",
-			// 		"label": "Material Description",
-			// 		"type": "string",
-			// 		"value": "Test"
-			// 	}, {
-			// 		"id": "MaterialType",
-			// 		"label": "Material Type",
-			// 		"type": "string",
-			// 		"value": "FERT"
-			// 	}, {
-			// 		"id": "NodeId",
-			// 		"label": "Node Id",
-			// 		"type": "string",
-			// 		"value": "M2.4.1"
-			// 	}, {
-			// 		"id": "Key",
-			// 		"label": "Key",
-			// 		"type": "string",
-			// 		"value": "<>"
-			// 	}, {
-			// 		"id": "SubKey",
-			// 		"label": "Sub-Key",
-			// 		"type": "string",
-			// 		"value": "<>"
-			// 	}, {
-			// 		"id": "Country",
-			// 		"label": "Country",
-			// 		"type": "string",
-			// 		"value": "IN"
-			// 	}, {
-			// 		"id": "role",
-			// 		"label": "Role",
-			// 		"type": "string",
-			// 		"value": null
-			// 	}, {
-			// 		"id": "scenario",
-			// 		"label": "Scenario",
-			// 		"type": "string",
-			// 		"value": null
-			// 	}];
-			// 	oController.getFieldsEnabled(mydata);
+			}else{
 				var Message = "Internal Server Error";
 				newproductintroductionui.newproductintroductionui.util.util.toastMessage(Message);
 			}
