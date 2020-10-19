@@ -1,0 +1,34 @@
+<mvc:View controllerName="inbox.inbox.controller.inbox" displayBlock="true" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:m="sap.m">
+	<m:App id="app">
+		<m:pages>
+			<m:Page id="page" title="{i18n>title}">
+				<m:content>
+					<Table id="table" selectionMode="None" rows="{/oInboxModel}" visibleRowCount="20">
+						<extension>
+							<m:OverflowToolbar>
+								<m:Select id="type">
+									<core:Item key="DetailScoping" text="Detail Scoping"/>
+									<core:Item key="basicDataInitial" text="Basic Data Initial"/>
+									<core:Item key="basicDataMDM" text="Basic Data MDM"/>
+								</m:Select>
+								<m:Input id="instId" width="10em"></m:Input>
+								<m:Button press="onOpen" text="Open"></m:Button>
+								<m:ToolbarSpacer/>
+								<!--<m:ToggleButton icon="sap-icon://show" tooltip="Enable / Disable Visibility Menu Entries" pressed="{ui>/showVisibilityMenuEntry}"/>-->
+							</m:OverflowToolbar>
+						</extension>
+						<columns>
+							<Column>
+								<m:Label text="Task"/>
+								<template>
+									<m:Text text="{workflowInstanceId}" wrapping="false"/>
+								</template>
+							</Column>
+						</columns>
+					</Table>
+				</m:content>
+			</m:Page>
+		</m:pages>
+	</m:App>
+</mvc:View>

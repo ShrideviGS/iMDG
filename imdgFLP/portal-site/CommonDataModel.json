@@ -38,6 +38,10 @@
 					"id": "viewRule.viewRule-2-1600846178727",
 					"appId": "viewRule.viewRule",
 					"vizId": "viewRule-display"
+				}, {
+					"id": "inbox.inbox-3-1603092061195",
+					"appId": "inbox.inbox",
+					"vizId": "inbox-display"
 				}]
 			}
 		}, {

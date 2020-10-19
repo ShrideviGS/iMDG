@@ -41,6 +41,10 @@ modules:
           artifacts:
             - './*'
           target-path: resources/viewRule
+        - name: inbox
+          artifacts:
+            - './*'
+          target-path: resources/inbox
   - name: newproductintroductionui
     type: html5
     path: newproductintroductionui
@@ -88,6 +92,16 @@ modules:
   - name: viewRule
     type: html5
     path: viewRule
+    build-parameters:
+      builder: custom
+      commands:
+        - npm install
+        - npm run build
+      supported-platforms: []
+      build-result: dist
+  - name: inbox
+    type: html5
+    path: inbox
     build-parameters:
       builder: custom
       commands:
