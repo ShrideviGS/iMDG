@@ -29,7 +29,8 @@
 						items="{oDropdownLookupsModel>/materialgroups}" width="100%">
 						<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
 					</Select>-->
-					<ComboBox items="{path: 'oDropdownLookupsModel>/materialgroups'}" id="mara_matkl" change="onChangeComboBox"
+					<!--	id="mara_matkl"-->
+					<ComboBox items="{path: 'oDropdownLookupsModel>/materialgroups'}" id="marc_dispo" change="onChangeComboBox"
 						editable="{oSpecTblDataModel>/isBasicEditable}" selectedKey="{oBasicDataCollectionModel>/basicDataDto/materialGroup}"
 						showSecondaryValues="true" width="100%">
 						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
@@ -91,7 +92,8 @@
 						items="{oDropdownLookupsModel>/generalItemCategory}" width="100%">
 						<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
 					</Select>-->
-					<ComboBox items="{path: 'oDropdownLookupsModel>/generalItemCategory'}" id="mara_mtpos_mara" change="onChangeComboBox"
+					<!--	id="mara_mtpos_mara"-->
+					<ComboBox items="{path: 'oDropdownLookupsModel>/generalItemCategory'}" id="marc_disgr" change="onChangeComboBox"
 						editable="{oSpecTblDataModel>/isBasicEditable}" selectedKey="{oBasicDataCollectionModel>/basicDataDto/genItemCatGroup}"
 						showSecondaryValues="true" width="100%">
 						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>

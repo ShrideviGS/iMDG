@@ -91,8 +91,9 @@
 		<l:Grid defaultSpan="XL3 L3 M6 S12">
 			<l:content>
 				<VBox>
+						<!--id="mara_tragr"-->
 					<Label text="{i18n>TRANSPORTATION_GROUP}:" class="sapUiTinyMarginTop" required="true"></Label>
-					<ComboBox items="{path: 'oDropdownLookupsModel>/transportgroups'}" id="mara_tragr" change="onChangeComboBox"
+					<ComboBox items="{path: 'oDropdownLookupsModel>/transportgroups'}" id="marc_dismm" change="onChangeComboBox"
 						editable="{oSpecTblDataModel>/isBasicEditable}" selectedKey="{oBasicDataCollectionModel>/basicDataDto/transportGroup}"
 						showSecondaryValues="true" width="100%">
 						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
