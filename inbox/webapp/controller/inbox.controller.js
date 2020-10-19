@@ -1095,7 +1095,24 @@ sap.ui.define([
 				"startedBy": "tanveer.singh@incture.com",
 				"completedAt": null
 			}];
-			inboxModel.setData(data);
+			
+			//inboxModel.setData(data);
+			var a=[];
+			for(var i= 0;i<data.length;i++)
+			{
+				if(data[i].status!=="COMPLETED")
+				{
+					a.push(data[i]);
+				}
+			}
+			//inboxModel.setData(a);
+		    inboxModel.setProperty("/inboxData",a);
+			inboxModel.refresh();
+		
+		},
+		rawSel: function(){
+			
+			
 		}
 	});
 });
