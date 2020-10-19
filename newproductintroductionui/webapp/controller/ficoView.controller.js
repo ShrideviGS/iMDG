@@ -200,7 +200,7 @@ sap.ui.define([
 					that.oBusyDialog.close();
 					if (that.oSubmit) {
 						that.oSubmit = false;
-						taskServices.onCompleteTask();
+						taskServices.onCompleteTask(that);
 						return;
 					}
 					var oMsg = oEvent.getSource().getData().message;

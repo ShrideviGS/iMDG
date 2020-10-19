@@ -390,7 +390,8 @@ sap.ui.define([
 			var oMRPContextModel = this.getView().getModel("oMRPContextModel");
 			var sPlantCode = oMRPContextModel.getProperty("/plantCode");
 			this.getView().setModel(oPlanCycleModel, "oPlanCycleModel");
-			var sUrl = "/npiservices/npi/lookup/planningcycles/" + sPlantCode;
+			var sUrl = "/npiservices/npi/lookup/planningcycles";
+			// var sUrl = "/npiservices/npi/lookup/planningcycles/" + sPlantCode;
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -464,7 +465,8 @@ sap.ui.define([
 			this.getView().setModel(oStrgCostIndModel, "oStrgCostIndModel");
 			var oMRPContextModel = this.getView().getModel("oMRPContextModel");
 			var sPlantCode = oMRPContextModel.getProperty("/plantCode");
-			var sUrl = "/npiservices/npi/lookup/storagecostindicators/" + sPlantCode;
+			var sUrl = "/npiservices/npi/lookup/storagecostindicators";
+			// var sUrl = "/npiservices/npi/lookup/storagecostindicators/" + sPlantCode;
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -502,7 +504,8 @@ sap.ui.define([
 			this.getView().setModel(oRoundProfModel, "oRoundProfModel");
 			var oMRPContextModel = this.getView().getModel("oMRPContextModel");
 			var sPlantCode = oMRPContextModel.getProperty("/plantCode");
-			var sUrl = "/npiservices/npi/lookup/roundingprofiles/" + sPlantCode;
+			var sUrl = "/npiservices/npi/lookup/roundingprofiles";
+			// var sUrl = "/npiservices/npi/lookup/roundingprofiles/" + sPlantCode;
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -720,7 +723,8 @@ sap.ui.define([
 			this.getView().setModel(oShdMarginModel, "oShdMarginModel");
 			var oMRPContextModel = this.getView().getModel("oMRPContextModel");
 			var sPlantCode = oMRPContextModel.getProperty("/plantCode");
-			var sUrl = "/npiservices/npi/lookup/scheduledmargins/" + sPlantCode;
+			var sUrl = "/npiservices/npi/lookup/scheduledmargins";
+			// var sUrl = "/npiservices/npi/lookup/scheduledmargins/" + sPlantCode;
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -1895,7 +1899,7 @@ sap.ui.define([
 					that.oBusyDialog.close();
 					if (that.oSubmit) {
 						that.oSubmit = false;
-						taskServices.onCompleteTask();
+						taskServices.onCompleteTask(that);
 						return;
 					}
 					var oMsg = oEvent.getSource().getData().message;

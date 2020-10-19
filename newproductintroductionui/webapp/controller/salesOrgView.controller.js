@@ -109,7 +109,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oSOModel = new JSONModel();
 			this.getView().setModel(oSOModel, "oSalesOrgDataModel");
-			var sUrl = "/mylanservices/salesorg/load/" + materialUniqueId + "/" + salesOrg + "/" + distributionChannelCode + "/" + startIndex +
+			var sUrl = "/npiservices/npi/salesorg/load/" + materialUniqueId + "/" + salesOrg + "/" + distributionChannelCode + "/" + startIndex +
 				"/" + batchSize;
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
@@ -192,7 +192,7 @@ sap.ui.define([
 		onSave: function () {
 			var that = this;
 			this.oBusyDialog.open();
-			var oSrvUrl = "/mylanservices/salesorg/update";
+			var oSrvUrl = "/npiservices/npi/salesorg/update";
 			var oSrvModel = new JSONModel();
 			var oSalesOrgData = this.getView().getModel("oSalesOrgDataModel").getData();
 			oSrvModel.loadData(oSrvUrl, JSON.stringify(oSalesOrgData), true, "POST", false, false, this.oHeader);
@@ -201,7 +201,7 @@ sap.ui.define([
 					that.oBusyDialog.close();
 					if (that.oSubmit) {
 						that.oSubmit = false;
-						taskServices.onCompleteTask();
+						taskServices.onCompleteTask(that);
 						return;
 					}
 					var oMsg = oEvent.getSource().getData().message;
@@ -308,7 +308,7 @@ sap.ui.define([
 			var oMatType = oMRPContextModel.getData().materialType;
 			var oPlantCode = oMRPContextModel.getData().plantCode;
 			var oNodeId = oMRPContextModel.getData().nodeId;
-			var oSrvUrl = "/mylanservices/salesorg/mandatory/fields/" + oLeadCat + "/" + oMatType + "/" + oPlantCode + "/" +
+			var oSrvUrl = "/npiservices/npi/salesorg/mandatory/fields/" + oLeadCat + "/" + oMatType + "/" + oPlantCode + "/" +
 				oNodeId;
 			var oSrvModel = new JSONModel();
 			oSrvModel.loadData(oSrvUrl, "", true, "GET", false, false, this.oHeader);
