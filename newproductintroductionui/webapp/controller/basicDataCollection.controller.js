@@ -14,15 +14,10 @@ sap.ui.define([
 
 		onInit: function () {
 			var that = this;
-			// this.oHeader = {
-			// 	"Accept": "application/json",
-			// 	"Content-Type": "application/json"
-			// };
 			var xhr = new XMLHttpRequest();
 			xhr.open("GET", "/bpmworkflowruntime/v1/xsrf-token", false);
 			xhr.setRequestHeader("X-CSRF-Token", "Fetch");
 			xhr.onreadystatechange = function () {
-				// alert();
 				that.oHeader = {
 					"Accept": "application/json",
 					"Content-Type": "application/json",
@@ -203,7 +198,7 @@ sap.ui.define([
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
 					if (actionType === "SUBMIT") {
-						taskServices.onCompleteTask(this, that.oHeader);
+						taskServices.onCompleteTask(that);
 					}
 					if (actionType === "SAVE") {
 						var Message = "Successfully Saved";
