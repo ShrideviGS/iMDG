@@ -243,7 +243,7 @@ sap.ui.define([
 			var that = this;
 			var oSrvModel = new JSONModel();
 			var oMRPDataModel = this.getView().getModel("oMRPDataModel");
-			var sUrl = "/npiservices/npi/mrp/load/" + materialUniqueId + "/" + plantCode + "/" + startIndex + "/" + batchSize;
+			var sUrl = "/npiservices/npi/mrp/load/" + materialUniqueId + "/" + plantCode + "";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -2042,7 +2042,7 @@ sap.ui.define([
 
 		onSubmit: function () {
 			this.oSubmit = true;
-			this.onValidate();
+			this.onSave();
 		}
 	});
 

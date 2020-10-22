@@ -109,8 +109,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oSOModel = new JSONModel();
 			this.getView().setModel(oSOModel, "oSalesOrgDataModel");
-			var sUrl = "/npiservices/npi/salesorg/load/" + materialUniqueId + "/" + salesOrg + "/" + distributionChannelCode + "/" + startIndex +
-				"/" + batchSize;
+			var sUrl = "/npiservices/npi/salesorg/load/" + materialUniqueId + "/" + salesOrg + "/" + distributionChannelCode + "";
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -344,7 +343,7 @@ sap.ui.define([
 
 		onSubmit: function () {
 			this.oSubmit = true;
-			this.onValidate();
+			this.onSave();
 		}
 	});
 
