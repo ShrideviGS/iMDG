@@ -341,7 +341,7 @@ sap.ui.define([
 					if (!that.oSubmit) {
 						that.oBusyDialog.close();
 					} else {
-						taskServices.onCompleteTask();
+						taskServices.onCompleteTask(that);
 						that.oBusyDialog.close();
 					}
 				}
