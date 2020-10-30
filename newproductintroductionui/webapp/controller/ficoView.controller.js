@@ -108,8 +108,7 @@ sap.ui.define([
 			var oSrvModel = new JSONModel();
 			var oFICOModel = new JSONModel();
 			this.getView().setModel(oFICOModel, "oFICODataModel");
-			var sUrl = "/mylanservices/fico/load/" + materialUniqueId + "/" + plantCode + "/" + startIndex + "/" +
-				batchSize;
+			var sUrl = "/npiservices/npi/fico/load/" + materialUniqueId + "/" + plantCode;
 			oSrvModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
@@ -191,7 +190,7 @@ sap.ui.define([
 		onSave: function () {
 			var that = this;
 			this.oBusyDialog.open();
-			var oSrvUrl = "/mylanservices/fico/update";
+			var oSrvUrl = "/npiservices/npi/fico/update";
 			var oSrvModel = new JSONModel();
 			var oFICOData = this.getView().getModel("oFICODataModel").getData();
 			oSrvModel.loadData(oSrvUrl, JSON.stringify(oFICOData), true, "POST", false, false, this.oHeader);
@@ -307,7 +306,7 @@ sap.ui.define([
 			var oMatType = oMRPContextModel.getData().materialType;
 			var oPlantCode = oMRPContextModel.getData().plantCode;
 			var oNodeId = oMRPContextModel.getData().nodeId;
-			var oSrvUrl = "/mylanservices/fico/mandatory/fields/" + oLeadCat + "/" + oMatType + "/" + oPlantCode + "/" +
+			var oSrvUrl = "/npiservices/npi/fico/mandatory/fields/" + oLeadCat + "/" + oMatType + "/" + oPlantCode + "/" +
 				oNodeId;
 			var oSrvModel = new JSONModel();
 			oSrvModel.loadData(oSrvUrl, "", true, "GET", false, false, this.oHeader);
