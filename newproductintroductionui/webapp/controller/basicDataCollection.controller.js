@@ -94,7 +94,7 @@ sap.ui.define([
 			var oTaskDataModel = this.oTaskDataModel;
 			var matUniqId = oTaskDataModel.getData().materialUniqueId;
 			var regionCode = oTaskDataModel.getData().region;
-			oModel.loadData("/npiservices/npi/basicdata/load/" + matUniqId + "/" + regionCode, "", true, "GET", false, false,this.oHeader);
+			oModel.loadData("/npiservices/npi/basicdata/load/" + matUniqId + "/" + regionCode, "", true, "GET", false, false, this.oHeader);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
 					var data = oEvent.getSource().getData();
@@ -124,32 +124,34 @@ sap.ui.define([
 			var sUrl = "/npiservices/npi/mrp/mandatory/fields/BEV/FERT/4321/" + sNodeID;
 			var oModel = new sap.ui.model.json.JSONModel();
 			var oBasicDataMandatoryFldModel = this.oBasicDataMandatoryFldModel;
-			oModel.loadData(sUrl, "", true, "GET", false, false,this.oHeader);
+			oModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
 					var count = 0;
 					var data = oEvent.getSource().getData();
 					oBasicDataMandatoryFldModel.setData(data);
-					// for (var i = 0; i < data.entity.length; i++) {
-					// 	var id = data.entity[i].technicalName;
-					// 	var manField = that.getView().byId(id);
-					// 	var fieldType = manField.getCustomData()[0].getValue();
-					// 	if (fieldType === "INPUT") {
-					// 		var selFieldValue = manField.getValue();
-					// 	} else {
-					// 		var selFieldValue = manField.getSelectedKey();
-					// 	}
-					// 	if (selFieldValue === "") {
-					// 		count++;
-					// 		manField.setValueState("Error");
-					// 	} else {
-					// 		manField.setValueState("None");
-					// 	}
-					// }
+					for (var i = 0; i < data.entity.length; i++) {
+						var id = data.entity[i].technicalName;
+						var manField = that.getView().byId(id);
+						var fieldType = manField.getCustomData()[0].getValue();
+						if (fieldType === "INPUT") {
+							var selFieldValue = manField.getValue();
+						} else {
+							var selFieldValue = manField.getValue(); //	var selFieldValue = manField.getSelectedKey();
+						}
+						if (selFieldValue === "") {
+							count++;
+							manField.setValueState("Error");
+						} else {
+							manField.setValueState("None");
+						}
+					}
 					if (count > 0) {
 						var Message = "Please fill mandatory fields";
 						newproductintroductionui.newproductintroductionui.util.util.toastMessage(Message);
 					} else {
+						var Message = "Success";
+						newproductintroductionui.newproductintroductionui.util.util.toastMessage(Message);
 						if (actionType === "SUBMIT") {
 							that.onUpdateBasicData("SUBMIT");
 						}
@@ -267,7 +269,7 @@ sap.ui.define([
 			}
 			var sUrl = "/npiservices/npi/basicdata/nextGtin/AMS";
 			var oModel = new sap.ui.model.json.JSONModel();
-			oModel.loadData(sUrl, "", true, "GET", false, false,this.oHeader);
+			oModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
 					var data = oEvent.getSource().getData();

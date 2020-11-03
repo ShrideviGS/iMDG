@@ -1,14 +1,14 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" class="sapUiSizeCompact" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table">
 	<VBox>
-		<Toolbar height="2rem" class="basicDataToolbarBrdClass">
+		<Toolbar  height="2rem" class="basicDataToolbarBrdClass">
 			<HBox>
-				<Text text="{i18n>GENERAL_DATA}" class="hdrTextClass"></Text>
+				<Text text="{i18n>GENERAL_DATA2}" class="hdrTextClass"></Text>
 			</HBox>
 			<VBox class="basicDataHLineClass sapUiSmallMarginBegin" width="100%"></VBox>
 		</Toolbar>
-		<l:Grid defaultSpan="XL3 L3 M6 S12">
+		<l:Grid  defaultSpan="XL3 L3 M6 S12">
 			<l:content>
-				<VBox>
+				<VBox id="QUALIFIES_FOR_DISCOUNT">
 					<Label text="{i18n>QUALIFIES_FOR_DISCOUNT}:" class="sapUiTinyMarginTop"></Label>
 					<Input value="{oBasicDataCollectionModel>/basicDataDto/qualifiesForDiscount}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
 				</VBox>
@@ -91,8 +91,9 @@
 		<l:Grid defaultSpan="XL3 L3 M6 S12">
 			<l:content>
 				<VBox>
+						<!--id="mara_tragr"-->
 					<Label text="{i18n>TRANSPORTATION_GROUP}:" class="sapUiTinyMarginTop" required="true"></Label>
-					<ComboBox items="{path: 'oDropdownLookupsModel>/transportgroups'}" id="mara_tragr" change="onChangeComboBox"
+					<ComboBox items="{path: 'oDropdownLookupsModel>/transportgroups'}" id="marc_dismm" change="onChangeComboBox"
 						editable="{oSpecTblDataModel>/isBasicEditable}" selectedKey="{oBasicDataCollectionModel>/basicDataDto/transportGroup}"
 						showSecondaryValues="true" width="100%">
 						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>

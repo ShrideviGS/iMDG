@@ -1,52 +1,52 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" class="sapUiSizeCompact" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table">
 	<VBox>
-		<Toolbar height="2rem" class="basicDataToolbarBrdClass">
+		<Toolbar height="2rem" class="basicDataToolbarBrdClass" id="OTHER_DATA">
 			<HBox>
 				<Text text="{i18n>OTHER_DATA}" class="hdrTextClass"></Text>
 			</HBox>
 			<VBox class="basicDataHLineClass sapUiSmallMarginBegin" width="100%"></VBox>
 		</Toolbar>
-		<l:Grid defaultSpan="XL3 L3 M6 S12">
+		<l:Grid defaultSpan="XL3 L3 M6 S12" id="OTHER_DATA_T">
 			<l:content>
-				<VBox>
+				<VBox id="PROD_INSP_MEMO">
 					<Label text="{i18n>PROD/INSP_MEMO}:" class="sapUiTinyMarginTop"></Label>
 					<Input value="{oBasicDataCollectionModel>/basicDataDto/prodInspMemo}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
 				</VBox>
-				<VBox class="sapUiSmallMarginBegin">
+				<VBox id="IND_STD_DESC" class="sapUiSmallMarginBegin">
 					<Label text="{i18n>IND_STD_DESC}:" class="sapUiTinyMarginTop"></Label>
 					<Input value="{oBasicDataCollectionModel>/basicDataDto/indStdDesc}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
 				</VBox>
-				<VBox class="sapUiSmallMarginBegin">
+				<VBox id="PAGE_FORMAT" class="sapUiSmallMarginBegin">
 					<Label text="{i18n>PAGE_FORMAT}:" class="sapUiTinyMarginTop"></Label>
 					<Input value="{oBasicDataCollectionModel>/basicDataDto/pageFormat}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
 				</VBox>
-				<VBox class="sapUiSmallMarginBegin">
+				<VBox id="BASIC_MATERIAL" class="sapUiSmallMarginBegin">
 					<Label text="{i18n>BASIC_MATERIAL}:" class="sapUiTinyMarginTop"></Label>
 					<Input value="{oBasicDataCollectionModel>/basicDataDto/basicMaterial}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
 				</VBox>
 			</l:content>
 		</l:Grid>
-		<Toolbar height="2rem" class="basicDataToolbarBrdClass sapUiSmallMarginTop">
+		<Toolbar id="ENVIRONMENT" height="2rem" class="basicDataToolbarBrdClass sapUiSmallMarginTop">
 			<HBox>
 				<Text text="{i18n>ENVIRONMENT}" class="hdrTextClass"></Text>
 			</HBox>
 			<VBox class="basicDataHLineClass sapUiSmallMarginBegin" width="100%"></VBox>
 		</Toolbar>
-		<l:Grid defaultSpan="XL3 L3 M6 S12">
+		<l:Grid id="ENVIRONMENT_T" defaultSpan="XL3 L3 M6 S12">
 			<l:content>
-				<VBox>
+				<VBox id="DG_INDICATOR_PROFILE">
 					<Label text="{i18n>DG_INDICATOR_PROFILE}:" class="sapUiTinyMarginTop"></Label>
 					<Input value="{oBasicDataCollectionModel>/basicDataDto/dangerGoodsProf}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
 				</VBox>
-				<VBox class="sapUiSmallMarginBegin">
+				<VBox id="HIGHLY_VISCOUS" class="sapUiSmallMarginBegin">
 					<Label text="{i18n>HIGHLY_VISCOUS}:" class="sapUiTinyMarginTop"></Label>
 					<CheckBox selected="{oBasicDataCollectionModel>/basicDataDto/highlyViscous}" editable="{oSpecTblDataModel>/isBasicEditable}"/>
 				</VBox>
-				<VBox class="sapUiSmallMarginBegin">
+				<VBox id="ENVIRONMENTALLY_RLTV" class="sapUiSmallMarginBegin">
 					<Label text="{i18n>ENVIRONMENTALLY_RLTV}:" class="sapUiTinyMarginTop"></Label>
 					<CheckBox selected="{oBasicDataCollectionModel>/basicDataDto/environmentallyRlvt}" editable="{oSpecTblDataModel>/isBasicEditable}"/>
 				</VBox>
-				<VBox class="sapUiSmallMarginBegin">
+				<VBox id="IN_BULK_LIQUID" class="sapUiSmallMarginBegin">
 					<Label text="{i18n>IN_BULK_LIQUID}:" class="sapUiTinyMarginTop"></Label>
 					<CheckBox selected="{oBasicDataCollectionModel>/basicDataDto/inBulkLiquid}" editable="{oSpecTblDataModel>/isBasicEditable}"/>
 				</VBox>

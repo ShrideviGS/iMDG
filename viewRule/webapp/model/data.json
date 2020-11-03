@@ -1,28 +1,117 @@
 {
     "rule": {
       "categories": [
-        {"name": "Basic Data 1", "categories": [
-          {"name":"General Data", "categories": [
-              {"name": "Base Unit", "visible": "true", "enabled": "true"},
-              {"name": "Material Group", "visible": "true", "enabled": "true"},
-              {"name": "Old Material Number", "visible": "true", "enabled": "true"},
-              {"name": "Division", "visible": "true", "enabled": "true"},
-              {"name": "Lab/Office", "visible": "true", "enabled": "true"},
-              {"name": "Gen Item Cat Group", "visible": "true", "enabled": "true"},
-              {"name": "Product Allocation", "visible": "true", "enabled": "true"},
-              {"name": "X-Plant Mat Status", "visible": "true", "enabled": "true"},
-              {"name": "X-Plant Valid From", "visible": "true", "enabled": "true"},
-              {"name": "X D-Chain Status", "visible": "true", "enabled": "true"},
-              {"name": "X D-ChainValid From", "visible": "true", "enabled": "true"}
+        {"name": "Basic Data 1", "UI_Field_Id":"BASICDATA_1", "Type":"View" ,"amount":false,"categories": [
+          {"name":"General Data", "UI_Field_Id":"GENERAL_DATA", "Type":"Sub View" ,"amount":false,"categories": [
+              {"name": "Base Unit","UI_Field_Id":"BASE_UNIT", "Type":"Field" ,"visible": "true", "enabled": "true","amount":false},
+              {"name": "Material Group","UI_Field_Id":"MATERIAL_GROUP","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Old Material Number","UI_Field_Id":"OLD_MATERIAL_NUMBER","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Division","UI_Field_Id":"DIVISION","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Lab/Office","UI_Field_Id":"LAB_OFFICE","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Gen Item Cat Group","UI_Field_Id":"GEN_ITEM_CAT_GROUP","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Product Allocation","UI_Field_Id":"PRODUCT_ALLOCATION","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "X-Plant Mat Status","UI_Field_Id":"X_PLANT_MAT_STATUS","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "X-Plant Valid From","UI_Field_Id":"X_PLANT_VALID_FROM","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "X D-Chain Status","UI_Field_Id":"X_D_CHAIN_STATUS","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "X D-ChainValid From","UI_Field_Id":"X_D_CHAIN_VALID_FROM","Type":"Field" , "visible": "true", "enabled": "true","amount":false}
             ]},
-          {"name":"Packing Material Data", "categories": [
-              {"name": "Material Group Packaging", "visible": "true", "enabled": "true"},
-              {"name": "Product Composition", "visible": "true", "enabled": "true"}
+          {"name":"Packing Material Data","UI_Field_Id":"PACKING_MAT_DATA","Type":"Sub View" , "amount":false,"categories": [
+              {"name": "Material Group Packaging","UI_Field_Id":"MATERIAL_GROUP_PACKAGING","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Product Composition","UI_Field_Id":"PRODUCT_COMPOSITION","Type":"Field" , "visible": "true", "enabled": "true","amount":false}
             ]},
-          {"name":"Hierarchy", "categories": [
-            {"name": "Product Hierarchy", "visible": "true", "enabled": "true"}
+          {"name":"Hierarchy","UI_Field_Id":"HEIRARCHY","Type":"Sub View" ,"amount":false, "categories": [
+            {"name": "Product Hierarchy","UI_Field_Id":"PRODUCT_HIREARCHY","Type":"Field" , "visible": "true", "enabled": "true","amount":false}
           ]}
+        ]},
+        {"name": "Basic Data 2", "UI_Field_Id":"BASICDATA_2", "Type":"View" ,"amount":false,"categories": [
+          {"name":"Other Data", "UI_Field_Id":"OTHER_DATA", "Type":"Sub View" ,"amount":false,"categories": [
+              {"name": "Prod/Insp Memo","UI_Field_Id":"PROD_INSP_MEMO", "Type":"Field" ,"visible": "true", "enabled": "true","amount":false},
+              {"name": "Ind Std Desc","UI_Field_Id":"IND_STD_DESC","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Page Format","UI_Field_Id":"PAGE_FORMAT","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Basic Material","UI_Field_Id":"BASIC_MATERIAL","Type":"Field" , "visible": "true", "enabled": "true","amount":false}
+            ]},
+          {"name":"Environment","UI_Field_Id":"ENVIRONMENT","Type":"Sub View" , "amount":false,"categories": [
+              {"name": "DG Indicator Profile","UI_Field_Id":"DG_INDICATOR_PROFILE","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Highly Viscous","UI_Field_Id":"HIGHLY_VISCOUS","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Environmentally Rltv","UI_Field_Id":"ENVIRONMENTALLY_RLTV","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "In Bulk/Liquid","UI_Field_Id":"IN_BULK_LIQUID","Type":"Field" , "visible": "true", "enabled": "true","amount":false}
+            ]}
+        ]},
+        {"name": "UOM/EAN", "UI_Field_Id":"UOM_EAN", "Type":"View" ,"amount":false,"categories": [
+         
+              {"name": "Net Weight","UI_Field_Id":"NET_WEIGHT", "Type":"Field" ,"visible": "true", "enabled": "true","amount":false},
+              {"name": "Size/dimensions","UI_Field_Id":"Size_dimensions","Type":"Field" , "visible": "true", "enabled": "true","amount":false}
+               ]},
+        {"name": "Plant Data Storage - 1", "UI_Field_Id":"PLANT_DATA_STORAGE1", "Type":"View" ,"amount":false,"categories": [
+          {"name":"GENERAL DATA", "UI_Field_Id":"GENERAL_DATA", "Type":"Sub View" ,"amount":false,"categories": [
+              {"name": "Temp Condtion","UI_Field_Id":"TEMP_CONDITION", "Type":"Field" ,"visible": "true", "enabled": "true","amount":false},
+              {"name": "Storage Conditions","UI_Field_Id":"STORAGE_CONDITIONS","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Container Requirements","UI_Field_Id":"CONTAINER_REQUIREMENTS","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Number of GR Slips","UI_Field_Id":"NUMBER_OF_GR_SLIPS","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+               {"name": "Label Type","UI_Field_Id":"LABEL_TYPE", "Type":"Field" ,"visible": "true", "enabled": "true","amount":false},
+              {"name": "Label Form","UI_Field_Id":"LABEL_FORM","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Haz Material Number","UI_Field_Id":"HAZ_MATERIAL_NUMBER","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Batch Record Required","UI_Field_Id":"BATCH_RECORD_REQUIRED","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+               {"name": "Batch Management","UI_Field_Id":"BATCH_MANAGEMENT","Type":"Field" , "visible": "true", "enabled": "true","amount":false}
+              
+            ]},
+          {"name":"SHELF LIFE DATA","UI_Field_Id":"SHELF_LIFE_DATA","Type":"Sub View" , "amount":false,"categories": [
+              {"name": "Min Remaining Shelf Life","UI_Field_Id":"MIN_REMAINING_SHELF_LIFE","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Total Shelf Life","UI_Field_Id":"TOTAL_SHELF_LIFE","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Period Indicator for SLED","UI_Field_Id":"PERIOD_INDICATOR_FOR_SLED","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Rounding Rule for SLED","UI_Field_Id":"ROUNDING_RULE_SLED","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Storage Percentage","UI_Field_Id":"STORAGE_PERCENTAGE","Type":"Field" , "visible": "true", "enabled": "true","amount":false}
+            ]}
+        ]},
+        {"name": "Sales General/Plant", "UI_Field_Id":"SALES_GENERAL_PLANT", "Type":"View" ,"amount":false,"categories": [
+          {"name":"GENERAL DATA", "UI_Field_Id":"GENERAL_DATA", "Type":"Sub View" ,"amount":false,"categories": [
+              {"name": "Qualifies For Discount","UI_Field_Id":"QUALIFIES_FOR_DISCOUNT", "Type":"Field" ,"visible": "true", "enabled": "true","amount":false}
+              
+            ]},
+          {"name":"Packing Material Data","UI_Field_Id":"","Type":"Sub View" , "amount":false,"categories": [
+              {"name": "Allowed Pkg Weight","UI_Field_Id":"","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Excess Volume Tolerance","UI_Field_Id":"","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Allowed Pkg Weight UOM","UI_Field_Id":"","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Excess Weight Tolerance","UI_Field_Id":"","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Maximum Level","UI_Field_Id":"","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Allowed Pkg Volume","UI_Field_Id":"","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Stackability Factor","UI_Field_Id":"","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Allowed Pkg Volume UOM","UI_Field_Id":"","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Packaging Mat Type","UI_Field_Id":"","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Closed","UI_Field_Id":"","Type":"Field" , "visible": "true", "enabled": "true","amount":false}
+            ]},
+            {"name":"SHIPPING DATA (TIME IN DAYS)","UI_Field_Id":"","Type":"Sub View" , "amount":false,"categories": [
+              {"name": "Transportation Group","UI_Field_Id":"","Type":"Field" , "visible": "true", "enabled": "true","amount":false}
+            ]}
+        ]},
+        {"name": "Purchasing", "UI_Field_Id":"", "Type":"View" ,"amount":false,"categories": [
+          {"name":"GENERAL DATA", "UI_Field_Id":"", "Type":"Sub View" ,"amount":false,"categories": [
+              {"name": "Order Unit","UI_Field_Id":"", "Type":"Field" ,"visible": "true", "enabled": "true","amount":false},
+              {"name": "Variable Unit","UI_Field_Id":"", "Type":"Field" ,"visible": "true", "enabled": "true","amount":false}
+            ]},
+          {"name":"Staging","UI_Field_Id":"","Type":"Sub View" , "amount":false,"categories": [
+              {"name": "Manufacturer","UI_Field_Id":"","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Mfr Plant Number","UI_Field_Id":"","Type":"Field" , "visible": "true", "enabled": "true","amount":false},
+              {"name": "Mfr Plant Profile","UI_Field_Id":"","Type":"Field" , "visible": "true", "enabled": "true","amount":false}
+            ]},
+            {"name":"Purchasing Values","UI_Field_Id":"","Type":"Sub View" , "amount":false,"categories": [
+              {"name": "Purchasing Value Key","UI_Field_Id":"","Type":"Field" , "visible": "true", "enabled": "true","amount":false}
+            ]}
+        ]},
+        {"name": "Other Data", "UI_Field_Id":"", "Type":"View" ,"amount":false,"categories": [
+          {"name":"GENERAL DATA", "UI_Field_Id":"", "Type":"Sub View" ,"amount":false,"categories": [
+              {"name": "Serial Number Level:","UI_Field_Id":"", "Type":"Field" ,"visible": "true", "enabled": "true","amount":false},
+              {"name": "Catalog Profile","UI_Field_Id":"", "Type":"Field" ,"visible": "true", "enabled": "true","amount":false}
+            ]},
+          {"name":"Other Data","UI_Field_Id":"","Type":"Sub View" , "amount":false,"categories": [
+              {"name": "PC Host Flag","UI_Field_Id":"","Type":"Field" , "visible": "true", "enabled": "true","amount":false}
+             
+            ]},
+            {"name":"PROCUREMENT DATA","UI_Field_Id":"","Type":"Sub View" , "amount":false,"categories": [
+              {"name": "QM Proc. Active","UI_Field_Id":"","Type":"Field" , "visible": "true", "enabled": "true","amount":false}
+            ]}
         ]}
+        
         ]},
   "apps": [
     {"key": "basicDataCollection", "value": "Basic Data Collection"},

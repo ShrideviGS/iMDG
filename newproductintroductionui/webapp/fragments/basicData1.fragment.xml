@@ -1,15 +1,15 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" class="sapUiSizeCompact" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table">
 	<VBox>
-		<Toolbar height="2rem" class="basicDataToolbarBrdClass">
+		<Toolbar height="2rem" class="basicDataToolbarBrdClass" id="GENERAL_DATA">
 			<HBox>
 				<Text text="{i18n>GENERAL_DATA}" class="hdrTextClass sapUiSizeCompact"></Text>
 			</HBox>
 			<VBox class="basicDataHLineClass sapUiSmallMarginBegin" width="100%"></VBox>
 		</Toolbar>
-		<l:Grid defaultSpan="XL3 L3 M6 S12" vSpacing="1" hSpacing="1">
+		<l:Grid defaultSpan="XL3 L3 M6 S12" vSpacing="1" hSpacing="1" id="GENERAL_DATA_T">
 			<l:content>
-				<VBox>
-					<Label text="{i18n>BASE_UNIT}:" class="sapUiTinyMarginTop"></Label>
+				<VBox id="BASE_UNIT">
+					<Label text="{i18n>BASE_UNIT}:" class="sapUiTinyMarginTop" ></Label>
 					<!--	<Select forceSelection="false" enabled="false" selectedKey="{oBasicDataCollectionModel>/basicDataDto/baseUnit}"
 						items="{oDropdownLookupsModel>/baseUnits}" width="100%">
 						<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
@@ -23,13 +23,14 @@
 						</customData>
 					</ComboBox>
 				</VBox>
-				<VBox >
+				<VBox id="MATERIAL_GROUP">
 					<Label text="{i18n>MATERIAL_GROUP}:" class="sapUiTinyMarginTop" required="true"></Label>
 					<!--<Select forceSelection="false" selectedKey="{oBasicDataCollectionModel>/basicDataDto/materialGroup}"
 						items="{oDropdownLookupsModel>/materialgroups}" width="100%">
 						<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
 					</Select>-->
-					<ComboBox items="{path: 'oDropdownLookupsModel>/materialgroups'}" id="mara_matkl" change="onChangeComboBox"
+					<!--	id="mara_matkl"-->
+					<ComboBox items="{path: 'oDropdownLookupsModel>/materialgroups'}" id="marc_dispo" change="onChangeComboBox"
 						editable="{oSpecTblDataModel>/isBasicEditable}" selectedKey="{oBasicDataCollectionModel>/basicDataDto/materialGroup}"
 						showSecondaryValues="true" width="100%">
 						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
@@ -38,7 +39,7 @@
 						</customData>
 					</ComboBox>
 				</VBox>
-				<VBox >
+				<VBox id="OLD_MATERIAL_NUMBER">
 					<Label text="{i18n>OLD_MATERIAL_NUMBER}:" class="sapUiTinyMarginTop"></Label>
 					<Input value="{oBasicDataCollectionModel>/basicDataDto/oldMatNumber}" editable="{oSpecTblDataModel>/isBasicEditable}"></Input>
 				</VBox>
@@ -57,7 +58,7 @@
 				<!--	</customData>-->
 				<!--</ComboBox>-->
 				<!--</VBox>-->
-				<VBox>
+				<VBox id="DIVISION">
 					<Label text="{i18n>DIVISION}:" class="sapUiTinyMarginTop"></Label>
 					<!--<Select forceSelection="false" selectedKey="{oBasicDataCollectionModel>/basicDataDto/salesDivision}"
 						items="{oDropdownLookupsModel>/divisionUnits}" width="100%">
@@ -71,7 +72,7 @@
 						</customData>
 					</ComboBox>
 				</VBox>
-				<VBox >
+				<VBox id="LAB_OFFICE">
 					<Label text="{i18n>LAB_OFFICE}:" class="sapUiTinyMarginTop"></Label>
 					<!--<Select forceSelection="false" width="100%" selectedKey="{oBasicDataCollectionModel>/basicDataDto/labOffice}"
 						items="{oDropdownLookupsModel>/labOffices}">
@@ -85,13 +86,14 @@
 						</customData>
 					</ComboBox>
 				</VBox>
-				<VBox>
+				<VBox id="GEN_ITEM_CAT_GROUP">
 					<Label text="{i18n>GEN_ITEM_CAT_GROUP}:" class="sapUiTinyMarginTop" required="true"></Label>
 					<!--<Select forceSelection="false" selectedKey="{oBasicDataCollectionModel>/basicDataDto/genItemCatGroup}"
 						items="{oDropdownLookupsModel>/generalItemCategory}" width="100%">
 						<core:Item key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}"/>
 					</Select>-->
-					<ComboBox items="{path: 'oDropdownLookupsModel>/generalItemCategory'}" id="mara_mtpos_mara" change="onChangeComboBox"
+					<!--	id="mara_mtpos_mara"-->
+					<ComboBox items="{path: 'oDropdownLookupsModel>/generalItemCategory'}" id="marc_disgr" change="onChangeComboBox"
 						editable="{oSpecTblDataModel>/isBasicEditable}" selectedKey="{oBasicDataCollectionModel>/basicDataDto/genItemCatGroup}"
 						showSecondaryValues="true" width="100%">
 						<core:ListItem key="{oDropdownLookupsModel>code}" text="{oDropdownLookupsModel>description}" additionalText="{oDropdownLookupsModel>code}"/>
@@ -100,7 +102,7 @@
 						</customData>
 					</ComboBox>
 				</VBox>
-				<VBox>
+				<VBox id="PRODUCT_ALLOCATION">
 					<Label text="{i18n>PRODUCT_ALLOCATION}:" class="sapUiTinyMarginTop"></Label>
 					<!--	<Select forceSelection="false" selectedKey="{oBasicDataCollectionModel>/basicDataDto/productAllocation}"
 						items="{oDropdownLookupsModel>/productAllocations}" width="100%">
@@ -114,7 +116,7 @@
 						</customData>
 					</ComboBox>
 				</VBox>
-				<VBox>
+				<VBox id="X_PLANT_MAT_STATUS">
 					<Label text="{i18n>X_PLANT_MAT_STATUS}:" class="sapUiTinyMarginTop"></Label>
 					<!--<Select forceSelection="false" selectedKey="{oBasicDataCollectionModel>/basicDataDto/xplantMatStatus}"
 						items="{oDropdownLookupsModel>/XplantStatus}" width="100%">
@@ -128,12 +130,12 @@
 						</customData>
 					</ComboBox>
 				</VBox>
-				<VBox>
+				<VBox id="X_PLANT_VALID_FROM">
 					<Label text="{i18n>X_PLANT_VALID_FROM}:" class="sapUiTinyMarginTop"></Label>
 					<DatePicker valueFormat="yyyy-MM-dd" displayFormat="yyyy-MM-dd" editable="{oSpecTblDataModel>/isBasicEditable}"
 						value="{path:'{oBasicDataCollectionModel>/basicDataDto/xplantValidFrom}', formatter:'newproductintroductionui.newproductintroductionui.formatter.formatter.formatDateObject'}"/>
 				</VBox>
-				<VBox>
+				<VBox id="X_D_CHAIN_STATUS">
 					<Label text="{i18n>X_D_CHAIN_STATUS}:" class="sapUiTinyMarginTop"></Label>
 					<!--<Select forceSelection="false" selectedKey="{oBasicDataCollectionModel>/basicDataDto/xdchainStatus}"
 						items="{oDropdownLookupsModel>/dChainStatus}" width="100%">
@@ -147,7 +149,7 @@
 						</customData>
 					</ComboBox>
 				</VBox>
-				<VBox>
+				<VBox id="X_D_CHAIN_VALID_FROM">
 					<Label text="{i18n>X_D_CHAIN_VALID_FROM}:" class="sapUiTinyMarginTop"></Label>
 					<DatePicker valueFormat="yyyy-MM-dd" displayFormat="yyyy-MM-dd" editable="{oSpecTblDataModel>/isBasicEditable}"
 						value="{path:'{oBasicDataCollectionModel>/basicDataDto/xdchainValidFrom}', formatter:'newproductintroductionui.newproductintroductionui.formatter.formatter.formatDateObject'}"/>
@@ -234,15 +236,15 @@
 								<CheckBox selected="false"/>
 							</VBox>
 						</HBox>-->
-		<Toolbar height="2rem" class="basicDataToolbarBrdClass sapUiSmallMarginTop">
+		<Toolbar height="2rem" class="basicDataToolbarBrdClass sapUiSmallMarginTop" id="PACKING_MAT_DATA">
 			<HBox>
 				<Text text="{i18n>PACKING_MAT_DATA}" class="hdrTextClass"></Text>
 			</HBox>
 			<VBox class="basicDataHLineClass sapUiSmallMarginBegin" width="100%"></VBox>
 		</Toolbar>
-		<l:Grid defaultSpan="XL3 L3 M6 S12">
+		<l:Grid defaultSpan="XL3 L3 M6 S12" id="PACKING_MAT_DATA_T">
 			<l:content>
-				<VBox>
+				<VBox id="MATERIAL_GROUP_PACKAGING">
 					<Label text="{i18n>MATERIAL_GROUP_PACKAGING}:" class="sapUiTinyMarginTop"></Label>
 					<!--	<Select forceSelection="false" selectedKey="{oBasicDataCollectionModel>/basicDataDto/matGroupPack}"
 						items="{oDropdownLookupsModel>/packmaterialgroups}" width="100%">
@@ -256,21 +258,21 @@
 						</customData>
 					</ComboBox>
 				</VBox>
-				<VBox class="sapUiSmallMarginBegin">
+				<VBox id="PRODUCT_COMPOSITION" class="sapUiSmallMarginBegin">
 					<Label text="{i18n>PRODUCT_COMPOSITION}:" class="sapUiTinyMarginTop"></Label>
 					<CheckBox selected="{oBasicDataCollectionModel>/basicDataDto/productComposition}" editable="{oSpecTblDataModel>/isBasicEditable}"/>
 				</VBox>
 			</l:content>
 		</l:Grid>
-		<Toolbar height="2rem" class="basicDataToolbarBrdClass sapUiSmallMarginTop">
+		<Toolbar height="2rem" class="basicDataToolbarBrdClass sapUiSmallMarginTop" id="HEIRARCHY">
 			<HBox>
 				<Text text="{i18n>HEIRARCHY}" class="hdrTextClass"></Text>
 			</HBox>
 			<VBox class="basicDataHLineClass sapUiSmallMarginBegin" width="100%"></VBox>
 		</Toolbar>
-		<l:Grid defaultSpan="XL3 L3 M6 S12">
+		<l:Grid defaultSpan="XL3 L3 M6 S12" id="HEIRARCHY_T">
 			<l:content>
-				<VBox>
+				<VBox id="PRODUCT_HIREARCHY">
 					<Label text="{i18n>PRODUCT_HIREARCHY}:" class="sapUiTinyMarginTop"></Label>
 					<Input showValueHelp="true" valueHelpRequest="onOpenProductHir" editable="{oSpecTblDataModel>/isBasicEditable}"
 						value="{oBasicDataCollectionModel>/basicDataDto/newProdHierarchy}"/>
