@@ -151,25 +151,25 @@
 			</Panel>
 			<IconTabBar class="basicDataIconTabClass sapIconTabBar" backgroundDesign="Transparent" headerBackgroundDesign="Transparent">
 				<items>
-					<IconTabFilter design="Vertical" text="{i18n>MATERIAL_DESC}" key="MAT_DESC">
+					<IconTabFilter design="Vertical" text="{i18n>MATERIAL_DESC}" key="MAT_DESC" id="MATERIAL_DESC">
 						<core:Fragment fragmentName="newproductintroductionui.newproductintroductionui.fragments.basicDataMaterialDesc" type="XML"/>
 					</IconTabFilter>
-					<IconTabFilter design="Vertical" text="{i18n>BASIC_DATA_1}" key="BASICDATA_1">
+					<IconTabFilter design="Vertical" text="{i18n>BASIC_DATA_1}" key="BASICDATA_1" id="BASIC_DATA_1">
 						<core:Fragment fragmentName="newproductintroductionui.newproductintroductionui.fragments.basicData1" type="XML"/>
 					</IconTabFilter>
-					<IconTabFilter design="Vertical" text="{i18n>BASIC_DATA_2}" key="BASICDATA_2">
+					<IconTabFilter design="Vertical" text="{i18n>BASIC_DATA_2}" key="BASICDATA_2" id="BASIC_DATA_2">
 						<core:Fragment fragmentName="newproductintroductionui.newproductintroductionui.fragments.basicData2" type="XML"/>
 					</IconTabFilter>
-					<IconTabFilter design="Vertical" text="{i18n>UOM/EAN}" key="UOM_EAN" visible="{oSpecTblDataModel>/isUOMEditable}">
+					<IconTabFilter design="Vertical" text="{i18n>UOM/EAN}" key="UOM_EAN" id="UOM_EAN" visible="{oSpecTblDataModel>/isUOMEditable}">
 						<core:Fragment fragmentName="newproductintroductionui.newproductintroductionui.fragments.UOMPerEANTab" type="XML"/>
 					</IconTabFilter>
-					<IconTabFilter design="Vertical" text="{i18n>PLANT_DATA_STORAGE1}" key="PLANT_DATA_STORAGE1">
+					<IconTabFilter design="Vertical" text="{i18n>PLANT_DATA_STORAGE1}" key="PLANT_DATA_STORAGE1" id="PLANT_DATA_STORAGE1">
 						<core:Fragment fragmentName="newproductintroductionui.newproductintroductionui.fragments.plantDataStorage1Tab" type="XML"/>
 					</IconTabFilter>
-					<IconTabFilter design="Vertical" text="{i18n>SALES_GENERAL_PLANT}" key="SALES_GENERAL_PLANT">
+					<IconTabFilter design="Vertical" text="{i18n>SALES_GENERAL_PLANT}" key="SALES_GENERAL_PLANT" id="SALES_GENERAL_PLANT">
 						<core:Fragment fragmentName="newproductintroductionui.newproductintroductionui.fragments.salesGeneralPlantTab" type="XML"/>
 					</IconTabFilter>
-					<IconTabFilter design="Vertical" text="{i18n>PURCHASING}" key="PURCHASING">
+					<IconTabFilter design="Vertical" text="{i18n>PURCHASING}" key="PURCHASING" id="PURCHASING">
 						<core:Fragment fragmentName="newproductintroductionui.newproductintroductionui.fragments.basicDataPurchasingTab" type="XML"/>
 					</IconTabFilter>
 					<!--	<IconTabFilter design="Vertical" text="{i18n>CLASSIFICATION}" key="CLASSIFICATION">

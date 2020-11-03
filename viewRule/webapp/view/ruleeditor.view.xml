@@ -9,7 +9,7 @@
 						<table:extension>
 							<OverflowToolbar>
 								<Label text="Select Application"/>
-								<Select items="{path: '/sizes', templateShareable: true}" selectedKey="{size}" forceSelection="false">
+								<Select items="{path: '/apps', templateShareable: true}" selectedKey="{size}" forceSelection="false">
 									<core:Item key="{key}" text="{value}"/>
 								</Select>
 								<ToolbarSpacer/>
@@ -27,7 +27,7 @@
 							<table:Column width="10%">
 								<Label text="Visible"/>
 								<table:template>
-									<CheckBox selected="{amount}"/>
+									<CheckBox selected="{amount}" select="selectAll"/>
 								</table:template>
 							</table:Column>
 							<table:Column width="10%">

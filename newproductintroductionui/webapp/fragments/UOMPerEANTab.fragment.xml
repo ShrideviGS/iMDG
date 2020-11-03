@@ -132,9 +132,9 @@
 				</HBox>
 			</content>
 		</Panel>-->
-		<l:Grid defaultSpan="XL3 L3 M6 S12">
+		<l:Grid defaultSpan="XL3 L3 M6 S12" >
 			<l:content>
-				<VBox>
+				<VBox id="NET_WEIGHT">
 					<Label text="{i18n>NET_WEIGHT}:" class="sapUiTinyMarginTop" required="true"></Label>
 					<Input value="{oBasicDataCollectionModel>/basicDataDto/netWeight}" enabled="true" type="Number" id="mara_ntgew">
 						<customData>
@@ -142,7 +142,7 @@
 						</customData>
 					</Input>
 				</VBox>
-				<VBox>
+				<VBox id="Size_dimensions">
 					<Label text="Size/dimensions:" class="sapUiTinyMarginTop" required="true"></Label>
 					<Input value="{oBasicDataCollectionModel>/basicDataDto/sizeDimensions}" enabled="true" id="mara_groes">
 						<customData>
