@@ -364,10 +364,14 @@ sap.ui.define([
 		fnSetCurrentUser: function (callback) {
 			var oThisController = this;
 			var oMdlCommon = oThisController.getParentModel("mCommon");
-			oThisController.fnProcessDataRequest("/services/userapi/currentuser", "GET", null, false, function (oXHR, status) {
+			oThisController.fnProcessDataRequest("../user", "GET", null, false, function (oXHR, status) {
 				if (oXHR && oXHR.responseJSON) {
 					oThisController.userDetails = oXHR.responseJSON;
-					oMdlCommon.setProperty("/userDetails", oXHR.responseJSON);
+					oMdlCommon.setProperty("/UserId", oThisController.userDetails.id);
+					oMdlCommon.setProperty("/sEmial", oThisController.userDetails.emails[0].value);
+					oMdlCommon.setProperty("/sFirstName", oThisController.userDetails.name.givenName);
+					oMdlCommon.setProperty("/sLastName", oThisController.userDetails.name.familyName);
+					// oMdlCommon.setProperty("/userDetails", oXHR.responseJSON);
 					oMdlCommon.refresh();
 
 					if (callback) {
@@ -378,6 +382,31 @@ sap.ui.define([
 				}
 			}, null);
 		},
+
+		// getUserDetails: function (oController, oUserModel) {
+		// 	var that = this;
+		// 	var sUrl = "../user";
+		// 	var oModel = new sap.ui.model.json.JSONModel();
+		// 	oModel.setSizeLimit(999);
+		// 	oModel.loadData(sUrl, true, "GET", false, false);
+		// 	oModel.attachRequestCompleted(function (oEvent) {
+		// 		if (oEvent.getParameter("success")) {
+		// 			var resultData = oEvent.getSource().getData();
+		// 			if (resultData) {
+		// 				oUserModel.setProperty("/UserId", resultData.id);
+		// 				oUserModel.setProperty("/sEmial", resultData.emails[0].value);
+		// 				oUserModel.setProperty("/sFirstName", resultData.name.givenName);
+		// 				oUserModel.setProperty("/sLastName", resultData.name.familyName);
+		// 				// oUserModel.setData(resultData);
+		// 			}
+		// 		} else {
+		// 			that.toastMessage("Internal Server Error");
+		// 		}
+		// 	});
+		// 	oModel.attachRequestFailed(function (oEvent) {
+		// 		that.toastMessage("Internal Server Error");
+		// 	});
+		// }
 
 		// fnGetMycycleService: function (bOpenBusyDialog, bCloseBusyDialog) {
 		// 	var oThisController = this;
@@ -460,7 +489,7 @@ sap.ui.define([
 		// 	oMdlCommon.refresh();
 		// },
 
-		fnGetNewcycleService: function (bOpenBusyDialog, bCloseBusyDialog) {
+			fnGetNewcycleService: function (bOpenBusyDialog, bCloseBusyDialog) {
 			var oThisController = this;
 			var oMdlCommon = oThisController.getParentModel("mCommon");
 			var oParam = $.extend(true, {}, oMdlCommon.getProperty("/oNewParam"));
