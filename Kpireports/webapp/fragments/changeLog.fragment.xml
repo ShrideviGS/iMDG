@@ -1,0 +1,118 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table">
+	<Dialog showHeader="false" class="sapPageBackgroundColor sapUiSizeCompact" contentWidth="70%">
+		<content>
+			<table:Table rows="{mCommon>/ProductCollectionColumn}" id="table1" selectionMode="None" rowSelectionChange="onSelectPlants"
+				alternateRowColors="true" rowHeight="40px" showNoData="true" visibleRowCount="5"
+				class="sapUiSmallMarginBeginEnd sapUiSmallMarginBottom sapUiTableBorderClass" visible="true">
+				<table:columns>
+					<table:Column width="10rem">
+						<Label text="Column" design="Bold"/>
+						<table:template>
+							<Link text="{mCommon>fieldName}" press="showChangeLogColumn"/>
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<Label text="New Value" design="Bold"/>
+						<table:template>
+							<Text text="{mCommon>newValue}"/>
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<Label text="Old Value" design="Bold"/>
+						<table:template>
+							<Text text="{mCommon>oldValue}"/>
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<Label text="Updated By" design="Bold"/>
+						<table:template>
+							<Text text="{mCommon>updatedBy}"/>
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<Label text="Updated On" design="Bold"/>
+						<table:template>
+							<Text text="{mCommon>updatedOn}"/>
+						</table:template>
+					</table:Column>
+				</table:columns>
+			</table:Table>
+			<table:Table rows="{mCommon>/ProductCollectionDetail}" id="table2" selectionMode="None" rowSelectionChange="onSelectPlants"
+				alternateRowColors="true" rowHeight="40px" showNoData="true" visibleRowCount="5"
+				class="sapUiSmallMarginBeginEnd sapUiSmallMarginBottom sapUiTableBorderClass" visible="false">
+				<table:columns>
+					<table:Column width="10rem">
+						<Label text="Column" design="Bold"/>
+						<table:template>
+							<Text text="{mCommon>fieldName}"/>
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<Label text="New Value" design="Bold"/>
+						<table:template>
+							<Text text="{mCommon>newValue}"/>
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<Label text="Old Value" design="Bold"/>
+						<table:template>
+							<Text text="{mCommon>oldValue}"/>
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<Label text="Updated By" design="Bold"/>
+						<table:template>
+							<Text text="{mCommon>updatedBy}"/>
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<Label text="Updated On" design="Bold"/>
+						<table:template>
+							<Text text="{mCommon>updatedOn}"/>
+						</table:template>
+					</table:Column>
+				</table:columns>
+			</table:Table>
+			<table:Table rows="{mCommon>/ProductCollectionDetail2}" id="table3" selectionMode="None" rowSelectionChange="onSelectPlants"
+				alternateRowColors="true" rowHeight="40px" showNoData="true" visibleRowCount="5"
+				class="sapUiSmallMarginBeginEnd sapUiSmallMarginBottom sapUiTableBorderClass" visible="false">
+				<table:columns>
+					<table:Column width="10rem">
+						<Label text="Column" design="Bold"/>
+						<table:template>
+							<Text text="{mCommon>fieldName}"/>
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<Label text="New Value" design="Bold"/>
+						<table:template>
+							<Text text="{mCommon>newValue}"/>
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<Label text="Old Value" design="Bold"/>
+						<table:template>
+							<Text text="{mCommon>oldValue}"/>
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<Label text="Updated By" design="Bold"/>
+						<table:template>
+							<Text text="{mCommon>updatedBy}"/>
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<Label text="Updated On" design="Bold"/>
+						<table:template>
+							<Text text="{mCommon>updatedOn}"/>
+						</table:template>
+					</table:Column>
+				</table:columns>
+			</table:Table>
+		</content>
+		<buttons>
+			<Button id="backbutton" text="Back" type="Accept" press="onCloseColumnChange" visible="false"></Button>
+			<Button text="Close" type="Reject" press="onCloseChange"></Button>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

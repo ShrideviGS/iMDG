@@ -1,101 +1,273 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:ui="sap.ui.table" xmlns:l="sap.ui.layout"
-	xmlns:fb="sap.ui.comp.filterbar" controllerName="com.incture.NewProductIntroduction_UI.Kpireports.controller.Changehistory"
-	xmlns:html="http://www.w3.org/1999/xhtml" class="sapUiSizeCompact">
-	<Page showHeader="false" class="sapUiSizeCompact">
-		<content>
+<!--<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:ui="sap.ui.table" xmlns:l="sap.ui.layout"-->
+<!--	xmlns:fb="sap.ui.comp.filterbar" controllerName="com.incture.NewProductIntroduction_UI.Kpireports.controller.Changehistory"-->
+<!--	xmlns:html="http://www.w3.org/1999/xhtml" class="sapUiSizeCompact">-->
+	<!--<Page showHeader="false" class="sapUiSizeCompact">-->
+	<!--	<content>-->
 			<!--<HBox height="8%" width="100%" justifyContent="Start" class="sapUiSmallMarginTop sapUiSmallMarginBegin">-->
 			<!--	<SearchField placeholder="Material Number" width="100%" class="sapUiTinyMarginBegin" search="onSearch"/>-->
 			<!--</HBox>-->
-			<l:FixFlex>
-				<l:fixContent >
-					<fb:FilterBar reset="onReset" search="onSearch" class="sapFbfilterbar" showFilterConfiguration="false" showClearOnFB="true"
-						clear="onClearFilter">
-						<fb:filterGroupItems name="ID_FILETERBAR_GROUPITEMS">
-							<fb:FilterGroupItem name="MATERAIL" label="{i18n>MATERAIL}" class="sapUiSmallMarginBegin" groupName="G1" visibleInFilterBar="true">
-								<fb:control>
-									<Input value="{mCommon>/oSearchParam/sMaterial}"/>
+	<!--		<l:FixFlex>-->
+	<!--			<l:fixContent >-->
+	<!--				<fb:FilterBar reset="onReset" search="onSearch" class="sapFbfilterbar" showFilterConfiguration="false" showClearOnFB="true"-->
+	<!--					clear="onClearFilter">-->
+	<!--					<fb:filterGroupItems name="ID_FILETERBAR_GROUPITEMS">-->
+	<!--						<fb:FilterGroupItem name="MATERAIL" label="{i18n>MATERAIL}" class="sapUiSmallMarginBegin" groupName="G1" visibleInFilterBar="true">-->
+	<!--							<fb:control>-->
+	<!--								<Input value="{mCommon>/oSearchParam/sMaterial}"/>-->
 									<!--<ComboBox name="ID_SHIPPERID_COMBOBOX" selectedKey="{mPackageModel>/SupplierID}" class="sapUiMInputBoxBorderRadius"-->
 									<!--	showSecondaryValues="true" items="{path: 'mPackageModel>/aSupplier',sorter:{ path:'SupplierId'}}" change="onChangeCBox"-->
 									<!--	valueState="{mPackageModel>/valState/SupplierValueState}">-->
 									<!--	<core:ListItem key="{mPackageModel>SupplierId}" text="{mPackageModel>SupplierId}" additionalText="{mPackageModel>NameOrg1}"/>-->
 									<!--</ComboBox>-->
-								</fb:control>
-							</fb:FilterGroupItem>
-							<fb:FilterGroupItem name="PLANT" label="{i18n>PLANT}" class="sapUiSmallMarginBegin" groupName="G2" visibleInFilterBar="true">
-								<fb:control>
-									<Input value="{mCommon>/oSearchParam/sPlant}"/>
+	<!--							</fb:control>-->
+	<!--						</fb:FilterGroupItem>-->
+	<!--						<fb:FilterGroupItem name="PLANT" label="{i18n>PLANT}" class="sapUiSmallMarginBegin" groupName="G2" visibleInFilterBar="true">-->
+	<!--							<fb:control>-->
+	<!--								<Input value="{mCommon>/oSearchParam/sPlant}"/>-->
 									<!--<ComboBox name="ID_PLANTNAME_COMBOBOX" width="100%" selectedKey="{mPackageModel>/PlantName}" change="onChangeCBox"-->
 									<!--	items="{path: 'mPackageModel>/aPlant',sorter:{ path:'text'},templateShareable:'true'}"-->
 									<!--	valueState="{mPackageModel>/valState/PlantNameValueState}">-->
 									<!--	<core:ListItem key="{mPackageModel>sKey}" text="{mPackageModel>sValue}"/>-->
 									<!--</ComboBox>-->
-								</fb:control>
-							</fb:FilterGroupItem>
-							<fb:FilterGroupItem name="SALES_ORG" label="{i18n>SALES_ORG}" class="sapUiSmallMarginBegin sapMFilterLabel" groupName="G3"
-								visibleInFilterBar="true">
-								<fb:control>
-									<Input value="{mCommon>/oSearchParam/sSalesorg}"/>
+	<!--							</fb:control>-->
+	<!--						</fb:FilterGroupItem>-->
+	<!--						<fb:FilterGroupItem name="SALES_ORG" label="{i18n>SALES_ORG}" class="sapUiSmallMarginBegin sapMFilterLabel" groupName="G3"-->
+	<!--							visibleInFilterBar="true">-->
+	<!--							<fb:control>-->
+	<!--								<Input value="{mCommon>/oSearchParam/sSalesorg}"/>-->
 									<!--<ComboBox width="100%" name="ID_PLANTNAME_COMBOBOX" selectedKey="{mPackageModel>/ViewType}" change="onChangeCBox"-->
 									<!--	items="{path: 'mPackageModel>/aViewType',sorter:{ path:'text'},templateShareable:'true'}"-->
 									<!--	valueState="{mPackageModel>/valState/ViewTypeValueState}">-->
 									<!--	<core:ListItem key="{mPackageModel>sKey}" text="{mPackageModel>sValue}"/>-->
 									<!--</ComboBox>-->
-								</fb:control>
-							</fb:FilterGroupItem>
-							<fb:FilterGroupItem name="WAREHOUSE" label="{i18n>WAREHOUSE}" class="sapUiSmallMarginBegin sapMFilterLabel" groupName="G4"
-								visibleInFilterBar="true">
-								<fb:control>
-									<Input value="{mCommon>/oSearchParam/sWareHourse}"/>
+	<!--							</fb:control>-->
+	<!--						</fb:FilterGroupItem>-->
+	<!--						<fb:FilterGroupItem name="WAREHOUSE" label="{i18n>WAREHOUSE}" class="sapUiSmallMarginBegin sapMFilterLabel" groupName="G4"-->
+	<!--							visibleInFilterBar="true">-->
+	<!--							<fb:control>-->
+	<!--								<Input value="{mCommon>/oSearchParam/sWareHourse}"/>-->
 									<!--<ComboBox width="100%" name="ID_PLANTNAME_COMBOBOX" selectedKey="{mPackageModel>/ViewType}" change="onChangeCBox"-->
 									<!--	items="{path: 'mPackageModel>/aViewType',sorter:{ path:'text'},templateShareable:'true'}"-->
 									<!--	valueState="{mPackageModel>/valState/ViewTypeValueState}">-->
 									<!--	<core:ListItem key="{mPackageModel>sKey}" text="{mPackageModel>sValue}"/>-->
 									<!--</ComboBox>-->
-								</fb:control>
-							</fb:FilterGroupItem>
-						</fb:filterGroupItems>
-					</fb:FilterBar>
-				</l:fixContent>
-				<l:flexContent >
-					<ui:Table rows="{mCommon>/aSearchMaterial}" selectionMode="None" visibleRowCountMode="Auto" alternateRowColors="true"
-						enableColumnReordering="false" class="sapUiMediumMarginBegin sapUiMediumMarginEnd sapFbfilterbar sapUiTableNoColBorders">
-						<ui:columns>
-							<ui:Column tooltip="{i18n>ATTRIBUTE}" width="16rem">
-								<Label text="{i18n>ATTRIBUTE}" wrapping="true" design="Bold"/>
-								<ui:template >
-									<Text text="{mCommon>attribute}"/>
-								</ui:template>
-							</ui:Column>
-							<ui:Column tooltip="{i18n>OLD_VALUE}">
-								<Label text="{i18n>OLD_VALUE}" wrapping="true" design="Bold"/>
-								<ui:template >
-									<Text text="{mCommon>oldValue}" maxLines="1"/>
-								</ui:template>
-							</ui:Column>
-							<ui:Column tooltip="{i18n>NEW_VALUE}">
-								<Label text="{i18n>NEW_VALUE}" wrapping="true" design="Bold"/>
-								<ui:template >
-									<Text text="{mCommon>newValue}" maxLines="1"/>
-								</ui:template>
-							</ui:Column>
-							<ui:Column tooltip="{i18n>UPDATED_BY}">
-								<Label text="{i18n>UPDATED_BY}" wrapping="true" design="Bold"/>
-								<ui:template >
-									<Text text="{mCommon>updatedBy}" maxLines="1"/>
-								</ui:template>
-							</ui:Column>
-							<ui:Column tooltip="{i18n>UPDATED_ON}">
-								<Label text="{i18n>UPDATED_ON}" wrapping="true" design="Bold"/>
-								<ui:template >
-									<Text maxLines="1"
-										text="{path:'mCommon>updatedOn', type:'sap.ui.model.type.DateTime', formatOptions: {pattern: 'dd MMM yyyy, HH:mm', strictParsing: true}}"/>
+	<!--							</fb:control>-->
+	<!--						</fb:FilterGroupItem>-->
+	<!--					</fb:filterGroupItems>-->
+	<!--				</fb:FilterBar>-->
+	<!--			</l:fixContent>-->
+	<!--			<l:flexContent >-->
+	<!--				<ui:Table rows="{mCommon>/aSearchMaterial}" selectionMode="None" visibleRowCountMode="Auto" alternateRowColors="true"-->
+	<!--					enableColumnReordering="false" class="sapUiMediumMarginBegin sapUiMediumMarginEnd sapFbfilterbar sapUiTableNoColBorders">-->
+	<!--					<ui:columns>-->
+	<!--						<ui:Column tooltip="{i18n>ATTRIBUTE}" width="16rem">-->
+	<!--							<Label text="{i18n>ATTRIBUTE}" wrapping="true" design="Bold"/>-->
+	<!--							<ui:template >-->
+	<!--								<Text text="{mCommon>attribute}"/>-->
+	<!--							</ui:template>-->
+	<!--						</ui:Column>-->
+	<!--						<ui:Column tooltip="{i18n>OLD_VALUE}">-->
+	<!--							<Label text="{i18n>OLD_VALUE}" wrapping="true" design="Bold"/>-->
+	<!--							<ui:template >-->
+	<!--								<Text text="{mCommon>oldValue}" maxLines="1"/>-->
+	<!--							</ui:template>-->
+	<!--						</ui:Column>-->
+	<!--						<ui:Column tooltip="{i18n>NEW_VALUE}">-->
+	<!--							<Label text="{i18n>NEW_VALUE}" wrapping="true" design="Bold"/>-->
+	<!--							<ui:template >-->
+	<!--								<Text text="{mCommon>newValue}" maxLines="1"/>-->
+	<!--							</ui:template>-->
+	<!--						</ui:Column>-->
+	<!--						<ui:Column tooltip="{i18n>UPDATED_BY}">-->
+	<!--							<Label text="{i18n>UPDATED_BY}" wrapping="true" design="Bold"/>-->
+	<!--							<ui:template >-->
+	<!--								<Text text="{mCommon>updatedBy}" maxLines="1"/>-->
+	<!--							</ui:template>-->
+	<!--						</ui:Column>-->
+	<!--						<ui:Column tooltip="{i18n>UPDATED_ON}">-->
+	<!--							<Label text="{i18n>UPDATED_ON}" wrapping="true" design="Bold"/>-->
+	<!--							<ui:template >-->
+	<!--								<Text maxLines="1"-->
+	<!--									text="{path:'mCommon>updatedOn', type:'sap.ui.model.type.DateTime', formatOptions: {pattern: 'dd MMM yyyy, HH:mm', strictParsing: true}}"/>-->
 									<!--<Text text="{mCommon>updatedOn}" maxLines="1"/>-->
-								</ui:template>
-							</ui:Column>
-						</ui:columns>
-					</ui:Table>
-				</l:flexContent>
-			</l:FixFlex>
-		</content>
-	</Page>
+	<!--							</ui:template>-->
+	<!--						</ui:Column>-->
+	<!--					</ui:columns>-->
+	<!--				</ui:Table>-->
+	<!--			</l:flexContent>-->
+	<!--		</l:FixFlex>-->
+	<!--	</content>-->
+	<!--</Page>-->
+<!--</mvc:View>-->
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns="sap.ui.table"
+	controllerName="com.incture.NewProductIntroduction_UI.Kpireports.controller.Changehistory" xmlns:html="http://www.w3.org/1999/xhtml"
+	class="sapUiSizeCompact">
+	<m:Page showHeader="false" class="sapUiSizeCompact" id="page">
+		<m:content>
+			<Table id="table" selectionMode="None" rows="{mCommon>/ProductCollection}" visibleRowCount="15" enableCellFilter="true" filter="filterPrice"
+				ariaLabelledBy="title" class="sapUiMediumMarginBegin sapUiMediumMarginEnd sapFbfilterbar sapUiTableNoColBorders">
+				<extension>
+					<m:OverflowToolbar class="sapUiSmallMarginTopBottom sapMToolbar">
+						<!--<m:VBox>-->
+						<m:Label text="Project Number"/>
+						<m:Input width="10em" value="{mCommon>/oFilterHistoryParam/sProjectNo}"/>
+						<!--</m:VBox>-->
+						<!--<m:Vbox>-->
+						<m:Label text="Material Number" class="sapUiTinyMarginBegin"/>
+						<m:Input width="10em" value="{mCommon>/oFilterHistoryParam/sMaterialNo}"/>
+						<m:Label text="Last Updated By" class="sapUiTinyMarginBegin"/>
+						<m:Input width="10em" value="{mCommon>/oFilterHistoryParam/sUpdatedBy}"/>
+						<m:Button text="Search" press="onHistoreySearch" class="sapUiTinyMarginBegin"/>
+						<m:Button text="Clear" press="onClear" class="sapUiTinyMarginBegin"/>
+						<!--</m:Vbox>-->
+						<m:ToolbarSpacer/>
+						<!--<m:ToggleButton icon="sap-icon://journey-change" tooltip="Show Change Log" press="onPressChangeLog"/>-->
+						<m:ToggleButton icon="sap-icon://download" tooltip="Export" press="onExport"/>
+						<!--<m:Button icon="sap-icon://decline" tooltip="Clear all filters" press="clearAllFilters"/>-->
+						<!--<m:ToolbarSeparator/>-->
+						<!--<m:SearchField placeholder="Filter" value="{ui>/globalFilter}" search="filterGlobally" width="15rem"/>-->
+					</m:OverflowToolbar>
+				</extension>
+				<columns>
+					<Column filterProperty="ProjectId">
+						<m:Label text="Project Number" design="Bold"/>
+						<template>
+							<m:Text text="{mCommon>ProjectId}" wrapping="false"/>
+						</template>
+					</Column>
+					<Column filterProperty="ProductId">
+						<m:Label text="Material Number" design="Bold"/>
+						<template>
+							<m:Link text="{mCommon>ProductId}" press="onPressChangeLog"/>
+						</template>
+					</Column>
+					<!--<Column filterProperty="fieldName" defaultFilterOperator="StartsWith">-->
+					<!--	<m:Label text="Field Name"/>-->
+					<!--	<template>-->
+					<!--		<m:Text text="{fieldName}" wrapping="false"/>-->
+					<!--	</template>-->
+					<!--</Column>-->
+					<!--<Column >-->
+					<!--	<m:Label text="New Value"/>-->
+					<!--	<template>-->
+					<!--		<m:Text text="{newValue}" wrapping="false"/>-->
+					<!--	</template>-->
+					<!--</Column>-->
+					<!--<Column >-->
+					<!--	<m:Label text="Old Value"/>-->
+					<!--	<template>-->
+					<!--		<m:Text text="{oldValue}" wrapping="false"/>-->
+					<!--	</template>-->
+					<!--</Column>-->
+					<Column filterProperty="updatedBy">
+						<m:Label text="Last Updated By" design="Bold"/>
+						<template>
+							<m:Text text="{mCommon>updatedBy}" wrapping="false"/>
+						</template>
+					</Column>
+					<Column filterProperty="updatedOn">
+						<m:Label text="Last Updated On" design="Bold"/>
+						<template>
+							<m:Text text="{mCommon>updatedOn}" wrapping="false"/>
+						</template>
+					</Column>
+				</columns>
+			</Table>
+			<!--<HBox height="8%" width="100%" justifyContent="Start" class="sapUiSmallMarginTop sapUiSmallMarginBegin">-->
+			<!--	<SearchField placeholder="Material Number" width="100%" class="sapUiTinyMarginBegin" search="onSearch"/>-->
+			<!--</HBox>-->
+			<!--	<l:FixFlex>-->
+			<!--		<l:fixContent >-->
+			<!--			<fb:FilterBar reset="onReset" search="onSearch" class="sapFbfilterbar" showFilterConfiguration="false" showClearOnFB="true"-->
+			<!--				clear="onClearFilter">-->
+			<!--				<fb:filterGroupItems name="ID_FILETERBAR_GROUPITEMS">-->
+			<!--					<fb:FilterGroupItem name="MATERAIL" label="{i18n>MATERAIL}" class="sapUiSmallMarginBegin" groupName="G1" visibleInFilterBar="true">-->
+			<!--						<fb:control>-->
+			<!--							<Input value="{mCommon>/oSearchParam/sMaterial}"/>-->
+			<!--<ComboBox name="ID_SHIPPERID_COMBOBOX" selectedKey="{mPackageModel>/SupplierID}" class="sapUiMInputBoxBorderRadius"-->
+			<!--	showSecondaryValues="true" items="{path: 'mPackageModel>/aSupplier',sorter:{ path:'SupplierId'}}" change="onChangeCBox"-->
+			<!--	valueState="{mPackageModel>/valState/SupplierValueState}">-->
+			<!--	<core:ListItem key="{mPackageModel>SupplierId}" text="{mPackageModel>SupplierId}" additionalText="{mPackageModel>NameOrg1}"/>-->
+			<!--</ComboBox>-->
+			<!--						</fb:control>-->
+			<!--					</fb:FilterGroupItem>-->
+			<!--					<fb:FilterGroupItem name="PLANT" label="{i18n>PLANT}" class="sapUiSmallMarginBegin" groupName="G2" visibleInFilterBar="true">-->
+			<!--						<fb:control>-->
+			<!--							<Input value="{mCommon>/oSearchParam/sPlant}"/>-->
+			<!--<ComboBox name="ID_PLANTNAME_COMBOBOX" width="100%" selectedKey="{mPackageModel>/PlantName}" change="onChangeCBox"-->
+			<!--	items="{path: 'mPackageModel>/aPlant',sorter:{ path:'text'},templateShareable:'true'}"-->
+			<!--	valueState="{mPackageModel>/valState/PlantNameValueState}">-->
+			<!--	<core:ListItem key="{mPackageModel>sKey}" text="{mPackageModel>sValue}"/>-->
+			<!--</ComboBox>-->
+			<!--						</fb:control>-->
+			<!--					</fb:FilterGroupItem>-->
+			<!--					<fb:FilterGroupItem name="SALES_ORG" label="{i18n>SALES_ORG}" class="sapUiSmallMarginBegin sapMFilterLabel" groupName="G3"-->
+			<!--						visibleInFilterBar="true">-->
+			<!--						<fb:control>-->
+			<!--							<Input value="{mCommon>/oSearchParam/sSalesorg}"/>-->
+			<!--<ComboBox width="100%" name="ID_PLANTNAME_COMBOBOX" selectedKey="{mPackageModel>/ViewType}" change="onChangeCBox"-->
+			<!--	items="{path: 'mPackageModel>/aViewType',sorter:{ path:'text'},templateShareable:'true'}"-->
+			<!--	valueState="{mPackageModel>/valState/ViewTypeValueState}">-->
+			<!--	<core:ListItem key="{mPackageModel>sKey}" text="{mPackageModel>sValue}"/>-->
+			<!--</ComboBox>-->
+			<!--						</fb:control>-->
+			<!--					</fb:FilterGroupItem>-->
+			<!--					<fb:FilterGroupItem name="WAREHOUSE" label="{i18n>WAREHOUSE}" class="sapUiSmallMarginBegin sapMFilterLabel" groupName="G4"-->
+			<!--						visibleInFilterBar="true">-->
+			<!--						<fb:control>-->
+			<!--							<Input value="{mCommon>/oSearchParam/sWareHourse}"/>-->
+			<!--<ComboBox width="100%" name="ID_PLANTNAME_COMBOBOX" selectedKey="{mPackageModel>/ViewType}" change="onChangeCBox"-->
+			<!--	items="{path: 'mPackageModel>/aViewType',sorter:{ path:'text'},templateShareable:'true'}"-->
+			<!--	valueState="{mPackageModel>/valState/ViewTypeValueState}">-->
+			<!--	<core:ListItem key="{mPackageModel>sKey}" text="{mPackageModel>sValue}"/>-->
+			<!--</ComboBox>-->
+			<!--						</fb:control>-->
+			<!--					</fb:FilterGroupItem>-->
+			<!--				</fb:filterGroupItems>-->
+			<!--			</fb:FilterBar>-->
+			<!--		</l:fixContent>-->
+			<!--		<l:flexContent >-->
+			<!--			<ui:Table rows="{mCommon>/aSearchMaterial}" selectionMode="None" visibleRowCountMode="Auto" alternateRowColors="true"-->
+			<!--				enableColumnReordering="false" class="sapUiMediumMarginBegin sapUiMediumMarginEnd sapFbfilterbar sapUiTableNoColBorders">-->
+			<!--				<ui:columns>-->
+			<!--					<ui:Column tooltip="{i18n>ATTRIBUTE}" width="16rem">-->
+			<!--						<Label text="{i18n>ATTRIBUTE}" wrapping="true" design="Bold"/>-->
+			<!--						<ui:template >-->
+			<!--							<Text text="{mCommon>attribute}"/>-->
+			<!--						</ui:template>-->
+			<!--					</ui:Column>-->
+			<!--					<ui:Column tooltip="{i18n>OLD_VALUE}">-->
+			<!--						<Label text="{i18n>OLD_VALUE}" wrapping="true" design="Bold"/>-->
+			<!--						<ui:template >-->
+			<!--							<Text text="{mCommon>oldValue}" maxLines="1"/>-->
+			<!--						</ui:template>-->
+			<!--					</ui:Column>-->
+			<!--					<ui:Column tooltip="{i18n>NEW_VALUE}">-->
+			<!--						<Label text="{i18n>NEW_VALUE}" wrapping="true" design="Bold"/>-->
+			<!--						<ui:template >-->
+			<!--							<Text text="{mCommon>newValue}" maxLines="1"/>-->
+			<!--						</ui:template>-->
+			<!--					</ui:Column>-->
+			<!--					<ui:Column tooltip="{i18n>UPDATED_BY}">-->
+			<!--						<Label text="{i18n>UPDATED_BY}" wrapping="true" design="Bold"/>-->
+			<!--						<ui:template >-->
+			<!--							<Text text="{mCommon>updatedBy}" maxLines="1"/>-->
+			<!--						</ui:template>-->
+			<!--					</ui:Column>-->
+			<!--					<ui:Column tooltip="{i18n>UPDATED_ON}">-->
+			<!--						<Label text="{i18n>UPDATED_ON}" wrapping="true" design="Bold"/>-->
+			<!--						<ui:template >-->
+			<!--							<Text maxLines="1"-->
+			<!--								text="{path:'mCommon>updatedOn', type:'sap.ui.model.type.DateTime', formatOptions: {pattern: 'dd MMM yyyy, HH:mm', strictParsing: true}}"/>-->
+			<!--<Text text="{mCommon>updatedOn}" maxLines="1"/>-->
+			<!--						</ui:template>-->
+			<!--					</ui:Column>-->
+			<!--				</ui:columns>-->
+			<!--			</ui:Table>-->
+			<!--		</l:flexContent>-->
+			<!--	</l:FixFlex>-->
+			<!--	</content>-->
+			<!--</Page>-->
+		</m:content>
+	</m:Page>
 </mvc:View>

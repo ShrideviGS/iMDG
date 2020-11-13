@@ -254,7 +254,7 @@
 		"bProjects": false,
 		"bProjTable": false,
 		"bViews": false,
-		"bCountry" : false
+		"bCountry": false
 	},
 
 	"aProjects": [],
@@ -290,5 +290,82 @@
 		"sProjComplted": "0",
 		"sCycleTPending": "0",
 		"sCycleTComplete": "0"
-	}
+	},
+
+	"ProductCollection": [{
+		"ProjectId": "200",
+		"ProductId": "91001274",
+		"fieldName": "UOM",
+		"newValue": "KG",
+		"oldValue": "",
+		"updatedBy": "Rohit",
+		"updatedOn": "Sep 03 2020 12:01:37"
+	}],
+	"ProductCollectionColumn": [{
+		"ProjectId": "200",
+		"ProductId": "91001274",
+		"fieldName": "UOM",
+		"newValue": "KG",
+		"oldValue": "EA",
+		"updatedBy": "Rohit",
+		"updatedOn": "Sep 03 2020 12:01:37"
+	}, {
+		"ProjectId": "200",
+		"ProductId": "91001274",
+		"fieldName": "Material Description",
+		"newValue": "Test 3",
+		"oldValue": "Test 2",
+		"updatedBy": "Manish",
+		"updatedOn": "Aug 11 2020 09:21:45"
+	}],
+	"ProductCollectionDetail": [{
+		"ProjectId": "200",
+		"ProductId": "91001274",
+		"fieldName": "UOM",
+		"newValue": "KG",
+		"oldValue": "EA",
+		"updatedBy": "Rohit",
+		"updatedOn": "Sep 03 2020 12:01:37"
+	}, {
+		"ProjectId": "200",
+		"ProductId": "91001274",
+		"fieldName": "UOM",
+		"newValue": "EA",
+		"oldValue": "G",
+		"updatedBy": "Rohit",
+		"updatedOn": "Aug 30 2020 09:08:23"
+	}, {
+		"ProjectId": "200",
+		"ProductId": "91001274",
+		"fieldName": "UOM",
+		"newValue": "G",
+		"oldValue": "",
+		"updatedBy": "Manish",
+		"updatedOn": "Aug 23 2020 11:07:09"
+	}],
+	"ProductCollectionDetail2": [{
+		"ProjectId": "200",
+		"ProductId": "91001274",
+		"fieldName": "Material Description",
+		"newValue": "Test 3",
+		"oldValue": "Test 2",
+		"updatedBy": "Manish",
+		"updatedOn": "Aug 29 2020 09:08:43"
+	}, {
+		"ProjectId": "200",
+		"ProductId": "91001274",
+		"fieldName": "Material Description",
+		"newValue": " Test 2",
+		"oldValue": "Test",
+		"updatedBy": "Rohit",
+		"updatedOn": "Aug 19 2020 10:18:12"
+	}, {
+		"ProjectId": "200",
+		"ProductId": "91001274",
+		"fieldName": "Material Description",
+		"newValue": "Test",
+		"oldValue": "",
+		"updatedBy": "Shekar",
+		"updatedOn": "Aug 15 2020 12:08:23"
+	}]
 }

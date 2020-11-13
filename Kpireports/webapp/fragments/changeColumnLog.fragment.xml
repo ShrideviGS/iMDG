@@ -1,0 +1,46 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table">
+	<Dialog showHeader="false" class="sapPageBackgroundColor sapUiSizeCompact" contentWidth="70%">
+		<content>
+			<table:Table rows="{mCommon>/ProductCollection}" id="MM_PLANTS_VALUE_HELP_TBL" selectionMode="None" rowSelectionChange="onSelectPlants"
+				alternateRowColors="true" rowHeight="40px" showNoData="true" visibleRowCount="5"
+				class="sapUiSmallMarginBeginEnd sapUiSmallMarginBottom sapUiTableBorderClass">
+				<table:columns>
+					<table:Column width="10rem">
+						<Label text="Column" design="Bold"/>
+						<table:template>
+							<Link text="{mCommon>fieldName}" press="showChangeLogColumn"/>
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<Label text="New Value" design="Bold"/>
+						<table:template>
+							<Text text="{mCommon>newValue}"/>
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<Label text="Old Value" design="Bold"/>
+						<table:template>
+							<Text text="{mCommon>oldValue}"/>
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<Label text="Updated By" design="Bold"/>
+						<table:template>
+							<Text text="{mCommon>updatedBy}"/>
+						</table:template>
+					</table:Column>
+					<table:Column>
+						<Label text="Updated On" design="Bold"/>
+						<table:template>
+							<Text text="{mCommon>updatedOn}"/>
+						</table:template>
+					</table:Column>
+				</table:columns>
+			</table:Table>
+		</content>
+		<buttons>
+			<!--<Button text="{i18n>APPLY}" type="Accept" press="onApplyPlants"></Button>-->
+			<Button text="Close" type="Reject" press="onCloseColumnChange"></Button>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>
