@@ -364,14 +364,10 @@ sap.ui.define([
 		fnSetCurrentUser: function (callback) {
 			var oThisController = this;
 			var oMdlCommon = oThisController.getParentModel("mCommon");
-			oThisController.fnProcessDataRequest("../user", "GET", null, false, function (oXHR, status) {
+			oThisController.fnProcessDataRequest("/services/userapi/currentuser", "GET", null, false, function (oXHR, status) {
 				if (oXHR && oXHR.responseJSON) {
 					oThisController.userDetails = oXHR.responseJSON;
-					oMdlCommon.setProperty("/UserId", oThisController.userDetails.id);
-					oMdlCommon.setProperty("/sEmial", oThisController.userDetails.emails[0].value);
-					oMdlCommon.setProperty("/sFirstName", oThisController.userDetails.name.givenName);
-					oMdlCommon.setProperty("/sLastName", oThisController.userDetails.name.familyName);
-					// oMdlCommon.setProperty("/userDetails", oXHR.responseJSON);
+					oMdlCommon.setProperty("/userDetails", oXHR.responseJSON);
 					oMdlCommon.refresh();
 
 					if (callback) {
@@ -382,31 +378,6 @@ sap.ui.define([
 				}
 			}, null);
 		},
-
-		// getUserDetails: function (oController, oUserModel) {
-		// 	var that = this;
-		// 	var sUrl = "../user";
-		// 	var oModel = new sap.ui.model.json.JSONModel();
-		// 	oModel.setSizeLimit(999);
-		// 	oModel.loadData(sUrl, true, "GET", false, false);
-		// 	oModel.attachRequestCompleted(function (oEvent) {
-		// 		if (oEvent.getParameter("success")) {
-		// 			var resultData = oEvent.getSource().getData();
-		// 			if (resultData) {
-		// 				oUserModel.setProperty("/UserId", resultData.id);
-		// 				oUserModel.setProperty("/sEmial", resultData.emails[0].value);
-		// 				oUserModel.setProperty("/sFirstName", resultData.name.givenName);
-		// 				oUserModel.setProperty("/sLastName", resultData.name.familyName);
-		// 				// oUserModel.setData(resultData);
-		// 			}
-		// 		} else {
-		// 			that.toastMessage("Internal Server Error");
-		// 		}
-		// 	});
-		// 	oModel.attachRequestFailed(function (oEvent) {
-		// 		that.toastMessage("Internal Server Error");
-		// 	});
-		// }
 
 		// fnGetMycycleService: function (bOpenBusyDialog, bCloseBusyDialog) {
 		// 	var oThisController = this;
@@ -489,7 +460,7 @@ sap.ui.define([
 		// 	oMdlCommon.refresh();
 		// },
 
-			fnGetNewcycleService: function (bOpenBusyDialog, bCloseBusyDialog) {
+		fnGetNewcycleService: function (bOpenBusyDialog, bCloseBusyDialog) {
 			var oThisController = this;
 			var oMdlCommon = oThisController.getParentModel("mCommon");
 			var oParam = $.extend(true, {}, oMdlCommon.getProperty("/oNewParam"));
@@ -786,149 +757,149 @@ sap.ui.define([
 
 		// },
 
-		// onChangeSelectAllPlants: function (oEvent) {
-		// 	var oThisController = this;
-		// 	var oMdlcommon = oThisController.getParentModel("mCommon");
-		// 	var bSelected = oEvent.getParameter("selected");
-		// 	var oTable = oEvent.getSource().getParent().getParent();
-		// 	var oBinding = oTable.getBinding("rows");
-		// 	if (oBinding.oList.length === oBinding.aIndices.length) {
-		// 		var aPlants = $.extend(true, [], oMdlcommon.getProperty("/aPlants"));
-		// 		$.each(aPlants, function (index, oRow) {
-		// 			oRow.isSelected = bSelected;
-		// 		});
-		// 		oMdlcommon.setProperty("/aPlants", aPlants);
-		// 		oMdlcommon.refresh();
-		// 	} else {
-		// 		for (var i = 0; i < oBinding.aIndices.length; i++) {
-		// 			oBinding.oList[oBinding.aIndices[i]].isSelected = bSelected;
-		// 		}
-		// 		oBinding.update();
-		// 	}
-		// 	oThisController.fnUpdateSelectAllPlant(oTable);
-		// },
+		onChangeSelectAllPlants: function (oEvent) {
+			var oThisController = this;
+			var oMdlcommon = oThisController.getParentModel("mCommon");
+			var bSelected = oEvent.getParameter("selected");
+			var oTable = oEvent.getSource().getParent().getParent();
+			var oBinding = oTable.getBinding("rows");
+			if (oBinding.oList.length === oBinding.aIndices.length) {
+				var aPlants = $.extend(true, [], oMdlcommon.getProperty("/aPlants"));
+				$.each(aPlants, function (index, oRow) {
+					oRow.isSelected = bSelected;
+				});
+				oMdlcommon.setProperty("/aPlants", aPlants);
+				oMdlcommon.refresh();
+			} else {
+				for (var i = 0; i < oBinding.aIndices.length; i++) {
+					oBinding.oList[oBinding.aIndices[i]].isSelected = bSelected;
+				}
+				oBinding.update();
+			}
+			oThisController.fnUpdateSelectAllPlant(oTable);
+		},
 
-		// onChangeIsSelectedPlants: function (oEvent) {
-		// 	var oTable = oEvent.getSource().getParent().getParent();
-		// 	this.fnUpdateSelectAllPlant(oTable);
-		// },
+		onChangeIsSelectedPlants: function (oEvent) {
+			var oTable = oEvent.getSource().getParent().getParent();
+			this.fnUpdateSelectAllPlant(oTable);
+		},
 
-		// fnUpdateSelectAllPlant: function (oTable) {
-		// 	var oThisController = this;
-		// 	var oMdlcommon = oThisController.getParentModel("mCommon");
-		// 	var aPlants = [];
-		// 	if (oTable) {
-		// 		var oBinding = oTable.getBinding("rows");
-		// 		if (oBinding.aIndices.length) {
-		// 			for (var i = 0; i < oBinding.aIndices.length; i++) {
-		// 				aPlants.push(oBinding.oList[oBinding.aIndices[i]]);
-		// 			}
-		// 		} else {
-		// 			aPlants = oBinding.oList;
-		// 		}
-		// 	} else {
-		// 		aPlants = $.extend(true, [], oMdlcommon.getProperty("/aPlants"));
-		// 	}
+		fnUpdateSelectAllPlant: function (oTable) {
+			var oThisController = this;
+			var oMdlcommon = oThisController.getParentModel("mCommon");
+			var aPlants = [];
+			if (oTable) {
+				var oBinding = oTable.getBinding("rows");
+				if (oBinding.aIndices.length) {
+					for (var i = 0; i < oBinding.aIndices.length; i++) {
+						aPlants.push(oBinding.oList[oBinding.aIndices[i]]);
+					}
+				} else {
+					aPlants = oBinding.oList;
+				}
+			} else {
+				aPlants = $.extend(true, [], oMdlcommon.getProperty("/aPlants"));
+			}
 
-		// 	if (aPlants.length && $.grep(aPlants, function (gRow) {
-		// 			return gRow.isSelected;
-		// 		}).length === aPlants.length) {
-		// 		oMdlcommon.setProperty("/isSelectedAllPlants", true);
-		// 	} else {
-		// 		oMdlcommon.setProperty("/isSelectedAllPlants", false);
-		// 	}
-		// 	oMdlcommon.refresh();
-		// 	this.fnGetSelectedPlants();
-		// },
-
-		//function to get the selected item in parts packaging
-		// fnGetSelectedPlants: function () {
-		// 	var oThisController = this;
-		// 	var oMdlcommon = oThisController.getParentModel("mCommon");
-		// 	var aPlants = $.extend(oMdlcommon.getProperty("/aPlants"));
-		// 	var aSelectedFU = [];
-
-		// 	$.each(aPlants, function (index, oRow) {
-		// 		if (oRow.isSelected) {
-		// 			oRow.sPath = ("/aPlants/" + index);
-		// 			aSelectedFU.push(oRow);
-		// 		}
-		// 	});
-		// 	oMdlcommon.setProperty("/aSelectedPlantData", aSelectedFU);
-		// 	oMdlcommon.refresh();
-		// },
-
-		// onChangeSelectAllSalesOrg: function (oEvent) {
-		// 	var oThisController = this;
-		// 	var oMdlcommon = oThisController.getParentModel("mCommon");
-		// 	var bSelected = oEvent.getParameter("selected");
-		// 	var oTable = oEvent.getSource().getParent().getParent();
-		// 	var oBinding = oTable.getBinding("rows");
-		// 	if (oBinding.oList.length === oBinding.aIndices.length) {
-		// 		var aSalesOrg = $.extend(true, [], oMdlcommon.getProperty("/aSalesOrg"));
-		// 		$.each(aSalesOrg, function (index, oRow) {
-		// 			oRow.isSelected = bSelected;
-		// 		});
-		// 		oMdlcommon.setProperty("/aSalesOrg", aSalesOrg);
-		// 		oMdlcommon.refresh();
-		// 	} else {
-		// 		for (var i = 0; i < oBinding.aIndices.length; i++) {
-		// 			oBinding.oList[oBinding.aIndices[i]].isSelected = bSelected;
-		// 		}
-		// 		oBinding.update();
-		// 	}
-		// 	oThisController.fnUpdateSelectAllSalesOrg(oTable);
-		// },
-
-		// onChangeIsSelectedSalesorg: function (oEvent) {
-		// 	var oTable = oEvent.getSource().getParent().getParent();
-		// 	this.fnUpdateSelectAllSalesOrg(oTable);
-		// },
-
-		// fnUpdateSelectAllSalesOrg: function (oTable) {
-		// 	var oThisController = this;
-		// 	var oMdlcommon = oThisController.getParentModel("mCommon");
-		// 	var aSalesOrg = [];
-		// 	if (oTable) {
-		// 		var oBinding = oTable.getBinding("rows");
-		// 		if (oBinding.aIndices.length) {
-		// 			for (var i = 0; i < oBinding.aIndices.length; i++) {
-		// 				aSalesOrg.push(oBinding.oList[oBinding.aIndices[i]]);
-		// 			}
-		// 		} else {
-		// 			aSalesOrg = oBinding.oList;
-		// 		}
-		// 	} else {
-		// 		aSalesOrg = $.extend(true, [], oMdlcommon.getProperty("/aSalesOrg"));
-		// 	}
-
-		// 	if (aSalesOrg.length && $.grep(aSalesOrg, function (gRow) {
-		// 			return gRow.isSelected;
-		// 		}).length === aSalesOrg.length) {
-		// 		oMdlcommon.setProperty("/isSelectedAllSalesOrg", true);
-		// 	} else {
-		// 		oMdlcommon.setProperty("/isSelectedAllSalesOrg", false);
-		// 	}
-		// 	oMdlcommon.refresh();
-		// 	this.fnGetSelectedSalesOrg();
-		// },
+			if (aPlants.length && $.grep(aPlants, function (gRow) {
+					return gRow.isSelected;
+				}).length === aPlants.length) {
+				oMdlcommon.setProperty("/isSelectedAllPlants", true);
+			} else {
+				oMdlcommon.setProperty("/isSelectedAllPlants", false);
+			}
+			oMdlcommon.refresh();
+			this.fnGetSelectedPlants();
+		},
 
 		//function to get the selected item in parts packaging
-		// fnGetSelectedSalesOrg: function () {
-		// 	var oThisController = this;
-		// 	var oMdlcommon = oThisController.getParentModel("mCommon");
-		// 	var aSalesOrg = $.extend(oMdlcommon.getProperty("/aSalesOrg"));
-		// 	var aSelectedFU = [];
+		fnGetSelectedPlants: function () {
+			var oThisController = this;
+			var oMdlcommon = oThisController.getParentModel("mCommon");
+			var aPlants = $.extend(oMdlcommon.getProperty("/aPlants"));
+			var aSelectedFU = [];
 
-		// 	$.each(aSalesOrg, function (index, oRow) {
-		// 		if (oRow.isSelected) {
-		// 			oRow.sPath = ("/aPlants/" + index);
-		// 			aSelectedFU.push(oRow);
-		// 		}
-		// 	});
-		// 	oMdlcommon.setProperty("/aSelectedSalesOrgData", aSelectedFU);
-		// 	oMdlcommon.refresh();
-		// },
+			$.each(aPlants, function (index, oRow) {
+				if (oRow.isSelected) {
+					oRow.sPath = ("/aPlants/" + index);
+					aSelectedFU.push(oRow);
+				}
+			});
+			oMdlcommon.setProperty("/aSelectedPlantData", aSelectedFU);
+			oMdlcommon.refresh();
+		},
+
+		onChangeSelectAllSalesOrg: function (oEvent) {
+			var oThisController = this;
+			var oMdlcommon = oThisController.getParentModel("mCommon");
+			var bSelected = oEvent.getParameter("selected");
+			var oTable = oEvent.getSource().getParent().getParent();
+			var oBinding = oTable.getBinding("rows");
+			if (oBinding.oList.length === oBinding.aIndices.length) {
+				var aSalesOrg = $.extend(true, [], oMdlcommon.getProperty("/aSalesOrg"));
+				$.each(aSalesOrg, function (index, oRow) {
+					oRow.isSelected = bSelected;
+				});
+				oMdlcommon.setProperty("/aSalesOrg", aSalesOrg);
+				oMdlcommon.refresh();
+			} else {
+				for (var i = 0; i < oBinding.aIndices.length; i++) {
+					oBinding.oList[oBinding.aIndices[i]].isSelected = bSelected;
+				}
+				oBinding.update();
+			}
+			oThisController.fnUpdateSelectAllSalesOrg(oTable);
+		},
+
+		onChangeIsSelectedSalesorg: function (oEvent) {
+			var oTable = oEvent.getSource().getParent().getParent();
+			this.fnUpdateSelectAllSalesOrg(oTable);
+		},
+
+		fnUpdateSelectAllSalesOrg: function (oTable) {
+			var oThisController = this;
+			var oMdlcommon = oThisController.getParentModel("mCommon");
+			var aSalesOrg = [];
+			if (oTable) {
+				var oBinding = oTable.getBinding("rows");
+				if (oBinding.aIndices.length) {
+					for (var i = 0; i < oBinding.aIndices.length; i++) {
+						aSalesOrg.push(oBinding.oList[oBinding.aIndices[i]]);
+					}
+				} else {
+					aSalesOrg = oBinding.oList;
+				}
+			} else {
+				aSalesOrg = $.extend(true, [], oMdlcommon.getProperty("/aSalesOrg"));
+			}
+
+			if (aSalesOrg.length && $.grep(aSalesOrg, function (gRow) {
+					return gRow.isSelected;
+				}).length === aSalesOrg.length) {
+				oMdlcommon.setProperty("/isSelectedAllSalesOrg", true);
+			} else {
+				oMdlcommon.setProperty("/isSelectedAllSalesOrg", false);
+			}
+			oMdlcommon.refresh();
+			this.fnGetSelectedSalesOrg();
+		},
+
+		//function to get the selected item in parts packaging
+		fnGetSelectedSalesOrg: function () {
+			var oThisController = this;
+			var oMdlcommon = oThisController.getParentModel("mCommon");
+			var aSalesOrg = $.extend(oMdlcommon.getProperty("/aSalesOrg"));
+			var aSelectedFU = [];
+
+			$.each(aSalesOrg, function (index, oRow) {
+				if (oRow.isSelected) {
+					oRow.sPath = ("/aPlants/" + index);
+					aSelectedFU.push(oRow);
+				}
+			});
+			oMdlcommon.setProperty("/aSelectedSalesOrgData", aSelectedFU);
+			oMdlcommon.refresh();
+		},
 
 		onApprove: function () {
 			var oThisController = this;
@@ -944,65 +915,65 @@ sap.ui.define([
 
 		// Reject Task Fragment
 
-		// onReject: function () {
-		// 	var oThisController = this;
-		// 	// var oMdlCommon = oThisController.getParentModel("mCommon");
-		// 	if (!oThisController._RejectTaskDialog) {
-		// 		oThisController._RejectTaskDialog = sap.ui.xmlfragment("com.colgate.Projectapproval.fragment.RejectTask", oThisController);
-		// 		oThisController.getView().addDependent(oThisController._RejectTaskDialog);
-		// 	}
-		// 	oThisController._RejectTaskDialog.open();
-		// },
+		onReject: function () {
+			var oThisController = this;
+			// var oMdlCommon = oThisController.getParentModel("mCommon");
+			if (!oThisController._RejectTaskDialog) {
+				oThisController._RejectTaskDialog = sap.ui.xmlfragment("com.colgate.Projectapproval.fragment.RejectTask", oThisController);
+				oThisController.getView().addDependent(oThisController._RejectTaskDialog);
+			}
+			oThisController._RejectTaskDialog.open();
+		},
 
-		// fnPostComment: function (sReason) {
+		fnPostComment: function (sReason) {
 
-		// 	var oThisController = this;
-		// 	var bMandate = false;
-		// 	var oMdlCommon = oThisController.getParentModel("mCommon");
-		// 	var aProjectDetail = $.extend(true, {}, oMdlCommon.getProperty("/oNewProject"));
-		// 	var sUrl = "",
+			var oThisController = this;
+			var bMandate = false;
+			var oMdlCommon = oThisController.getParentModel("mCommon");
+			var aProjectDetail = $.extend(true, {}, oMdlCommon.getProperty("/oNewProject"));
+			var sUrl = "",
 
-		// 		oHeader = {
-		// 			"Content-Type": "application/json",
-		// 			"Accept": "application/json"
-		// 		};
+				oHeader = {
+					"Content-Type": "application/json",
+					"Accept": "application/json"
+				};
 
-		// 	try {
-		// 		sUrl = "/Colgate/data/project/comment";
-		// 		var oRejectionDetails = {
-		// 			"comment": sReason,
-		// 			"createdBy": oThisController.userDetails.name,
-		// 			"createdOn": oThisController.dateHelper.getBackEndDate(new Date()),
-		// 			"projectId": aProjectDetail.sBasicProjectId,
-		// 			"validForUsage": true
-		// 		};
+			try {
+				sUrl = "/Colgate/data/project/comment";
+				var oRejectionDetails = {
+					"comment": sReason,
+					"createdBy": oThisController.userDetails.name,
+					"createdOn": oThisController.dateHelper.getBackEndDate(new Date()),
+					"projectId": aProjectDetail.sBasicProjectId,
+					"validForUsage": true
+				};
 
-		// 		// oThisController._oCommon.userDetails.name
+				// oThisController._oCommon.userDetails.name
 
-		// 	} catch (e) {
-		// 		oThisController.showMessage(oThisController.getMessage("EXCEPTION"), "E");
-		// 		oThisController.closeBusyDialog();
-		// 	}
+			} catch (e) {
+				oThisController.showMessage(oThisController.getMessage("EXCEPTION"), "E");
+				oThisController.closeBusyDialog();
+			}
 
-		// 	oThisController.fnProcessDataRequest(sUrl, "POST", oHeader, false, function (oXHR, status) {
-		// 		try {
-		// 			if (status === "success") {
-		// 				if (oXHR.status === 200 && oXHR.statusText === "success") {
-		// 					oThisController._RejectTaskDialog.close();
-		// 					oThisController.onSubmit(false);
+			oThisController.fnProcessDataRequest(sUrl, "POST", oHeader, false, function (oXHR, status) {
+				try {
+					if (status === "success") {
+						if (oXHR.status === 200 && oXHR.statusText === "success") {
+							oThisController._RejectTaskDialog.close();
+							oThisController.onSubmit(false);
 
-		// 				}
-		// 			} else {
-		// 				oThisController.closeBusyDialog();
-		// 				oThisController.showMessage(oThisController.getMessage("REQUEST_OPERATION_FAILED"), "E");
-		// 			}
-		// 		} catch (e) {
-		// 			oThisController.closeBusyDialog();
-		// 			oThisController.showMessage(oThisController.getMessage("EXCEPTION"), "E");
-		// 		}
-		// 	}, oRejectionDetails);
-		// 	oMdlCommon.refresh();
-		// },
+						}
+					} else {
+						oThisController.closeBusyDialog();
+						oThisController.showMessage(oThisController.getMessage("REQUEST_OPERATION_FAILED"), "E");
+					}
+				} catch (e) {
+					oThisController.closeBusyDialog();
+					oThisController.showMessage(oThisController.getMessage("EXCEPTION"), "E");
+				}
+			}, oRejectionDetails);
+			oMdlCommon.refresh();
+		},
 
 		onChangeCBox: function (oEvent) {
 			var oValidatedComboBox = oEvent.getSource(),
@@ -1026,16 +997,16 @@ sap.ui.define([
 			}
 		},
 
-		// onOvsMsg: function (oEvent) {
-		// 	var oButton = oEvent.getSource();
-		// 	var oThisController = this;
-		// 	if (!oThisController.OvsMSg) {
-		// 		oThisController.OvsMSg = sap.ui.xmlfragment("com.colgate.Projectapproval.fragment.Languagemandate",
-		// 			oThisController);
-		// 		oThisController.getView().addDependent(oThisController.OvsMSg);
-		// 	}
-		// 	oThisController.OvsMSg.openBy(oButton);
-		// }
+		onOvsMsg: function (oEvent) {
+			var oButton = oEvent.getSource();
+			var oThisController = this;
+			if (!oThisController.OvsMSg) {
+				oThisController.OvsMSg = sap.ui.xmlfragment("com.colgate.Projectapproval.fragment.Languagemandate",
+					oThisController);
+				oThisController.getView().addDependent(oThisController.OvsMSg);
+			}
+			oThisController.OvsMSg.openBy(oButton);
+		}
 
 	});
 });

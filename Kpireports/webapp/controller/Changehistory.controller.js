@@ -16,27 +16,17 @@ sap.ui.define([
 		onInit: function () {
 			var oThisController = this;
 			oThisController.closeBusyDialog();
-			oThisController.fngetHistoryData();
 			this._oRouter = this.getRouter();
-			var xhr = new XMLHttpRequest();
-			xhr.open("GET", "/bpmworkflowruntime/v1/xsrf-token", false);
-			xhr.setRequestHeader("X-CSRF-Token", "Fetch");
-			xhr.onreadystatechange = function () {
-				oThisController.oHeader = {
-					"Accept": "application/json",
-					"Content-Type": "application/json",
-					"x-csrf-token": xhr.getResponseHeader("X-CSRF-Token")
-				};
-			};
-			xhr.send(null);
+			oThisController.fngetHistoryData();
 			this._oRouter.attachRoutePatternMatched(function (oEvent) {
 				if (oEvent.getParameter("name") === "Changehistory") {
 					oThisController.closeBusyDialog();
+
 				}
 			}, this);
 
 		},
-		
+
 		fngetHistoryData: function () {
 			var oThisController = this;
 			var oMdlCommon = this.getParentModel("mCommon");
@@ -275,29 +265,25 @@ sap.ui.define([
 		// 	var oThisController = this;
 		// 	oThisController.openBusyDialog();
 		// 	var oMdlCommon = this.getParentModel("mCommon");
-		// 	var sUserID = oMdlCommon.getProperty("/UserId");
 		// 	var oSearchParams = $.extend(true, {}, oMdlCommon.getProperty("/oSearchParam"))
-		// 	var sUrl = "";
+		// 	var sUrl = "",
+		// 		oHeader = {
+		// 			"Content-Type": "application/json",
+		// 			"Accept": "application/json"
+		// 		};
 
 		// 	try {
-		// 		sUrl = "/npiservices/npi/report/audit?materialId=" + oSearchParams.sMaterial;
-		// 		var oPayload = {
-		// 			"attribute": "",
-		// 			"newValue": "",
-		// 			"oldValue": "",
-		// 			"updatedBy": sUserID,
-		// 			"updatedOn": new Date().toISOString()
-		// 		};
+		// 		sUrl = "/mylanservices/report/audit?materialId=" + oSearchParams.sMaterial;
 
 		// 	} catch (e) {
 		// 		oThisController.showMessage(oThisController.getMessage("EXCEPTION"), "E");
 		// 		oThisController.closeBusyDialog();
 		// 	}
 
-		// 	oThisController.fnProcessDataRequest(sUrl, "POST", oThisController.oHeader, false, function (oXHR, status) {
+		// 	oThisController.fnProcessDataRequest(sUrl, "GET", oHeader, false, function (oXHR, status) {
 		// 		try {
 		// 			if (status === "success") {
-		// 				if (oXHR.status === 200 && oXHR.statusText === "OK") {
+		// 				if (oXHR.status === 200 && oXHR.statusText === "success") {
 		// 					var aChangeHistory = $.extend(true, [], oXHR.responseJSON);
 		// 					// oMdlCommon.setProperty("/aSearchMaterial", oXHR.responseJSON);
 		// 					for (let i = 0; i < aChangeHistory.length; i++) {
@@ -315,7 +301,7 @@ sap.ui.define([
 		// 			oThisController.showMessage(oThisController.getMessage("EXCEPTION"), "E");
 		// 			oThisController.closeBusyDialog();
 		// 		}
-		// 	}, oPayload);
+		// 	});
 		// 	oMdlCommon.refresh();
 		// 	// var aMatchValue = oMdlCommon.getProperty("/aChangeHistory");
 		// 	// oMdlCommon.setProperty("/aSearchMaterial", aMatchValue);

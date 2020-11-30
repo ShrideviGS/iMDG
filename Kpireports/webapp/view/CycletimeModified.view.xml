@@ -124,31 +124,31 @@
 					<ui:Column tooltip="{i18n>PROJECT_ID}">
 						<Label text="{i18n>PROJECT_ID}" wrapping="true" design="Bold"/>
 						<ui:template >
-							<Text text="{mCommon>projectNumber}"/>
+							<Text text="{mCommon>sProjectID}"/>
 						</ui:template>
 					</ui:Column>
 					<ui:Column tooltip="{i18n>PROJECT_DESCRIPTION}">
 						<Label text="{i18n>PROJECT_DESCRIPTION}" wrapping="true" design="Bold"/>
 						<ui:template >
-							<Text text="{mCommon>description}"/>
+							<Text text="{mCommon>sDescription}"/>
 						</ui:template>
 					</ui:Column>
 					<ui:Column tooltip="{i18n>CYCLE_TIME_HRS}">
 						<Label text="{i18n>CYCLE_TIME_HRS}" wrapping="true" design="Bold"/>
 						<ui:template >
-							<Text text="{mCommon>durationInSeconds}" maxLines="1"/>
+							<Text text="{mCommon>sCycleTime}" maxLines="1"/>
 						</ui:template>
 					</ui:Column>
 					<ui:Column tooltip="{i18n>INITIATED_BY}">
 						<Label text="{i18n>INITIATED_BY}" wrapping="true" design="Bold"/>
 						<ui:template >
-							<Text text="{mCommon>createdBy}" maxLines="1"/>
+							<Text text="{mCommon>sInitiatedBy}" maxLines="1"/>
 						</ui:template>
 					</ui:Column>
 					<ui:Column tooltip="{i18n>STATUS}">
 						<Label text="{i18n>STATUS}" wrapping="true" design="Bold"/>
 						<ui:template >
-							<Text text="{mCommon>status}" maxLines="1"/>
+							<Text text="{mCommon>sStatus}" maxLines="1"/>
 						</ui:template>
 					</ui:Column>
 				</ui:columns>

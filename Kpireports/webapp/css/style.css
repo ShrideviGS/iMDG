@@ -58,6 +58,10 @@
     border-right: 1px solid #dcdcdc !important;
 }
 
+.sapMTBStandard {
+    border-bottom: none !important;
+}
+
 
 /*.sapContrast.sapTntNavLIItemSelected .sapTntNavLIGroup, .sapContrast .sapTntNavLIItemSelected .sapTntNavLIGroup {*/
 

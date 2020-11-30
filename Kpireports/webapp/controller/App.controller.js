@@ -28,6 +28,7 @@ sap.ui.define([
 					oThisController.closeBusyDialog();
 				} else {
 					this._oRouter.navTo("Dataqualityreport");
+					oThisController.closeBusyDialog();
 				}
 
 				// oThisController.closeBusyDialog();
@@ -37,6 +38,7 @@ sap.ui.define([
 					oThisController.closeBusyDialog();
 				} else {
 					this._oRouter.navTo("Changehistory");
+					oThisController.closeBusyDialog();
 				}
 
 				// this._oRouter.navTo("Changehistory");
@@ -47,6 +49,7 @@ sap.ui.define([
 					oThisController.closeBusyDialog();
 				} else {
 					this._oRouter.navTo("CycletimeModified");
+					oThisController.closeBusyDialog();
 				}
 				// this._oRouter.navTo("CycletimeModified");
 				// oThisController.closeBusyDialog();
@@ -56,6 +59,7 @@ sap.ui.define([
 					oThisController.closeBusyDialog();
 				} else {
 					this._oRouter.navTo("Dataquality");
+					oThisController.closeBusyDialog();
 				}
 				// this._oRouter.navTo("Dataquality");
 				// oThisController.closeBusyDialog();

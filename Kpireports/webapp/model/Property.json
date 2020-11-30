@@ -150,55 +150,127 @@
 	}],
 
 	"aSearchMaterial": [],
-	"aReports": [{
-		"sProjectID": "001",
-		"sCycleTime": "20s",
-		"sInitiatedBy": "P0001234",
+	"aReportsCompleted": [{
+		"sProjectID": "200",
+		"sCycleTime": "03 Hours 20 Minutes",
+		"sInitiatedBy": "P1099205",
+		"sDescription": "TEST",
+		"sStatus": "Completed"
+	}, {
+		"sProjectID": "201",
+		"sCycleTime": "201 Hours 32 Minutes",
+		"sInitiatedBy": "P1099205",
+		"sDescription": "Test Demo 15 Sep",
 		"sStatus": "In Progress"
 	}, {
-		"sProjectID": "002",
-		"sCycleTime": "567s",
-		"sInitiatedBy": "P0001234",
+		"sProjectID": "202",
+		"sCycleTime": "3011 Hours 22 Minutes",
+		"sInitiatedBy": "P1099205",
+		"sDescription": "Test 7 Sept",
 		"sStatus": "Completed"
 	}, {
-		"sProjectID": "003",
-		"sCycleTime": "345s",
-		"sInitiatedBy": "P0001234",
+		"sProjectID": "203",
+		"sCycleTime": "482 Hours 93 Minutes",
+		"sInitiatedBy": "P1099205",
+		"sDescription": "TEST",
+		"sStatus": "In Progress"
+	}, {
+		"sProjectID": "204",
+		"sCycleTime": "583 Hours 20 Minutes",
+		"sInitiatedBy": "P1099205",
+		"sDescription": "TEST",
+		"sStatus": "In Progress"
+	}, {
+		"sProjectID": "205",
+		"sCycleTime": "3902 Hours 30 Minutes",
+		"sInitiatedBy": "P1099205",
+		"sDescription": "Test 7 Sept",
 		"sStatus": "Completed"
 	}, {
-		"sProjectID": "004",
-		"sCycleTime": "560s",
+		"sProjectID": "302",
+		"sCycleTime": "392 Hours 39 Minutes",
+		"sInitiatedBy": "P1099205",
+		"sDescription": "Test Demo 15 Sep",
+		"sStatus": "In Progress"
+	}, {
+		"sProjectID": "207",
+		"sCycleTime": "203 Hours 04 Minutes",
+		"sInitiatedBy": "P1099205",
+		"sDescription": "Demo 11 Sep 2",
+		"sStatus": "In Progress"
+	}, {
+		"sProjectID": "302",
+		"sCycleTime": "03 Hours 20 Minutes",
+		"sInitiatedBy": "P1099205",
+		"sDescription": "TEST",
+		"sStatus": "Completed"
+	}, {
+		"sProjectID": "201",
+		"sCycleTime": "37 Hours 30 Minutes",
+		"sInitiatedBy": "P0001284",
+		"sDescription": "ABC Material",
+		"sStatus": "In Progress"
+	}],
+
+	"aReportsPending": [{
+		"sProjectID": "301",
+		"sCycleTime": "0753 Hours 59 Minutes",
+		"sInitiatedBy": "P1099205",
+		"sDescription": "TEST",
+		"sStatus": "In Progress"
+	}, {
+		"sProjectID": "293",
+		"sCycleTime": "02 Hours 30 Minutes",
+		"sInitiatedBy": "P0001234",
+		"sDescription": "Test Demo 15 Sep",
+		"sStatus": "Completed"
+	}, {
+		"sProjectID": "203",
+		"sCycleTime": "30 Hours 09 Minutes",
+		"sInitiatedBy": "P1099205",
+		"sDescription": "Test 7 Sept",
+		"sStatus": "In Progress"
+	}, {
+		"sProjectID": "220",
+		"sCycleTime": "832 Hours 09 Minutes",
 		"sInitiatedBy": "P0001232",
+		"sDescription": "TEST",
+		"sStatus": "Completed"
+	}, {
+		"sProjectID": "287",
+		"sCycleTime": "472 Hours 40 Minutes",
+		"sInitiatedBy": "P1099205",
+		"sDescription": "TEST",
 		"sStatus": "In Progress"
 	}, {
-		"sProjectID": "005",
-		"sCycleTime": "230s",
-		"sInitiatedBy": "P0001634",
+		"sProjectID": "308",
+		"sCycleTime": "38 Hours 56 Minutes",
+		"sInitiatedBy": "P1099205",
+		"sDescription": "Test 7 Sept",
 		"sStatus": "In Progress"
 	}, {
-		"sProjectID": "006",
-		"sCycleTime": "250s",
-		"sInitiatedBy": "P0005234",
-		"sStatus": "In Progress"
-	}, {
-		"sProjectID": "007",
-		"sCycleTime": "220s",
+		"sProjectID": "206",
+		"sCycleTime": "473 Hours 20 Minutes",
 		"sInitiatedBy": "P0001234",
+		"sDescription": "Test Demo 15 Sep",
 		"sStatus": "In Progress"
 	}, {
-		"sProjectID": "008",
-		"sCycleTime": "202s",
+		"sProjectID": "291",
+		"sCycleTime": "392 Hours 45 Minutes",
 		"sInitiatedBy": "P0003233",
+		"sDescription": "Demo 11 Sep 2",
+		"sStatus": "Completed"
+	}, {
+		"sProjectID": "292",
+		"sCycleTime": "822 Hours 56 Minutes",
+		"sInitiatedBy": "P1099205",
+		"sDescription": "TEST",
 		"sStatus": "In Progress"
 	}, {
-		"sProjectID": "000",
-		"sCycleTime": "204s",
+		"sProjectID": "209",
+		"sCycleTime": "302 Hours 09 Minutes",
 		"sInitiatedBy": "P0001284",
-		"sStatus": "In Progress"
-	}, {
-		"sProjectID": "010",
-		"sCycleTime": "20s",
-		"sInitiatedBy": "P0001284",
+		"sDescription": "ABC Material",
 		"sStatus": "In Progress"
 	}],
 
@@ -259,13 +331,60 @@
 
 	"aProjects": [],
 	"aCountrySegments": [],
-	"aScenarioSegmentList": [],
+	
+	
+	"aScenarioSegmentList": [{
+		"label": "Hub",
+		"value": "1983 Hours 23 Minutes"
+	}, {
+		"label": "Manufacturing",
+		"value": "1007 Hours 14 Minutes"
+	}, {
+		"label": "Affiliate (Sales Country)",
+		"value": "403 Hours 21 Min"
+	}],
 	"aViewSegmentList": [],
 	"aRoleSegmentList": [],
 	"aProjectCompletedProjBckUp": [],
 	"aProjectPendingProjBckUp": [],
-	"aProjectCompletedViewBckUp": [],
-	"aProjectPendingViewBckUp": [],
+	"aProjectCompletedViewBckUp": [{
+		"label": "BASIC DATA",
+		"value": "6021"
+	}, {
+		"label": "MRP",
+		"value": "3028"
+	}, {
+		"label": "SALES ORG",
+		"value": "4383"
+	}, {
+		"label": "WAREHOUSE",
+		"value": "6443"
+	}, {
+		"label": "FICO",
+		"value": "8493"
+	}, {
+		"label": "QM",
+		"value": "5840"
+	}],
+	"aProjectPendingViewBckUp": [{
+		"label": "BASIC DATA",
+		"value": "5043"
+	}, {
+		"label": "MRP",
+		"value": "6954"
+	}, {
+		"label": "SALES ORG",
+		"value": "5940"
+	}, {
+		"label": "WAREHOUSE",
+		"value": "7493"
+	}, {
+		"label": "FICO",
+		"value": "5840"
+	}, {
+		"label": "QM",
+		"value": "8372"
+	}],
 	"aProjectProj": [],
 	"aProjectViews": [],
 
@@ -276,20 +395,17 @@
 		"isScenario": false
 	},
 
+	"oFilterHistoryParam": {
+		"sProjectNo": "",
+		"sMaterialNo": "",
+		"sUpdatedBy": ""
+	},
+
 	"oNewParam": {
 		"isCountry": false,
 		"isView": false,
 		"isRole": false,
 		"isScenario": false
-	},
-
-	"sProjects": {
-		"sMatCompleted": "0",
-		"sMatPending": "0",
-		"sProjPending": "0",
-		"sProjComplted": "0",
-		"sCycleTPending": "0",
-		"sCycleTComplete": "0"
 	},
 
 	"ProductCollection": [{
@@ -367,5 +483,14 @@
 		"oldValue": "",
 		"updatedBy": "Shekar",
 		"updatedOn": "Aug 15 2020 12:08:23"
-	}]
+	}],
+
+	"sProjects": {
+		"sMatCompleted": "0",
+		"sMatPending": "0",
+		"sProjPending": "0",
+		"sProjComplted": "0",
+		"sCycleTPending": "0",
+		"sCycleTComplete": "0"
+	}
 }
