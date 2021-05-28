@@ -184,7 +184,7 @@ sap.ui.define([
 			var oThisController = this;
 			var oMdlCommon = oThisController.getParentModel("mCommon");
 			var aCompletedProj = $.extend(true, [], oMdlCommon.getProperty("/aReportsCompleted"));
-			oMdlCommon.setProperty("/aProjectProj", aCompletedProj)
+			oMdlCommon.setProperty("/aProjectProj", aCompletedProj);
 			oMdlCommon.setProperty("/oVisible/bProjTable", true);
 			oMdlCommon.setProperty("/oVisible/bViews", false);
 			oMdlCommon.refresh();
@@ -194,14 +194,14 @@ sap.ui.define([
 			var oThisController = this;
 			var oMdlCommon = oThisController.getParentModel("mCommon");
 			var aProjectPendingProjBckUp = $.extend(true, [], oMdlCommon.getProperty("/aReportsPending"));
-			oMdlCommon.setProperty("/aProjectProj", aProjectPendingProjBckUp)
+			oMdlCommon.setProperty("/aProjectProj", aProjectPendingProjBckUp);
 			oMdlCommon.setProperty("/oVisible/bProjTable", true);
 			oMdlCommon.setProperty("/oVisible/bViews", false);
 			oMdlCommon.refresh();
 		},
 
 		onSearchGroup: function (oEvent) {
-			var oThisController = this;
+			// var oThisController = this;
 			// oThisController.openBusyDialog();
 			var sQuery = oEvent.getParameter("newValue");
 			var oTable = oEvent.getSource().getParent().getParent();

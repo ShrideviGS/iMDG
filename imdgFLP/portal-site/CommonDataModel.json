@@ -54,15 +54,15 @@
 			},
 			"payload": {
 				"viz": [{
-					"id": "com.sap.bpm.monitorworkflow-0-1596038759488",
+					"id": "com.sap.bpm.workflowmonitor-0-1619447687893",
 					"appId": "com.sap.bpm.monitorworkflow",
 					"vizId": "bpmworkflowmonitor-DisplayInstances"
 				}, {
-					"id": "com.sap.bpm.monitorworkflow-1-1596038759488",
+					"id": "com.sap.bpm.monitorworkflow-1-1619447687893",
 					"appId": "com.sap.bpm.monitorworkflow",
 					"vizId": "bpmworkflowmonitor-DisplayDefinitions"
 				}, {
-					"id": "cross.fnd.fiori.inbox-2-1596038759488",
+					"id": "cross.fnd.fiori.inbox-2-1619447687893",
 					"appId": "cross.fnd.fiori.inbox",
 					"vizId": "WorkflowTask-DisplayMyInbox"
 				}]

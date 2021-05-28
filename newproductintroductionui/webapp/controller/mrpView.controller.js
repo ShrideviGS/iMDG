@@ -125,7 +125,7 @@ sap.ui.define([
 			// var taskId = "42f85c41-1efe-11e9-b488-00163e82bb6e";
 			var sUrl = "/bpmworkflowruntime/v1/task-instances/" + taskId + "/context";
 			var oSrvModel = new JSONModel();
-			oSrvModel.loadData(sUrl, true, "GET", false, false,this.oHeader);
+			oSrvModel.loadData(sUrl, true, "GET", false, false, this.oHeader);
 			oSrvModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
 					var resultData = oEvent.getSource().getData();
@@ -167,19 +167,83 @@ sap.ui.define([
 			var url_string = window.location.href;
 			var oUrlSplit = url_string.split("/");
 			var taskId = oUrlSplit[oUrlSplit.length - 1];
-			var oModel = new sap.ui.model.json.JSONModel();
-			oModel.setSizeLimit(999);
-			oModel.loadData("/bpmworkflowruntime/v1/task-instances/" + taskId + "/attributes", "", true, "GET", false,
-				false,this.oHeader);
-			oModel.attachRequestCompleted(function (oEvent) {
-				var nodeId;
-				var resData = oEvent.getSource().getData();
-				for (var i = 0; i < resData.length; i++) {
-					if (resData[i].id === "NodeId") {
-						nodeId = resData[i].value;
-					}
-				}
-				if (nodeId === "P2.1") {
+			// var oModel = new sap.ui.model.json.JSONModel();
+			// oModel.setSizeLimit(999);
+			// oModel.loadData("/bpmworkflowruntime/v1/task-instances/" + taskId + "/attributes", "", true, "GET", false,
+			// 	false, this.oHeader);
+			// oModel.attachRequestCompleted(function (oEvent) {
+			// 	var nodeId;
+			// 	var resData = oEvent.getSource().getData();
+			// 	for (var i = 0; i < resData.length; i++) {
+			// 		if (resData[i].id === "NodeId") {
+			// 			nodeId = resData[i].value;
+			// 		}
+			// 	}
+			// 	if (nodeId === "P2.1") {
+			// 		that.getView().byId("MRP1").setVisible(true);
+			// 		that.getView().byId("MRP2").setVisible(true);
+			// 		that.getView().byId("MRP3").setVisible(true);
+			// 		that.getView().byId("MRP4").setVisible(true);
+			// 		that.getView().byId("WRK_SCHEDULE").setVisible(true);
+			// 		that.getView().byId("PLANT_DATA_STORAGE1").setVisible(true);
+			// 		that.getView().byId("PLANT_DATA_STORAGE2").setVisible(true);
+			// 		that.getView().byId("STORAGE_LOC").setVisible(false);
+			// 		that.getView().byId("PURCHASING").setVisible(false);
+			// 		that.getView().byId("FOREIGN_TRADE_EXPORT").setVisible(false);
+			// 		that.getView().byId("SALES_GENERAL_PLANT").setVisible(false);
+			// 		that.getView().byId("QUALITY_MGMT").setVisible(false);
+			// 	} else if (nodeId === "P8.1") {
+			// 		that.getView().byId("MRP1").setVisible(false);
+			// 		that.getView().byId("MRP2").setVisible(false);
+			// 		that.getView().byId("MRP3").setVisible(false);
+			// 		that.getView().byId("MRP4").setVisible(false);
+			// 		that.getView().byId("WRK_SCHEDULE").setVisible(false);
+			// 		that.getView().byId("PLANT_DATA_STORAGE1").setVisible(false);
+			// 		that.getView().byId("PLANT_DATA_STORAGE2").setVisible(false);
+			// 		that.getView().byId("STORAGE_LOC").setVisible(false);
+			// 		that.getView().byId("PURCHASING").setVisible(false);
+			// 		that.getView().byId("FOREIGN_TRADE_EXPORT").setVisible(false);
+			// 		that.getView().byId("SALES_GENERAL_PLANT").setVisible(false);
+			// 		that.getView().byId("QUALITY_MGMT").setVisible(true);
+			// 	} else if (nodeId === "P9.1") {
+			// 		that.getView().byId("MRP1").setVisible(false);
+			// 		that.getView().byId("MRP2").setVisible(false);
+			// 		that.getView().byId("MRP3").setVisible(false);
+			// 		that.getView().byId("MRP4").setVisible(false);
+			// 		that.getView().byId("WRK_SCHEDULE").setVisible(false);
+			// 		that.getView().byId("PLANT_DATA_STORAGE1").setVisible(false);
+			// 		that.getView().byId("PLANT_DATA_STORAGE2").setVisible(false);
+			// 		that.getView().byId("STORAGE_LOC").setVisible(false);
+			// 		that.getView().byId("PURCHASING").setVisible(true);
+			// 		that.getView().byId("FOREIGN_TRADE_EXPORT").setVisible(true);
+			// 		that.getView().byId("SALES_GENERAL_PLANT").setVisible(false);
+			// 		that.getView().byId("QUALITY_MGMT").setVisible(false);
+			// 	} else if (nodeId === "P10.1") {
+			// 		that.getView().byId("MRP1").setVisible(false);
+			// 		that.getView().byId("MRP2").setVisible(false);
+			// 		that.getView().byId("MRP3").setVisible(false);
+			// 		that.getView().byId("MRP4").setVisible(false);
+			// 		that.getView().byId("WRK_SCHEDULE").setVisible(false);
+			// 		that.getView().byId("PLANT_DATA_STORAGE1").setVisible(false);
+			// 		that.getView().byId("PLANT_DATA_STORAGE2").setVisible(false);
+			// 		that.getView().byId("STORAGE_LOC").setVisible(false);
+			// 		that.getView().byId("PURCHASING").setVisible(false);
+			// 		that.getView().byId("FOREIGN_TRADE_EXPORT").setVisible(false);
+			// 		that.getView().byId("SALES_GENERAL_PLANT").setVisible(true);
+			// 		that.getView().byId("QUALITY_MGMT").setVisible(false);
+			// 	}
+			// });
+			// oModel.attachRequestFailed(function (oEvent) {
+			// 	var Message = "Internal Server Error";
+			// 	sap.m.MessageBox.show(Message);
+			// });
+			var oModelTaskDetails = new sap.ui.model.json.JSONModel();
+			oModelTaskDetails.setSizeLimit(9999);
+			oModelTaskDetails.loadData("/bpmworkflowruntime/v1/task-instances/" + taskId, "", true, "GET", false,
+				false, that.oHeader);
+			oModelTaskDetails.attachRequestCompleted(function (oEvent) {
+				var sView = oEvent.getSource().getData().subject.split(" - ")[1];
+				if (sView === "MRP Data Initial") {
 					that.getView().byId("MRP1").setVisible(true);
 					that.getView().byId("MRP2").setVisible(true);
 					that.getView().byId("MRP3").setVisible(true);
@@ -192,7 +256,7 @@ sap.ui.define([
 					that.getView().byId("FOREIGN_TRADE_EXPORT").setVisible(false);
 					that.getView().byId("SALES_GENERAL_PLANT").setVisible(false);
 					that.getView().byId("QUALITY_MGMT").setVisible(false);
-				} else if (nodeId === "P8.1") {
+				} else if (sView === "QM Data Initial") {
 					that.getView().byId("MRP1").setVisible(false);
 					that.getView().byId("MRP2").setVisible(false);
 					that.getView().byId("MRP3").setVisible(false);
@@ -205,7 +269,7 @@ sap.ui.define([
 					that.getView().byId("FOREIGN_TRADE_EXPORT").setVisible(false);
 					that.getView().byId("SALES_GENERAL_PLANT").setVisible(false);
 					that.getView().byId("QUALITY_MGMT").setVisible(true);
-				} else if (nodeId === "P9.1") {
+				} else if (sView === "Purchasing Data Initial") {
 					that.getView().byId("MRP1").setVisible(false);
 					that.getView().byId("MRP2").setVisible(false);
 					that.getView().byId("MRP3").setVisible(false);
@@ -218,7 +282,7 @@ sap.ui.define([
 					that.getView().byId("FOREIGN_TRADE_EXPORT").setVisible(true);
 					that.getView().byId("SALES_GENERAL_PLANT").setVisible(false);
 					that.getView().byId("QUALITY_MGMT").setVisible(false);
-				} else if (nodeId === "P10.1") {
+				} else if (sView === "Costing") {
 					that.getView().byId("MRP1").setVisible(false);
 					that.getView().byId("MRP2").setVisible(false);
 					that.getView().byId("MRP3").setVisible(false);
@@ -232,10 +296,12 @@ sap.ui.define([
 					that.getView().byId("SALES_GENERAL_PLANT").setVisible(true);
 					that.getView().byId("QUALITY_MGMT").setVisible(false);
 				}
+				// var nodeId;
+				// var resData = oEvent.getSource().getData();
 			});
-			oModel.attachRequestFailed(function (oEvent) {
+			oModelTaskDetails.attachRequestFailed(function (oEvent) {
 				var Message = "Internal Server Error";
-				newproductintroductionui.newproductintroductionui.util.util.toastMessage(Message);
+				sap.m.MessageBox.show(Message);
 			});
 		},
 

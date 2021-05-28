@@ -12,6 +12,19 @@
 		"sourceTemplate": {
 			"id": "ui5template.basicSAPUI5ApplicationProject",
 			"version": "1.40.12"
+		},
+		"crossNavigation": {
+			"inbounds": {
+				"intent1": {
+					"signature": {
+						"parameters": {},
+						"additionalParameters": "allowed"
+					},
+					"semanticObject": "kpireports",
+					"action": "display",
+					"title": "KPI-Reports"
+				}
+			}
 		}
 	},
 	"sap.ui": {
@@ -62,11 +75,9 @@
 			}
 		},
 		"resources": {
-			"css": [
-				{
-					"uri": "css/style.css"
-				}
-			]
+			"css": [{
+				"uri": "css/style.css"
+			}]
 		},
 		"routing": {
 			"config": {
@@ -78,57 +89,35 @@
 				"controlId": "id_npi_Appcontainer",
 				"clearControlAggregation": false
 			},
-			"routes": [
-				{
-					"name": "App",
-					"pattern": "App",
-					"target": [
-						"CycletimeModified"
-					]
-				},
-				{
-					"name": "Reports",
-					"pattern": "Reports",
-					"target": [
-						"Reports"
-					]
-				},
-				{
-					"name": "Dataqualityreport",
-					"pattern": "Dataqualityreport",
-					"target": [
-						"Dataqualityreport"
-					]
-				},
-				{
-					"name": "Changehistory",
-					"pattern": "Changehistory",
-					"target": [
-						"Changehistory"
-					]
-				},
-				{
-					"name": "Cycletime",
-					"pattern": "Cycletime",
-					"target": [
-						"Cycletime"
-					]
-				},
-				{
-					"name": "Dataquality",
-					"pattern": "Dataquality",
-					"target": [
-						"Dataquality"
-					]
-				},
-				{
-					"name": "CycletimeModified",
-					"pattern": "",
-					"target": [
-						"CycletimeModified"
-					]
-				}
-			],
+			"routes": [{
+				"name": "App",
+				"pattern": "App",
+				"target": ["CycletimeModified"]
+			}, {
+				"name": "Reports",
+				"pattern": "Reports",
+				"target": ["Reports"]
+			}, {
+				"name": "Dataqualityreport",
+				"pattern": "Dataqualityreport",
+				"target": ["Dataqualityreport"]
+			}, {
+				"name": "Changehistory",
+				"pattern": "Changehistory",
+				"target": ["Changehistory"]
+			}, {
+				"name": "Cycletime",
+				"pattern": "Cycletime",
+				"target": ["Cycletime"]
+			}, {
+				"name": "Dataquality",
+				"pattern": "Dataquality",
+				"target": ["Dataquality"]
+			}, {
+				"name": "CycletimeModified",
+				"pattern": "",
+				"target": ["CycletimeModified"]
+			}],
 			"targets": {
 				"TargetApp": {
 					"viewId": "App",

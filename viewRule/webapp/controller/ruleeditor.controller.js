@@ -19,22 +19,26 @@ sap.ui.define([
 			};
 			xhr.send(null);
 			var oModel = new JSONModel("./model/data.json");
+			var sRootPath = jQuery.sap.getModulePath("viewRule.viewRule");
+			oModel.attachRequestCompleted(function (oEvent) {
+				oModel.refresh();
+			});
+			oModel.loadData(sRootPath + "/model/data.json", null, false);
 			this.getView().setModel(oModel);
 			this.getData();
 		},
-		getData: function() {
-			var that=this;
+		getData: function () {
+			var that = this;
 			var sUrl = "/npiservices/npi/visibilityRules/treeData?applicationName= ";
 			var oModel = new sap.ui.model.json.JSONModel();
 			oModel.loadData(sUrl, "", true, "GET", false, false, this.oHeader);
 			oModel.attachRequestCompleted(function (oEvent) {
-				debugger;
 				if (oEvent.getParameter("success")) {
 					var resultData = oEvent.getSource().getData();
 
 				} else {
 					var errorText = that.oResourceModel.getText("INTERNAL_SERVER_ERROR");
-				
+
 				}
 			});
 
@@ -92,13 +96,16 @@ sap.ui.define([
 			oModel.loadData("/npiservices/npi/visibilityRules/update", data, true, "POST", false, false, this.oHeader);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
-					alert("success");
+					sap.ui.core.BusyIndicator.close(0);
+					// alert("success");
 
 				} else {
+					sap.ui.core.BusyIndicator.close(0);
 					var Message = "Internal Server Error";
 				}
 			});
 			oModel.attachRequestFailed(function (oEvent) {
+				sap.ui.core.BusyIndicator.close(0);
 				var Message = "Internal Server Error";
 			});
 

@@ -24,7 +24,6 @@ sap.ui.define([
 			this.loadWFInstances("detailed_scoping_wf");
 		},
 		onSearch: function (oEvent) {
-			debugger;
 			var taskType = this.getView().byId("taskType").getSelectedKey();
 			this.loadWFInstances(taskType);
 		},

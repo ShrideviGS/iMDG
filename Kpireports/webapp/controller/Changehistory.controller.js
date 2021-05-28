@@ -141,7 +141,7 @@ sap.ui.define([
 			}
 
 			if (CSV == '') {
-				console.lo("Invalid data");
+				// console.lo("Invalid data");
 				return;
 			}
 
@@ -209,7 +209,7 @@ sap.ui.define([
 		},
 
 		onHistoreySearch: function (oEvent) {
-			var oThisController = this;
+			// var oThisController = this;
 			var oMdlCommon = this.getParentModel("mCommon");
 			var oFilterParam = oMdlCommon.getProperty("/oFilterHistoryParam");
 			// oThisController.openBusyDialog();
@@ -219,35 +219,35 @@ sap.ui.define([
 
 			var aPropertyFilterSettings = [];
 			if (oFilterParam.sProjectNo) {
-				let oRowProjNo = {
+				var oRowProjNo = {
 					propertyName: "ProjectId",
 					filterOperator: "Contains",
 					propertyValue: oFilterParam.sProjectNo
-				}
+				};
 				aPropertyFilterSettings.push(oRowProjNo);
 			}
 			if (oFilterParam.sMaterialNo) {
-				let oRowMatNo = {
+				var oRowMatNo = {
 					propertyName: "ProductId",
 					filterOperator: "Contains",
 					propertyValue: oFilterParam.sMaterialNo
-				}
+				};
 				aPropertyFilterSettings.push(oRowMatNo);
 			}
 			if (oFilterParam.sUpdatedBy) {
-				let oRowUpdateby = {
+				var oRowUpdateby = {
 					propertyName: "updatedBy",
 					filterOperator: "Contains",
 					propertyValue: oFilterParam.sUpdatedBy
-				}
-				aPropertyFilterSettings.push(oRowUpdateby)
+				};
+				aPropertyFilterSettings.push(oRowUpdateby);
 			}
 			this.fnApplyCustomerFilter(aPropertyFilterSettings, oBinding, false);
 			// oThisController.closeBusyDialog();
 		},
 
 		onClear: function () {
-			var oThisController = this;
+			// var oThisController = this;
 			var oMdlCommon = this.getParentModel("mCommon");
 			var aHistoryBckup = oMdlCommon.getProperty("/aHistoryBckup");
 			oMdlCommon.setProperty("/ProductCollection", aHistoryBckup);
