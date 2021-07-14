@@ -1,4 +1,5 @@
-<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" class="sapUiSizeCompact" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table">
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" class="sapUiSizeCompact" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified"
+	xmlns:table="sap.ui.table">
 	<IconTabBar class="sapIconTabBar sapUiResponsiveContentPadding sapUiSmallMarginTop sapUiTinyMarginEnd" backgroundDesign="Transparent"
 		headerBackgroundDesign="Transparent">
 		<items>
@@ -188,7 +189,12 @@
 					</table:columns>
 				</table:Table>
 			</IconTabFilter>
-			<IconTabFilter design="Vertical" text="Uploads" key="UPLOAD"></IconTabFilter>
+			<IconTabFilter design="Vertical" text="Uploads" key="UPLOAD">
+				<u:FileUploader iconOnly="true" icon="sap-icon://browse-folder" placeholder="Upload a File" change="afterFileUpload" id="fileUploaderId"
+					class="fileUploaderClass downloadButtonClass" tooltip="Materials"></u:FileUploader>
+				<Button text="Upload" icon="sap-icon://arrow-top" press="onUploadProgress" visible="false"/>
+				<Button text="Clear" press="onClearBtn" visible="true" class="sapUiTinyMarginBegin"/>
+			</IconTabFilter>
 		</items>
 	</IconTabBar>
 	<!--	<l:Grid defaultSpan="XL6 L6 M12 S12">

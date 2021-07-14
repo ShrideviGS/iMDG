@@ -30,7 +30,7 @@ sap.ui.define([
 					"Content-Type": "application/json",
 					"x-csrf-token": xhr.getResponseHeader("X-CSRF-Token")
 				};
-				that.token=xhr.getResponseHeader("X-CSRF-Token");
+				that.token = xhr.getResponseHeader("X-CSRF-Token");
 			};
 			xhr.send(null);
 			var oDropdownLookupsModel = this.getOwnerComponent().getModel("oDropdownLookupsModel");
@@ -85,7 +85,7 @@ sap.ui.define([
 			//	var sUrl = "/bpmworkflowruntime/v1/task-instances/" + taskId + "/context";
 			var sUrl = "/bpmworkflowruntime/v1/task-instances/" + taskId + "/context";
 			var oModel = new sap.ui.model.json.JSONModel();
-			oModel.loadData(sUrl, true, "GET", false, false,this.oHeader);
+			oModel.loadData(sUrl, true, "GET", false, false, this.oHeader);
 			oModel.attachRequestCompleted(function (oEvent) {
 				if (oEvent.getParameter("success")) {
 					var resultData = oEvent.getSource().getData();
@@ -1554,24 +1554,24 @@ sap.ui.define([
 			var token;
 			var that = this;
 			var oUrl = "/bpmworkflowruntime/v1/xsrf-token";
-			if(this.token){
+			if (this.token) {
 				that.completeBpmtask(this.token);
 				return this.token;
-			}else{
-			$.ajax({
-				url: oUrl,
-				method: "GET",
-				async: false,
-				headers: this.oHeader,
-				success: function (result, xhr, data) {
-					token = data.getResponseHeader("X-CSRF-Token");
-					that.completeBpmtask(token);
-				},
-				error: function (result, xhr, data) {
-					token = result.getResponseHeader("x-csrf-token");
-				}
-			});
-			return token;
+			} else {
+				$.ajax({
+					url: oUrl,
+					method: "GET",
+					async: false,
+					headers: this.oHeader,
+					success: function (result, xhr, data) {
+						token = data.getResponseHeader("X-CSRF-Token");
+						that.completeBpmtask(token);
+					},
+					error: function (result, xhr, data) {
+						token = result.getResponseHeader("x-csrf-token");
+					}
+				});
+				return token;
 			}
 		},
 
@@ -1611,8 +1611,10 @@ sap.ui.define([
 		},
 
 		onCloseScenarioPopUp: function () {
-				this.scenarioDialog.close();
-			}
+			this.scenarioDialog.close();
+		}
+
+	
 			/**
 			 * Called when a controller is instantiated and its View controls (if available) are already created.
 			 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.

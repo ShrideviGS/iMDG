@@ -383,6 +383,11 @@ sap.ui.define([
 			var oProjectDetailModel = this.oProjectDetailModel;
 			oProjectDetailModel.setProperty("/isProjectDetailsVisible", true);
 			oProjectDetailModel.refresh();
+		},
+
+		onClearBtn: function () {
+			var fileUploader = this.getView().byId("fileUploaderId");
+			fileUploader.clear();
 		}
 
 		/**
